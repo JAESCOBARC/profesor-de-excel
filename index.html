@@ -361,13 +361,22 @@
   .superprof-badge { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--gold); line-height: 1; }
 
   @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; padding: 4rem 5%; }
+    .hero { grid-template-columns: 1fr; min-height: auto; padding: 2.5rem 5% 2rem; }
     .hero-visual { display: none; }
+    .hero-trust { flex-wrap: wrap; gap: 1rem 1.5rem; }
+    .trust-divider { display: none; }
+    .trust-item { min-width: calc(50% - 1rem); }
+    .trust-superprof { min-width: 100%; }
     .metodo-grid { grid-template-columns: 1fr; }
     .temario-cols { grid-template-columns: 1fr; }
+    .precios-grid { flex-direction: column; }
+    .precio-pill { min-width: 100%; transform: none !important; }
     .faq-testi-grid { grid-template-columns: 1fr; gap: 3rem; }
     .cta-inner { grid-template-columns: 1fr; }
-    .cta-text { text-align: center; }
+    .cta-text { text-align: center; align-items: center; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .footer-links { flex-wrap: wrap; gap: 1rem; }
+    .footer-social { flex-wrap: wrap; gap: 1rem; }
     .nav-links { display: none; }
     h1 { font-size: 2rem; }
   }
