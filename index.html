@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profesor de Excel | Clases Particulares Online – Jhony</title>
-<meta name="description" content="Clases de Excel online en vivo, 100% personalizadas. Fórmulas avanzadas, tablas dinámicas, macros y VBA. Profesor experto en España. Primera clase gratis.">
+<meta name="description" content="Clases de Excel online en vivo, 100% personalizadas. Fórmulas avanzadas, tablas dinámicas, macros y VBA. Profesor experto en España. Desde 22€/hora.">
 <meta name="keywords" content="clases de excel online, profesor de excel, clases particulares excel, aprender excel desde cero, curso excel personalizado, clases excel en vivo, excel para empresas, formulas excel avanzadas, tablas dinamicas excel, macros excel VBA">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.trabajoenexcel.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.trabajoenexcel.com/">
 <meta property="og:title" content="Profesor de Excel | Clases Particulares Online – Jhony">
-<meta property="og:description" content="Clases de Excel online en vivo, 100% personalizadas. Fórmulas avanzadas, tablas dinámicas, macros y VBA. Profesor experto en España. Primera clase gratis.">
+<meta property="og:description" content="Clases de Excel online en vivo, 100% personalizadas. Fórmulas avanzadas, tablas dinámicas, macros y VBA. Profesor experto en España. Desde 22€/hora.">
 <meta property="og:image" content="https://www.trabajoenexcel.com/clases_excel_particulas_tarjeta.png">
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Excel con Jhony">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Profesor de Excel | Clases Particulares Online – Jhony">
-<meta name="twitter:description" content="Clases de Excel online en vivo, 100% personalizadas. Fórmulas avanzadas, tablas dinámicas, macros y VBA. Profesor experto en España. Primera clase gratis.">
+<meta name="twitter:description" content="Clases de Excel online en vivo, 100% personalizadas. Fórmulas avanzadas, tablas dinámicas, macros y VBA. Profesor experto en España. Desde 22€/hora.">
 <meta name="twitter:image" content="https://www.trabajoenexcel.com/clases_excel_particulas_tarjeta.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -317,6 +317,52 @@
     h1 { font-size: 2rem; }
   }
 
+  .precios { background: var(--cream); }
+  .precios-grid { display: flex; gap: 1.25rem; margin-top: 3rem; flex-wrap: wrap; }
+  .precio-pill {
+    flex: 1; min-width: 220px;
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 24px; padding: 2rem 1.75rem;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 0.5rem; position: relative;
+    transition: all 0.3s;
+  }
+  .precio-pill:hover { transform: translateY(-4px); border-color: var(--green-light); box-shadow: 0 8px 32px rgba(45,134,83,0.12); }
+  .precio-pill--popular {
+    background: var(--green-deep); border-color: var(--green-deep);
+    transform: scale(1.04);
+  }
+  .precio-pill--popular:hover { transform: scale(1.04) translateY(-4px); }
+  .precio-badge {
+    position: absolute; top: -14px;
+    background: var(--green-light); color: white;
+    padding: 4px 16px; border-radius: 100px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em;
+  }
+  .precio-horas { font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 0.5rem; }
+  .precio-pill--popular .precio-horas { color: rgba(255,255,255,0.6); }
+  .precio-amount {
+    font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 600;
+    color: var(--green-deep); line-height: 1;
+  }
+  .precio-amount span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+  .precio-pill--popular .precio-amount { color: white; }
+  .precio-pill--popular .precio-amount span { color: rgba(255,255,255,0.55); }
+  .precio-descuento { font-size: 0.78rem; font-weight: 500; color: var(--green-mid); background: var(--green-pale); padding: 3px 12px; border-radius: 100px; }
+  .precio-pill--popular .precio-descuento { background: rgba(77,184,122,0.2); color: var(--green-light); }
+  .precio-desc { font-size: 0.84rem; color: var(--slate); line-height: 1.5; }
+  .precio-pill--popular .precio-desc { color: rgba(255,255,255,0.65); }
+  .precio-cta {
+    margin-top: 0.75rem; width: 100%;
+    background: var(--green-mid); color: white;
+    padding: 10px 0; border-radius: 100px;
+    text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    transition: background 0.2s; display: block;
+  }
+  .precio-cta:hover { background: var(--green-deep); }
+  .precio-pill--popular .precio-cta { background: white; color: var(--green-deep); }
+  .precio-pill--popular .precio-cta:hover { background: var(--green-pale); }
+
   .animate-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 </style>
@@ -327,10 +373,10 @@
   <a href="#" class="nav-logo">Excel con Jhony</a>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#temario">Temario</a></li>
+    <li><a href="#precios">Precios</a></li>
     <li><a href="#metodologia">Metodología</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contacto" class="nav-cta">Primera clase gratis</a></li>
+    <li><a href="#contacto" class="nav-cta">Reservar clase</a></li>
   </ul>
 </nav>
 
@@ -346,7 +392,7 @@
       Clases de Excel particulares online en vivo. Sin cursos pregrabados. Sin temarios genéricos. Trabajamos directamente sobre tus archivos, tus problemas y tus objetivos.
     </p>
     <div class="hero-actions">
-      <a href="#contacto" class="btn-primary">Primera clase gratis →</a>
+      <a href="#precios" class="btn-primary">Ver precios →</a>
       <a href="#servicios" class="btn-ghost">Ver servicios</a>
     </div>
     <div class="hero-trust">
@@ -484,6 +530,35 @@
   </div>
 </section>
 
+<section class="precios" id="precios">
+  <div class="section-tag">Tarifas</div>
+  <h2>Planes de <em>precio</em></h2>
+  <p class="section-lead">Sin permanencias ni suscripciones. Elige el bono que mejor se adapta a tu ritmo.</p>
+  <div class="precios-grid">
+    <div class="precio-pill">
+      <div class="precio-horas">1 hora</div>
+      <div class="precio-amount">25€<span>/hora</span></div>
+      <div class="precio-desc">Sesión suelta, sin compromiso</div>
+      <a href="mailto:hola@trabajoenexcel.com" class="precio-cta">Reservar</a>
+    </div>
+    <div class="precio-pill precio-pill--popular">
+      <div class="precio-badge">Más popular</div>
+      <div class="precio-horas">Bono 5 horas</div>
+      <div class="precio-amount">23€<span>/hora</span></div>
+      <div class="precio-descuento">5% descuento · 115€ total</div>
+      <div class="precio-desc">Ideal para aprender a tu ritmo</div>
+      <a href="mailto:hola@trabajoenexcel.com" class="precio-cta">Reservar</a>
+    </div>
+    <div class="precio-pill">
+      <div class="precio-horas">Bono 10 h o más</div>
+      <div class="precio-amount">22€<span>/hora</span></div>
+      <div class="precio-descuento">10% descuento · desde 220€</div>
+      <div class="precio-desc">Para formaciones completas o equipos</div>
+      <a href="mailto:hola@trabajoenexcel.com" class="precio-cta">Reservar</a>
+    </div>
+  </div>
+</section>
+
 <section class="temario" id="temario">
   <div class="section-tag">Contenidos</div>
   <h2>¿Qué aprenderás en las <em>clases de Excel</em>?</h2>
@@ -557,7 +632,7 @@
         <div class="step-circle">1</div>
         <div class="step-content">
           <h4>Diagnóstico personalizado</h4>
-          <p>Primera sesión gratuita para entender tu nivel, tus objetivos y qué necesitas resolver con Excel.</p>
+          <p>Primera sesión para entender tu nivel, tus objetivos y qué necesitas resolver con Excel.</p>
         </div>
       </div>
       <div class="metodo-step">
@@ -655,7 +730,7 @@
   <div class="faq-list">
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">¿Necesito tener nivel previo de Excel para las clases?</div>
-      <div class="faq-a">No. Doy clases de Excel desde cero hasta nivel avanzado. La primera sesión gratuita sirve precisamente para evaluar tu nivel y diseñar el plan más adecuado para ti.</div>
+      <div class="faq-a">No. Doy clases de Excel desde cero hasta nivel avanzado. La primera sesión sirve precisamente para evaluar tu nivel y diseñar el plan más adecuado para ti.</div>
     </div>
     <div class="faq-item" onclick="this.classList.toggle('open')">
       <div class="faq-q">¿Cuánto duran las clases y cuál es el precio?</div>
@@ -674,8 +749,8 @@
       <div class="faq-a">Sí. Ofrezco formación para empresas en toda España de forma online. Puedo adaptar el temario a los procesos de vuestra empresa y formar a equipos completos. Contacta para un presupuesto personalizado.</div>
     </div>
     <div class="faq-item" onclick="this.classList.toggle('open')">
-      <div class="faq-q">¿Cómo reservo la primera clase gratuita?</div>
-      <div class="faq-a">Rellena el formulario de contacto o escríbeme directamente. Te respondo en menos de 24 horas para coordinar la sesión gratuita de diagnóstico sin compromiso.</div>
+      <div class="faq-q">¿Cómo reservo mi primera clase?</div>
+      <div class="faq-a">Rellena el formulario de contacto o escríbeme directamente. Te respondo en menos de 24 horas para coordinar la primera sesión sin compromiso.</div>
     </div>
   </div>
 </section>
@@ -683,9 +758,9 @@
 <section class="cta-final" id="contacto">
   <div class="cta-box">
     <div style="font-size:2rem; margin-bottom:1rem;">📊</div>
-    <h2 style="font-size:1.8rem;">Tu primera clase<br><em>es gratuita</em></h2>
-    <p>Sin compromiso. Evaluamos tu nivel y diseñamos juntos el plan que necesitas.</p>
-    <a href="mailto:hola@trabajoenexcel.com" class="btn-white">Reservar clase gratis</a>
+    <h2 style="font-size:1.8rem;">¿Listo para<br><em>empezar?</em></h2>
+    <p>Escríbeme y diseñamos juntos el plan que necesitas. Respondo en menos de 24h.</p>
+    <a href="mailto:hola@trabajoenexcel.com" class="btn-white">Contactar ahora</a>
     <p style="margin-top:1.5rem; font-size:0.78rem; color:rgba(255,255,255,0.35);">
       O escríbeme a hola@trabajoenexcel.com · Respondo en menos de 24h
     </p>
