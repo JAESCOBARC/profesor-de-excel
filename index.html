@@ -249,7 +249,7 @@
   .problemas .section-tag { color: var(--green-light); }
   .problemas h2 { color: white; }
   .problemas .section-lead { color: rgba(255,255,255,0.65); }
-  .problemas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .problemas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
   .problema-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
@@ -381,6 +381,7 @@
     .footer-social { flex-wrap: wrap; gap: 1rem; justify-content: center; }
     .nav-links { display: none; }
     h1 { font-size: 2rem; }
+    .problemas-grid { grid-template-columns: repeat(2, 1fr); }
     .keywords-grid { grid-template-columns: 1fr; gap: 2rem; }
     .keywords-grid p { border-left: none !important; padding-left: 0 !important; }
   }
