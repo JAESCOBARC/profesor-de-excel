@@ -332,6 +332,8 @@
   .kw-list { display: flex; flex-wrap: wrap; gap: 10px; }
   .kw-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75); padding: 6px 16px; border-radius: 100px; font-size: 0.82rem; border: 1px solid rgba(255,255,255,0.15); transition: all 0.2s; }
   .kw-tag:hover { background: rgba(255,255,255,0.15); color: white; }
+  .keywords-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 0; }
+  .keywords-grid-divider { width: 1px; background: rgba(255,255,255,0.1); }
 
   .cta-final { background: white; padding: 3.5rem 5%; }
   .cta-box { max-width: 960px; margin: 0 auto; background: var(--green-deep); border-radius: 28px; padding: 3rem 0 3rem 3.5rem; overflow: hidden; }
@@ -379,6 +381,8 @@
     .footer-social { flex-wrap: wrap; gap: 1rem; justify-content: center; }
     .nav-links { display: none; }
     h1 { font-size: 2rem; }
+    .keywords-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .keywords-grid p { border-left: none !important; padding-left: 0 !important; }
   }
 
   .precios { background: var(--cream); }
@@ -852,10 +856,15 @@
 
 <section class="keywords-seo">
   <div class="section-tag" style="color:var(--green-light)">Áreas de especialización</div>
-  <h2 style="color:white; font-size:1.5rem; margin-bottom:1rem;">Excel para cada necesidad</h2>
-  <p style="color:rgba(255,255,255,0.65); max-width:800px; line-height:1.9; font-size:0.92rem;">
-    Ofrezco <strong style="color:white;">clases particulares de Excel online</strong> para profesionales, estudiantes y empresas de toda España — Madrid, Barcelona, Valencia, Sevilla y más. Tanto si quieres <strong style="color:white;">aprender Excel desde cero</strong> como dominar fórmulas avanzadas, tablas dinámicas, macros VBA o Power Query, cada sesión se adapta a tus archivos reales. También imparto <strong style="color:white;">formación Excel para empresas</strong>: dashboards personalizados, automatización de procesos y modelos financieros. Consulta mis <strong style="color:white;">precios de clases particulares de Excel</strong> en la sección de tarifas.
-  </p>
+  <h2 style="color:white; font-size:1.5rem; margin-bottom:2rem;">Excel para cada necesidad</h2>
+  <div class="keywords-grid">
+    <p style="color:rgba(255,255,255,0.65); line-height:1.9; font-size:0.92rem;">
+      Ofrezco <strong style="color:white;">clases particulares de Excel online</strong> para profesionales, estudiantes y empresas de toda España — Madrid, Barcelona, Valencia, Sevilla y más. Tanto si quieres <strong style="color:white;">aprender Excel desde cero</strong> como dominar fórmulas avanzadas, tablas dinámicas, macros VBA o Power Query, cada sesión se adapta a tus archivos reales. También imparto <strong style="color:white;">formación Excel para empresas</strong>: dashboards personalizados, automatización de procesos y modelos financieros. Consulta mis <strong style="color:white;">precios de clases particulares de Excel</strong> en la sección de tarifas.
+    </p>
+    <p style="color:rgba(255,255,255,0.65); line-height:1.9; font-size:0.92rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:3rem;">
+      ¿Necesitas algo más que formación? También ofrezco servicios de <strong style="color:white;">automatización y consultoría de datos</strong> adaptados a tu negocio. Construyo automatizaciones con <strong style="color:white;">macros VBA y Python</strong>, bases de datos y consultas en <strong style="color:white;">SQL</strong>, y dashboards profesionales en <strong style="color:white;">Power BI, Google Data Studio y Tableau</strong>. Si buscas una solución sin código, desarrollo aplicaciones personalizadas con <strong style="color:white;">AppSheet</strong> conectadas a tus datos. Dime qué necesitas y te propongo la solución más eficiente.
+    </p>
+  </div>
 </section>
 
 <footer>
