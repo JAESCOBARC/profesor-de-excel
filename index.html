@@ -58,23 +58,95 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jhony Escobar",
+  "jobTitle": "Profesor de Excel Online",
+  "url": "https://www.trabajoenexcel.com",
+  "image": "https://www.trabajoenexcel.com/clases-particuales-excel-online.png",
+  "email": "jhonya2000@gmail.com",
+  "telephone": "+34641682371",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Granada",
+    "addressCountry": "ES"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Granada" },
+    { "@type": "City", "name": "Madrid" },
+    { "@type": "City", "name": "Barcelona" },
+    { "@type": "City", "name": "Valencia" },
+    { "@type": "City", "name": "Sevilla" },
+    { "@type": "City", "name": "Bilbao" },
+    { "@type": "City", "name": "Zaragoza" },
+    { "@type": "City", "name": "Málaga" },
+    { "@type": "City", "name": "Murcia" },
+    { "@type": "Country", "name": "España" }
+  ],
+  "knowsAbout": ["Microsoft Excel", "VBA", "Power Query", "Tablas Dinámicas", "Macros", "Power Pivot", "Dashboards"],
+  "sameAs": [
+    "https://www.linkedin.com/in/jaescobarc/",
+    "https://www.superprof.es/clases-excel-desde-cero-avanzado-aprende-rapido-para-trabajo-profesor-certificado.html"
+  ]
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Clases particulares de Excel online",
-  "url": "https://www.trabajoenexcel.com/",
+  "description": "Clases de Excel online en vivo, 100% personalizadas. Fórmulas avanzadas, tablas dinámicas, macros VBA, Power Query. Profesor experto en España.",
+  "url": "https://www.trabajoenexcel.com",
   "provider": {
     "@type": "Person",
     "name": "Jhony Escobar",
-    "url": "https://www.trabajoenexcel.com/"
+    "url": "https://www.trabajoenexcel.com"
   },
+  "areaServed": { "@type": "Country", "name": "España" },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceType": "Online",
+    "availableLanguage": { "@type": "Language", "name": "Spanish" }
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Clase suelta · 1 hora",
+      "price": "25.00",
+      "priceCurrency": "EUR",
+      "description": "Sesión suelta sin compromiso",
+      "url": "https://www.trabajoenexcel.com/#precios",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Bono 5 horas",
+      "price": "115.00",
+      "priceCurrency": "EUR",
+      "description": "23€/hora · 5% descuento",
+      "url": "https://www.trabajoenexcel.com/#precios",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Bono 10 horas o más",
+      "price": "220.00",
+      "priceCurrency": "EUR",
+      "description": "22€/hora · 10% descuento",
+      "url": "https://www.trabajoenexcel.com/#precios",
+      "availability": "https://schema.org/InStock"
+    }
+  ],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
-    "reviewCount": "200",
     "bestRating": "5",
-    "worstRating": "1"
+    "worstRating": "1",
+    "reviewCount": "200"
   },
   "review": [
     {
@@ -372,7 +444,7 @@
   .kw-list { display: flex; flex-wrap: wrap; gap: 10px; }
   .kw-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75); padding: 6px 16px; border-radius: 100px; font-size: 0.82rem; border: 1px solid rgba(255,255,255,0.15); transition: all 0.2s; }
   .kw-tag:hover { background: rgba(255,255,255,0.15); color: white; }
-  .keywords-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 0; }
+  .keywords-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; margin-top: 0; }
   .keywords-grid-divider { width: 1px; background: rgba(255,255,255,0.1); }
 
   .cta-final { background: white; padding: 3.5rem 5%; }
@@ -423,6 +495,7 @@
     h1 { font-size: 2rem; }
     .problemas-grid { grid-template-columns: repeat(2, 1fr); }
     .keywords-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .keywords-grid p:nth-child(2), .keywords-grid p:nth-child(3) { border-left: none !important; padding-left: 0 !important; }
     .keywords-grid p { border-left: none !important; padding-left: 0 !important; }
   }
 
@@ -938,6 +1011,9 @@
     </p>
     <p style="color:rgba(255,255,255,0.65); line-height:1.9; font-size:0.92rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:3rem;">
       ¿Necesitas algo más que formación? También ofrezco servicios de <strong style="color:white;">automatización y consultoría de datos</strong> adaptados a tu negocio. Construyo automatizaciones con <strong style="color:white;">macros VBA y Python</strong>, bases de datos y consultas en <strong style="color:white;">SQL</strong>, y dashboards profesionales en <strong style="color:white;">Power BI, Google Data Studio y Tableau</strong>. Si buscas una solución sin código, desarrollo aplicaciones personalizadas con <strong style="color:white;">AppSheet</strong> conectadas a tus datos. Dime qué necesitas y te propongo la solución más eficiente.
+    </p>
+    <p style="color:rgba(255,255,255,0.65); line-height:1.9; font-size:0.92rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:3rem;">
+      ¿Buscas un <strong style="color:white;">profesor de Excel cerca de ti</strong>? Con las clases online la distancia no existe. Desde <strong style="color:white;">Granada</strong> imparto sesiones en directo a alumnos de <strong style="color:white;">Madrid, Barcelona, Valencia, Sevilla, Bilbao, Zaragoza, Málaga, Murcia</strong> y cualquier punto de España. Mismo profesor, misma calidad, misma cercanía — solo necesitas conexión a internet. Si buscas un <strong style="color:white;">profesor de Excel cerca de ti online</strong>, ya me has encontrado.
     </p>
   </div>
 </section>
