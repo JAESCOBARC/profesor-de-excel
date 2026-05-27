@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ruta para aprender Excel: de cero a la certificación MOS | Jhony Escobar</title>
-<meta name="description" content="Roadmap completo para aprender Excel desde cero hasta la certificación Microsoft Office Specialist (MOS). 5 niveles, temas por etapa y clases particulares online.">
+<title>Clases particulares Excel: ruta de cero a certificación MOS | Jhony Escobar</title>
+<meta name="description" content="Clases particulares de Excel con profesor experto: ruta de 5 niveles hasta la certificación MOS Microsoft Office Specialist. Online, toda España.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.trabajoenexcel.com/certificacion-microsoft-excel-especialista.html">
 <meta property="og:type" content="website">
@@ -121,9 +121,17 @@
   .section-label { font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green-soft); margin-bottom: 0.5rem; }
 
   /* ── Hero ── */
-  .page-hero { padding: 4rem 5% 3rem; max-width: 860px; position: relative; }
-  .page-hero::after { content: ''; position: absolute; top: 0; right: -5%; width: 50vw; height: 100%; background: radial-gradient(ellipse at right, var(--green-pale) 0%, transparent 65%); opacity: 0.4; pointer-events: none; z-index: 0; }
-  .page-hero > * { position: relative; z-index: 1; }
+  .page-hero { padding: 4rem 5% 3rem; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 3rem; }
+  .page-hero-text { }
+  .mos-badge-card { background: var(--green-deep); border-radius: 20px; padding: 2rem 1.75rem; min-width: 220px; max-width: 240px; text-align: center; box-shadow: 0 8px 40px rgba(10,46,26,0.18); flex-shrink: 0; position: relative; overflow: hidden; }
+  .mos-badge-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%); border-radius: 50%; }
+  .mos-badge-icon { font-size: 2.8rem; margin-bottom: 0.75rem; display: block; }
+  .mos-badge-label { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+  .mos-badge-name { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 400; color: white; line-height: 1.3; margin-bottom: 0.5rem; }
+  .mos-badge-expert { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold); line-height: 1.1; margin-bottom: 1rem; }
+  .mos-badge-divider { width: 32px; height: 1px; background: rgba(201,168,76,0.3); margin: 0.85rem auto; }
+  .mos-badge-id { font-size: 0.72rem; color: rgba(255,255,255,0.4); font-family: monospace; margin-bottom: 2px; }
+  .mos-badge-holder { font-size: 0.82rem; color: rgba(255,255,255,0.7); font-weight: 500; }
   .hero-desc { font-size: 1.1rem; color: var(--slate); line-height: 1.8; max-width: 580px; margin-bottom: 2rem; }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 2.5rem; }
 
@@ -240,7 +248,8 @@
 
   /* ── Responsive ── */
   @media (max-width: 768px) {
-    .page-hero { padding: 3rem 5% 2rem; }
+    .page-hero { padding: 3rem 5% 2rem; grid-template-columns: 1fr; }
+    .mos-badge-card { max-width: 100%; min-width: unset; }
     .page-hero::after { display: none; }
     .section { padding: 2.5rem 5%; }
     .roadmap { padding: 2rem 5% 3rem; }
@@ -280,32 +289,46 @@
 
 <!-- ── Hero ── -->
 <div class="page-hero">
-  <div class="badge">Ruta oficial · 5 niveles · Certificación Microsoft</div>
-  <h1>De cero a la certificación<br><em>MOS Excel Expert</em></h1>
-  <p class="hero-desc">
-    Esta es la ruta exacta que sigo con mis alumnos en clases particulares online. Desde los fundamentos hasta dominar Power Query, VBA y obtener la certificación oficial de Microsoft. Tú decides a qué ritmo avanzas.
-  </p>
-  <div class="hero-actions">
-    <a href="#roadmap" class="btn-primary">Ver la ruta completa →</a>
-    <a href="/#precios" class="btn-ghost">Ver precios</a>
+  <div class="page-hero-text">
+    <div class="badge">Clases particulares · 5 niveles · Certificación Microsoft</div>
+    <h1>De cero a la certificación <em>MOS Excel Expert</em></h1>
+    <p class="hero-desc">
+      La ruta que sigo con mis alumnos en <strong>clases particulares de Excel</strong> online. Tu profesor de Excel te guía desde los fundamentos hasta dominar Power Query, VBA y obtener la certificación oficial de Microsoft. Tú decides a qué ritmo avanzas.
+    </p>
+    <div class="hero-actions">
+      <a href="#roadmap" class="btn-primary">Ver la ruta completa →</a>
+      <a href="/#precios" class="btn-ghost">Ver precios</a>
+    </div>
+    <div class="quick-stats">
+      <div class="quick-stat">
+        <span class="quick-stat-num">~130h</span>
+        <span class="quick-stat-label">De cero a MOS Expert</span>
+      </div>
+      <div class="quick-stat">
+        <span class="quick-stat-num">5</span>
+        <span class="quick-stat-label">Niveles progresivos</span>
+      </div>
+      <div class="quick-stat">
+        <span class="quick-stat-num">+40</span>
+        <span class="quick-stat-label">Temas cubiertos</span>
+      </div>
+      <div class="quick-stat">
+        <span class="quick-stat-num">100%</span>
+        <span class="quick-stat-label">Online y en vivo</span>
+      </div>
+    </div>
   </div>
-  <div class="quick-stats">
-    <div class="quick-stat">
-      <span class="quick-stat-num">~130h</span>
-      <span class="quick-stat-label">De cero a MOS Expert</span>
-    </div>
-    <div class="quick-stat">
-      <span class="quick-stat-num">5</span>
-      <span class="quick-stat-label">Niveles progresivos</span>
-    </div>
-    <div class="quick-stat">
-      <span class="quick-stat-num">+40</span>
-      <span class="quick-stat-label">Temas cubiertos</span>
-    </div>
-    <div class="quick-stat">
-      <span class="quick-stat-num">100%</span>
-      <span class="quick-stat-label">Clases en vivo y online</span>
-    </div>
+
+  <div class="mos-badge-card">
+    <span class="mos-badge-icon">🏆</span>
+    <div class="mos-badge-label">Microsoft</div>
+    <div class="mos-badge-name">Office Specialist</div>
+    <div class="mos-badge-expert">Excel Expert</div>
+    <div class="mos-badge-divider"></div>
+    <div class="mos-badge-id">ID: 90082787</div>
+    <div class="mos-badge-holder">Jhony Escobar</div>
+    <div class="mos-badge-divider"></div>
+    <div style="font-size:0.72rem; color:rgba(255,255,255,0.4); line-height:1.5;">Certificación oficial<br>Microsoft · Julio 2023</div>
   </div>
 </div>
 
