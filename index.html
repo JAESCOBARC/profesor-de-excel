@@ -357,6 +357,45 @@
   h2 em { font-style: italic; color: var(--green-mid); }
   .section-lead { font-size: 1.05rem; color: var(--slate); max-width: 560px; line-height: 1.8; }
 
+  /* ── Enfoque 80/20 ── */
+  .enfoque-8020 { background: var(--cream); padding: 3.5rem 5%; border-bottom: 1px solid var(--border); }
+  .ocho-grid {
+    display: flex; align-items: stretch; justify-content: center;
+    gap: 0; margin-top: 2.5rem; flex-wrap: wrap;
+    background: white; border-radius: 20px; border: 1px solid var(--border);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05); overflow: hidden;
+  }
+  .ocho-card {
+    flex: 1; min-width: 180px; padding: 2rem 2rem 1.75rem;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; border-right: 1px solid var(--border);
+  }
+  .ocho-card:last-child { border-right: none; }
+  .ocho-num {
+    font-family: 'Fraunces', serif; font-size: 3.8rem;
+    font-weight: 600; color: var(--green-mid); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .ocho-num span { font-size: 2.2rem; }
+  .ocho-card--result .ocho-num { color: var(--green-deep); }
+  .ocho-title { font-weight: 500; font-size: 0.9rem; color: var(--charcoal); margin-bottom: 0.4rem; }
+  .ocho-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.6; max-width: 180px; }
+  .ocho-arrow {
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 0.5rem; color: var(--green-pale); font-size: 1.8rem;
+    font-weight: 300; flex-shrink: 0;
+  }
+  .ocho-card--result { background: var(--green-deep); }
+  .ocho-card--result .ocho-num { color: var(--green-light); }
+  .ocho-card--result .ocho-title { color: white; }
+  .ocho-card--result .ocho-sub { color: rgba(255,255,255,0.55); }
+  .ocho-card--result .ocho-arrow { color: rgba(255,255,255,0.2); }
+  .ocho-detail {
+    font-size: 0.92rem; color: var(--muted); max-width: 640px;
+    margin: 1.5rem auto 0; text-align: center; line-height: 1.8;
+  }
+  .ocho-detail strong { color: var(--green-mid); }
+
   .problemas { background: var(--green-deep); }
   .problemas .section-tag { color: var(--green-light); }
   .problemas h2 { color: white; }
@@ -493,6 +532,10 @@
     .footer-social { flex-wrap: wrap; gap: 1rem; justify-content: center; }
     .nav-links { display: none; }
     h1 { font-size: 2rem; }
+    .ocho-grid { flex-direction: column; }
+    .ocho-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .ocho-card:last-child { border-bottom: none; }
+    .ocho-arrow { transform: rotate(90deg); padding: 0; height: 2rem; }
     .problemas-grid { grid-template-columns: repeat(2, 1fr); }
     .keywords-grid { grid-template-columns: 1fr; gap: 2rem; }
     .keywords-grid p:nth-child(2), .keywords-grid p:nth-child(3) { border-left: none !important; padding-left: 0 !important; }
@@ -569,7 +612,7 @@
     <div class="hero-badge">Clases en vivo · Online · Toda España</div>
     <h1>Clases particulares de Excel online con profesor experto</h1>
     <p class="hero-desc">
-      Aprende Excel <em>de verdad</em> con un profesor que adapta cada sesión a ti. Sin cursos pregrabados, sin temarios genéricos — trabajamos sobre tus archivos, tus problemas y tus objetivos reales.
+      Aprende Excel <em>de verdad</em> con un profesor que adapta cada sesión a ti. Enfoque 80/20: trabajamos el 20% de Excel que se usa el 80% del tiempo en la vida real — y consigues resultados en 15 horas de clases.
     </p>
     <div class="hero-actions">
       <a href="#precios" class="btn-primary">Ver precios →</a>
@@ -630,6 +673,34 @@
       <div class="live-badge">EN VIVO</div>
     </div>
   </div>
+</section>
+
+<section class="enfoque-8020" id="enfoque">
+  <div class="section-tag">Propuesta de valor</div>
+  <h2>El principio <em>80/20</em> aplicado a Excel</h2>
+  <p class="section-lead">No hace falta aprender Excel entero. Solo el 20% de funciones y herramientas que aparecen en el 80% de los trabajos reales.</p>
+  <div class="ocho-grid">
+    <div class="ocho-card">
+      <div class="ocho-num">20<span>%</span></div>
+      <div class="ocho-title">del temario de Excel</div>
+      <div class="ocho-sub">Las fórmulas, tablas dinámicas y herramientas que usarás cada semana en tu trabajo</div>
+    </div>
+    <div class="ocho-arrow">→</div>
+    <div class="ocho-card">
+      <div class="ocho-num">80<span>%</span></div>
+      <div class="ocho-title">del trabajo real cubierto</div>
+      <div class="ocho-sub">Sin malgastar horas en funciones que probablemente nunca vas a necesitar</div>
+    </div>
+    <div class="ocho-arrow">→</div>
+    <div class="ocho-card ocho-card--result">
+      <div class="ocho-num">15<span>h</span></div>
+      <div class="ocho-title">para ver resultados reales</div>
+      <div class="ocho-sub">Productivo con Excel desde las primeras sesiones, aplicado a tu trabajo</div>
+    </div>
+  </div>
+  <p class="ocho-detail">
+    Este es el enfoque que sigo en cada clase particular: <strong>trabajamos lo que realmente importa</strong>, en el orden correcto, sobre tus archivos reales. Sin relleno, sin teoría vacía.
+  </p>
 </section>
 
 <section class="problemas" id="problemas">
