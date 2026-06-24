@@ -275,6 +275,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-size: 1.1rem; color: var(--slate); line-height: 1.8;
     max-width: 500px; margin-bottom: 2.5rem;
   }
+  .hero-desc-row { display: contents; }
+  .hero-photo-mobile { display: none; }
+  .hero-price-hint { display: none; }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
   .btn-primary {
     background: var(--green-mid); color: white;
@@ -521,9 +524,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .trust-superprof { text-decoration: none; }
   .superprof-badge { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--gold); line-height: 1; }
 
+  /* Floating WhatsApp button - mobile only */
+  .whatsapp-float {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      display: flex;
+      align-items: center; gap: 10px;
+      position: fixed; bottom: 20px; right: 16px; z-index: 999;
+      background: #25D366; color: white;
+      padding: 13px 20px; border-radius: 100px;
+      font-size: 0.95rem; font-weight: 600;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      text-decoration: none;
+    }
+    .whatsapp-float svg { width: 22px; height: 22px; flex-shrink: 0; }
+  }
+
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; min-height: auto; padding: 2.5rem 5% 2rem; }
     .hero-visual { display: none; }
+    .hero-desc-row { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; margin-bottom: 0; }
+    .hero-photo-mobile { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--green-light); flex-shrink: 0; }
+    .hero-price-hint { font-size: 0.88rem; color: var(--muted); margin-top: 0.75rem; margin-bottom: 0; }
+    .hero-price-hint strong { color: var(--green-deep); }
     .hero-trust { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; margin-top: 2rem; }
     .trust-divider { display: none; }
     .trust-item { min-width: unset; }
@@ -623,13 +648,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-content animate-in">
     <div class="hero-badge">Clases en vivo · Online · Toda España</div>
     <h1>Clases particulares con profesor de Excel online experto</h1>
-    <p class="hero-desc">
-      Aprende Excel <em>de verdad</em> con un profesor que adapta cada sesión a ti. Enfoque 80/20: trabajamos el 20% de Excel que se usa el 80% del tiempo en la vida real — y consigues resultados en 15 horas de clases.
-    </p>
-    <div class="hero-actions">
-      <a href="#precios" class="btn-primary">Ver precios →</a>
-      <a href="#servicios" class="btn-ghost">Ver servicios</a>
+    <div class="hero-desc-row">
+      <p class="hero-desc">
+        Aprende Excel <em>de verdad</em> con un profesor que adapta cada sesión a ti — y consigues resultados concretos en tu trabajo.
+      </p>
+      <img src="/profesor-de-excel-online.jpg" alt="Jhony Escobar, profesor de Excel online" class="hero-photo-mobile" />
     </div>
+    <div class="hero-actions">
+      <a href="https://wa.me/34641682371?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20primera%20clase%20de%20Excel" class="btn-primary">Reservar primera clase →</a>
+    </div>
+    <p class="hero-price-hint">Desde <strong>20€/hora</strong> · Sin permanencias</p>
     <div class="hero-trust">
       <div class="trust-item">
         <span class="trust-num">+200</span>
@@ -1133,5 +1161,10 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
   el.style.animationDelay = (i * 0.15) + 's';
 });
 </script>
+
+<a href="https://wa.me/34641682371?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20primera%20clase%20de%20Excel" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+  Reservar clase
+</a>
 </body>
 </html>
