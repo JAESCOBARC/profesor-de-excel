@@ -524,6 +524,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .social-link { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
   .social-link:hover { color: white; }
   .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); width: 100%; text-align: center; margin-top: 1rem; }
+  .nav-sobre-mi { display: none; }
   .trust-superprof { text-decoration: none; }
   .superprof-badge { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--gold); line-height: 1; }
   .trust-ms { text-decoration: none; }
@@ -576,6 +577,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer-links { flex-wrap: wrap; gap: 1rem; justify-content: center; }
     .footer-social { flex-wrap: wrap; gap: 1rem; justify-content: center; }
     .nav-links { display: none; }
+    .nav-sobre-mi {
+      display: block;
+      font-size: 0.88rem; font-weight: 400; color: var(--slate);
+      text-decoration: none;
+    }
+    .btn-ghost--sobre-mi { display: none; }
+    .hero-actions { justify-content: center; }
+    .btn-primary { border-radius: 6px; width: 100%; text-align: center; }
     h1 { font-size: 2rem; }
     .ocho-grid { flex-direction: column; }
     .ocho-card { border-right: none; border-bottom: 1px solid var(--border); }
@@ -653,6 +662,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="profesor-excel-online.html">Sobre mí</a></li>
     <li><a href="certificacion-microsoft-excel-especialista.html">Certificación</a></li>
   </ul>
+  <a href="profesor-excel-online.html" class="nav-sobre-mi">Sobre mí</a>
   <a href="#testimonios" class="nav-cta">Testimonios →</a>
 </nav>
 
@@ -674,7 +684,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="hero-actions">
       <a href="https://wa.me/34641682371?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad%20para%20clases%20de%20Excel" class="btn-primary">Consulta disponibilidad →</a>
-      <a href="https://www.trabajoenexcel.com/profesor-excel-online.html" class="btn-ghost">Sobre mí</a>
+      <a href="https://www.trabajoenexcel.com/profesor-excel-online.html" class="btn-ghost btn-ghost--sobre-mi">Sobre mí</a>
     </div>
     <p class="hero-price-hint">Desde <strong>20€/hora</strong> · Sin permanencias</p>
     <p class="hero-urgency">🟢 <strong>Plazas limitadas</strong><br>Respondo en menos de 2h · Lunes a viernes</p>
