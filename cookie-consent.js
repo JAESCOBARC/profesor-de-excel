@@ -47,9 +47,11 @@
       '}',
       '#ck-accept:hover{background:#d4b968;}',
       '@media(max-width:600px){',
-        '#ck-banner{flex-direction:column;align-items:flex-start;padding:1.25rem 5%;}',
-        '.ck-actions{width:100%;}',
-        '#ck-essential,#ck-accept{flex:1;text-align:center;}',
+        '#ck-banner{flex-direction:row;align-items:center;padding:0.65rem 4%;gap:0.75rem;}',
+        '#ck-banner p{font-size:0.78rem;line-height:1.3;}',
+        '.ck-actions{flex-shrink:0;gap:0.5rem;}',
+        '#ck-essential{padding:6px 10px;font-size:0.75rem;}',
+        '#ck-accept{padding:6px 12px;font-size:0.75rem;}',
       '}'
     ].join('');
     document.head.appendChild(style);
@@ -66,9 +68,9 @@
       '</div>';
     document.body.appendChild(banner);
 
-    requestAnimationFrame(function () {
+    setTimeout(function () {
       requestAnimationFrame(function () { banner.classList.add('ck-visible'); });
-    });
+    }, 1500);
 
     function applyConsent(choice) {
       localStorage.setItem('cookieConsent', choice);
