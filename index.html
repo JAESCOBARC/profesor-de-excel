@@ -1204,9 +1204,13 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
 (function () {
   var btn = document.querySelector('.whatsapp-float');
   if (!btn) return;
+  function getScroll() {
+    return window.pageYOffset || document.documentElement.scrollTop || 0;
+  }
   function toggleWa() {
-    btn.style.opacity = window.scrollY > 887 ? '1' : '0';
-    btn.style.pointerEvents = window.scrollY > 887 ? 'auto' : 'none';
+    var visible = getScroll() > 887;
+    btn.style.setProperty('opacity', visible ? '1' : '0', 'important');
+    btn.style.setProperty('pointer-events', visible ? 'auto' : 'none', 'important');
   }
   toggleWa();
   window.addEventListener('scroll', toggleWa, { passive: true });
