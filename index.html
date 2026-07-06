@@ -544,6 +544,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size: 0.95rem; font-weight: 600;
       box-shadow: 0 4px 20px rgba(37,211,102,0.45);
       text-decoration: none;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
     }
     .whatsapp-float svg { width: 22px; height: 22px; flex-shrink: 0; }
   }
@@ -1198,6 +1200,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 document.querySelectorAll('.animate-in').forEach((el, i) => {
   el.style.animationDelay = (i * 0.15) + 's';
 });
+
+(function () {
+  var btn = document.querySelector('.whatsapp-float');
+  if (!btn) return;
+  function toggleWa() {
+    btn.style.opacity = window.scrollY > 887 ? '1' : '0';
+    btn.style.pointerEvents = window.scrollY > 887 ? 'auto' : 'none';
+  }
+  toggleWa();
+  window.addEventListener('scroll', toggleWa, { passive: true });
+})();
 </script>
 
 <a href="https://wa.me/34641682371?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad%20para%20clases%20de%20Excel" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Consulta disponibilidad">
