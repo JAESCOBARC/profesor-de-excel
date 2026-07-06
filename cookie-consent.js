@@ -70,7 +70,7 @@
 
     setTimeout(function () {
       requestAnimationFrame(function () { banner.classList.add('ck-visible'); });
-    }, 1500);
+    }, 3500);
 
     function applyConsent(choice) {
       localStorage.setItem('cookieConsent', choice);
