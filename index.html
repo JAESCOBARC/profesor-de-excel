@@ -276,6 +276,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     max-width: 500px; margin-bottom: 2.5rem;
   }
   .hero-desc-row { display: contents; }
+  .hero-live-note {
+    display: flex; align-items: center; gap: 7px;
+    margin-top: 0.85rem;
+    font-size: 0.95rem; font-weight: 500; color: var(--green-mid);
+  }
+  .hero-live-note::before { content: '●'; color: var(--green-light); font-size: 0.6rem; flex-shrink: 0; }
   .hero-photo-col { display: none; }
   .hero-photo-mobile { display: none; }
   .ms-badge-under-photo { display: none; }
@@ -554,6 +560,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero { grid-template-columns: 1fr; min-height: auto; padding: 2.5rem 5% 2rem; }
     .hero-visual { display: none; }
     .hero-desc-row { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; margin-bottom: 0; }
+    .hero-desc { font-size: 0.98rem; margin-bottom: 1rem; }
+    .hero-live-note { font-size: 0.85rem; margin-top: 0.6rem; align-items: flex-start; }
+    .hero-live-note::before { margin-top: 5px; }
     .hero-photo-col { display: flex !important; flex-direction: column; align-items: center; gap: 0.5rem; }
     .hero-photo-mobile { display: block; width: 115px; height: 115px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--green-light); flex-shrink: 0; }
     .ms-badge-under-photo { display: flex !important; align-items: center; gap: 4px; font-size: 0.7rem; font-weight: 600; color: var(--green-deep); text-decoration: none; white-space: nowrap; }
@@ -681,11 +690,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="hero" id="inicio">
   <div class="hero-content animate-in">
-    <div class="hero-badge">Clases 1:1 · En vivo · Online · Toda España</div>
+    <div class="hero-badge">Clases individuales · En vivo · Online · Toda España</div>
     <h1>Deja de perder 2 horas en lo que debería tardar 10 minutos.</h1>
     <div class="hero-desc-row">
       <p class="hero-desc">
         Soy tu profesor particular de Excel online: te enseño solo el 20% de Excel que cubre el 80% de tu trabajo — con tus propios archivos, desde el primer día.
+        <span class="hero-live-note">Clases en directo, tú y yo — no es un curso pregrabado.</span>
       </p>
       <div class="hero-photo-col">
         <a href="https://www.trabajoenexcel.com/profesor-excel-online.html" aria-label="Sobre Jhony Escobar"><img src="/profesor-de-excel-online.jpg" alt="Jhony Escobar, profesor de Excel online" class="hero-photo-mobile" /></a>
