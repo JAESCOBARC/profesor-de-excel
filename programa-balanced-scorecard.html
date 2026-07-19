@@ -174,12 +174,27 @@
 
   /* Temario */
   .temario { background: var(--cream); }
-  .semana-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
-  .semana { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; gap: 1.25rem; align-items: flex-start; }
-  .semana-num { font-family: 'Fraunces', serif; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-light); background: var(--green-mist); border: 1px solid var(--green-pale); padding: 6px 12px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+  .semana-list { margin-top: 2.5rem; position: relative; display: flex; flex-direction: column; gap: 0; padding-left: 0; }
+  .semana { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 1.25rem; padding-bottom: 2rem; }
+  .semana:last-child { padding-bottom: 0; }
+  .semana::before { content: ''; position: absolute; left: 27px; top: 56px; bottom: 0; width: 2px; background: var(--green-pale); }
+  .semana:last-child::before { display: none; }
+  .roadmap-node {
+    width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+    background: white; border: 2px solid var(--green-light);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 600; color: var(--green-mid);
+    position: relative; z-index: 1;
+  }
+  .semana--11 .roadmap-node { background: var(--green-mid); border-color: var(--green-mid); color: white; }
+  .roadmap-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
+  .semana--11 .roadmap-card { background: var(--green-mist); border-color: var(--green-pale); }
+  .semana-num { display: inline-block; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--green-light); margin-bottom: 4px; }
   .semana h4 { font-size: 0.95rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
   .semana p { font-size: 0.85rem; color: var(--slate); line-height: 1.6; }
-  .semana--11 { background: var(--green-mist); border-color: var(--green-pale); }
+  .roadmap-goal { display: flex; align-items: center; gap: 10px; margin-top: 0.5rem; padding-left: 76px; }
+  .roadmap-goal span { font-size: 0.85rem; font-weight: 600; color: var(--green-mid); }
+  .roadmap-goal::before { content: '🏁'; font-size: 1.1rem; }
 
   /* Incluye */
   .incluye { background: white; }
@@ -261,7 +276,11 @@
     .vs-grid { grid-template-columns: 1fr; }
     .incluye-grid { grid-template-columns: 1fr; }
     .quien-grid { grid-template-columns: 1fr; }
-    .semana { flex-direction: column; gap: 0.6rem; }
+    .semana { grid-template-columns: 40px 1fr; gap: 0.85rem; padding-bottom: 1.5rem; }
+    .semana::before { left: 19px; top: 40px; }
+    .roadmap-node { width: 40px; height: 40px; font-size: 1.05rem; }
+    .roadmap-card { padding: 1rem 1.1rem; }
+    .roadmap-goal { padding-left: 0; justify-content: center; }
     .cta-box { padding: 2rem 1.25rem; border-radius: 16px; }
     .autor-inner { flex-direction: column; text-align: center; }
     .autor-creds { justify-content: center; }
@@ -338,7 +357,7 @@
         <h3>La asesoría BSC Implementado</h3>
         <ul>
           <li>Sesiones individuales en vivo, solo tú y yo</li>
-          <li>Trabajas sobre TU empresa desde la semana 1</li>
+          <li>Trabajas sobre TU empresa desde la primera sesión</li>
           <li>4 sesiones 1:1 trabajando sobre tu caso real</li>
           <li>Terminas con tu Balanced Scorecard funcionando</li>
           <li>Revisión final de tu cuadro de mando, KPI a KPI</li>
@@ -355,34 +374,39 @@
     <h2>4 sesiones, de la estrategia en tu cabeza<br>al <em>cuadro de mando funcionando</em></h2>
     <div class="semana-list">
       <div class="semana">
-        <span class="semana-num">Sesión 1</span>
-        <div>
+        <div class="roadmap-node">1</div>
+        <div class="roadmap-card">
+          <span class="semana-num">Sesión 1</span>
           <h4>Diagnóstico estratégico y alcance</h4>
           <p>Metodología Kaplan y Norton aplicada a tu caso. Analizamos misión, visión y líneas estratégicas de tu organización, y definimos el alcance exacto de tu cuadro de mando.</p>
         </div>
       </div>
       <div class="semana">
-        <span class="semana-num">Sesión 2</span>
-        <div>
+        <div class="roadmap-node">2</div>
+        <div class="roadmap-card">
+          <span class="semana-num">Sesión 2</span>
           <h4>Objetivos y mapa estratégico</h4>
           <p>Formulamos los objetivos de las 4 perspectivas — Financiera, Clientes, Procesos internos y Aprendizaje — y construimos el mapa estratégico con sus relaciones causa-efecto: tu estrategia explicada en una página.</p>
         </div>
       </div>
       <div class="semana">
-        <span class="semana-num">Sesión 3</span>
-        <div>
+        <div class="roadmap-node">3</div>
+        <div class="roadmap-card">
+          <span class="semana-num">Sesión 3</span>
           <h4>KPIs, metas y ponderaciones</h4>
           <p>El error nº 1 de los BSC fallidos son KPIs mal elegidos. Seleccionamos juntos los indicadores correctos para cada objetivo, con sus metas, pesos y hoja de vida de cada indicador.</p>
         </div>
       </div>
       <div class="semana semana--11">
-        <span class="semana-num">Sesión 4</span>
-        <div>
+        <div class="roadmap-node">4</div>
+        <div class="roadmap-card">
+          <span class="semana-num">Sesión 4</span>
           <h4>Montaje, puesta en marcha y auditoría final</h4>
           <p>Montamos tu cuadro de mando sobre la plantilla Pro: semáforos, cumplimiento automático y resumen global. Audito el resultado KPI a KPI y preparamos cómo presentarlo a dirección y el ritmo de seguimiento mensual.</p>
         </div>
       </div>
     </div>
+    <div class="roadmap-goal"><span>Meta: tu Balanced Scorecard presentado a dirección y en marcha</span></div>
     <p style="font-size:0.85rem; color:var(--muted); margin-top:1.25rem; max-width:620px;">Entre sesión y sesión avanzas con tareas guiadas sobre tu propia empresa, con mi soporte por WhatsApp para resolver dudas sin esperar a la siguiente sesión.</p>
   </div>
 </section>
@@ -432,7 +456,7 @@
         <span class="incluye-check">✓</span>
         <div>
           <h4>Acceso permanente a materiales</h4>
-          <p>Grabaciones, plantillas y guías de cada semana, tuyas para siempre.</p>
+          <p>Grabaciones, plantillas y guías de cada sesión, tuyas para siempre.</p>
         </div>
       </div>
     </div>
