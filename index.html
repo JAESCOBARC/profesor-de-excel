@@ -266,6 +266,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .hero-badge::before { content: '●'; color: var(--green-light); font-size: 0.6rem; }
   .badge-br { display: none; }
   .nav-mobile-badge { display: none; }
+  .hero-quickfeat { display: none; }
   h1 {
     font-family: 'Fraunces', serif;
     font-size: clamp(2.2rem, 4vw, 3.4rem);
@@ -629,6 +630,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .hero-badge { display: none; }
     .hero { padding-top: 0.9rem; }
+    .hero-quickfeat {
+      display: block; text-align: center; white-space: nowrap;
+      font-size: clamp(1rem, 5.5vw, 1.3rem); font-weight: 700;
+      color: var(--green-mid); margin: 0 0 0.85rem;
+    }
     .btn-ghost--sobre-mi { display: none; }
     .hero-actions { justify-content: center; }
     .btn-primary { border-radius: 6px; width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; }
@@ -715,12 +721,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="profesor-excel-online.html" class="nav-sobre-mi">Sobre mí</a>
   <a href="#precios" class="nav-precios-cta">Precios</a>
   <a href="#testimonios" class="nav-cta">Testimonios →</a>
-  <div class="nav-mobile-badge"><span>Clases individuales · En vivo · Online<span class="badge-dot-mid"> · </span><br class="badge-br">Toda España</span></div>
+  <div class="nav-mobile-badge"><span>Clases individuales · En vivo · Online</span></div>
 </nav>
 
 <section class="hero" id="inicio">
   <div class="hero-content animate-in">
     <div class="hero-badge"><span>Clases individuales · En vivo · Online<span class="badge-dot-mid"> · </span><br class="badge-br">Toda España</span></div>
+    <p class="hero-quickfeat">⚡ <strong>Aprende 3x más rápido</strong></p>
     <h1>Deja de perder 2 horas en lo que debería tardar 10 minutos.</h1>
     <div class="hero-desc-row">
       <p class="hero-desc">
