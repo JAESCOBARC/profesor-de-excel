@@ -265,6 +265,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .hero-badge::before { content: '●'; color: var(--green-light); font-size: 0.6rem; }
   .badge-br { display: none; }
+  .nav-mobile-badge { display: none; }
   h1 {
     font-family: 'Fraunces', serif;
     font-size: clamp(2.2rem, 4vw, 3.4rem);
@@ -615,18 +616,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .footer-links { flex-wrap: wrap; gap: 1rem; justify-content: center; }
     .footer-social { flex-wrap: wrap; gap: 1rem; justify-content: center; }
     .nav-links { display: none; }
-    .nav-sobre-mi {
-      display: block;
-      font-size: 0.88rem; font-weight: 400; color: var(--slate);
-      text-decoration: none;
+    .nav-logo { display: none; }
+    .nav-sobre-mi { display: none; }
+    .nav-precios-cta { display: none; }
+    .nav-cta { display: none; }
+    nav { justify-content: center; height: 48px; }
+    .nav-mobile-badge {
+      display: table; margin: 0 auto; text-align: center; line-height: 1.35;
+      background: var(--green-pale); color: var(--green-mid);
+      padding: 5px 14px; border-radius: 14px;
+      font-size: 0.72rem; font-weight: 500;
     }
-    .nav-precios-cta {
-      display: block;
-      font-size: 0.82rem; font-weight: 600; color: var(--green-mid);
-      text-decoration: none;
-      background: var(--green-pale);
-      padding: 5px 12px; border-radius: 100px;
-    }
+    .hero-badge { display: none; }
+    .hero { padding-top: 0.9rem; }
     .btn-ghost--sobre-mi { display: none; }
     .hero-actions { justify-content: center; }
     .btn-primary { border-radius: 6px; width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; }
@@ -713,6 +715,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="profesor-excel-online.html" class="nav-sobre-mi">Sobre mí</a>
   <a href="#precios" class="nav-precios-cta">Precios</a>
   <a href="#testimonios" class="nav-cta">Testimonios →</a>
+  <div class="nav-mobile-badge"><span>Clases individuales · En vivo · Online<span class="badge-dot-mid"> · </span><br class="badge-br">Toda España</span></div>
 </nav>
 
 <section class="hero" id="inicio">
