@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automatización de Excel para Empresas | Macros VBA y Power Query</title>
+<meta name="description" content="Automatiza informes y procesos manuales en Excel para tu empresa. Macros VBA, Power Query, Power BI. Ahorra horas de trabajo y reduce errores. Presupuesto personalizado.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.trabajoenexcel.com/automatizacion-excel-empresas.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.trabajoenexcel.com/automatizacion-excel-empresas.html">
+<meta property="og:title" content="Automatización de Excel para Empresas | Macros VBA y Power Query">
+<meta property="og:description" content="Automatiza en semanas lo que tu equipo hace a mano cada mes. Macros VBA, Power Query, Power BI. Presupuesto personalizado.">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Automatización de procesos en Excel para empresas",
+  "name": "Automatización de Excel para Empresas",
+  "description": "Servicio de automatización de informes, macros VBA, Power Query y dashboards Power BI para reducir horas de trabajo manual en empresas.",
+  "url": "https://www.trabajoenexcel.com/automatizacion-excel-empresas.html",
+  "provider": {
+    "@type": "Organization",
+    "name": "Excel con Jhony",
+    "url": "https://www.trabajoenexcel.com"
+  },
+  "areaServed": "ES",
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "description": "Presupuesto personalizado tras diagnóstico gratuito"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta automatizar procesos en Excel para mi empresa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende del alcance del proyecto — no es lo mismo automatizar un informe mensual que integrar varias fuentes de datos con un dashboard completo. Por eso el primer paso es un diagnóstico gratuito, tras el cual recibes un presupuesto cerrado y personalizado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tarda una automatización?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Proyectos sencillos (una macro o un flujo de Power Query) pueden estar listos en 1-2 semanas. Proyectos más completos con varios procesos o un dashboard en Power BI suelen tardar entre 3 y 6 semanas." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesitamos licencias especiales para usar las automatizaciones?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Las automatizaciones en Excel con macros VBA o Power Query funcionan con Microsoft 365 estándar. Power BI requiere una licencia si se comparte en la nube, pero muchas empresas empiezan con la versión gratuita de escritorio." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo empezamos?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Escríbeme por WhatsApp y agendamos una llamada de diagnóstico gratuita de 20-30 minutos. Analizamos tu proceso actual, te explico cómo lo automatizaría y te doy un presupuesto cerrado." }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green-deep: #0a2e1a; --green-mid: #1a5c36; --green-soft: #2d8653;
+    --green-light: #4db87a; --green-pale: #d4f0e0; --green-mist: #f0faf4;
+    --cream: #faf8f3; --charcoal: #1c1c1c; --slate: #4a4a4a;
+    --muted: #7a7a7a; --border: rgba(0,0,0,0.08); --gold: #c9a84c; --amber: #f5a623;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,248,243,0.96); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 60px;
+  }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--green-deep); text-decoration: none; }
+  .nav-btn {
+    background: var(--green-mid); color: white;
+    padding: 8px 18px; border-radius: 6px;
+    text-decoration: none; font-size: 0.82rem; font-weight: 600;
+    transition: background 0.2s; white-space: nowrap;
+  }
+  .nav-btn:hover { background: var(--green-deep); }
+
+  .urgency-bar {
+    background: var(--green-deep); color: white;
+    text-align: center; padding: 10px 5%;
+    font-size: 0.82rem; font-weight: 500;
+  }
+  .urgency-bar strong { color: var(--green-light); }
+
+  .hero { padding: 3.5rem 5%; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; align-items: center; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--green-pale); color: var(--green-mid);
+    padding: 5px 14px; border-radius: 100px;
+    font-size: 0.78rem; font-weight: 500; margin-bottom: 1.25rem;
+  }
+  .hero-badge::before { content: '●'; color: var(--green-light); font-size: 0.55rem; }
+  h1 { font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3.2vw, 2.9rem); font-weight: 300; line-height: 1.15; color: var(--green-deep); margin-bottom: 1.25rem; text-wrap: balance; }
+  h1 em { font-style: italic; color: var(--green-mid); }
+  .hero-lead { font-size: 1.05rem; color: var(--slate); line-height: 1.8; margin-bottom: 1.75rem; max-width: 520px; }
+  .hero-lead strong { color: var(--green-deep); }
+
+  .btn-cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--green-mid); color: white;
+    padding: 15px 30px; border-radius: 8px;
+    text-decoration: none; font-weight: 700; font-size: 0.98rem;
+    transition: all 0.2s; box-shadow: 0 4px 20px rgba(26,92,54,0.3);
+  }
+  .btn-cta:hover { background: var(--green-deep); transform: translateY(-1px); }
+  .btn-cta svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .cta-hint { font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; }
+
+  .hero-visual { background: var(--green-deep); border-radius: 20px; padding: 1.75rem; }
+  .hv-label { font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 0.85rem; }
+  .hv-row { display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .hv-row:last-child { border-bottom: none; }
+  .hv-task { font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+  .hv-time { font-size: 0.78rem; color: var(--green-light); font-weight: 600; }
+  .hv-time.old { color: rgba(255,255,255,0.35); text-decoration: line-through; font-weight: 400; }
+
+  section { padding: 3.5rem 5%; }
+  .inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag { display: inline-block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 0.85rem; }
+  h2 { font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); font-weight: 300; color: var(--green-deep); line-height: 1.2; margin-bottom: 0.85rem; text-wrap: balance; }
+  h2 em { font-style: italic; color: var(--green-mid); }
+  .section-lead { font-size: 1rem; color: var(--slate); max-width: 620px; line-height: 1.8; }
+
+  .pain { background: var(--green-deep); }
+  .pain .section-tag { color: var(--green-light); }
+  .pain h2 { color: white; }
+  .pain-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 1.75rem; margin-top: 2.25rem; max-width: 680px; }
+  .pain-card p { font-size: 0.92rem; color: rgba(255,255,255,0.7); line-height: 1.8; font-style: italic; border-left: 2px solid var(--green-light); padding-left: 1.1rem; margin: 0; }
+
+  /* Coste de inacción — ROI */
+  .roi { background: white; }
+  .roi-chain { display: flex; align-items: center; justify-content: flex-start; gap: 0.85rem; flex-wrap: wrap; margin: 2rem 0 1.5rem; }
+  .roi-step { display: flex; flex-direction: column; background: var(--green-mist); border: 1px solid var(--green-pale); border-radius: 12px; padding: 0.9rem 1.25rem; min-width: 130px; }
+  .roi-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
+  .roi-label { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
+  .roi-arrow { color: var(--green-light); font-size: 1.2rem; }
+  .roi-final { background: var(--green-deep); border-radius: 14px; padding: 1.5rem 1.75rem; max-width: 680px; }
+  .roi-final p { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.8; margin: 0; }
+  .roi-final strong { color: white; }
+
+  .procesos { background: var(--cream); }
+  .procesos-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.5rem; }
+  .proceso-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; }
+  .proceso-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--green-deep); margin-bottom: 0.5rem; }
+  .proceso-card p { font-size: 0.85rem; color: var(--slate); line-height: 1.6; }
+
+  .como-funciona { background: white; }
+  .pasos-list { display: flex; flex-direction: column; gap: 0; margin-top: 2.5rem; max-width: 680px; }
+  .paso { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 1.1rem; padding-bottom: 1.75rem; }
+  .paso:last-child { padding-bottom: 0; }
+  .paso::before { content: ''; position: absolute; left: 21px; top: 44px; bottom: 0; width: 2px; background: var(--green-pale); }
+  .paso:last-child::before { display: none; }
+  .paso-node { width: 44px; height: 44px; border-radius: 50%; background: white; border: 2px solid var(--green-light); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 600; color: var(--green-mid); z-index: 1; }
+  .paso h4 { font-size: 0.95rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
+  .paso p { font-size: 0.85rem; color: var(--slate); line-height: 1.6; margin: 0; }
+
+  .incluye { background: var(--cream); }
+  .incluye-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-top: 2.5rem; }
+  .incluye-item { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 1.1rem 1.25rem; display: flex; gap: 0.85rem; align-items: flex-start; }
+  .incluye-check { color: var(--green-mid); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .incluye-item h4 { font-size: 0.88rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
+  .incluye-item p { font-size: 0.81rem; color: var(--slate); line-height: 1.6; margin: 0; }
+
+  .cta-final { background: var(--green-deep); text-align: center; }
+  .cta-box { max-width: 620px; margin: 0 auto; }
+  .urgency-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(249,166,35,0.15); border: 1px solid rgba(249,166,35,0.3);
+    color: var(--amber); padding: 6px 14px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600; margin-bottom: 1.25rem;
+  }
+  .urgency-badge::before { content: '⚡'; }
+  .cta-box h2 { color: white; margin-bottom: 0.75rem; }
+  .cta-box p { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.75rem; }
+  .btn-cta-white {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: #25D366; color: white;
+    padding: 16px 34px; border-radius: 8px;
+    text-decoration: none; font-weight: 700; font-size: 1rem;
+    transition: all 0.2s; margin-bottom: 1rem;
+  }
+  .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+  .btn-cta-white svg { width: 22px; height: 22px; flex-shrink: 0; }
+  .cta-risk { display: flex; flex-direction: column; gap: 4px; margin-top: 0.5rem; }
+  .cta-risk span { font-size: 0.75rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; justify-content: center; gap: 5px; }
+  .cta-risk span::before { content: '✓'; color: var(--green-light); font-weight: 700; }
+
+  .faq { background: white; }
+  .faq-list { margin-top: 2.5rem; max-width: 680px; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; cursor: pointer; }
+  .faq-q { font-size: 0.93rem; font-weight: 500; color: var(--green-deep); display: flex; justify-content: space-between; align-items: center; gap: 1rem; user-select: none; }
+  .faq-q::after { content: '+'; color: var(--green-mid); font-size: 1.2rem; flex-shrink: 0; }
+  .faq-a { font-size: 0.88rem; color: var(--slate); line-height: 1.8; margin-top: 0.75rem; display: none; }
+  .faq-item.open .faq-q::after { content: '−'; }
+  .faq-item.open .faq-a { display: block; }
+
+  .autor { background: var(--cream); border-top: 1px solid var(--border); }
+  .autor-inner { display: flex; align-items: center; gap: 2rem; max-width: 680px; margin: 0 auto; }
+  .autor-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--green-light); flex-shrink: 0; }
+  .autor-text h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 400; color: var(--green-deep); margin-bottom: 4px; }
+  .autor-text p { font-size: 0.85rem; color: var(--slate); line-height: 1.7; }
+  .autor-creds { display: flex; gap: 0.75rem; margin-top: 0.75rem; flex-wrap: wrap; }
+  .autor-cred { font-size: 0.72rem; background: white; border: 1px solid var(--border); color: var(--green-mid); padding: 3px 10px; border-radius: 100px; font-weight: 500; }
+
+  footer { background: var(--green-deep); padding: 2rem 5%; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; max-width: 1100px; margin: 0 auto; }
+  .footer-logo { font-family: 'Fraunces', serif; color: white; font-size: 0.95rem; }
+  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-links a:hover { color: white; }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); width: 100%; text-align: center; margin-top: 0.75rem; }
+
+  @media (max-width: 768px) {
+    nav { height: 56px; }
+    .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.25rem 5%; }
+    .hero-visual { order: -1; }
+    .pain-card { max-width: 100%; }
+    .roi-chain { gap: 0.5rem; }
+    .roi-step { min-width: calc(50% - 0.5rem); }
+    .roi-final { max-width: 100%; }
+    .procesos-grid { grid-template-columns: 1fr; }
+    .incluye-grid { grid-template-columns: 1fr; }
+    .autor-inner { flex-direction: column; text-align: center; }
+    .autor-creds { justify-content: center; }
+    .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+    section { padding: 2.5rem 5%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Excel con Jhony</a>
+  <a href="https://wa.me/34641682371?text=Hola%20Jhony%2C%20soy%20de%20una%20empresa%20y%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto%20para%20automatizar%20procesos%20en%20Excel" class="nav-btn">Solicitar presupuesto</a>
+</nav>
+
+<div class="urgency-bar">
+  <strong>Diagnóstico inicial gratuito</strong> · Presupuesto cerrado y personalizado
+</div>
+
+<!-- ══ A — ATTENTION ══ -->
+<section class="hero">
+  <div>
+    <div class="hero-badge">Para empresas · Automatización y consultoría · España</div>
+    <h1>Automatiza en semanas<br>lo que tu equipo hace <em>a mano cada mes</em></h1>
+    <p class="hero-lead">Si tu equipo dedica horas cada semana a informes manuales en Excel, hay una forma de recuperarlas — sin cambiar de herramienta, <strong>automatizando lo que ya usáis</strong>.</p>
+    <a href="https://wa.me/34641682371?text=Hola%20Jhony%2C%20soy%20de%20una%20empresa%20y%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto%20para%20automatizar%20procesos%20en%20Excel" class="btn-cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+      Solicitar presupuesto
+    </a>
+    <p class="cta-hint">Diagnóstico gratuito de 20-30 min · Sin compromiso</p>
+  </div>
+  <div class="hero-visual">
+    <div class="hv-label">Antes / después de automatizar</div>
+    <div class="hv-row"><span class="hv-task">Consolidar informe mensual de ventas</span><span class="hv-time"><span class="hv-time old">6h</span> → 2min</span></div>
+    <div class="hv-row"><span class="hv-task">Limpiar datos de varios archivos</span><span class="hv-time"><span class="hv-time old">4h</span> → 30seg</span></div>
+    <div class="hv-row"><span class="hv-task">Actualizar dashboard directivo</span><span class="hv-time"><span class="hv-time old">3h</span> → automático</span></div>
+    <div class="hv-row"><span class="hv-task">Enviar reportes a cada departamento</span><span class="hv-time"><span class="hv-time old">2h</span> → 1 clic</span></div>
+  </div>
+</section>
+
+<!-- ══ I — INTEREST ══ -->
+<section class="pain">
+  <div class="inner">
+    <div class="section-tag">¿Te suena?</div>
+    <h2>El coste real de seguir haciéndolo <em>a mano</em></h2>
+    <div class="pain-card">
+      <p>"Cada fin de mes mi equipo dedica dos días enteros a consolidar informes de ventas a mano, copiando y pegando entre archivos. Sé que se puede automatizar, pero no tenemos a nadie que sepa hacerlo bien."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Coste de inacción — ROI ══ -->
+<section class="roi">
+  <div class="inner">
+    <div class="section-tag">Lo que de verdad cuesta no automatizar</div>
+    <h2>Cada hora manual <em>es dinero que se va</em></h2>
+    <p class="section-lead">Si tu equipo dedica 20 horas al mes a tareas repetitivas en Excel, esto es lo que representa:</p>
+    <div class="roi-chain">
+      <div class="roi-step"><span class="roi-num">20h</span><span class="roi-label">al mes en tareas manuales</span></div>
+      <span class="roi-arrow">→</span>
+      <div class="roi-step"><span class="roi-num">300€</span><span class="roi-label">al mes solo en tiempo (a 15€/h)</span></div>
+      <span class="roi-arrow">→</span>
+      <div class="roi-step"><span class="roi-num">3.600€</span><span class="roi-label">al año en horas perdidas</span></div>
+    </div>
+    <div class="roi-final">
+      <p>Y eso sin contar los <strong>errores humanos</strong> — un informe mal consolidado o una fórmula copiada mal puede costarle a tu empresa mucho más que las horas invertidas en corregirlo, si lleva a una decisión de negocio equivocada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ D — DESIRE: qué se puede automatizar ══ -->
+<section class="procesos">
+  <div class="inner">
+    <div class="section-tag">Qué podemos automatizar</div>
+    <h2>Procesos típicos que <em>dejan de ser manuales</em></h2>
+    <div class="procesos-grid">
+      <div class="proceso-card">
+        <h4>Consolidación de informes</h4>
+        <p>Unir datos de varias hojas o archivos en un único informe, sin copiar y pegar.</p>
+      </div>
+      <div class="proceso-card">
+        <h4>Limpieza y transformación de datos</h4>
+        <p>Con Power Query: automatiza la limpieza de datos que hoy haces a mano cada vez.</p>
+      </div>
+      <div class="proceso-card">
+        <h4>Macros VBA a medida</h4>
+        <p>Automatiza tareas repetitivas de varios clics en una sola acción.</p>
+      </div>
+      <div class="proceso-card">
+        <h4>Dashboards en Power BI</h4>
+        <p>Paneles interactivos que se actualizan solos, sin depender de nadie para verlos al día.</p>
+      </div>
+      <div class="proceso-card">
+        <h4>Generación automática de reportes</h4>
+        <p>Informes que se crean y envían solos cada semana o mes, en el formato que necesitéis.</p>
+      </div>
+      <div class="proceso-card">
+        <h4>Validaciones y alertas</h4>
+        <p>Avisos automáticos cuando un dato falla o un indicador sale de su rango esperado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Cómo funciona ══ -->
+<section class="como-funciona">
+  <div class="inner">
+    <div class="section-tag">Cómo funciona</div>
+    <h2>De la primera llamada <em>al proceso automatizado</em></h2>
+    <div class="pasos-list">
+      <div class="paso">
+        <div class="paso-node">1</div>
+        <div>
+          <h4>Diagnóstico gratuito</h4>
+          <p>Analizamos tu proceso actual: qué haces, cuánto tiempo lleva y dónde está el margen de mejora.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <div class="paso-node">2</div>
+        <div>
+          <h4>Propuesta y presupuesto cerrado</h4>
+          <p>Te presento cómo lo automatizaría y un presupuesto sin sorpresas, ajustado al alcance real.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <div class="paso-node">3</div>
+        <div>
+          <h4>Desarrollo de la automatización</h4>
+          <p>Construyo la solución (macro, Power Query, dashboard) sobre tus propios archivos y procesos.</p>
+        </div>
+      </div>
+      <div class="paso">
+        <div class="paso-node">4</div>
+        <div>
+          <h4>Entrega, formación y soporte</h4>
+          <p>Te dejo todo documentado y formo a tu equipo para que lo use sin depender de mí.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Qué incluye ══ -->
+<section class="incluye">
+  <div class="inner">
+    <div class="section-tag">Qué incluye</div>
+    <h2>Un proyecto <em>de principio a fin</em></h2>
+    <div class="incluye-grid">
+      <div class="incluye-item">
+        <span class="incluye-check">✓</span>
+        <div><h4>Análisis de tus archivos actuales</h4><p>Entiendo cómo trabajáis antes de proponer nada.</p></div>
+      </div>
+      <div class="incluye-item">
+        <span class="incluye-check">✓</span>
+        <div><h4>Automatización a medida</h4><p>Macros VBA, Power Query o Power BI, según lo que necesites.</p></div>
+      </div>
+      <div class="incluye-item">
+        <span class="incluye-check">✓</span>
+        <div><h4>Documentación clara</h4><p>Para que tu equipo entienda y mantenga la solución.</p></div>
+      </div>
+      <div class="incluye-item">
+        <span class="incluye-check">✓</span>
+        <div><h4>Formación de tu equipo</h4><p>Sesión práctica para que todos sepan usarlo desde el primer día.</p></div>
+      </div>
+      <div class="incluye-item">
+        <span class="incluye-check">✓</span>
+        <div><h4>Soporte post-entrega</h4><p>Resolución de dudas tras la implementación.</p></div>
+      </div>
+      <div class="incluye-item">
+        <span class="incluye-check">✓</span>
+        <div><h4>Presupuesto cerrado</h4><p>Sin sorpresas ni costes ocultos una vez acordado el alcance.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Autor -->
+<section class="autor">
+  <div class="section-tag" style="text-align:center; display:block;">Quién lo hace</div>
+  <div class="autor-inner">
+    <img src="/profesor-de-excel-online.jpg" alt="Jhony Escobar, consultor de automatización en Excel" class="autor-img" onerror="this.style.display='none'">
+    <div class="autor-text">
+      <h3>Jhony Escobar</h3>
+      <p>Más de 8 años trabajando con empresas en España en automatización de procesos con Excel, VBA, Power Query y Power BI. Certificado Microsoft Excel Expert. He ayudado a equipos a recuperar decenas de horas al mes que antes se perdían en tareas manuales.</p>
+      <div class="autor-creds">
+        <span class="autor-cred">Certificado Microsoft Excel Expert</span>
+        <span class="autor-cred">+8 años de experiencia</span>
+        <span class="autor-cred">⭐ Súper Profesor Superprof</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="inner">
+    <div class="section-tag">Preguntas frecuentes</div>
+    <h2>Todo lo que necesitas <em>saber</em></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">¿Cuánto cuesta automatizar procesos en Excel para mi empresa?</div>
+        <div class="faq-a">Depende del alcance del proyecto — no es lo mismo automatizar un informe mensual que integrar varias fuentes de datos con un dashboard completo. Por eso el primer paso es un diagnóstico gratuito, tras el cual recibes un presupuesto cerrado y personalizado.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cuánto tiempo tarda una automatización?</div>
+        <div class="faq-a">Proyectos sencillos (una macro o un flujo de Power Query) pueden estar listos en 1-2 semanas. Proyectos más completos con varios procesos o un dashboard en Power BI suelen tardar entre 3 y 6 semanas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Necesitamos licencias especiales?</div>
+        <div class="faq-a">No. Las automatizaciones en Excel con macros VBA o Power Query funcionan con Microsoft 365 estándar. Power BI requiere una licencia si se comparte en la nube, pero muchas empresas empiezan con la versión gratuita de escritorio.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">¿Cómo empezamos?</div>
+        <div class="faq-a">Escríbeme por WhatsApp y agendamos una llamada de diagnóstico gratuita de 20-30 minutos. Analizamos tu proceso actual, te explico cómo lo automatizaría y te doy un presupuesto cerrado.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ A — ACTION: CTA final ══ -->
+<section class="cta-final">
+  <div class="cta-box">
+    <div class="urgency-badge">Plazas limitadas al mes para nuevos proyectos</div>
+    <h2>Recupera las horas que tu equipo<br><em>pierde cada mes</em></h2>
+    <p>Diagnóstico gratuito de tu proceso actual. Sin compromiso, sin presión — solo te digo cómo lo automatizaría y cuánto costaría.</p>
+    <a href="https://wa.me/34641682371?text=Hola%20Jhony%2C%20soy%20de%20una%20empresa%20y%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto%20para%20automatizar%20procesos%20en%20Excel" class="btn-cta-white" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+      Solicitar presupuesto por WhatsApp
+    </a>
+    <div class="cta-risk">
+      <span>Diagnóstico inicial 100% gratuito</span>
+      <span>Presupuesto cerrado, sin sorpresas</span>
+      <span>Certificado Microsoft Excel Expert</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Excel con Jhony</div>
+    <div class="footer-links">
+      <a href="/">Inicio</a>
+      <a href="/#precios">Clases particulares</a>
+      <a href="/profesor-excel-online.html">Sobre mí</a>
+    </div>
+    <div class="footer-copy">© 2026 · trabajoenexcel.com · Automatización de Excel para empresas en España</div>
+  </div>
+</footer>
+
+<script src="/cookie-consent.js"></script>
+<script>
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => item.classList.toggle('open'));
+});
+</script>
+
+</body>
+</html>
