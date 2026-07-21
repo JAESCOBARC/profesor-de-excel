@@ -104,6 +104,18 @@
     transition: background 0.2s; white-space: nowrap;
   }
   .nav-btn:hover { background: var(--green-deep); }
+  .nav-mobile-badge { display: none; }
+
+  .whatsapp-float {
+    display: none;
+    position: fixed; bottom: 22px; right: 20px; z-index: 999;
+    background: #25D366; border-radius: 50%; width: 52px; height: 52px;
+    align-items: center; justify-content: center;
+    box-shadow: 0 4px 18px rgba(37,211,102,0.45);
+    text-decoration: none; transition: transform 0.2s;
+  }
+  .whatsapp-float:hover { transform: scale(1.08); }
+  .whatsapp-float svg { width: 28px; height: 28px; }
 
   .urgency-bar {
     background: var(--green-deep); color: white;
@@ -244,9 +256,20 @@
   .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); width: 100%; text-align: center; margin-top: 0.75rem; }
 
   @media (max-width: 768px) {
-    nav { height: 56px; }
+    nav { height: 48px; justify-content: center; }
+    .nav-logo { display: none; }
+    .nav-btn { display: none; }
+    .nav-mobile-badge {
+      display: table; margin: 0 auto; text-align: center; line-height: 1.35;
+      background: var(--green-pale); color: var(--green-mid);
+      padding: 5px 14px; border-radius: 14px;
+      font-size: 0.72rem; font-weight: 500;
+    }
+    .whatsapp-float { display: flex; }
     .urgency-bar { font-size: 0.76rem; padding: 8px 5%; }
-    .hero { padding: 1.25rem 5% 1.5rem; }
+    .hero { padding: 1rem 5% 1.5rem; }
+    .hero-badge { display: none; }
+    .btn-cta { width: 100%; }
     h1 { font-size: 1.7rem; }
     .hero-lead { font-size: 0.97rem; margin-bottom: 1.25rem; }
     .hero-stats { gap: 1.5rem; margin-top: 1.5rem; padding-top: 1.5rem; }
@@ -266,6 +289,7 @@
 <nav>
   <a href="/" class="nav-logo">Excel con Jhony</a>
   <a href="#" data-wa-msg="Hola Jhony, soy de una empresa y me gustaría solicitar un presupuesto para formación de Excel bonificada con FUNDAE" class="nav-btn">Solicitar presupuesto</a>
+  <div class="nav-mobile-badge"><span>Formación bonificable FUNDAE</span></div>
 </nav>
 
 <div class="urgency-bar">
@@ -509,6 +533,9 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 </script>
 
+<a href="#" data-wa-msg="Hola Jhony, soy de una empresa y me gustaría solicitar un presupuesto para formación de Excel bonificada con FUNDAE" class="whatsapp-float" aria-label="Solicitar presupuesto por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+</a>
 <script src="/whatsapp-config.js"></script>
 </body>
 </html>

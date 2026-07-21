@@ -107,6 +107,7 @@
     transition: background 0.2s; white-space: nowrap;
   }
   .nav-cta:hover { background: var(--green-deep) !important; }
+  .nav-mobile-badge { display: none; }
 
   .urgency-bar {
     background: var(--green-deep); color: white;
@@ -296,15 +297,23 @@
   .whatsapp-float svg { width: 28px; height: 28px; }
 
   @media (max-width: 768px) {
-    nav { height: 56px; }
-    .nav-links { gap: 0.75rem; }
-    .hero { grid-template-columns: 1fr; gap: 0; padding: 1.1rem 5% 0; }
+    nav { height: 48px; justify-content: center; }
+    .nav-links { display: none; }
+    .nav-logo { display: none; }
+    .nav-mobile-badge {
+      display: table; margin: 0 auto; text-align: center; line-height: 1.35;
+      background: var(--green-pale); color: var(--green-mid);
+      padding: 5px 14px; border-radius: 14px;
+      font-size: 0.72rem; font-weight: 500;
+    }
+    .hero { grid-template-columns: 1fr; gap: 0; padding: 0.9rem 5% 0; }
     .sidebar { display: none; }
     .article-body { grid-template-columns: 1fr; gap: 0; }
     .article-sidebar { display: none; }
     .breadcrumb { display: none; }
-    h1 { font-size: 1.6rem; margin-bottom: 0.75rem; }
-    .hero-badge { font-size: 0.72rem; margin-bottom: 0.85rem; }
+    .hero-badge { display: none; }
+    h1 { font-size: 1.6rem; margin-bottom: 0.75rem; text-align: center; }
+    .hero-lead { text-align: center; }
     .hero-lead { font-size: 0.95rem; margin-bottom: 1rem; }
     .btn-wa.hero-mobile-cta { display: flex; margin-bottom: 1rem; }
     .hero-meta { padding-top: 1rem; }
@@ -331,6 +340,7 @@
     <a href="/#precios">Precios</a>
     <a href="#" data-wa-msg="Hola Jhony 👋 vengo desde tu web, tengo un examen de Excel y quería preguntarte algo" class="nav-cta">Contactar →</a>
   </div>
+  <div class="nav-mobile-badge"><span>Universidad · FP · Módulos · España</span></div>
 </nav>
 
 <div class="urgency-bar">
