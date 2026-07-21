@@ -379,6 +379,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   h2 em { font-style: italic; color: var(--green-mid); }
   .section-lead { font-size: 1.05rem; color: var(--slate); max-width: 560px; line-height: 1.8; }
 
+  /* ── Coste de la inacción (LIFT: Valor + pérdida cuantificada) ── */
+  .coste-inaccion { background: var(--green-deep); padding: 3rem 5%; text-align: center; }
+  .coste-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-light); margin-bottom: 1rem; }
+  .coste-chain { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .coste-step { display: flex; flex-direction: column; align-items: center; }
+  .coste-num { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 600; color: white; line-height: 1; }
+  .coste-num strong { color: var(--green-light); }
+  .coste-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 3px; }
+  .coste-arrow { color: var(--green-light); font-size: 1.1rem; }
+  .coste-final { display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.1rem 1.75rem; max-width: 640px; }
+  .coste-final p { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
+  .coste-final strong { color: white; }
+  .coste-hook { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--green-light); margin-top: 0.85rem; }
+
   /* ── Enfoque 80/20 ── */
   .enfoque-8020 { background: var(--cream); padding: 3.5rem 5%; border-bottom: 1px solid var(--border); }
   .ocho-grid {
@@ -578,6 +592,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-trust .trust-item, .hero-trust a.trust-item { padding: 0.5rem; margin: -0.5rem; }
     section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
     .enfoque-8020 { padding-top: 2rem; padding-bottom: 2rem; }
+    .coste-inaccion { padding: 2.25rem 6%; }
+    .coste-chain { gap: 0.4rem; }
+    .coste-arrow { display: none; }
+    .coste-step { flex-direction: row; gap: 5px; }
+    .coste-num { font-size: 1.15rem; }
+    .coste-label { margin-top: 0; }
+    .coste-final { padding: 1rem 1.25rem; }
+    .coste-final p { font-size: 0.9rem; }
+    .coste-hook { font-size: 1.05rem; }
     .trust-divider { display: none; }
     .trust-item { min-width: unset; }
     .metodo-grid { grid-template-columns: 1fr; }
@@ -778,6 +801,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="live-badge">EN VIVO</div>
     </div>
+  </div>
+</section>
+
+<section class="coste-inaccion">
+  <div class="coste-eyebrow">Lo que de verdad te está costando</div>
+  <div class="coste-chain">
+    <div class="coste-step"><span class="coste-num"><strong>2h</strong></span><span class="coste-label">al día</span></div>
+    <span class="coste-arrow">→</span>
+    <div class="coste-step"><span class="coste-num"><strong>10h</strong></span><span class="coste-label">a la semana</span></div>
+    <span class="coste-arrow">→</span>
+    <div class="coste-step"><span class="coste-num"><strong>40h</strong></span><span class="coste-label">al mes</span></div>
+    <span class="coste-arrow">→</span>
+    <div class="coste-step"><span class="coste-num"><strong>500h</strong></span><span class="coste-label">al año</span></div>
+  </div>
+  <div class="coste-final">
+    <p>Más de 500 horas al año — casi <strong>3 meses de tu vida laboral</strong> — perdidos en tareas que podrías resolver en segundos si dominaras Excel de verdad.</p>
+    <p class="coste-hook">¿Qué harías tú con esas horas de vuelta?</p>
   </div>
 </section>
 
