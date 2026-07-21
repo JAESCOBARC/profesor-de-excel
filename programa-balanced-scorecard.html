@@ -169,6 +169,17 @@
   .problema h2 { color: white; }
   .problema-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 2.5rem; }
   .problema-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; padding: 1.5rem; }
+
+  /* Coste de inacción */
+  .coste-bsc { background: white; text-align: center; }
+  .coste-bsc-chain { display: flex; align-items: center; justify-content: center; gap: 0.85rem; flex-wrap: wrap; margin: 2rem 0 1.5rem; }
+  .coste-bsc-step { display: flex; flex-direction: column; align-items: center; background: var(--green-mist); border: 1px solid var(--green-pale); border-radius: 12px; padding: 0.9rem 1.25rem; min-width: 150px; }
+  .coste-bsc-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
+  .coste-bsc-label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; text-align: center; }
+  .coste-bsc-arrow { color: var(--green-light); font-size: 1.2rem; }
+  .coste-bsc-final { background: var(--green-deep); border-radius: 14px; padding: 1.25rem 1.75rem; max-width: 680px; margin: 0 auto; }
+  .coste-bsc-final p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+  .coste-bsc-final strong { color: white; }
   .problema-card p { font-size: 0.88rem; color: rgba(255,255,255,0.7); line-height: 1.75; font-style: italic; border-left: 2px solid var(--green-light); padding-left: 1rem; }
 
   /* Diferencia curso vs programa */
@@ -299,6 +310,9 @@
     .hero-lead { font-size: 0.97rem; margin-bottom: 1.25rem; }
     .hero-stats { gap: 1.5rem; margin-top: 1.5rem; padding-top: 1.5rem; }
     .problema-grid { grid-template-columns: 1fr; }
+    .coste-bsc-chain { flex-direction: column; gap: 0.6rem; }
+    .coste-bsc-arrow { display: none; }
+    .coste-bsc-step { width: 100%; }
     .vs-grid { grid-template-columns: 1fr; }
     .incluye-grid { grid-template-columns: 1fr; }
     .quien-grid { grid-template-columns: 1fr; }
@@ -360,6 +374,24 @@
       <div class="problema-card">
         <p>La dirección me pidió un cuadro de mando "para el trimestre que viene". No tengo tiempo de aprender por ensayo y error.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Coste de inacción — LIFT: Valor + pérdida cuantificada ══ -->
+<section class="coste-bsc">
+  <div class="inner">
+    <div class="section-tag">Lo que de verdad cuesta seguir sin BSC</div>
+    <h2>Cada trimestre sin un cuadro de mando <em>es un trimestre a ciegas</em></h2>
+    <div class="coste-bsc-chain">
+      <div class="coste-bsc-step"><span class="coste-bsc-num">2 días</span><span class="coste-bsc-label">al mes consolidando informes sueltos</span></div>
+      <span class="coste-bsc-arrow">→</span>
+      <div class="coste-bsc-step"><span class="coste-bsc-num">0 certeza</span><span class="coste-bsc-label">decisiones tomadas sin datos reales</span></div>
+      <span class="coste-bsc-arrow">→</span>
+      <div class="coste-bsc-step"><span class="coste-bsc-num">1 trimestre</span><span class="coste-bsc-label">más sin saber si la estrategia funciona</span></div>
+    </div>
+    <div class="coste-bsc-final">
+      <p>Cada trimestre que pasa sin el BSC implementado es un trimestre más tomando decisiones sin datos reales — <strong>el mismo problema que tenías hace un año.</strong></p>
     </div>
   </div>
 </section>
