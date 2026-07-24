@@ -8,9 +8,6 @@
       var url = 'https://wa.me/' + WHATSAPP_NUMBER;
       if (msg) url += '?text=' + encodeURIComponent(msg);
       el.setAttribute('href', url);
-      el.addEventListener('click', function () {
-        if (typeof fbq === 'function') fbq('track', 'Contact');
-      });
     });
   });
 })();
