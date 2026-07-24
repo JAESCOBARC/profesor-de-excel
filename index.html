@@ -393,15 +393,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .coste-final { display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.1rem 1.75rem; max-width: 640px; }
   .coste-final p { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
 
-  /* ── Video demo (LIFT: Claridad + reduce ansiedad antes del contacto) ── */
-  .video-demo { text-align: center; }
-  .video-demo .section-lead { margin: 0 auto; }
-  .video-wrap {
-    position: relative; width: 100%; max-width: 780px; margin: 2rem auto 0;
-    aspect-ratio: 16 / 9; border-radius: 16px; overflow: hidden;
+  /* ── Video en hero (LIFT: Claridad + reduce ansiedad antes del contacto) ── */
+  .hero-video-wrap {
+    position: relative; width: 100%; aspect-ratio: 16 / 10;
+    border-radius: 16px; overflow: hidden;
     box-shadow: 0 20px 50px rgba(10,46,26,0.15);
   }
-  .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .hero-video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .coste-final strong { color: white; }
   .coste-hook { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--green-light); margin-top: 0.85rem; }
 
@@ -793,35 +791,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="hero-visual">
-    <div class="excel-card">
-      <div class="excel-card-label">Sesión en curso · Fórmulas avanzadas</div>
-      <div class="formula-bar">=BUSCARV(A2,Datos!A:D,4,FALSO)</div>
-      <div class="cell-grid">
-        <div class="cell header">Nombre</div>
-        <div class="cell header">Dpto</div>
-        <div class="cell header">Ventas</div>
-        <div class="cell header">% Obj.</div>
-        <div class="cell">Ana López</div>
-        <div class="cell">Comercial</div>
-        <div class="cell highlight">€ 42.800</div>
-        <div class="cell formula">107%</div>
-        <div class="cell">Carlos R.</div>
-        <div class="cell">Marketing</div>
-        <div class="cell highlight">€ 38.500</div>
-        <div class="cell formula">96%</div>
-        <div class="cell">María S.</div>
-        <div class="cell">Ventas</div>
-        <div class="cell highlight">€ 51.200</div>
-        <div class="cell formula">128%</div>
-      </div>
-    </div>
-    <div class="session-card">
-      <div class="session-avatar">JH</div>
-      <div class="session-info">
-        <div class="session-title">Clase en vivo · Tablas Dinámicas</div>
-        <div class="session-sub">Hoy 18:00 · Google Meet · Personalizada</div>
-      </div>
-      <div class="live-badge">EN VIVO</div>
+    <div class="hero-video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/ahc7xxEDbbE?vq=hd720&rel=0&modestbranding=1" title="Clases de Excel con Jhony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -840,15 +811,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="coste-final">
     <p>Más de 500 horas al año — casi <strong>3 meses de tu vida laboral</strong> — perdidos en tareas que podrías resolver en segundos si dominaras Excel de verdad.</p>
     <p class="coste-hook">¿Qué harías tú con esas horas de vuelta?</p>
-  </div>
-</section>
-
-<section class="video-demo" id="video">
-  <div class="section-tag">Antes de escribirme</div>
-  <h2>Te lo cuento yo mismo <em>en 57 segundos</em></h2>
-  <p class="section-lead">Cómo trabajo, qué te enseño y por qué tantas personas se quedan atascadas en Excel — directo de mi parte, sin rodeos.</p>
-  <div class="video-wrap">
-    <iframe src="https://www.youtube-nocookie.com/embed/ahc7xxEDbbE" title="Clases de Excel con Jhony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
   </div>
 </section>
 
