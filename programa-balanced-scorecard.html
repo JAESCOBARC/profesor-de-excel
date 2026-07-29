@@ -98,7 +98,8 @@
     border-bottom: 1px solid var(--border);
     padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 60px;
   }
-  .nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--green-deep); text-decoration: none; }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--green-deep); text-decoration: none;  display: inline-flex; align-items: center; gap: 8px; }
+  .nav-logo-mark { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
   .nav-btn {
     background: var(--green-mid); color: white;
     padding: 8px 18px; border-radius: 6px;
@@ -333,7 +334,7 @@
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">Excel con Jhony</a>
+  <a href="/" class="nav-logo"><img src="/logo-pe.png" alt="" class="nav-logo-mark">Excel con Jhony</a>
   <a href="#" data-wa-msg="Hola Jhony, quiero agendar la llamada de diagnóstico de la asesoría Balanced Scorecard" class="nav-btn">Agendar llamada</a>
   <div class="nav-mobile-badge"><span>Asesoría 1:1 · Balanced Scorecard</span></div>
 </nav>

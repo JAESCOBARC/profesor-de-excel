@@ -151,7 +151,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* ── Nav ── */
   nav { position: sticky; top: 0; z-index: 100; background: rgba(250,248,243,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .nav-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-deep); text-decoration: none; }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-deep); text-decoration: none;  display: inline-flex; align-items: center; gap: 8px; }
+  .nav-logo-mark { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 0.88rem; font-weight: 400; color: var(--slate); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover, .nav-links a.active { color: var(--green-mid); }
@@ -344,7 +345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <nav>
-  <a href="/" class="nav-logo">Excel con Jhony</a>
+  <a href="/" class="nav-logo"><img src="/logo-pe.png" alt="" class="nav-logo-mark">Excel con Jhony</a>
   <ul class="nav-links">
     <li><a href="/#servicios">Servicios</a></li>
     <li><a href="/#precios">Precios</a></li>
