@@ -1315,26 +1315,32 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
     return window.matchMedia('(max-width: 768px)').matches;
   }
 
-  function startVideo() {
+  function startVideo(userInitiated) {
     if (triggered || !isMobileView()) return;
     triggered = true;
     playBtn.classList.add('is-hidden');
     unmuteBtn.classList.add('is-hidden');
     video.controls = true;
     video.src = '/video-clases-excel.mp4';
-    video.muted = false;
-    video.play().catch(function () {
-      // El navegador bloqueó el sonido automático (sin interacción previa) — probamos silenciado.
+    if (userInitiated) {
+      // Gesto real del usuario (clic): Safari/Chrome permiten sonido directo aquí.
+      video.muted = false;
+      video.play().catch(function () {
+        video.muted = true;
+        video.play().catch(function () {});
+      });
+    } else {
+      // Disparo automático sin gesto: silenciado directo (único modo que Safari garantiza sin interacción).
       video.muted = true;
       video.play().catch(function () {});
-    });
+    }
   }
 
   setTimeout(startVideo, 7000);
 
   playBtn.addEventListener('click', function (e) {
     e.stopPropagation();
-    startVideo();
+    startVideo(true);
   });
 
   unmuteBtn.addEventListener('click', function (e) {
