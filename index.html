@@ -1298,34 +1298,17 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
 <script src="/whatsapp-config.js"></script>
 <script>
 (function () {
-  var ytApiPromise = null;
-  function loadYTApi() {
-    if (ytApiPromise) return ytApiPromise;
-    ytApiPromise = new Promise(function (resolve) {
-      if (window.YT && window.YT.Player) { resolve(); return; }
-      window.onYouTubeIframeAPIReady = resolve;
-      var tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      document.head.appendChild(tag);
-    });
-    return ytApiPromise;
-  }
   function loadVideo(el) {
     var id = el.getAttribute('data-video-id');
-    var mount = document.createElement('div');
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?vq=hd720&rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1';
+    iframe.title = el.getAttribute('aria-label') || 'Vídeo';
+    iframe.frameBorder = '0';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
     el.innerHTML = '';
-    el.appendChild(mount);
+    el.appendChild(iframe);
     el.classList.remove('yt-facade');
-    loadYTApi().then(function () {
-      new YT.Player(mount, {
-        videoId: id,
-        host: 'https://www.youtube-nocookie.com',
-        playerVars: { autoplay: 1, mute: 1, playsinline: 1, rel: 0, modestbranding: 1, vq: 'hd720' },
-        events: {
-          onReady: function (e) { e.target.playVideo(); }
-        }
-      });
-    });
   }
   document.querySelectorAll('.yt-facade').forEach(function (el) {
     el.addEventListener('click', function () { loadVideo(el); });
