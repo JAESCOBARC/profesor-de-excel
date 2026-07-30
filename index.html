@@ -1305,7 +1305,14 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
     if (triggered || !isMobileView()) return;
     triggered = true;
     video.src = '/video-clases-excel.mp4';
-    video.play().catch(function () {});
+    video.muted = false;
+    unmuteBtn.textContent = '🔊';
+    video.play().catch(function () {
+      // El navegador bloqueó el sonido automático (sin interacción previa) — probamos silenciado.
+      video.muted = true;
+      unmuteBtn.textContent = '🔇';
+      video.play().catch(function () {});
+    });
   }
 
   setTimeout(startVideo, 15000);
