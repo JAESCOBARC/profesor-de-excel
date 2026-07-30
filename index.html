@@ -420,6 +420,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .mv-play:hover { background: #cc0000; transform: translate(-50%, -50%) scale(1.06); }
   .mv-play.is-hidden { display: none; }
+  .mv-unmute.is-hidden { display: none; }
   .video-mobile { display: none; }
   .coste-final strong { color: white; }
   .coste-hook { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--green-light); margin-top: 0.85rem; }
@@ -1318,13 +1319,13 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
     if (triggered || !isMobileView()) return;
     triggered = true;
     playBtn.classList.add('is-hidden');
+    unmuteBtn.classList.add('is-hidden');
+    video.controls = true;
     video.src = '/video-clases-excel.mp4';
     video.muted = false;
-    unmuteBtn.textContent = '🔊';
     video.play().catch(function () {
       // El navegador bloqueó el sonido automático (sin interacción previa) — probamos silenciado.
       video.muted = true;
-      unmuteBtn.textContent = '🔇';
       video.play().catch(function () {});
     });
   }
