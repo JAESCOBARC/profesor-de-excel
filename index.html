@@ -1301,7 +1301,7 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
   function loadVideo(el) {
     var id = el.getAttribute('data-video-id');
     var iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?vq=hd720&rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1';
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?vq=hd720&rel=0&modestbranding=1';
     iframe.title = el.getAttribute('aria-label') || 'Vídeo';
     iframe.frameBorder = '0';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
