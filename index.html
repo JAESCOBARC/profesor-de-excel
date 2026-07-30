@@ -402,18 +402,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-shadow: 0 20px 50px rgba(10,46,26,0.15);
   }
   .hero-video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .yt-facade { cursor: pointer; background: #000; }
-  .yt-facade-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .yt-facade-play {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 68px; height: 48px; border-radius: 14px;
-    background: #ff0000; color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem; padding-left: 5px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-    transition: background 0.2s, transform 0.2s;
-  }
-  .yt-facade:hover .yt-facade-play { background: #cc0000; transform: translate(-50%, -50%) scale(1.06); }
   .video-mobile { display: none; }
   .coste-final strong { color: white; }
   .coste-hook { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--green-light); margin-top: 0.85rem; }
@@ -809,9 +797,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="hero-visual">
-    <div class="hero-video-wrap yt-facade" data-video-id="ahc7xxEDbbE" role="button" tabindex="0" aria-label="Reproducir vídeo: Clases de Excel con Jhony">
-      <img src="https://i.ytimg.com/vi/ahc7xxEDbbE/hqdefault.jpg" alt="" loading="lazy" class="yt-facade-thumb">
-      <span class="yt-facade-play" aria-hidden="true">▶</span>
+    <div class="hero-video-wrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/ahc7xxEDbbE?vq=hd720&rel=0&modestbranding=1" title="Clases de Excel con Jhony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -819,9 +806,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="video-mobile">
   <div class="section-tag">Antes de escribirme</div>
   <h2>Te lo cuento yo mismo <em>en 57 segundos</em></h2>
-  <div class="hero-video-wrap yt-facade" data-video-id="ahc7xxEDbbE" role="button" tabindex="0" aria-label="Reproducir vídeo: Clases de Excel con Jhony">
-    <img src="https://i.ytimg.com/vi/ahc7xxEDbbE/hqdefault.jpg" alt="" loading="lazy" class="yt-facade-thumb">
-    <span class="yt-facade-play" aria-hidden="true">▶</span>
+  <div class="hero-video-wrap">
+    <iframe src="https://www.youtube-nocookie.com/embed/ahc7xxEDbbE?vq=hd720&rel=0&modestbranding=1" title="Clases de Excel con Jhony" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
   </div>
 </section>
 
@@ -1296,27 +1282,5 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
   Consulta disponibilidad
 </a>
 <script src="/whatsapp-config.js"></script>
-<script>
-(function () {
-  function loadVideo(el) {
-    var id = el.getAttribute('data-video-id');
-    var iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?vq=hd720&rel=0&modestbranding=1';
-    iframe.title = el.getAttribute('aria-label') || 'Vídeo';
-    iframe.frameBorder = '0';
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-    iframe.allowFullscreen = true;
-    el.innerHTML = '';
-    el.appendChild(iframe);
-    el.classList.remove('yt-facade');
-  }
-  document.querySelectorAll('.yt-facade').forEach(function (el) {
-    el.addEventListener('click', function () { loadVideo(el); });
-    el.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); loadVideo(el); }
-    });
-  });
-})();
-</script>
 </body>
 </html>
