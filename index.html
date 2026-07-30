@@ -406,13 +406,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .yt-facade-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .yt-facade-play {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 64px; height: 64px; border-radius: 50%;
-    background: rgba(0,0,0,0.65); color: #fff;
+    width: 68px; height: 48px; border-radius: 14px;
+    background: #ff0000; color: #fff;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; padding-left: 4px;
+    font-size: 1.5rem; padding-left: 5px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
     transition: background 0.2s, transform 0.2s;
   }
-  .yt-facade:hover .yt-facade-play { background: var(--green-mid); transform: translate(-50%, -50%) scale(1.08); }
+  .yt-facade:hover .yt-facade-play { background: #cc0000; transform: translate(-50%, -50%) scale(1.06); }
   .video-mobile { display: none; }
   .coste-final strong { color: white; }
   .coste-hook { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--green-light); margin-top: 0.85rem; }
@@ -1300,7 +1301,7 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
   function loadVideo(el) {
     var id = el.getAttribute('data-video-id');
     var iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?vq=hd720&rel=0&modestbranding=1&autoplay=1';
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?vq=hd720&rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1';
     iframe.title = el.getAttribute('aria-label') || 'Vídeo';
     iframe.frameBorder = '0';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
