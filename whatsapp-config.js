@@ -43,7 +43,7 @@
 
     document.querySelectorAll('[data-wa-msg]').forEach(function (el) {
       var msg = el.getAttribute('data-wa-msg');
-      if (refCode) msg += ' (ref: ' + refCode + ')';
+      if (refCode) msg += ' (ID solicitud: ' + refCode + ')';
       var url = 'https://wa.me/' + WHATSAPP_NUMBER;
       if (msg) url += '?text=' + encodeURIComponent(msg);
       el.setAttribute('href', url);
