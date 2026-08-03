@@ -12,17 +12,20 @@
 
     var params = new URLSearchParams(window.location.search);
     var gclid = params.get('gclid');
+    var fbclid = params.get('fbclid');
 
     if (!data) {
       data = {
         code: 'EXC-' + Math.floor(100000 + Math.random() * 900000),
         gclid: gclid || '',
+        fbclid: fbclid || '',
         sent: false
       };
-    } else if (gclid && !data.gclid) {
-      // Llegó el gclid en una navegación posterior dentro de la misma sesión.
-      data.gclid = gclid;
-      data.sent = false;
+    } else {
+      var changed = false;
+      if (gclid && !data.gclid) { data.gclid = gclid; changed = true; }
+      if (fbclid && !data.fbclid) { data.fbclid = fbclid; changed = true; }
+      if (changed) data.sent = false;
     }
 
     sessionStorage.setItem('lead_ref', JSON.stringify(data));
@@ -35,7 +38,7 @@
     fetch(GCLID_ENDPOINT, {
       method: 'POST',
       mode: 'no-cors',
-      body: JSON.stringify({ code: data.code, gclid: data.gclid, page: window.location.pathname })
+      body: JSON.stringify({ code: data.code, gclid: data.gclid, fbclid: data.fbclid, page: window.location.pathname })
     }).catch(function () {});
 
     data.sent = true;
