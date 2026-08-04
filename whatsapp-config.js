@@ -13,12 +13,6 @@
   function safeGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function safeSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
 
-  // Solo persistimos identificadores publicitarios si el usuario aceptó
-  // cookies de publicidad en el banner de consentimiento (Consent Mode v2).
-  function hasAdConsent() {
-    return safeGet('cookieConsent') === 'all';
-  }
-
   function readAttribution() {
     var raw = safeGet(ATTR_KEY);
     if (!raw) return null;
@@ -29,12 +23,7 @@
     } catch (e) { return null; }
   }
 
-  // Memoria de corto plazo (esta pestaña, esta visita): guarda los parámetros
-  // de la URL SIN depender del consentimiento, porque el usuario puede
-  // aceptar el banner (a los 3.5s) después de que la página ya cargó.
-  // No se persiste entre sesiones — solo sirve de puente hasta que sepamos
-  // si hay consentimiento para guardarlo 60 días de verdad.
-  function stashPending() {
+  function captureAttribution() {
     var p = new URLSearchParams(location.search);
     var found = {}, any = false;
     PARAMS.forEach(function (k) {
@@ -42,31 +31,12 @@
       if (v) { found[k] = v; any = true; }
     });
     if (!any) return;
-    found.landing = location.pathname;
-    try { sessionStorage.setItem('tec_pending', JSON.stringify(found)); } catch (e) {}
-  }
-
-  // Si ya hay consentimiento, promueve lo que haya en la memoria de corto
-  // plazo (de esta visita o de una página anterior de la misma pestaña) a
-  // almacenamiento persistente de 60 días.
-  function promotePending() {
-    if (!hasAdConsent()) return;
-    var raw;
-    try { raw = sessionStorage.getItem('tec_pending'); } catch (e) { raw = null; }
-    if (!raw) return;
-    var found;
-    try { found = JSON.parse(raw); } catch (e) { return; }
     found.ts = Date.now();
+    found.landing = location.pathname;
     safeSet(ATTR_KEY, JSON.stringify(found)); // último clic gana
   }
 
-  function captureAttribution() {
-    stashPending();
-    promotePending();
-  }
-
   function visitorId() {
-    if (!hasAdConsent()) return '';
     var v = safeGet(VID_KEY);
     if (!v) {
       v = (window.crypto && crypto.randomUUID)
@@ -96,7 +66,6 @@
   }
 
   function buildLead() {
-    promotePending(); // último intento por si el consentimiento se aceptó después de cargar
     var a = readAttribution() || {};
     var vid = visitorId();
     return {
