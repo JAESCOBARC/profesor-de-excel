@@ -3,7 +3,8 @@
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }
 
-  var stored = localStorage.getItem('cookieConsent');
+  var stored = null;
+  try { stored = localStorage.getItem('cookieConsent'); } catch (e) {}
   var granted = stored === 'all';
 
   gtag('consent', 'default', {
@@ -73,7 +74,7 @@
     }, 3500);
 
     function applyConsent(choice) {
-      localStorage.setItem('cookieConsent', choice);
+      try { localStorage.setItem('cookieConsent', choice); } catch (e) {}
       var ok = choice === 'all';
       gtag('consent', 'update', {
         analytics_storage:  ok ? 'granted' : 'denied',
