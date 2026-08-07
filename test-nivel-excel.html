@@ -239,6 +239,8 @@
   .whatsapp-float svg { width: 28px; height: 28px; }
 
   .field-error { border-color: #b02020 !important; }
+  .field-error-msg { display: none; font-size: 0.75rem; color: #b02020; margin-top: 4px; }
+  .field.has-error .field-error-msg { display: block; }
 
   @media (max-width: 768px) {
     nav { height: 48px; justify-content: center; }
@@ -300,22 +302,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- Paso 0: datos -->
   <div class="quiz-panel active" id="panelIntro">
     <div class="quiz-step-label">Antes de empezar</div>
-    <div class="field">
-      <label for="fNombre">Nombre</label>
-      <input type="text" id="fNombre" placeholder="Tu nombre" autocomplete="name">
+    <div class="field" id="fieldNombre">
+      <label for="fNombre">Nombre *</label>
+      <input type="text" id="fNombre" placeholder="Tu nombre" autocomplete="name" required>
+      <div class="field-error-msg">Escribe tu nombre para continuar.</div>
     </div>
-    <div class="field">
-      <label for="fEmail">Email</label>
-      <input type="email" id="fEmail" placeholder="tu@email.com" autocomplete="email">
+    <div class="field" id="fieldEmail">
+      <label for="fEmail">Email *</label>
+      <input type="email" id="fEmail" placeholder="tu@email.com" autocomplete="email" required>
+      <div class="field-error-msg" id="emailErrorMsg">Escribe un email válido (ej. tu@email.com).</div>
     </div>
-    <div class="field">
-      <label for="fPais">País</label>
-      <select id="fPais">
+    <div class="field" id="fieldPais">
+      <label for="fPais">País *</label>
+      <select id="fPais" required>
         <option value="">Selecciona tu país</option>
         <option>España</option><option>México</option><option>Colombia</option><option>Argentina</option>
         <option>Chile</option><option>Perú</option><option>Ecuador</option><option>Venezuela</option>
         <option>Estados Unidos</option><option>Otro</option>
       </select>
+      <div class="field-error-msg">Selecciona tu país para continuar.</div>
     </div>
     <button class="btn-primary btn-primary-full" onclick="startQuiz()">Empezar test →</button>
   </div>
@@ -457,22 +462,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var answers = new Array(QUESTIONS.length).fill(null);
   var userData = {};
 
-  window.startQuiz = function () {
-    var nombre = document.getElementById('fNombre').value.trim();
-    var email = document.getElementById('fEmail').value.trim();
-    var pais = document.getElementById('fPais').value;
-    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
 
-    document.getElementById('fNombre').classList.toggle('field-error', !nombre);
-    document.getElementById('fEmail').classList.toggle('field-error', !emailOk);
-    document.getElementById('fPais').classList.toggle('field-error', !pais);
-    if (!nombre || !emailOk || !pais) return;
+  function setFieldError(fieldId, inputId, isError) {
+    document.getElementById(fieldId).classList.toggle('has-error', isError);
+    document.getElementById(inputId).classList.toggle('field-error', isError);
+  }
+
+  window.startQuiz = function () {
+    var nombreEl = document.getElementById('fNombre');
+    var emailEl = document.getElementById('fEmail');
+    var paisEl = document.getElementById('fPais');
+    var nombre = nombreEl.value.trim();
+    var email = emailEl.value.trim();
+    var pais = paisEl.value;
+    var emailOk = EMAIL_RE.test(email);
+
+    setFieldError('fieldNombre', 'fNombre', !nombre);
+    setFieldError('fieldEmail', 'fEmail', !emailOk);
+    setFieldError('fieldPais', 'fPais', !pais);
+
+    if (!nombre || !emailOk || !pais) {
+      var firstInvalid = !nombre ? nombreEl : (!emailOk ? emailEl : paisEl);
+      firstInvalid.focus();
+      return;
+    }
 
     userData = { nombre: nombre, email: email, pais: pais };
     document.getElementById('panelIntro').classList.remove('active');
     document.getElementById('panelQuiz').classList.add('active');
     renderQuestion();
   };
+
+  ['fNombre', 'fEmail', 'fPais'].forEach(function (id) {
+    document.getElementById(id).addEventListener('input', function () {
+      var fieldId = id === 'fNombre' ? 'fieldNombre' : (id === 'fEmail' ? 'fieldEmail' : 'fieldPais');
+      document.getElementById(fieldId).classList.remove('has-error');
+      document.getElementById(id).classList.remove('field-error');
+    });
+  });
 
   function renderQuestion() {
     var q = QUESTIONS[current];
