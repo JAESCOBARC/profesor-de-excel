@@ -631,6 +631,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     btn.textContent = open ? 'Ocultar mis respuestas ↑' : 'Ver mis respuestas, pregunta por pregunta ↓';
   };
 
+  function buildFallosText() {
+    var partes = [];
+    QUESTIONS.forEach(function (q, i) {
+      var userIdx = answers[i];
+      if (userIdx !== q.correct) {
+        var tuResp = (userIdx === null || userIdx === undefined) ? 'Sin responder' : q.opts[userIdx];
+        partes.push('P' + (i + 1) + ': ' + q.q + ' | Respondió: ' + tuResp + ' | Correcta: ' + q.opts[q.correct]);
+      }
+    });
+    return partes.length ? partes.join(' || ') : 'Ninguna (acertó todas)';
+  }
+
+  function buildResumenText() {
+    var partes = [];
+    QUESTIONS.forEach(function (q, i) {
+      var userIdx = answers[i];
+      var ok = userIdx === q.correct;
+      var tuResp = (userIdx === null || userIdx === undefined) ? 'Sin responder' : q.opts[userIdx];
+      partes.push('P' + (i + 1) + ': ' + (ok ? 'OK' : 'FALLO') + ' | Respondió: ' + tuResp);
+    });
+    return partes.join(' || ');
+  }
+
   function sendTestLead(nivelLabel, plan) {
     try {
       var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxaoBbw2PlkY_xuccp8dZBKVOPbK_K1t17ZuWXI9tP58PxXCWDbjWFv06K1UhYc0uK0/exec';
@@ -641,6 +664,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           type: 'test',
           nombre: userData.nombre, email: userData.email, pais: userData.pais,
           nivel: nivelLabel, plan: plan,
+          fallos: buildFallosText(),
+          resumen: buildResumenText(),
           gclid: p.get('gclid') || '', gbraid: p.get('gbraid') || '', wbraid: p.get('wbraid') || '', fbclid: p.get('fbclid') || '',
           page: location.pathname
         })
