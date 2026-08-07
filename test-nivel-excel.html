@@ -578,23 +578,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var intermedioOk = scoreByLevel.intermedio >= totalByLevel.intermedio - 1;
     var basicoOk = scoreByLevel.basico >= totalByLevel.basico - 1;
     var P = window.PLANES || {};
-    var bono5 = P.bono5 || { label: 'Bono 5 horas', precioHora: 18, total: 90, descuento: 10 };
-    var bono10 = P.bono10 || { label: 'Bono 10 horas o más', precioHora: 16.5 };
+    var bono5 = P.bono5 || { precioHora: 18, total: 90, descuento: 10 };
+    var bono10 = P.bono10 || { precioHora: 16.5 };
 
     if (avanzadoOk && intermedioOk) {
       nivel = 'avanzado'; nivelLabel = 'Nivel Avanzado';
       desc = 'Dominas fórmulas lógicas, tablas dinámicas y tienes buena base en herramientas avanzadas como Power Query o macros. Para pulir detalles concretos y resolver dudas puntuales, unas pocas horas dirigidas son suficientes.';
-      plan = bono5.label;
+      plan = 'Bono 5 horas';
       planDesc = bono5.precioHora + '€/hora (' + bono5.descuento + '% dto., ' + bono5.total + '€ total). Ideal para pulir detalles concretos y resolver dudas puntuales a tu ritmo.';
     } else if (intermedioOk || basicoOk) {
       nivel = 'intermedio'; nivelLabel = 'Nivel Intermedio';
       desc = 'Tienes buena base en fórmulas y funciones del día a día, pero aún hay margen en tablas dinámicas, BUSCARV/BUSCARX o funciones lógicas más complejas. Un bloque de horas más amplio te da margen para cerrar esos huecos sin prisa.';
-      plan = bono10.label;
+      plan = 'Bono 10 horas o más';
       planDesc = 'Desde ' + String(bono10.precioHora).replace('.', ',') + '€/hora. Ideal para reforzar varios huecos concretos y ganar soltura de forma completa.';
     } else {
       nivel = 'basico'; nivelLabel = 'Nivel Básico';
       desc = 'Dominas lo esencial, pero hay bastante margen en fórmulas, funciones lógicas y organización de datos. No pasa nada — es el punto de partida más común. Un bloque de horas más amplio te da el margen necesario para construir una base sólida sin agobios.';
-      plan = bono10.label;
+      plan = 'Bono 10 horas o más';
       planDesc = 'Desde ' + String(bono10.precioHora).replace('.', ',') + '€/hora. Ideal para construir una base sólida de forma completa, a tu ritmo.';
     }
 
