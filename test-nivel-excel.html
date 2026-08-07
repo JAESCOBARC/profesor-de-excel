@@ -577,9 +577,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var avanzadoOk = scoreByLevel.avanzado >= totalByLevel.avanzado - 1;
     var intermedioOk = scoreByLevel.intermedio >= totalByLevel.intermedio - 1;
     var basicoOk = scoreByLevel.basico >= totalByLevel.basico - 1;
-    var P = window.PLANES || {};
-    var bono5 = P.bono5 || { precioHora: 18, total: 90, descuento: 10 };
-    var bono10 = P.bono10 || { precioHora: 16.5 };
+    var bono5 = window.PLANES.bono5;
+    var bono10 = window.PLANES.bono10;
 
     if (avanzadoOk && intermedioOk) {
       nivel = 'avanzado'; nivelLabel = 'Nivel Avanzado';
