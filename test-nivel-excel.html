@@ -196,6 +196,21 @@
   .btn-wa:hover { background: #1fb858; transform: translateY(-1px); }
   .btn-wa svg { width: 20px; height: 20px; flex-shrink: 0; }
 
+  .btn-toggle-review { width: 100%; margin-top: 0.75rem; }
+  .review-list { display: none; margin-top: 1.25rem; text-align: left; flex-direction: column; gap: 0.6rem; }
+  .review-list.open { display: flex; }
+  .review-item { border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem 1rem; }
+  .review-item.correct { border-left: 3px solid var(--green-mid); }
+  .review-item.wrong { border-left: 3px solid #b02020; }
+  .review-q { font-size: 0.85rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.4rem; display: flex; align-items: flex-start; gap: 6px; }
+  .review-q .review-icon { flex-shrink: 0; font-size: 0.85rem; }
+  .review-item.correct .review-icon { color: var(--green-mid); }
+  .review-item.wrong .review-icon { color: #b02020; }
+  .review-your-answer { font-size: 0.8rem; color: var(--muted); margin-bottom: 2px; }
+  .review-your-answer strong { color: var(--charcoal); font-weight: 500; }
+  .review-correct-answer { font-size: 0.8rem; color: var(--green-mid); }
+  .review-correct-answer strong { font-weight: 600; }
+
   .article-body { padding: 1rem 5% 3rem; max-width: 740px; margin: 0 auto; }
   .article-body h2 { font-family: 'Fraunces', serif; font-size: clamp(1.4rem, 2.2vw, 1.85rem); font-weight: 300; color: var(--green-deep); margin-top: 2.5rem; margin-bottom: 0.85rem; line-height: 1.25; }
   .article-body h2 em { font-style: italic; color: var(--green-mid); }
@@ -351,6 +366,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
       Hablar con Jhony sobre mi resultado
     </a>
+
+    <button class="btn-ghost btn-toggle-review" id="btnToggleReview" onclick="toggleReview()">Ver mis respuestas, pregunta por pregunta ↓</button>
+    <div class="review-list" id="reviewList"></div>
   </div>
 </div>
 
@@ -584,11 +602,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var waNumber = window.WHATSAPP_NUMBER || '34641682371';
     waBtn.href = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(waMsg);
 
+    renderReview();
+
     document.getElementById('panelQuiz').classList.remove('active');
     document.getElementById('panelResult').classList.add('active');
 
     sendTestLead(nivelLabel, plan);
   }
+
+  function renderReview() {
+    var html = '';
+    QUESTIONS.forEach(function (q, i) {
+      var userIdx = answers[i];
+      var isCorrect = userIdx === q.correct;
+      html += '<div class="review-item ' + (isCorrect ? 'correct' : 'wrong') + '">' +
+        '<div class="review-q"><span class="review-icon">' + (isCorrect ? '✓' : '✕') + '</span><span>' + (i + 1) + '. ' + q.q + '</span></div>' +
+        '<div class="review-your-answer">Tu respuesta: <strong>' + q.opts[userIdx] + '</strong></div>' +
+        (isCorrect ? '' : '<div class="review-correct-answer">Respuesta correcta: <strong>' + q.opts[q.correct] + '</strong></div>') +
+        '</div>';
+    });
+    document.getElementById('reviewList').innerHTML = html;
+  }
+
+  window.toggleReview = function () {
+    var list = document.getElementById('reviewList');
+    var btn = document.getElementById('btnToggleReview');
+    var open = list.classList.toggle('open');
+    btn.textContent = open ? 'Ocultar mis respuestas ↑' : 'Ver mis respuestas, pregunta por pregunta ↓';
+  };
 
   function sendTestLead(nivelLabel, plan) {
     try {
