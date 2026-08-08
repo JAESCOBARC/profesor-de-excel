@@ -742,23 +742,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .precio-pill--popular .precio-cta:hover { background: var(--green-pale); }
 
   .quien-soy { background: white; }
-  .timeline { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0; max-width: 780px; }
-  .timeline-item { display: grid; grid-template-columns: 150px 1fr; gap: 2rem; position: relative; padding-bottom: 2.5rem; }
+  .timeline { margin-top: 2.5rem; columns: 2; column-gap: 3rem; max-width: 980px; }
+  .timeline-item { break-inside: avoid; display: flex; gap: 1rem; position: relative; padding-bottom: 2.25rem; }
   .timeline-item:last-child { padding-bottom: 0; }
-  .timeline-item::before { content: ''; position: absolute; left: 150px; top: 8px; width: 1px; height: calc(100% - 8px); background: var(--border); }
-  .timeline-item:last-child::before { display: none; }
-  .timeline-date { font-size: 0.82rem; color: var(--muted); padding-top: 4px; text-align: right; line-height: 1.4; }
-  .timeline-content { padding-left: 2rem; position: relative; }
-  .timeline-content::before { content: ''; position: absolute; left: calc(2rem - 22px); top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--green-mid); border: 2px solid white; box-shadow: 0 0 0 2px var(--green-pale); }
-  .timeline-role { font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-soft); margin-bottom: 4px; }
-  .timeline-content h3 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; }
-  .timeline-content p { font-size: 0.9rem; color: var(--slate); line-height: 1.7; }
+  .timeline-icon {
+    width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+    background: var(--green-mist); border: 2px solid var(--green-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; position: relative; z-index: 1;
+  }
+  .timeline-item:not(:last-child) .timeline-icon::after {
+    content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+    width: 1px; height: 2.1rem; background: var(--border);
+  }
+  .timeline-content { flex: 1; padding-top: 2px; }
+  .timeline-date { font-size: 0.74rem; color: var(--muted); margin-bottom: 2px; }
+  .timeline-role { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green-soft); margin-bottom: 3px; }
+  .timeline-content h3 { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+  .timeline-content p { font-size: 0.87rem; color: var(--slate); line-height: 1.6; }
+  .timeline-more { display: inline; }
   @media (max-width: 768px) {
-    .timeline-item { grid-template-columns: 1fr; gap: 0.25rem; }
-    .timeline-item::before { display: none; }
-    .timeline-date { text-align: left; }
-    .timeline-content { padding-left: 0; }
-    .timeline-content::before { display: none; }
+    .timeline { columns: 1; margin-top: 2rem; }
+    .timeline-item { padding-bottom: 1.5rem; gap: 0.85rem; }
+    .timeline-icon { width: 36px; height: 36px; font-size: 1.05rem; }
+    .timeline-item:not(:last-child) .timeline-icon::after { height: 1.4rem; }
+    .timeline-content p { font-size: 0.85rem; }
+    .timeline-more { display: none; }
   }
 
   .animate-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
@@ -1190,43 +1199,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </p>
   <div class="timeline">
     <div class="timeline-item">
-      <div class="timeline-date">2021 – hoy<br><span style="color:var(--green-mid); font-weight:500;">Activo</span></div>
+      <div class="timeline-icon">🎓</div>
       <div class="timeline-content">
+        <div class="timeline-date">2021 – hoy · Activo</div>
         <div class="timeline-role">Fundador y Profesor</div>
-        <h3>Excel para Todos · Clases particulares online</h3>
-        <p>Fundé Excel para Todos para ayudar a profesionales y empresas a dominar Excel desde cero hasta nivel avanzado. Más de 200 alumnos formados en fórmulas, VBA, Power Query y dashboards. He desarrollado más de 200 plantillas y aplicaciones en AppSheet para automatizar procesos en PYMEs.</p>
+        <h3>Excel para Todos</h3>
+        <p>+200 alumnos formados en fórmulas, VBA, Power Query y dashboards.<span class="timeline-more"> He desarrollado más de 200 plantillas y aplicaciones en AppSheet para automatizar procesos en PYMEs.</span></p>
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">2018 – hoy<br><span style="color:var(--green-mid); font-weight:500;">Vigente</span></div>
+      <div class="timeline-icon">🛒</div>
       <div class="timeline-content">
+        <div class="timeline-date">2018 – hoy · Vigente</div>
         <div class="timeline-role">Ecommerce Manager Junior</div>
-        <h3>Perfumerías Coqueteo · Granada, España</h3>
-        <p>Estrategia integral de e-commerce desde cero: más de 1 millón de euros de facturación anual y ROAS de 9x. Aplicación diaria de análisis RFM, Pareto y ABC con Excel y herramientas de Business Intelligence para optimizar ventas, pricing e inversión publicitaria.</p>
+        <h3>Perfumerías Coqueteo · Granada</h3>
+        <p>+1M€ de facturación anual y ROAS de 9x en e-commerce.<span class="timeline-more"> Análisis diario RFM, Pareto y ABC con Excel y BI para optimizar ventas y pricing.</span></p>
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">2016 – 2017</div>
+      <div class="timeline-icon">💰</div>
       <div class="timeline-content">
+        <div class="timeline-date">2016 – 2017</div>
         <div class="timeline-role">Analista de Costos y Presupuestos</div>
-        <h3>Audifarma S.A · Pereira, Colombia</h3>
-        <p>Análisis de costos y gestión presupuestaria en el sector farmacéutico. Trabajo intensivo con Excel para reporting financiero y control de desviaciones.</p>
+        <h3>Audifarma S.A · Colombia</h3>
+        <p>Gestión presupuestaria y reporting financiero en el sector farmacéutico.<span class="timeline-more"> Trabajo intensivo con Excel para control de desviaciones.</span></p>
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">2011 – 2016</div>
+      <div class="timeline-icon">📊</div>
       <div class="timeline-content">
+        <div class="timeline-date">2011 – 2016</div>
         <div class="timeline-role">Auxiliar de Información Comercial</div>
-        <h3>Grupo Nutresa (Zenú) · Pereira, Colombia</h3>
-        <p>Reporting de ventas y apoyo a la toma de decisiones comerciales. Primeros años consolidando el análisis de datos como herramienta de trabajo diario.</p>
+        <h3>Grupo Nutresa (Zenú) · Colombia</h3>
+        <p>Reporting de ventas y apoyo a decisiones comerciales.<span class="timeline-more"> Primeros años consolidando el análisis de datos como herramienta diaria.</span></p>
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">2007 – 2011</div>
+      <div class="timeline-icon">⚙️</div>
       <div class="timeline-content">
+        <div class="timeline-date">2007 – 2011</div>
         <div class="timeline-role">Analista de Métodos y Tiempos</div>
-        <h3>Ayco Ltda · Pereira, Colombia</h3>
-        <p>Planeación e implementación del ERP de producción e inventarios. Aquí arrancó todo: la pasión por optimizar procesos con datos y herramientas analíticas.</p>
+        <h3>Ayco Ltda · Colombia</h3>
+        <p>Planeación del ERP de producción e inventarios.<span class="timeline-more"> Aquí arrancó todo: la pasión por optimizar procesos con datos.</span></p>
       </div>
     </div>
   </div>
