@@ -741,6 +741,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .precio-pill--popular .precio-cta { background: white; color: var(--green-deep); }
   .precio-pill--popular .precio-cta:hover { background: var(--green-pale); }
 
+  .quien-soy { background: white; }
+  .timeline { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0; max-width: 780px; }
+  .timeline-item { display: grid; grid-template-columns: 150px 1fr; gap: 2rem; position: relative; padding-bottom: 2.5rem; }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item::before { content: ''; position: absolute; left: 150px; top: 8px; width: 1px; height: calc(100% - 8px); background: var(--border); }
+  .timeline-item:last-child::before { display: none; }
+  .timeline-date { font-size: 0.82rem; color: var(--muted); padding-top: 4px; text-align: right; line-height: 1.4; }
+  .timeline-content { padding-left: 2rem; position: relative; }
+  .timeline-content::before { content: ''; position: absolute; left: calc(2rem - 22px); top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--green-mid); border: 2px solid white; box-shadow: 0 0 0 2px var(--green-pale); }
+  .timeline-role { font-size: 0.78rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-soft); margin-bottom: 4px; }
+  .timeline-content h3 { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.5rem; }
+  .timeline-content p { font-size: 0.9rem; color: var(--slate); line-height: 1.7; }
+  @media (max-width: 768px) {
+    .timeline-item { grid-template-columns: 1fr; gap: 0.25rem; }
+    .timeline-item::before { display: none; }
+    .timeline-date { text-align: left; }
+    .timeline-content { padding-left: 0; }
+    .timeline-content::before { display: none; }
+  }
+
   .animate-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
   @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 </style>
@@ -1160,6 +1180,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+</section>
+
+<section class="quien-soy" id="quien-soy">
+  <div class="section-tag">Sobre tu profesor particular</div>
+  <h2>¿Quién es tu <em>profesor de Excel</em>?</h2>
+  <p class="section-lead">
+    Soy profesor particular de Excel online con más de 15 años de experiencia real en empresa — marketing digital, finanzas y e-commerce. Analista de datos certificado por Microsoft que imparte clases particulares de Excel avanzado adaptadas a tus archivos y objetivos reales, no a ejercicios de manual.
+  </p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2021 – hoy<br><span style="color:var(--green-mid); font-weight:500;">Activo</span></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Fundador y Profesor</div>
+        <h3>Excel para Todos · Clases particulares online</h3>
+        <p>Fundé Excel para Todos para ayudar a profesionales y empresas a dominar Excel desde cero hasta nivel avanzado. Más de 200 alumnos formados en fórmulas, VBA, Power Query y dashboards. He desarrollado más de 200 plantillas y aplicaciones en AppSheet para automatizar procesos en PYMEs.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2018 – hoy<br><span style="color:var(--green-mid); font-weight:500;">Vigente</span></div>
+      <div class="timeline-content">
+        <div class="timeline-role">Ecommerce Manager Junior</div>
+        <h3>Perfumerías Coqueteo · Granada, España</h3>
+        <p>Estrategia integral de e-commerce desde cero: más de 1 millón de euros de facturación anual y ROAS de 9x. Aplicación diaria de análisis RFM, Pareto y ABC con Excel y herramientas de Business Intelligence para optimizar ventas, pricing e inversión publicitaria.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2016 – 2017</div>
+      <div class="timeline-content">
+        <div class="timeline-role">Analista de Costos y Presupuestos</div>
+        <h3>Audifarma S.A · Pereira, Colombia</h3>
+        <p>Análisis de costos y gestión presupuestaria en el sector farmacéutico. Trabajo intensivo con Excel para reporting financiero y control de desviaciones.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2011 – 2016</div>
+      <div class="timeline-content">
+        <div class="timeline-role">Auxiliar de Información Comercial</div>
+        <h3>Grupo Nutresa (Zenú) · Pereira, Colombia</h3>
+        <p>Reporting de ventas y apoyo a la toma de decisiones comerciales. Primeros años consolidando el análisis de datos como herramienta de trabajo diario.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2007 – 2011</div>
+      <div class="timeline-content">
+        <div class="timeline-role">Analista de Métodos y Tiempos</div>
+        <h3>Ayco Ltda · Pereira, Colombia</h3>
+        <p>Planeación e implementación del ERP de producción e inventarios. Aquí arrancó todo: la pasión por optimizar procesos con datos y herramientas analíticas.</p>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:2rem;"><a href="https://www.trabajoenexcel.com/jhony-profesor-excel-online.html" class="btn-ghost">Conoce mi historia completa</a></p>
 </section>
 
 <section class="faq-testi" id="faq">
