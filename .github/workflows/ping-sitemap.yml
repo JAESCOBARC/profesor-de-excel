@@ -1,0 +1,20 @@
+name: Ping sitemap a buscadores
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # todos los días a las 06:00 UTC
+  workflow_dispatch: {}   # permite lanzarlo manualmente desde GitHub
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Bing (sitemap ping clásico)
+        run: |
+          curl -sS -o /dev/null -w "Bing ping: %{http_code}\n" \
+            "https://www.bing.com/ping?sitemap=https://www.trabajoenexcel.com/sitemap.xml"
+
+      - name: Aviso a IndexNow (Bing, Yandex, Seznam)
+        run: |
+          curl -sS -o /dev/null -w "IndexNow ping: %{http_code}\n" \
+            "https://www.bing.com/indexnow?url=https://www.trabajoenexcel.com/sitemap.xml&key=a64d1f7d8b1bf3c9feaaa4505087c349"
