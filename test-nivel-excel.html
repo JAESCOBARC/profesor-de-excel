@@ -315,9 +315,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="quiz-card" id="quizCard">
 
-  <!-- Paso 0: datos -->
-  <div class="quiz-panel active" id="panelIntro">
-    <div class="quiz-step-label">Antes de empezar</div>
+  <!-- Preguntas -->
+  <div class="quiz-panel active" id="panelQuiz">
+    <div class="quiz-progress"><div class="quiz-progress-bar" id="progressBar"></div></div>
+    <div class="quiz-step-label" id="stepLabel">Pregunta 1 de 12</div>
+    <div class="q-title" id="qTitle"></div>
+    <div class="q-options" id="qOptions"></div>
+    <div class="quiz-nav">
+      <button class="btn-ghost" id="btnBack" onclick="prevQuestion()">← Anterior</button>
+      <button class="btn-primary" id="btnNext" onclick="nextQuestion()" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- Paso final: datos, para desbloquear el resultado -->
+  <div class="quiz-panel" id="panelIntro">
+    <div class="quiz-step-label">Último paso: ¿dónde te enviamos el resultado?</div>
     <div class="field" id="fieldNombre">
       <label for="fNombre">Nombre *</label>
       <input type="text" id="fNombre" placeholder="Tu nombre" autocomplete="name" required>
@@ -338,20 +350,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </select>
       <div class="field-error-msg">Selecciona tu país para continuar.</div>
     </div>
-    <button class="btn-primary btn-primary-full" onclick="startQuiz()">Empezar test →</button>
+    <button class="btn-primary btn-primary-full" onclick="startQuiz()">Ver mi resultado →</button>
     <p class="consent-note">Al continuar, autorizas el tratamiento de tus datos para gestionar tu resultado y que podamos contactarte. No compartimos tus datos con terceros.</p>
-  </div>
-
-  <!-- Preguntas -->
-  <div class="quiz-panel" id="panelQuiz">
-    <div class="quiz-progress"><div class="quiz-progress-bar" id="progressBar"></div></div>
-    <div class="quiz-step-label" id="stepLabel">Pregunta 1 de 12</div>
-    <div class="q-title" id="qTitle"></div>
-    <div class="q-options" id="qOptions"></div>
-    <div class="quiz-nav">
-      <button class="btn-ghost" id="btnBack" onclick="prevQuestion()">← Anterior</button>
-      <button class="btn-primary" id="btnNext" onclick="nextQuestion()" disabled>Siguiente →</button>
-    </div>
   </div>
 
   <!-- Resultado -->
@@ -511,9 +511,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     userData = { nombre: nombre, email: email, pais: pais };
-    document.getElementById('panelIntro').classList.remove('active');
-    document.getElementById('panelQuiz').classList.add('active');
-    renderQuestion();
+    showResult();
   };
 
   ['fNombre', 'fEmail', 'fPais'].forEach(function (id) {
@@ -564,9 +562,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       renderQuestion();
     } else {
       document.getElementById('progressBar').style.width = '100%';
-      showResult();
+      document.getElementById('panelQuiz').classList.remove('active');
+      document.getElementById('panelIntro').classList.add('active');
+      document.getElementById('fNombre').focus();
     }
   };
+
+  renderQuestion();
 
   function showResult() {
     var scoreByLevel = { basico: 0, intermedio: 0, avanzado: 0 };
