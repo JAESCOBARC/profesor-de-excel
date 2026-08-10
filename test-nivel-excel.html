@@ -140,6 +140,14 @@
   .quiz-progress { height: 6px; background: var(--green-pale); border-radius: 100px; margin-bottom: 1.75rem; overflow: hidden; }
   .quiz-progress-bar { height: 100%; background: var(--green-mid); border-radius: 100px; width: 0%; transition: width 0.3s ease; }
   .quiz-step-label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-mid); margin-bottom: 0.6rem; }
+  .completed-badge {
+    width: 56px; height: 56px; border-radius: 16px; background: var(--green-mist);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.25rem; color: var(--green-mid);
+  }
+  .completed-badge svg { width: 30px; height: 30px; }
+  .completed-title { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; color: var(--green-deep); text-align: center; margin-bottom: 0.6rem; }
+  .completed-sub { font-size: 0.92rem; color: var(--slate); text-align: center; line-height: 1.6; margin-bottom: 1.75rem; }
 
   .field { margin-bottom: 1.1rem; text-align: left; }
   .field label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--charcoal); margin-bottom: 0.4rem; }
@@ -329,7 +337,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Paso final: datos, para desbloquear el resultado -->
   <div class="quiz-panel" id="panelIntro">
-    <div class="quiz-step-label">Último paso: ¿dónde te enviamos el resultado?</div>
+    <div class="completed-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    </div>
+    <h2 class="completed-title">¡Test completado!</h2>
+    <p class="completed-sub">Ya tenemos tu resultado listo. Solo falta saber a quién se lo mostramos.</p>
     <div class="field" id="fieldNombre">
       <label for="fNombre">Nombre *</label>
       <input type="text" id="fNombre" placeholder="Tu nombre" autocomplete="name" required>
