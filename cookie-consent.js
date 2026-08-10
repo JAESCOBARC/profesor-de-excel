@@ -62,7 +62,7 @@
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Aviso de cookies');
     banner.innerHTML =
-      '<p>Usamos cookies propias y de Google Ads para mostrarte publicidad relevante.</p>' +
+      '<p>Usamos cookies propias y de Google Ads para mostrarte publicidad relevante. <a href="/politica-privacidad.html" style="color:inherit;text-decoration:underline;">Más información</a>.</p>' +
       '<div class="ck-actions">' +
         '<button id="ck-essential">Solo esenciales</button>' +
         '<button id="ck-accept">Aceptar todo</button>' +
