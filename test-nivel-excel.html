@@ -602,13 +602,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
 
     var nivel, nivelLabel, desc, plan, planDesc;
-    var avanzadoOk = scoreByLevel.avanzado >= totalByLevel.avanzado - 1;
+    var totalCorrect = scoreByLevel.basico + scoreByLevel.intermedio + scoreByLevel.avanzado;
+    var totalFallos = QUESTIONS.length - totalCorrect;
+    var avanzadoOk = totalFallos <= 1; // nivel avanzado: como máximo 1 fallo en todo el test
     var intermedioOk = scoreByLevel.intermedio >= totalByLevel.intermedio - 1;
     var basicoOk = scoreByLevel.basico >= totalByLevel.basico - 1;
     var bono5 = window.PLANES.bono5;
     var bono10 = window.PLANES.bono10;
 
-    if (avanzadoOk && intermedioOk) {
+    if (avanzadoOk) {
       nivel = 'avanzado'; nivelLabel = 'Nivel Avanzado';
       desc = 'Dominas fórmulas lógicas, tablas dinámicas y tienes buena base en herramientas avanzadas como Power Query o macros. Para pulir detalles concretos y resolver dudas puntuales, unas pocas horas dirigidas son suficientes.';
       plan = 'Bono 5 horas';
