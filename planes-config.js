@@ -6,7 +6,8 @@
   };
 
   function fmtPrecio(n) {
-    return String(n).replace('.', ',');
+    var str = Number.isInteger(n) ? String(n) : n.toFixed(2);
+    return str.replace('.', ',');
   }
 
   function render() {
