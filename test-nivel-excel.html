@@ -596,19 +596,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (hfInstance !== null) return hfInstance;
     if (typeof HyperFormula === 'undefined') { hfInstance = false; return false; }
     try {
-      if (HyperFormula.languages && HyperFormula.languages.esES &&
-          HyperFormula.getRegisteredLanguagesCodes().indexOf('esES') === -1) {
-        HyperFormula.registerLanguage('esES', HyperFormula.languages.esES);
-      }
-      hfInstance = HyperFormula.buildEmpty({ licenseKey: 'gpl-v3', language: 'esES' });
+      hfInstance = HyperFormula.buildEmpty({ licenseKey: 'gpl-v3' });
     } catch (e) {
-      try {
-        hfInstance = HyperFormula.buildEmpty({ licenseKey: 'gpl-v3' });
-      } catch (e2) {
-        hfInstance = false;
-      }
+      hfInstance = false;
     }
     return hfInstance;
+  }
+
+  // El motor solo reconoce nombres de función en inglés y "," como separador
+  // de argumentos. Las preguntas están escritas en Excel en español (SUMA,
+  // SI, BUSCARV, SUMAPRODUCTO, separador ";"), así que traducimos antes de
+  // evaluar, sin depender de un paquete de idioma esES no verificable aquí.
+  var FN_MAP_ES_EN = [
+    ['SUMAPRODUCTO', 'SUMPRODUCT'],
+    ['BUSCARV', 'VLOOKUP'],
+    ['SUMA', 'SUM'],
+    ['SI', 'IF']
+  ];
+
+  function translateFormulaToEngine(text) {
+    var out = '';
+    var inQuotes = false;
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      if (ch === '"') inQuotes = !inQuotes;
+      out += (ch === ';' && !inQuotes) ? ',' : ch;
+    }
+    FN_MAP_ES_EN.forEach(function (pair) {
+      var re = new RegExp('\\b' + pair[0] + '\\s*\\(', 'gi');
+      out = out.replace(re, pair[1] + '(');
+    });
+    return out;
   }
 
   function checkFormulaAnswer(q, formulaText) {
@@ -623,13 +641,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         grid[p.row][p.col] = q.sheetData[ref];
       });
       var ansPos = parseCell(q.answerCell);
-      grid[ansPos.row][ansPos.col] = formulaText;
+      grid[ansPos.row][ansPos.col] = translateFormulaToEngine(formulaText);
 
       var sheetName = 'S' + Date.now() + '_' + Math.floor(Math.random() * 1e6);
       var sheetId = hf.addSheet(sheetName);
       hf.setSheetContent(sheetId, grid);
       var value = hf.getCellValue({ sheet: sheetId, col: ansPos.col, row: ansPos.row });
       hf.removeSheet(sheetId);
+      if (value && typeof value === 'object' && value.type) return { supported: true, error: true };
       return { supported: true, value: value };
     } catch (e) {
       return { supported: true, error: true };
