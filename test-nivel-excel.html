@@ -643,14 +643,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var ansPos = parseCell(q.answerCell);
       grid[ansPos.row][ansPos.col] = translateFormulaToEngine(formulaText);
 
-      var sheetName = 'S' + Date.now() + '_' + Math.floor(Math.random() * 1e6);
-      var sheetId = hf.addSheet(sheetName);
+      var sheetName = hf.addSheet('S' + Date.now() + '_' + Math.floor(Math.random() * 1e6));
+      var sheetId = hf.getSheetId(sheetName);
       hf.setSheetContent(sheetId, grid);
       var value = hf.getCellValue({ sheet: sheetId, col: ansPos.col, row: ansPos.row });
       hf.removeSheet(sheetId);
-      if (value && typeof value === 'object' && value.type) return { supported: true, error: true };
+      if (value && typeof value === 'object' && value.type) {
+        if (window.console) console.warn('Fórmula devolvió error de motor:', value, 'para', formulaText);
+        return { supported: true, error: true };
+      }
       return { supported: true, value: value };
     } catch (e) {
+      if (window.console) console.warn('Excepción al evaluar fórmula:', e, 'para', formulaText);
       return { supported: true, error: true };
     }
   }
