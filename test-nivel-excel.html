@@ -681,7 +681,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.getElementById('qOptions').innerHTML = html;
 
     var input = document.getElementById('formulaInput');
-    input.value = userFormulas[current] || '';
+    input.value = userFormulas[current] || '=';
     if (lastResults[current] !== undefined) renderFormulaFeedback(lastResults[current]);
 
     input.addEventListener('input', function (e) { userFormulas[current] = e.target.value; });
@@ -691,7 +691,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     document.getElementById('btnCheckFormula').addEventListener('click', function () {
       var formulaText = input.value.trim();
-      if (!formulaText) return;
+      if (formulaText && formulaText.charAt(0) !== '=') formulaText = '=' + formulaText;
+      if (!formulaText || formulaText === '=') return;
+      input.value = formulaText;
       userFormulas[current] = formulaText;
       var result = checkFormulaAnswer(q, formulaText);
       var isOk;
