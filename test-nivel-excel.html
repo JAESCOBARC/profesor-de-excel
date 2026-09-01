@@ -629,7 +629,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var re = new RegExp('\\b' + pair[0] + '\\b', 'gi');
       out = out.replace(re, pair[1]);
     });
-    return out;
+    // Mayúsculas para que las referencias de celda (a1, d1...) también se
+    // reconozcan si el usuario escribe la fórmula en minúsculas. No afecta
+    // a la comparación de texto porque compareResult ya ignora mayúsculas.
+    return out.toUpperCase();
   }
 
   function checkFormulaAnswer(q, formulaText) {
