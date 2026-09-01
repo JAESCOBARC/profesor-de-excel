@@ -608,6 +608,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ['SI', 'IF']
   ];
 
+  var LITERAL_MAP_ES_EN = [
+    ['VERDADERO', 'TRUE'],
+    ['FALSO', 'FALSE']
+  ];
+
   function translateFormulaToEngine(text) {
     var out = '';
     var inQuotes = false;
@@ -619,6 +624,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     FN_MAP_ES_EN.forEach(function (pair) {
       var re = new RegExp('\\b' + pair[0] + '\\s*\\(', 'gi');
       out = out.replace(re, pair[1] + '(');
+    });
+    LITERAL_MAP_ES_EN.forEach(function (pair) {
+      var re = new RegExp('\\b' + pair[0] + '\\b', 'gi');
+      out = out.replace(re, pair[1]);
     });
     return out;
   }
