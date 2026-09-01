@@ -311,11 +311,6 @@
   }
   .sheet-cell--answer input:focus { outline: none; box-shadow: 0 0 0 2px var(--green-pale); }
   .sheet-header-cell { background: #eef1ef; color: var(--muted); font-weight: 600; font-size: 0.75rem; }
-  .formula-feedback { font-size: 0.85rem; padding: 0.6rem 0.85rem; border-radius: 8px; margin-bottom: 1rem; display: none; }
-  .formula-feedback.show { display: block; }
-  .formula-feedback.correct { background: var(--green-mist); color: var(--green-mid); }
-  .formula-feedback.wrong { background: #fbeaea; color: #b02020; }
-  .formula-feedback.unknown { background: var(--green-mist); color: var(--slate); }
 </style>
 <script src="/cookie-consent.js"></script>
 <!-- Google Tag Manager -->
@@ -566,7 +561,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   function hasAnswered(i) {
     var q = QUESTIONS[i];
-    if (q.type === 'formula') return lastResults[i] !== undefined;
+    if (q.type === 'formula') {
+      var f = (userFormulas[i] || '').trim();
+      return f !== '' && f !== '=';
+    }
     return answers[i] !== null;
   }
 
@@ -663,19 +661,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     return String(value == null ? '' : value).trim().toLowerCase() === String(expected).trim().toLowerCase();
   }
 
-  function renderFormulaFeedback(isOk) {
-    var el = document.getElementById('formulaFeedback');
-    if (!el) return;
-    if (isOk === null) {
-      el.className = 'formula-feedback show unknown';
-      el.textContent = 'No hemos podido verificar tu fórmula automáticamente ahora mismo, pero tu respuesta ha quedado guardada.';
-    } else if (isOk) {
-      el.className = 'formula-feedback show correct';
-      el.textContent = '✓ ¡Correcto! El resultado es el esperado.';
-    } else {
-      el.className = 'formula-feedback show wrong';
-      el.textContent = '✕ El resultado no coincide. Puedes intentarlo de nuevo o continuar.';
-    }
+  function evaluateFormulaAnswers() {
+    QUESTIONS.forEach(function (q, i) {
+      if (q.type !== 'formula') return;
+      var formulaText = (userFormulas[i] || '').trim();
+      if (formulaText && formulaText.charAt(0) !== '=') formulaText = '=' + formulaText;
+      userFormulas[i] = formulaText;
+      if (!formulaText || formulaText === '=') { lastResults[i] = false; return; }
+      var result = checkFormulaAnswer(q, formulaText);
+      if (!result.supported) lastResults[i] = null;
+      else if (result.error) lastResults[i] = false;
+      else lastResults[i] = compareResult(result.value, q.expectedResult);
+    });
   }
 
   function renderFormulaQuestion(q) {
@@ -699,33 +696,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     }
     html += '</div></div>';
-    html += '<button class="btn-ghost" id="btnCheckFormula" type="button" style="margin-bottom:0.75rem;">Comprobar fórmula</button>';
-    html += '<div class="formula-feedback" id="formulaFeedback"></div>';
     document.getElementById('qOptions').innerHTML = html;
 
     var input = document.getElementById('formulaInput');
     input.value = userFormulas[current] || '=';
-    if (lastResults[current] !== undefined) renderFormulaFeedback(lastResults[current]);
 
-    input.addEventListener('input', function (e) { userFormulas[current] = e.target.value; });
-    input.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); document.getElementById('btnCheckFormula').click(); }
+    input.addEventListener('input', function (e) {
+      userFormulas[current] = e.target.value;
+      document.getElementById('btnNext').disabled = !hasAnswered(current);
     });
-
-    document.getElementById('btnCheckFormula').addEventListener('click', function () {
-      var formulaText = input.value.trim();
-      if (formulaText && formulaText.charAt(0) !== '=') formulaText = '=' + formulaText;
-      if (!formulaText || formulaText === '=') return;
-      input.value = formulaText;
-      userFormulas[current] = formulaText;
-      var result = checkFormulaAnswer(q, formulaText);
-      var isOk;
-      if (!result.supported) isOk = null;
-      else if (result.error) isOk = false;
-      else isOk = compareResult(result.value, q.expectedResult);
-      lastResults[current] = isOk;
-      renderFormulaFeedback(isOk);
-      document.getElementById('btnNext').disabled = false;
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && hasAnswered(current)) {
+        e.preventDefault();
+        document.getElementById('btnNext').click();
+      }
     });
   }
 
@@ -822,6 +806,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   renderQuestion();
 
   function showResult() {
+    evaluateFormulaAnswers();
     var scoreByLevel = { basico: 0, intermedio: 0, avanzado: 0 };
     var totalByLevel = { basico: 0, intermedio: 0, avanzado: 0 };
     QUESTIONS.forEach(function (q, i) {
