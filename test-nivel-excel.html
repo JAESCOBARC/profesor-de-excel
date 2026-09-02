@@ -860,8 +860,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var totalCorrect = scoreByLevel.basico + scoreByLevel.intermedio + scoreByLevel.avanzado;
     var totalFallos = QUESTIONS.length - totalCorrect;
     var avanzadoOk = totalFallos <= 1; // nivel avanzado: como máximo 1 fallo en todo el test
-    var intermedioOk = scoreByLevel.intermedio >= totalByLevel.intermedio - 1;
-    var basicoOk = scoreByLevel.basico >= totalByLevel.basico - 1;
+    var basicoPerfecto = scoreByLevel.basico === totalByLevel.basico; // las 3 de básico resueltas
+    var fallosAvanzado = totalByLevel.avanzado - scoreByLevel.avanzado;
+    var intermedioOk = basicoPerfecto && fallosAvanzado <= 1; // básico perfecto y máximo 1 fallo en avanzado
     var bono5 = window.PLANES.bono5;
     var bono10 = window.PLANES.bono10;
 
@@ -870,7 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       desc = 'Dominas fórmulas lógicas, tablas dinámicas y tienes buena base en herramientas avanzadas como Power Query o macros. Para pulir detalles concretos y resolver dudas puntuales, unas pocas horas dirigidas son suficientes.';
       plan = 'Bono 5 horas';
       planDesc = bono5.precioHora + '€/hora (' + bono5.descuento + '% dto., ' + bono5.total + '€ total). Ideal para pulir detalles concretos y resolver dudas puntuales a tu ritmo.';
-    } else if (intermedioOk || basicoOk) {
+    } else if (intermedioOk) {
       nivel = 'intermedio'; nivelLabel = 'Nivel Intermedio';
       desc = 'Tienes buena base en fórmulas y funciones del día a día, pero aún hay margen en tablas dinámicas, BUSCARV/BUSCARX o funciones lógicas más complejas. Un bloque de horas más amplio te da margen para cerrar esos huecos sin prisa.';
       plan = 'Bono 10 horas o más';
