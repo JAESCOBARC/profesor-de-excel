@@ -311,6 +311,8 @@
   }
   .sheet-cell--answer input:focus { outline: none; box-shadow: 0 0 0 2px var(--green-pale); }
   .sheet-header-cell { background: #eef1ef; color: var(--muted); font-weight: 600; font-size: 0.75rem; }
+  .q-preview:empty { display: none; }
+  .q-preview { margin-bottom: 1rem; }
 </style>
 <script src="/cookie-consent.js"></script>
 <!-- Google Tag Manager -->
@@ -358,6 +360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="quiz-progress"><div class="quiz-progress-bar" id="progressBar"></div></div>
     <div class="quiz-step-label" id="stepLabel">Pregunta 1 de 12</div>
     <div class="q-title" id="qTitle"></div>
+    <div class="q-preview" id="qPreview"></div>
     <div class="q-options" id="qOptions"></div>
     <div class="quiz-nav">
       <button class="btn-ghost" id="btnBack" onclick="prevQuestion()">← Anterior</button>
@@ -523,20 +526,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var QUESTIONS = [
     { level: 'basico', type: 'formula', q: 'Escribe en la celda resaltada una fórmula que sume el rango A1:A5.',
       sheetData: { A1: 10, A2: 20, A3: 15, A4: 25, A5: 30 }, answerCell: 'A6', expectedResult: 100 },
-    { level: 'basico', q: '¿Qué diferencia hay entre A1 y $A$1 en una fórmula?', opts: ['Ninguna', 'A1 es relativa y $A$1 es absoluta (no cambia al copiar)', '$A$1 solo sirve para texto', 'No lo sé'], correct: 1 },
+    { level: 'basico', q: '¿Qué diferencia hay entre A$2 y $A2 en una fórmula?', opts: ['A$2 fija la columna y $A2 fija la fila', 'A$2 fija la fila y $A2 fija la columna', 'Ambas fijan fila y columna a la vez', 'No hay ninguna diferencia entre las dos'], correct: 1 },
     { level: 'basico', type: 'formula', q: 'En A1 tienes la nota de un alumno (72). Escribe una fórmula en la celda resaltada que devuelva "Aprobado" si la nota es mayor o igual a 60, y "Suspenso" si no.',
       sheetData: { A1: 72 }, answerCell: 'A2', expectedResult: 'Aprobado' },
     { level: 'avanzado', q: 'Necesitas que la lista desplegable de B2 (Validación de datos) solo muestre productos de la categoría elegida en A2. ¿Cómo lo haces?', opts: ['Con Formato condicional en B2', 'Con INDIRECTO en el origen de la lista, apuntando a rangos con nombre según el valor de A2', 'Escribiendo un BUSCARV directamente como origen de la lista', 'No lo sé'], correct: 1 },
     { level: 'intermedio', type: 'formula', q: 'Tienes una tabla de productos y precios. Escribe en la celda resaltada una fórmula que busque el precio de "Pera" (celda D1) en la tabla A1:B3.',
       sheetData: { A1: 'Manzana', B1: 0.5, A2: 'Pera', B2: 0.9, A3: 'Uva', B3: 2.1, D1: 'Pera' }, answerCell: 'D2', expectedResult: 0.9 },
     { level: 'intermedio', q: 'Si te dan una tabla de 5.000 filas de ventas y te piden resumirla por producto y mes, ¿qué usarías?', opts: ['Copiar y pegar manualmente', 'Una tabla dinámica', 'Una macro compleja', 'No sabría cómo empezar'], correct: 1 },
-    { level: 'intermedio', q: '¿Qué hace el formato condicional?', opts: ['Protege la celda con contraseña', 'Cambia el aspecto de una celda según se cumpla una condición', 'Convierte texto en número', 'No lo sé'], correct: 1 },
-    { level: 'intermedio', q: 'Tienes SI(Y(A1>10;B1<5);"OK";"Revisar") — ¿qué evalúa?', opts: ['Solo la condición de A1', 'Que se cumplan A1>10 Y B1<5 a la vez', 'Que se cumpla cualquiera de las dos', 'No lo sé'], correct: 1 },
+    { level: 'intermedio', q: '¿Qué opción tengo para identificar registros duplicados en una columna?', opts: ['Quitar duplicados', 'Formato condicional', 'Filtros avanzados', 'Función HALLAR'], correct: 1 },
+    { level: 'intermedio', q: 'Si A1 = 15 y B1 = 15, ¿qué resultado devuelve la fórmula SI(Y(A1>10;B1<>15);"OK";"Revisar")?', opts: ['OK', 'Revisar', '15', '#VALOR!'], correct: 1 },
     { level: 'avanzado', type: 'formula', q: 'Escribe en la celda resaltada una fórmula que sume las ventas (columna B) solo de las filas donde la región (columna A) es "Norte" y la venta supera 1000.',
       sheetData: { A1: 'Norte', B1: 1200, A2: 'Sur', B2: 900, A3: 'Norte', B3: 800 }, answerCell: 'D1', expectedResult: 1200 },
-    { level: 'avanzado', q: 'Te piden automatizar un informe mensual que repites a mano cada mes. ¿Qué opción tiene más sentido?', opts: ['Seguir haciéndolo a mano, es más seguro', 'Grabar una macro o usar Power Query para automatizarlo', 'Hacerlo en otro programa', 'No sabría por dónde empezar'], correct: 1 },
-    { level: 'avanzado', q: '¿Por qué usarías ÍNDICE+COINCIDIR en vez de BUSCARV en una tabla grande y dinámica?', opts: ['No hay diferencia real entre ambas', 'ÍNDICE+COINCIDIR puede buscar hacia la izquierda y no se rompe si insertas o mueves columnas, BUSCARV sí', 'BUSCARV siempre es más preciso', 'No lo sé'], correct: 1 },
-    { level: 'avanzado', q: 'Si una fórmula BUSCARV te da el error #N/A en cientos de filas, ¿qué harías primero?', opts: ['Borrar la columna', 'Revisar si el valor buscado existe exactamente igual en la tabla de referencia', 'Reiniciar Excel', 'No sabría diagnosticarlo'], correct: 1 }
+    { level: 'avanzado', q: 'Te piden automatizar un informe mensual que repites a mano cada mes. ¿Qué opción tiene más sentido?', opts: ['Seguir haciéndolo a mano, es más seguro', 'Usar macros y/o Power Query', 'Hacerlo en otro programa', 'No sabría por dónde empezar'], correct: 1 },
+    { level: 'avanzado', q: 'Conoces el nombre de un producto y necesitas averiguar su código, que está en una columna a la izquierda de "Producto". ¿Qué usarías para buscarlo?',
+      previewTable: { A1: 'Código', B1: 'Producto', C1: 'Precio', A2: 101, B2: 'Teclado', C2: 25, A3: 102, B3: 'Mouse', C3: 15, A4: 103, B4: 'Monitor', C4: 120 },
+      opts: ['ÍNDICE + COINCIDIR', 'BUSCARV + BUSCARH', 'ENCONTRAR', 'VALIDACIÓN DE DATOS'], correct: 0 },
+    { level: 'avanzado', q: 'Si una fórmula te da el error #¡REF! en varias celdas, ¿qué harías primero?', opts: ['Revisar si se eliminó una fila, columna o celda a la que la fórmula hacía referencia', 'Reiniciar Excel', 'Borrar la fórmula y escribirla de nuevo sin mirar la causa', 'No sabría diagnosticarlo'], correct: 0 }
   ];
 
   var current = 0;
@@ -687,6 +692,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }
 
+  function renderPreviewTable(sheetData) {
+    var maxRow = 0, maxCol = 0;
+    Object.keys(sheetData).forEach(function (ref) {
+      var p = parseCell(ref);
+      if (p.row > maxRow) maxRow = p.row;
+      if (p.col > maxCol) maxCol = p.col;
+    });
+    var rows = maxRow + 1, cols = maxCol + 1;
+    var html = '<div class="sheet-wrap"><div class="sheet-grid" style="grid-template-columns:34px repeat(' + cols + ',1fr);">';
+    html += '<div class="sheet-cell sheet-header-cell"></div>';
+    for (var c = 0; c < cols; c++) html += '<div class="sheet-cell sheet-header-cell">' + colLetter(c) + '</div>';
+    for (var r = 0; r < rows; r++) {
+      html += '<div class="sheet-cell sheet-header-cell">' + (r + 1) + '</div>';
+      for (var c2 = 0; c2 < cols; c2++) {
+        var ref = colLetter(c2) + (r + 1);
+        html += sheetData.hasOwnProperty(ref)
+          ? '<div class="sheet-cell sheet-cell--fixed">' + escapeHtml(sheetData[ref]) + '</div>'
+          : '<div class="sheet-cell"></div>';
+      }
+    }
+    html += '</div></div>';
+    return html;
+  }
+
   function renderFormulaQuestion(q) {
     var dims = gridDims(q);
     var html = '<div class="sheet-wrap"><div class="sheet-grid" style="grid-template-columns:34px repeat(' + dims.cols + ',1fr);">';
@@ -784,6 +813,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.getElementById('stepLabel').textContent = 'Pregunta ' + (current + 1) + ' de ' + QUESTIONS.length;
     document.getElementById('progressBar').style.width = (((current) / QUESTIONS.length) * 100) + '%';
     document.getElementById('qTitle').textContent = q.q;
+    document.getElementById('qPreview').innerHTML = q.previewTable ? renderPreviewTable(q.previewTable) : '';
 
     if (q.type === 'formula') {
       renderFormulaQuestion(q);
