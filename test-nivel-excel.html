@@ -857,11 +857,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
 
     var nivel, nivelLabel, desc, plan, planDesc;
-    var totalCorrect = scoreByLevel.basico + scoreByLevel.intermedio + scoreByLevel.avanzado;
-    var totalFallos = QUESTIONS.length - totalCorrect;
-    var avanzadoOk = totalFallos <= 1; // nivel avanzado: como máximo 1 fallo en todo el test
     var basicoPerfecto = scoreByLevel.basico === totalByLevel.basico; // las 3 de básico resueltas
+    var intermedioPerfecto = scoreByLevel.intermedio === totalByLevel.intermedio; // las 4 de intermedio resueltas
     var fallosAvanzado = totalByLevel.avanzado - scoreByLevel.avanzado;
+    // nivel avanzado: básico e intermedio sin ningún fallo, y como máximo 1 fallo en avanzado
+    var avanzadoOk = basicoPerfecto && intermedioPerfecto && fallosAvanzado <= 1;
     var intermedioOk = basicoPerfecto && fallosAvanzado <= 1; // básico perfecto y máximo 1 fallo en avanzado
     var bono5 = window.PLANES.bono5;
     var bono10 = window.PLANES.bono10;
