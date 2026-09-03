@@ -410,7 +410,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3 id="resultPlanName"></h3>
       <p id="resultPlanDesc"></p>
     </div>
-    <a href="https://www.trabajoenexcel.com/" id="resultCtaBtn" class="btn-wa" style="text-decoration:none;">
+    <a href="https://www.trabajoenexcel.com/?utm_source=test-nivel-excel&amp;utm_medium=resultado#precios" id="resultCtaBtn" class="btn-wa" style="text-decoration:none;">
       Ver planes y empezar mis clases →
     </a>
 
@@ -430,7 +430,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h3>¿Ya sabes tu nivel de Excel?</h3>
       <p>Si prefieres saltarte el test, mira los planes de clases particulares disponibles.</p>
     </div>
-    <a href="https://www.trabajoenexcel.com/?utm_source=test-nivel-excel&utm_medium=inline-cta#precios" class="btn-wa">
+    <a href="https://www.trabajoenexcel.com/?utm_source=test-nivel-excel&amp;utm_medium=inline-cta#precios" class="btn-wa">
       Ver planes de clases →
     </a>
   </div>
@@ -886,10 +886,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.getElementById('resultDesc').textContent = desc;
     document.getElementById('resultPlanName').textContent = plan;
     document.getElementById('resultPlanDesc').textContent = planDesc;
-
-    var ctaBtn = document.getElementById('resultCtaBtn');
-    var ctaParams = new URLSearchParams({ utm_source: 'test-nivel-excel', utm_medium: 'resultado', nivel: nivel });
-    ctaBtn.href = 'https://www.trabajoenexcel.com/?' + ctaParams.toString() + '#precios';
 
     renderReview();
 
