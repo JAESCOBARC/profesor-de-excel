@@ -160,51 +160,96 @@
   .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
   .article-wrap { max-width: 740px; margin: 0 auto; }
 
-  /* Hero */
-  .hero {
-    padding: 3.5rem 5% 0;
-    display: grid; grid-template-columns: 1fr 340px; gap: 4rem; align-items: start;
-    max-width: 1100px; margin: 0 auto;
+  /* Hero — full-bleed, cuadrícula: copy+tarjeta a la izquierda, specs abajo a la derecha */
+  .hero-x {
+    position: relative;
+    background: linear-gradient(160deg, var(--green-deep) 0%, #06170e 100%);
+    overflow: hidden;
   }
-  .breadcrumb { font-size: 0.75rem; color: var(--muted); margin-bottom: 1rem; }
-  .breadcrumb a { color: var(--muted); text-decoration: none; }
-  .breadcrumb a:hover { color: var(--green-mid); }
-  .breadcrumb span { margin: 0 5px; }
-
-  .hero-badge {
+  .hero-x::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 84% 12%, rgba(77,184,122,0.22), transparent 55%);
+    pointer-events: none;
+  }
+  .hero-x-ui {
+    position: relative; z-index: 1;
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 360px; grid-template-rows: auto 1fr auto;
+    gap: 0 3rem; padding: 3.5rem 5% 3.5rem; min-height: 600px;
+  }
+  .hero-x-tag {
+    grid-column: 2; grid-row: 1; justify-self: end;
+    font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(251,251,246,0.5);
+  }
+  .hero-x-left {
+    grid-column: 1; grid-row: 1 / -1;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 2.5rem; min-width: 0;
+  }
+  .hero-x-breadcrumb { font-size: 0.75rem; color: rgba(251,251,246,0.45); margin-bottom: 1.25rem; }
+  .hero-x-breadcrumb a { color: rgba(251,251,246,0.45); text-decoration: none; }
+  .hero-x-breadcrumb a:hover { color: var(--green-light); }
+  .hero-x-breadcrumb span { margin: 0 5px; }
+  .hero-x-badge {
     display: inline-flex; align-items: center; gap: 7px;
-    background: var(--green-pale); color: var(--green-mid);
-    padding: 5px 14px; border-radius: 100px;
-    font-size: 0.78rem; font-weight: 500; margin-bottom: 1.25rem;
+    background: rgba(77,184,122,0.14); color: var(--green-light);
+    padding: 5px 14px; border-radius: 100px; font-size: 0.78rem; font-weight: 500; margin-bottom: 1.25rem;
   }
-  .hero-badge::before { content: '●'; color: var(--green-light); font-size: 0.55rem; }
+  .hero-x-badge::before { content: '●'; font-size: 0.55rem; }
+  .hero-x-copy h1 {
+    font-family: 'Fraunces', serif; font-weight: 300; line-height: 1.1;
+    font-size: clamp(2rem, 4vw, 3.2rem); color: white; margin-bottom: 1.1rem; text-wrap: balance;
+  }
+  .hero-x-copy h1 .pull-line { display: block; }
+  .hero-x-copy h1 .pull-emphasis { font-style: italic; color: var(--green-light); }
+  .hero-x-lead { font-size: 1.05rem; color: rgba(251,251,246,0.72); line-height: 1.8; max-width: 480px; margin-bottom: 1.5rem; }
+  .hero-x-author { display: flex; align-items: center; gap: 0.6rem; }
+  .hero-x-author img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--green-light); }
+  .hero-x-author-info { display: flex; flex-direction: column; }
+  .hero-x-author-name { font-size: 0.82rem; font-weight: 500; color: white; line-height: 1.2; }
+  .hero-x-author-cred { font-size: 0.72rem; color: rgba(251,251,246,0.5); }
 
-  h1 { font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 300; line-height: 1.15; color: var(--green-deep); margin-bottom: 1rem; text-wrap: balance; }
-  h1 em { font-style: italic; color: var(--green-mid); }
+  .hero-x-card {
+    width: min(360px, 100%);
+    background: rgba(251,251,246,0.06); border: 1px solid rgba(251,251,246,0.12);
+    -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-radius: 16px; padding: 1.5rem;
+  }
+  .hero-x-card-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-light); margin-bottom: 0.5rem; }
+  .hero-x-card h3 { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 400; color: white; margin-bottom: 0.85rem; line-height: 1.25; }
+  .hero-x-card-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.25rem; }
+  .hero-x-card-list li { font-size: 0.8rem; color: rgba(251,251,246,0.7); display: flex; align-items: flex-start; gap: 7px; line-height: 1.4; }
+  .hero-x-card-list li::before { content: '✓'; color: var(--green-light); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .hero-x-card-btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--green-light); color: var(--green-deep);
+    padding: 12px 18px; border-radius: 8px; font-weight: 700; font-size: 0.88rem;
+    text-decoration: none; transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .hero-x-card-btn:hover { background: white; transform: translateY(-1px); }
+  .hero-x-card-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
 
-  .hero-lead { font-size: 1.05rem; color: var(--slate); line-height: 1.8; margin-bottom: 1.5rem; }
+  .hero-x-specs { grid-column: 2; grid-row: 3; justify-self: end; width: min(360px, 100%); }
+  .hero-x-specs h4 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(251,251,246,0.5); margin-bottom: 0.85rem; font-weight: 600; }
+  .hero-x-spec-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 8px 0; }
+  .hero-x-spec-row + .hero-x-spec-row { border-top: 1px solid rgba(251,251,246,0.1); }
+  .hero-x-spec-label { font-size: 0.78rem; color: rgba(251,251,246,0.55); }
+  .hero-x-spec-value { font-size: 0.85rem; color: white; text-align: right; font-weight: 500; }
 
-  .hero-meta { display: flex; align-items: center; gap: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+  /* Animaciones de entrada del hero */
+  @keyframes wordPullUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .pull-word { display: inline-block; opacity: 0; transform: translateY(20px); }
+  .pull-word:not(:last-child) { margin-right: 0.28em; }
+  .words-visible .pull-word { animation: wordPullUp 0.55s ease forwards; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-up-reveal { opacity: 0; transform: translateY(14px); }
+  .fade-up-reveal.is-visible { animation: fadeUp 0.7s ease forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .words-visible .pull-word, .fade-up-reveal.is-visible { animation: none !important; }
+    .pull-word, .fade-up-reveal { opacity: 1 !important; transform: none !important; }
+  }
 
-  /* Coste de inacción — cadena de riesgo */
-  .riesgo-chain { background: var(--green-deep); border-radius: 14px; padding: 1.25rem 1.5rem; margin-top: 1.25rem; }
-  .riesgo-eyebrow { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-light); margin-bottom: 0.75rem; }
-  .riesgo-steps { display: flex; align-items: center; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
-  .riesgo-step { font-size: 0.82rem; color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.06); border-radius: 8px; padding: 5px 10px; }
-  .riesgo-step--final { color: white; background: rgba(249,166,35,0.18); font-weight: 600; }
-  .riesgo-arrow { color: var(--green-light); font-size: 0.85rem; }
-  .riesgo-final { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0; }
-  .riesgo-final strong { color: var(--green-light); }
-  .meta-author { display: flex; align-items: center; gap: 0.6rem; }
-  .meta-author img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: center top; border: 2px solid var(--green-light); }
-  .meta-author-info { display: flex; flex-direction: column; }
-  .meta-author-name { font-size: 0.82rem; font-weight: 500; color: var(--charcoal); line-height: 1.2; }
-  .meta-author-cred { font-size: 0.72rem; color: var(--muted); }
-  .meta-sep { color: var(--border); }
-  .meta-item { font-size: 0.78rem; color: var(--muted); }
-
-  /* Sticky sidebar CTA */
-  .sidebar { position: sticky; top: 80px; }
+  /* Sticky sidebar CTA (segunda tarjeta, dentro del artículo) */
   .cta-card {
     background: var(--green-deep); border-radius: 16px; padding: 1.75rem;
     color: white;
@@ -341,8 +386,6 @@
   .footer-links a:hover { color: white; }
   .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); width: 100%; text-align: center; margin-top: 0.5rem; }
 
-  .btn-wa.hero-mobile-cta { display: none; }
-
   /* WhatsApp float */
   .whatsapp-float {
     display: none;
@@ -366,20 +409,18 @@
       padding: 5px 14px; border-radius: 14px;
       font-size: 0.72rem; font-weight: 500;
     }
-    .hero { grid-template-columns: 1fr; gap: 0; padding: 0.9rem 5% 0; }
-    .sidebar { display: none; }
+    .hero-x-ui { grid-template-columns: 1fr; grid-template-rows: auto auto auto; min-height: auto; padding: 2.25rem 5%; gap: 1.75rem 0; }
+    .hero-x-tag { display: none; }
+    .hero-x-left { grid-column: 1; grid-row: 1; gap: 1.75rem; }
+    .hero-x-breadcrumb { display: none; }
+    .hero-x-copy h1 { font-size: 1.7rem; text-align: center; }
+    .hero-x-lead { text-align: center; margin-left: auto; margin-right: auto; font-size: 0.95rem; }
+    .hero-x-badge { display: inline-flex; }
+    .hero-x-author { justify-content: center; }
+    .hero-x-card { width: 100%; }
+    .hero-x-specs { grid-column: 1; grid-row: 2; justify-self: stretch; width: 100%; }
     .article-body { grid-template-columns: 1fr; gap: 0; }
     .article-sidebar { display: none; }
-    .breadcrumb { display: none; }
-    .hero-badge { display: none; }
-    h1 { font-size: 1.6rem; margin-bottom: 0.75rem; text-align: center; }
-    .hero-lead { text-align: center; }
-    .hero-lead { font-size: 0.95rem; margin-bottom: 1rem; }
-    .btn-wa.hero-mobile-cta { display: flex; margin-bottom: 1rem; }
-    .hero-meta { padding-top: 1rem; justify-content: center; }
-    .riesgo-chain { margin-top: 1rem; }
-    .riesgo-steps { justify-content: center; }
-    .riesgo-final { text-align: center; }
     .article-body { padding: 1rem 5% 2rem; }
     .pain-block { margin: 0.5rem 0 1.75rem; }
     .plan-grid { grid-template-columns: 1fr; }
@@ -422,62 +463,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <!-- ══ A — ATTENTION ══ -->
-<div class="hero">
-  <div>
-    <div class="breadcrumb">
-      <a href="/">Inicio</a><span>›</span>
-      <a href="/">Blog</a><span>›</span>
-      Prueba de Excel en entrevista
-    </div>
-    <div class="hero-badge">Guía actualizada 2026 · Nivel básico-intermedio · Gratis</div>
-    <h1>Pruebas de Excel<br>para entrevistas de trabajo:<br><em>qué cae y cómo prepararte</em></h1>
-    <p class="hero-lead">Si tienes una entrevista con prueba de Excel y no sabes por dónde empezar, esta guía te dice exactamente qué formato tiene el examen, qué temas estudiar y cómo practicar — empezando por saber tu nivel real con nuestro test gratis.</p>
-    <a href="/test-nivel-excel.html?utm_source=prueba-excel-entrevista-trabajo&amp;utm_medium=hero-cta" class="btn-wa hero-mobile-cta">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
-      Haz gratis el test de nivel de Excel
-    </a>
-    <div class="hero-meta">
-      <div class="meta-author">
-        <img src="/profesor-de-excel-online-thumb.jpg" alt="Jhony Escobar, profesor de Excel" onerror="this.style.display='none'">
-        <div class="meta-author-info">
-          <span class="meta-author-name">Jhony Escobar</span>
-          <span class="meta-author-cred">Certificado Microsoft Excel Expert</span>
+<div class="hero-x">
+  <div class="hero-x-ui">
+    <div class="hero-x-tag fade-up-reveal" data-delay="0.75">Guía 2026</div>
+
+    <div class="hero-x-left">
+      <div class="hero-x-copy">
+        <div class="hero-x-breadcrumb">
+          <a href="/">Inicio</a><span>›</span>
+          <a href="/">Blog</a><span>›</span>
+          Prueba de Excel en entrevista
+        </div>
+        <div class="hero-x-badge">Nivel básico-intermedio · Gratis</div>
+        <h1 class="words-pull-up">
+          <span class="pull-line">Pruebas de Excel</span>
+          <span class="pull-line">para entrevistas</span>
+          <span class="pull-line pull-emphasis">de trabajo</span>
+        </h1>
+        <p class="hero-x-lead fade-up-reveal" data-delay="0.5">Qué formato tiene el examen, qué temas estudiar y cómo practicar — empezando por saber tu nivel real con nuestro test gratis.</p>
+        <div class="hero-x-author fade-up-reveal" data-delay="0.65">
+          <img src="/profesor-de-excel-online-thumb.jpg" alt="Jhony Escobar, profesor de Excel" onerror="this.style.display='none'">
+          <div class="hero-x-author-info">
+            <span class="hero-x-author-name">Jhony Escobar</span>
+            <span class="hero-x-author-cred">Certificado Microsoft Excel Expert</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Coste de inacción — LIFT: Valor + pérdida cuantificada -->
-    <div class="riesgo-chain">
-      <div class="riesgo-eyebrow">Lo que pasa si no te preparas</div>
-      <div class="riesgo-steps">
-        <span class="riesgo-step">No repasas a tiempo</span>
-        <span class="riesgo-arrow">→</span>
-        <span class="riesgo-step">Te bloqueas con el BUSCARV</span>
-        <span class="riesgo-arrow">→</span>
-        <span class="riesgo-step">El entrevistador lo nota</span>
-        <span class="riesgo-arrow">→</span>
-        <span class="riesgo-step riesgo-step--final">Pierdes la oferta</span>
+      <div class="hero-x-card fade-up-reveal" data-delay="0.9">
+        <div class="hero-x-card-label">Antes de estudiar</div>
+        <h3>¿Cuál es tu nivel real de Excel?</h3>
+        <ul class="hero-x-card-list">
+          <li>12 preguntas prácticas</li>
+          <li>Resultado en 5 minutos</li>
+          <li>100% gratis, sin tarjeta</li>
+        </ul>
+        <a href="/test-nivel-excel.html?utm_source=prueba-excel-entrevista-trabajo&amp;utm_medium=hero-cta" class="hero-x-card-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
+          Hacer el test gratis
+        </a>
       </div>
-      <p class="riesgo-final">No pierdas una oferta de trabajo por algo tan evitable como <strong>3 fórmulas que se aprenden en una tarde.</strong></p>
     </div>
-  </div>
 
-  <!-- Sidebar sticky CTA — desktop -->
-  <div class="sidebar">
-    <div class="cta-card">
-      <div class="cta-card-label">Antes de estudiar</div>
-      <h3>¿Cuál es tu nivel real de Excel?</h3>
-      <ul class="cta-card-plan">
-        <li>12 preguntas prácticas</li>
-        <li>Resultado en 5 minutos</li>
-        <li>Te dice qué repasar primero</li>
-        <li>100% gratis, sin tarjeta</li>
-      </ul>
-      <a href="/test-nivel-excel.html?utm_source=prueba-excel-entrevista-trabajo&amp;utm_medium=sidebar-cta" class="btn-wa">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
-        Hacer el test gratis
-      </a>
-      <div class="cta-card-trust">Diseñado por un profesor certificado</div>
+    <div class="hero-x-specs fade-up-reveal" data-delay="1.05">
+      <h4>Datos de la prueba</h4>
+      <div class="hero-x-spec-row"><span class="hero-x-spec-label">Duración</span><span class="hero-x-spec-value">20–60 min</span></div>
+      <div class="hero-x-spec-row"><span class="hero-x-spec-label">Nivel</span><span class="hero-x-spec-value">Básico-Intermedio</span></div>
+      <div class="hero-x-spec-row"><span class="hero-x-spec-label">Formato</span><span class="hero-x-spec-value">Archivo Excel + tareas</span></div>
+      <div class="hero-x-spec-row"><span class="hero-x-spec-label">Preparación</span><span class="hero-x-spec-value">Test gratis, 5 min</span></div>
     </div>
   </div>
 </div>
@@ -872,6 +905,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 document.querySelectorAll('.faq-item').forEach(item => {
   item.querySelector('.faq-q').addEventListener('click', () => item.classList.toggle('open'));
 });
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  // Divide el H1 del hero en palabras para animarlas de una en una al cargar
+  var pullUpElements = document.querySelectorAll('.words-pull-up');
+  pullUpElements.forEach(function (el) {
+    var globalWordIndex = 0;
+    var directSpans = el.querySelectorAll(':scope > span');
+    if (el.tagName === 'H1' && directSpans.length > 0) {
+      directSpans.forEach(function (span) {
+        span.classList.add('pull-line');
+        var words = span.textContent.trim().split(/\s+/);
+        span.innerHTML = words.map(function (word) {
+          var html = '<span class="pull-word" style="animation-delay:' + (globalWordIndex * 0.08).toFixed(2) + 's">' + word + '</span>';
+          globalWordIndex++;
+          return html;
+        }).join(' ');
+      });
+    }
+  });
+
+  if ('IntersectionObserver' in window) {
+    var wordsObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('words-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    pullUpElements.forEach(function (el) { wordsObserver.observe(el); });
+
+    var fadeElements = document.querySelectorAll('.fade-up-reveal');
+    var fadeObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          el.style.animationDelay = (el.getAttribute('data-delay') || '0') + 's';
+          el.classList.add('is-visible');
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.15 });
+    fadeElements.forEach(function (el) { fadeObserver.observe(el); });
+  } else {
+    pullUpElements.forEach(function (el) { el.classList.add('words-visible'); });
+    document.querySelectorAll('.fade-up-reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+})();
 </script>
 
 <script src="/planes-config.js"></script>
