@@ -206,7 +206,12 @@
 
   .result-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--green-pale); color: var(--green-mid); padding: 6px 16px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
   .result-level { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 400; color: var(--green-deep); margin-bottom: 0.75rem; }
-  .result-desc { font-size: 0.92rem; color: var(--slate); line-height: 1.75; margin-bottom: 1.5rem; text-align: left; }
+  .result-desc {
+    font-size: 0.92rem; color: var(--slate); line-height: 1.75; margin-bottom: 1.5rem; text-align: left;
+    background: var(--green-mist); border-left: 4px solid var(--green-mid);
+    border-radius: 0 10px 10px 0; padding: 1rem 1.15rem;
+  }
+  .result-desc strong { color: var(--green-deep); font-weight: 700; }
   .result-plan { background: var(--green-deep); border-radius: 14px; padding: 1.5rem; text-align: left; margin-bottom: 1.25rem; }
   .result-plan-label { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green-light); margin-bottom: 0.5rem; }
   .result-plan h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 400; color: white; margin-bottom: 0.5rem; }
@@ -883,26 +888,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     if (avanzadoOk) {
       nivel = 'avanzado'; nivelLabel = 'Nivel Avanzado';
-      desc = 'Cuanto más se sabe de Excel, más claro se ve lo que aún falta por dominar — y tú ya estás en ese punto. Manejas bien fórmulas lógicas y tablas dinámicas: tu siguiente salto real es profundizar en Power Query, Power Pivot, macros y Power BI, el terreno donde se separa quien usa Excel de quien automatiza y analiza datos a otro nivel.';
+      desc = 'Cuanto más se sabe de Excel, más claro se ve lo que aún falta por dominar — y tú ya estás en ese punto. Manejas bien fórmulas lógicas y tablas dinámicas: <strong>tu siguiente salto real es profundizar en Power Query, Power Pivot, macros y Power BI</strong>, el terreno donde se separa quien usa Excel de quien automatiza y analiza datos a otro nivel.';
       plan = 'Bono 5 horas';
       planDesc = bono5.precioHora + '€/hora (' + bono5.descuento + '% dto., ' + bono5.total + '€ total). Ideal para dar el salto a Power Query, Power Pivot, macros o Power BI a tu ritmo.';
       ctaText = 'Dar el salto a Power Query y BI →';
     } else if (intermedioOk) {
       nivel = 'intermedio'; nivelLabel = 'Nivel Intermedio';
-      desc = 'Tienes buena base en fórmulas y funciones del día a día, pero hay huecos concretos — tablas dinámicas, BUSCARV/BUSCARX, funciones lógicas más complejas — que suelen aparecer justo cuando más cuentan: en una entrevista o una tarea urgente. Mejor detectarlos ahora, con calma, que en el peor momento posible.';
+      desc = 'Tienes buena base en fórmulas y funciones del día a día, pero hay huecos concretos — tablas dinámicas, BUSCARV/BUSCARX, funciones lógicas más complejas — <strong>que suelen aparecer justo cuando más cuentan: en una entrevista o una tarea urgente</strong>. Mejor detectarlos ahora, con calma, que en el peor momento posible.';
       plan = 'Bono 10 horas o más';
       planDesc = 'Desde ' + String(bono10.precioHora).replace('.', ',') + '€/hora. Ideal para cerrar esos huecos concretos y ganar soltura antes de que te pillen desprevenido.';
       ctaText = 'Cerrar esos huecos antes de que se noten →';
     } else {
       nivel = 'basico'; nivelLabel = 'Nivel Básico';
-      desc = 'Dominas lo esencial — y no, no eres el único: es el punto de partida más común, incluso entre gente con años usando Excel sin haberlo comprobado nunca. La diferencia es que muchas ofertas de trabajo piden Excel como requisito silencioso, así que construir una base sólida ahora tiene un impacto real en las puertas que se te abren.';
+      desc = 'Dominas lo esencial — y no, no eres el único: es el punto de partida más común, incluso entre gente con años usando Excel sin haberlo comprobado nunca. La diferencia es que <strong>muchas ofertas de trabajo piden Excel como requisito silencioso</strong>, así que construir una base sólida ahora tiene un impacto real en las puertas que se te abren.';
       plan = 'Bono 10 horas o más';
       planDesc = 'Desde ' + String(bono10.precioHora).replace('.', ',') + '€/hora. Ideal para construir una base sólida de forma completa, a tu ritmo.';
       ctaText = 'Construir una base que sí cuente →';
     }
 
     document.getElementById('resultLevel').textContent = nivelLabel;
-    document.getElementById('resultDesc').textContent = desc;
+    document.getElementById('resultDesc').innerHTML = desc;
     document.getElementById('resultPlanName').textContent = plan;
     document.getElementById('resultPlanDesc').textContent = planDesc;
     document.getElementById('resultCtaText').textContent = ctaText;
