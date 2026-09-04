@@ -411,7 +411,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p id="resultPlanDesc"></p>
     </div>
     <a href="https://www.trabajoenexcel.com/?utm_source=test-nivel-excel&amp;utm_medium=resultado#precios" id="resultCtaBtn" class="btn-wa" style="text-decoration:none;" onclick="return window.delayedNav(event, this.href);">
-      Ver planes y empezar mis clases →
+      <span id="resultCtaText">Ver planes y empezar mis clases →</span>
     </a>
 
     <button class="btn-ghost btn-toggle-review" id="btnToggleReview" onclick="toggleReview()">Ocultar mis respuestas ↑</button>
@@ -871,7 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (isCorrect(i)) scoreByLevel[q.level]++;
     });
 
-    var nivel, nivelLabel, desc, plan, planDesc;
+    var nivel, nivelLabel, desc, plan, planDesc, ctaText;
     var basicoPerfecto = scoreByLevel.basico === totalByLevel.basico; // las 3 de básico resueltas
     var intermedioPerfecto = scoreByLevel.intermedio === totalByLevel.intermedio; // las 4 de intermedio resueltas
     var fallosAvanzado = totalByLevel.avanzado - scoreByLevel.avanzado;
@@ -883,25 +883,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     if (avanzadoOk) {
       nivel = 'avanzado'; nivelLabel = 'Nivel Avanzado';
-      desc = 'Dominas fórmulas lógicas, tablas dinámicas y tienes buena base en herramientas avanzadas como Power Query o macros. Para pulir detalles concretos y resolver dudas puntuales, unas pocas horas dirigidas son suficientes.';
+      desc = 'Cuanto más se sabe de Excel, más claro se ve lo que aún falta por dominar — y tú ya estás en ese punto. Manejas bien fórmulas lógicas, tablas dinámicas y tienes buena base en herramientas como Power Query o macros. Lo que te separa de dominarlo del todo son detalles muy concretos, no conceptos nuevos que aprender desde cero.';
       plan = 'Bono 5 horas';
-      planDesc = bono5.precioHora + '€/hora (' + bono5.descuento + '% dto., ' + bono5.total + '€ total). Ideal para pulir detalles concretos y resolver dudas puntuales a tu ritmo.';
+      planDesc = bono5.precioHora + '€/hora (' + bono5.descuento + '% dto., ' + bono5.total + '€ total). Ideal para pulir esos detalles concretos y resolver dudas puntuales a tu ritmo.';
+      ctaText = 'Afinar los detalles que me faltan →';
     } else if (intermedioOk) {
       nivel = 'intermedio'; nivelLabel = 'Nivel Intermedio';
-      desc = 'Tienes buena base en fórmulas y funciones del día a día, pero aún hay margen en tablas dinámicas, BUSCARV/BUSCARX o funciones lógicas más complejas. Un bloque de horas más amplio te da margen para cerrar esos huecos sin prisa.';
+      desc = 'Tienes buena base en fórmulas y funciones del día a día, pero hay huecos concretos — tablas dinámicas, BUSCARV/BUSCARX, funciones lógicas más complejas — que suelen aparecer justo cuando más cuentan: en una entrevista o una tarea urgente. Mejor detectarlos ahora, con calma, que en el peor momento posible.';
       plan = 'Bono 10 horas o más';
-      planDesc = 'Desde ' + String(bono10.precioHora).replace('.', ',') + '€/hora. Ideal para reforzar varios huecos concretos y ganar soltura de forma completa.';
+      planDesc = 'Desde ' + String(bono10.precioHora).replace('.', ',') + '€/hora. Ideal para cerrar esos huecos concretos y ganar soltura antes de que te pillen desprevenido.';
+      ctaText = 'Cerrar esos huecos antes de que se noten →';
     } else {
       nivel = 'basico'; nivelLabel = 'Nivel Básico';
-      desc = 'Dominas lo esencial, pero hay bastante margen en fórmulas, funciones lógicas y organización de datos. No pasa nada — es el punto de partida más común. Un bloque de horas más amplio te da el margen necesario para construir una base sólida sin agobios.';
+      desc = 'Dominas lo esencial — y no, no eres el único: es el punto de partida más común, incluso entre gente con años usando Excel sin haberlo comprobado nunca. La diferencia es que muchas ofertas de trabajo piden Excel como requisito silencioso, así que construir una base sólida ahora tiene un impacto real en las puertas que se te abren.';
       plan = 'Bono 10 horas o más';
       planDesc = 'Desde ' + String(bono10.precioHora).replace('.', ',') + '€/hora. Ideal para construir una base sólida de forma completa, a tu ritmo.';
+      ctaText = 'Construir una base que sí cuente →';
     }
 
     document.getElementById('resultLevel').textContent = nivelLabel;
     document.getElementById('resultDesc').textContent = desc;
     document.getElementById('resultPlanName').textContent = plan;
     document.getElementById('resultPlanDesc').textContent = planDesc;
+    document.getElementById('resultCtaText').textContent = ctaText;
 
     renderReview();
 
