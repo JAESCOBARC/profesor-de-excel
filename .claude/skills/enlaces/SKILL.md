@@ -117,6 +117,17 @@ Tipografía: Fraunces (display/headings) + DM Sans (texto) + JetBrains Mono
    - Si hay una página objetivo, márcala visualmente (ej. un aro alrededor
      del nodo) para que se distinga del resto sin necesidad de leer la
      leyenda.
+   - **Pares recíprocos**: cuando dos páginas se enlazan mutuamente (A→B y
+     B→A), NO dibujes ambos como líneas rectas — se superponen exactamente y
+     una tapa a la otra, dando la falsa impresión de que el enlace es
+     unidireccional cuando en realidad es mutuo. Dibuja los edges como
+     `<path>` (no `<line>`) y, cuando detectes un par recíproco, cúrvalos
+     ligeramente hacia lados opuestos (una curva cuadrática con un pequeño
+     "bow" perpendicular al segmento, signo determinado por el orden
+     alfabético de los IDs para que ambas curvas se separen de forma
+     consistente) para que ambos sentidos —y sus flechas— se vean por
+     separado. Esto ya causó confusión real una vez (el usuario pensó que
+     faltaba un enlace que en realidad ya existía en ambos sentidos).
 5. **Tabla completa** de páginas ordenada por `incoming` descendente, con
    columnas: página (nombre + ruta en mono), categoría, entrantes,
    salientes, estado (huérfana / 404 no existe / redirección / solo 1
