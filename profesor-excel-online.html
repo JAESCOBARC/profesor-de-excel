@@ -67,6 +67,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "Question",
       "name": "¿Cómo reservo mi primera clase con el profesor particular?",
       "acceptedAnswer": { "@type": "Answer", "text": "Escríbeme por WhatsApp contándome tu nivel actual y qué necesitas resolver. Te respondo en menos de 24 horas para coordinar la primera sesión, sin compromiso de continuar." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa en la primera clase?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Te explico mi metodología y cómo van a ser las sesiones, y te indico cómo descargar los materiales de clase desde Classroom para que los tengas listos desde el primer día." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito preparar algo?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, solo necesitas tener Excel instalado en tu ordenador. Todo lo demás lo vemos juntos en la propia clase." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo cancelar sin coste?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí, no hay compromiso de permanencia. Puedes dejar de tomar clases cuando quieras, sin penalización ni letra pequeña." }
     }
   ]
 }
@@ -814,7 +829,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="hero-live-note">Solo tú y yo en la videollamada — como un profesor particular de toda la vida, pero online.</p>
     <div class="hero-actions">
-      <a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="btn-primary" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Consulta disponibilidad →</a>
+      <a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="btn-primary" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Reservar primera clase →</a>
     </div>
     <p class="hero-wa-hint">Se abre WhatsApp con el mensaje ya escrito — solo tienes que pulsar enviar.</p>
     <p class="hero-price-hint">Desde <strong><span data-plan="hora1" data-plan-field="precioHora">20€</span>/hora</strong> · Sin permanencias</p>
@@ -1279,6 +1294,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3 class="faq-q">¿Cómo reservo mi primera clase con el profesor particular?</h3>
           <div class="faq-a">Escríbeme por WhatsApp contándome tu nivel actual y qué necesitas resolver. Te respondo en menos de 24 horas para coordinar la primera sesión, sin compromiso de continuar.</div>
         </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Qué pasa en la primera clase?</h3>
+          <div class="faq-a">Te explico mi metodología y cómo van a ser las sesiones, y te indico cómo descargar los materiales de clase desde Classroom para que los tengas listos desde el primer día.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Necesito preparar algo?</h3>
+          <div class="faq-a">No, solo necesitas tener Excel instalado en tu ordenador. Todo lo demás lo vemos juntos en la propia clase.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Puedo cancelar sin coste?</h3>
+          <div class="faq-a">Sí, no hay compromiso de permanencia. Puedes dejar de tomar clases cuando quieras, sin penalización ni letra pequeña.</div>
+        </div>
       </div>
     </div>
     <div class="testi-col" id="testimonios">
@@ -1398,7 +1425,7 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
 
 <a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Consulta disponibilidad">
   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
-  Consulta disponibilidad
+  Reservar
 </a>
 <script src="/planes-config.js"></script>
 <script src="/whatsapp-config.js"></script>
