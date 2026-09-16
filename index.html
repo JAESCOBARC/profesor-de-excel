@@ -485,6 +485,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .problema-card h3 { font-size: 0.95rem; font-weight: 500; color: white; margin-bottom: 0.5rem; }
   .problema-card p { font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
 
+  .comparativa { background: white; }
+  .comparativa-wrap { overflow-x: auto; margin-top: 2.5rem; padding-top: 18px; }
+  .comparativa-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 640px; }
+  .comparativa-table th, .comparativa-table td {
+    padding: 1rem 1.25rem; text-align: left; font-size: 0.92rem;
+    border-bottom: 1px solid var(--border); vertical-align: top;
+  }
+  .comparativa-table thead th {
+    font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted);
+    border-bottom: 2px solid var(--border); white-space: nowrap;
+  }
+  .comparativa-table th:first-child, .comparativa-table td:first-child { color: var(--slate); font-weight: 500; }
+  .comparativa-table td:not(:first-child), .comparativa-table th:not(:first-child) { color: var(--muted); }
+  .comparativa-table tbody tr:last-child th,
+  .comparativa-table tbody tr:last-child td { border-bottom: none; }
+  .comparativa-col-jhony {
+    background: var(--green-deep) !important; color: white !important;
+    position: relative;
+  }
+  .comparativa-table td.comparativa-col-jhony, .comparativa-table th.comparativa-col-jhony { color: white !important; font-weight: 500; }
+  .comparativa-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: var(--green-deep); font-size: 0.68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 14px; border-radius: 100px;
+    white-space: nowrap;
+  }
+  .comparativa-table thead th.comparativa-col-jhony { border-radius: 10px 10px 0 0; }
+  .comparativa-table tbody tr:last-child td.comparativa-col-jhony { border-radius: 0 0 10px 10px; }
+  @media (max-width: 640px) {
+    .comparativa-table { min-width: 560px; }
+  }
+
   .servicios { background: var(--cream); }
   .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .servicio-card {
@@ -990,6 +1023,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li>Entrega en 48–72 horas</li>
       </ul>
     </div>
+  </div>
+</section>
+
+<section class="comparativa">
+  <div class="section-tag">Antes de decidir</div>
+  <h2>¿Otro curso grabado que vas a abandonar en la <em>lección 3</em>?</h2>
+  <p class="section-lead">Cada opción tiene un coste distinto — de tiempo, de dinero o de dudas que nunca se resuelven. Compáralas tú mismo.</p>
+  <div class="comparativa-wrap">
+    <table class="comparativa-table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col" class="comparativa-col-jhony"><span class="comparativa-badge">Recomendado</span>Clases con Jhony</th>
+          <th scope="col">Curso pregrabado</th>
+          <th scope="col">Tutoriales de YouTube</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Personalización</th>
+          <td class="comparativa-col-jhony">Con tus propios archivos reales</td>
+          <td>Contenido genérico igual para todos</td>
+          <td>Ninguna</td>
+        </tr>
+        <tr>
+          <th scope="row">Dudas resueltas</th>
+          <td class="comparativa-col-jhony">En el momento, en vivo</td>
+          <td>Nunca (o en un foro, días después)</td>
+          <td>Nunca</td>
+        </tr>
+        <tr>
+          <th scope="row">Nivel del contenido</th>
+          <td class="comparativa-col-jhony">Adaptado a tu nivel real</td>
+          <td>Fijo, sin importar tu nivel</td>
+          <td>Disperso, sin progresión</td>
+        </tr>
+        <tr>
+          <th scope="row">Certificación del profesor</th>
+          <td class="comparativa-col-jhony">Microsoft Excel Expert</td>
+          <td>Variable</td>
+          <td>Ninguna</td>
+        </tr>
+        <tr>
+          <th scope="row">Precio</th>
+          <td class="comparativa-col-jhony">Desde 20€/hora, sin permanencia</td>
+          <td>20-40€ una vez, contenido fijo</td>
+          <td>Gratis, pero meses de tiempo perdido</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
