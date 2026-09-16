@@ -431,6 +431,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="diploma-section">
       <div class="diploma-label">Tu diploma</div>
       <canvas id="diplomaCanvas" width="1000" height="700"></canvas>
+      <img id="diplomaLogoImg" src="/logo-pe.png" alt="" crossorigin="anonymous" style="display:none;">
       <a href="#" id="diplomaDownload" class="btn-ghost diploma-download-btn" download="diploma-nivel-excel.png">Descargar mi diploma →</a>
     </div>
   </div>
@@ -936,11 +937,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     sendTestLead(nivelLabel, plan);
   }
 
+  function fitFontSize(ctx, text, opts) {
+    var size = opts.maxSize;
+    while (size > opts.minSize) {
+      ctx.font = (opts.italic ? 'italic ' : '') + opts.weight + ' ' + size + 'px "' + opts.family + '"';
+      if (ctx.measureText(text).width <= opts.maxWidth) break;
+      size -= 2;
+    }
+    ctx.font = (opts.italic ? 'italic ' : '') + opts.weight + ' ' + size + 'px "' + opts.family + '"';
+    return size;
+  }
+
   function renderDiploma(nombreCompleto, nivelLabel) {
     var canvas = document.getElementById('diplomaCanvas');
     var ctx = canvas.getContext('2d');
     var W = canvas.width, H = canvas.height;
     var fechaStr = new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+    var logoImg = document.getElementById('diplomaLogoImg');
 
     function draw() {
       ctx.clearRect(0, 0, W, H);
@@ -955,40 +968,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ctx.lineWidth = 1;
       ctx.strokeRect(42, 42, W - 84, H - 84);
 
+      // Logo trabajoenexcel.com, esquina superior derecha
+      var logoR = 26, logoCx = W - 74, logoCy = 88;
+      if (logoImg && logoImg.complete && logoImg.naturalWidth) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(logoCx, logoCy, logoR, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(logoImg, logoCx - logoR, logoCy - logoR, logoR * 2, logoR * 2);
+        ctx.restore();
+      }
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#1a5c36';
+      ctx.font = '600 12px "DM Sans", sans-serif';
+      ctx.fillText('trabajoenexcel.com', logoCx, logoCy + logoR + 20);
+
       ctx.textAlign = 'center';
 
       ctx.fillStyle = '#7a7a7a';
       ctx.font = '600 15px "DM Sans", sans-serif';
       ctx.save();
       ctx.letterSpacing = '3px';
-      ctx.fillText('CERTIFICADO DE NIVEL DE EXCEL', W / 2, 140);
+      ctx.fillText('CERTIFICADO DE NIVEL DE EXCEL', W / 2, 150);
       ctx.restore();
-
-      ctx.fillStyle = '#1a5c36';
-      ctx.font = '15px "DM Sans", sans-serif';
-      ctx.fillText('trabajoenexcel.com', W / 2, 168);
 
       ctx.fillStyle = '#0a2e1a';
       ctx.font = '400 26px "DM Sans", sans-serif';
-      ctx.fillText('Se certifica que', W / 2, 260);
+      ctx.fillText('Se certifica que', W / 2, 250);
 
-      var nameFontSize = nombreCompleto.length > 28 ? 46 : 58;
-      ctx.font = '600 ' + nameFontSize + 'px "Fraunces", serif';
-      ctx.fillText(nombreCompleto, W / 2, 330);
+      var nameSize = fitFontSize(ctx, nombreCompleto, {
+        family: 'Fraunces', weight: 600, italic: false,
+        maxWidth: W - 160, maxSize: 58, minSize: 24
+      });
+      ctx.fillStyle = '#0a2e1a';
+      ctx.fillText(nombreCompleto, W / 2, 325);
 
       ctx.strokeStyle = '#c9a84c';
       ctx.lineWidth = 1.5;
       ctx.beginPath();
-      ctx.moveTo(W / 2 - 160, 355);
-      ctx.lineTo(W / 2 + 160, 355);
+      ctx.moveTo(W / 2 - 160, 352);
+      ctx.lineTo(W / 2 + 160, 352);
       ctx.stroke();
 
       ctx.fillStyle = '#0a2e1a';
       ctx.font = '400 26px "DM Sans", sans-serif';
       ctx.fillText('ha completado el test de nivel de Excel con un', W / 2, 415);
 
+      fitFontSize(ctx, nivelLabel, {
+        family: 'Fraunces', weight: 400, italic: true,
+        maxWidth: W - 160, maxSize: 48, minSize: 24
+      });
       ctx.fillStyle = '#1a5c36';
-      ctx.font = 'italic 400 48px "Fraunces", serif';
       ctx.fillText(nivelLabel, W / 2, 480);
 
       ctx.fillStyle = '#7a7a7a';
@@ -1004,15 +1035,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       dl.download = 'diploma-nivel-excel-' + nivelLabel.toLowerCase().replace(/\s+/g, '-') + '.png';
     }
 
-    if (document.fonts && document.fonts.ready) {
-      Promise.all([
-        document.fonts.load('600 58px "Fraunces"'),
-        document.fonts.load('italic 400 48px "Fraunces"'),
-        document.fonts.load('400 26px "DM Sans"')
-      ]).then(draw).catch(draw);
-    } else {
-      draw();
-    }
+    var fontsReady = (document.fonts && document.fonts.ready)
+      ? Promise.all([
+          document.fonts.load('600 58px "Fraunces"'),
+          document.fonts.load('italic 400 48px "Fraunces"'),
+          document.fonts.load('400 26px "DM Sans"')
+        ])
+      : Promise.resolve();
+
+    var logoReady = new Promise(function (resolve) {
+      if (logoImg.complete) { resolve(); return; }
+      logoImg.onload = resolve;
+      logoImg.onerror = resolve;
+    });
+
+    Promise.all([fontsReady, logoReady]).then(draw).catch(draw);
   }
 
   function renderReview() {
