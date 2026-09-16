@@ -830,7 +830,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="hero-wa-hint">Se abre WhatsApp con el mensaje ya escrito.</p>
     <p class="hero-price-hint"><strong>15 min · Gratis</strong> · Analizamos tu nivel y uno de tus archivos reales</p>
-    <p class="hero-urgency">🔴 <strong>Últimas Plazas</strong><br>Respondo en menos de 2h · Lunes a viernes</p>
+    <p class="hero-urgency"><span id="urgencyEmoji">🟡</span> <strong id="urgencyText">Últimas Plazas</strong><br>Respondo en menos de 2h · Lunes a viernes</p>
     <div class="hero-trust">
       <div class="trust-item">
         <span class="trust-num">+200</span>
@@ -1429,6 +1429,7 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
 </a>
 <script src="/planes-config.js"></script>
 <script src="/whatsapp-config.js"></script>
+<script src="/plazas-urgencia.js"></script>
 <script>
 (function () {
   var video = document.getElementById('mobileVideo');
