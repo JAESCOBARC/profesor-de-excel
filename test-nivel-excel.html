@@ -969,7 +969,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ctx.strokeRect(42, 42, W - 84, H - 84);
 
       // Logo trabajoenexcel.com, esquina superior derecha
-      var logoR = 26, logoCx = W - 74, logoCy = 88;
+      var logoR = 24, logoCx = W - 100, logoCy = 96;
       if (logoImg && logoImg.complete && logoImg.naturalWidth) {
         ctx.save();
         ctx.beginPath();
@@ -979,10 +979,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         ctx.drawImage(logoImg, logoCx - logoR, logoCy - logoR, logoR * 2, logoR * 2);
         ctx.restore();
       }
-      ctx.textAlign = 'center';
-      ctx.fillStyle = '#1a5c36';
-      ctx.font = '600 12px "DM Sans", sans-serif';
-      ctx.fillText('trabajoenexcel.com', logoCx, logoCy + logoR + 20);
 
       ctx.textAlign = 'center';
 
@@ -992,6 +988,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ctx.letterSpacing = '3px';
       ctx.fillText('CERTIFICADO DE NIVEL DE EXCEL', W / 2, 150);
       ctx.restore();
+
+      ctx.fillStyle = '#1a5c36';
+      ctx.font = '600 15px "DM Sans", sans-serif';
+      ctx.fillText('trabajoenexcel.com', W / 2, 178);
 
       ctx.fillStyle = '#0a2e1a';
       ctx.font = '400 26px "DM Sans", sans-serif';
