@@ -722,6 +722,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transform: scale(1.04);
   }
   .precio-pill--popular:hover { transform: scale(1.04) translateY(-4px); }
+  .precio-pill--diagnostico { border-color: var(--gold); border-width: 2px; }
+  .precio-pill--diagnostico .precio-badge { background: var(--gold); }
+  .precio-pill--diagnostico .precio-amount { color: var(--green-mid); }
   .precio-badge {
     position: absolute; top: -14px;
     background: var(--green-light); color: white;
@@ -824,10 +827,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="hero-live-note">Solo tú y yo en la videollamada — como un profesor particular de toda la vida, pero online.</p>
     <div class="hero-actions">
-      <a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="btn-primary" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Reservar primera clase →</a>
+      <a href="#" data-wa-msg="Hola Jhony, quiero reservar la clase diagnóstico gratuita de 15 min para ver mi nivel de Excel." class="btn-primary" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Reservar clase diagnóstico gratis →</a>
+      <a href="#precios" class="btn-ghost">Ver precios y bonos</a>
     </div>
     <p class="hero-wa-hint">Se abre WhatsApp con el mensaje ya escrito — solo tienes que pulsar enviar.</p>
-    <p class="hero-price-hint">Desde <strong><span data-plan="hora1" data-plan-field="precioHora">20€</span>/hora</strong> · Sin permanencias</p>
+    <p class="hero-price-hint"><strong>15 min · Gratis</strong> · Analizamos tu nivel y uno de tus archivos reales</p>
     <p class="hero-urgency">🔴 <strong>Últimas 2 plazas de septiembre</strong><br>Respondo en menos de 2h · Lunes a viernes</p>
     <div class="hero-trust">
       <div class="trust-item">
@@ -1031,6 +1035,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Planes de <em>precio</em></h2>
   <p class="section-lead">Sin permanencias ni suscripciones. Elige el bono que mejor se adapta a tu ritmo.</p>
   <div class="precios-grid">
+    <div class="precio-pill precio-pill--diagnostico">
+      <div class="precio-badge">Empieza aquí</div>
+      <div class="precio-horas">Clase diagnóstico</div>
+      <div class="precio-amount">Gratis</div>
+      <div class="precio-desc">15 min · Analizamos tu nivel y uno de tus archivos reales, sin compromiso</div>
+      <a href="#" data-wa-msg="Hola Jhony, quiero reservar la clase diagnóstico gratuita de 15 min para ver mi nivel de Excel." class="precio-cta" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Reservar gratis</a>
+    </div>
     <div class="precio-pill">
       <div class="precio-horas">1 hora</div>
       <div class="precio-amount"><span data-plan="hora1" data-plan-field="precioHora">20€</span><span>/hora</span></div>
@@ -1346,9 +1357,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cta-box">
     <div class="cta-inner">
       <div class="cta-text">
-        <h2 style="font-size:1.8rem; text-align:center;">¿Empezamos <em>tu primera clase?</em></h2>
-        <p>Cuéntame tu nivel y qué necesitas resolver, y diseño la primera sesión contigo. Respondo en menos de 24h.</p>
-        <a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="btn-white" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Consulta disponibilidad</a>
+        <h2 style="font-size:1.8rem; text-align:center;">¿Empezamos con tu <em>clase diagnóstico?</em></h2>
+        <p>15 minutos, gratis. Analizamos tu nivel y uno de tus archivos reales, sin compromiso. Respondo en menos de 24h.</p>
+        <a href="#" data-wa-msg="Hola Jhony, quiero reservar la clase diagnóstico gratuita de 15 min para ver mi nivel de Excel." class="btn-white" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Reservar clase diagnóstico gratis</a>
       </div>
       <div class="cta-img">
         <img src="/clases-particuales-excel-online.png"
@@ -1414,7 +1425,7 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
 
 </script>
 
-<a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Consulta disponibilidad">
+<a href="#" data-wa-msg="Hola Jhony, quiero reservar la clase diagnóstico gratuita de 15 min para ver mi nivel de Excel." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Reservar clase diagnóstico gratis">
   <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
   Reservar
 </a>
