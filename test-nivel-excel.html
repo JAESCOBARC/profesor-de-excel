@@ -206,6 +206,10 @@
 
   .result-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--green-pale); color: var(--green-mid); padding: 6px 16px; border-radius: 100px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
   .result-name { font-size: 1rem; color: var(--slate); margin-bottom: 0.35rem; }
+  .diploma-section { margin-top: 2rem; padding-top: 1.75rem; border-top: 1px solid var(--border); text-align: center; }
+  .diploma-label { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.75rem; }
+  #diplomaCanvas { width: 100%; max-width: 480px; height: auto; border-radius: 10px; box-shadow: 0 6px 24px rgba(10,46,26,0.14); }
+  .diploma-download-btn { display: inline-block; margin-top: 0.9rem; text-decoration: none; }
   .result-level { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 400; color: var(--green-deep); margin-bottom: 0.75rem; }
   .result-desc {
     font-size: 0.92rem; color: var(--slate); line-height: 1.75; margin-bottom: 1.5rem; text-align: left;
@@ -423,6 +427,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <button class="btn-ghost btn-toggle-review" id="btnToggleReview" onclick="toggleReview()">Ocultar mis respuestas ↑</button>
     <div class="review-list open" id="reviewList"></div>
+
+    <div class="diploma-section">
+      <div class="diploma-label">Tu diploma</div>
+      <canvas id="diplomaCanvas" width="1000" height="700"></canvas>
+      <a href="#" id="diplomaDownload" class="btn-ghost diploma-download-btn" download="diploma-nivel-excel.png">Descargar mi diploma →</a>
+    </div>
   </div>
 </div>
 
@@ -917,12 +927,92 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.getElementById('resultCtaText').textContent = ctaText;
 
     renderReview();
+    renderDiploma(userData.nombre, nivelLabel);
 
     document.getElementById('panelQuiz').classList.remove('active');
     document.getElementById('panelIntro').classList.remove('active');
     document.getElementById('panelResult').classList.add('active');
 
     sendTestLead(nivelLabel, plan);
+  }
+
+  function renderDiploma(nombreCompleto, nivelLabel) {
+    var canvas = document.getElementById('diplomaCanvas');
+    var ctx = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    var fechaStr = new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      ctx.fillStyle = '#faf8f3';
+      ctx.fillRect(0, 0, W, H);
+
+      ctx.strokeStyle = '#c9a84c';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(28, 28, W - 56, H - 56);
+      ctx.strokeStyle = 'rgba(10,46,26,0.35)';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(42, 42, W - 84, H - 84);
+
+      ctx.textAlign = 'center';
+
+      ctx.fillStyle = '#7a7a7a';
+      ctx.font = '600 15px "DM Sans", sans-serif';
+      ctx.save();
+      ctx.letterSpacing = '3px';
+      ctx.fillText('CERTIFICADO DE NIVEL DE EXCEL', W / 2, 140);
+      ctx.restore();
+
+      ctx.fillStyle = '#1a5c36';
+      ctx.font = '15px "DM Sans", sans-serif';
+      ctx.fillText('trabajoenexcel.com', W / 2, 168);
+
+      ctx.fillStyle = '#0a2e1a';
+      ctx.font = '400 26px "DM Sans", sans-serif';
+      ctx.fillText('Se certifica que', W / 2, 260);
+
+      var nameFontSize = nombreCompleto.length > 28 ? 46 : 58;
+      ctx.font = '600 ' + nameFontSize + 'px "Fraunces", serif';
+      ctx.fillText(nombreCompleto, W / 2, 330);
+
+      ctx.strokeStyle = '#c9a84c';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(W / 2 - 160, 355);
+      ctx.lineTo(W / 2 + 160, 355);
+      ctx.stroke();
+
+      ctx.fillStyle = '#0a2e1a';
+      ctx.font = '400 26px "DM Sans", sans-serif';
+      ctx.fillText('ha completado el test de nivel de Excel con un', W / 2, 415);
+
+      ctx.fillStyle = '#1a5c36';
+      ctx.font = 'italic 400 48px "Fraunces", serif';
+      ctx.fillText(nivelLabel, W / 2, 480);
+
+      ctx.fillStyle = '#7a7a7a';
+      ctx.font = '400 16px "DM Sans", sans-serif';
+      ctx.fillText(fechaStr, W / 2, 590);
+
+      ctx.fillStyle = '#7a7a7a';
+      ctx.font = '400 13px "DM Sans", sans-serif';
+      ctx.fillText('Jhony Escobar · Profesor de Excel · Microsoft Excel Expert', W / 2, 620);
+
+      var dl = document.getElementById('diplomaDownload');
+      dl.href = canvas.toDataURL('image/png');
+      dl.download = 'diploma-nivel-excel-' + nivelLabel.toLowerCase().replace(/\s+/g, '-') + '.png';
+    }
+
+    if (document.fonts && document.fonts.ready) {
+      Promise.all([
+        document.fonts.load('600 58px "Fraunces"'),
+        document.fonts.load('italic 400 48px "Fraunces"'),
+        document.fonts.load('400 26px "DM Sans"')
+      ]).then(draw).catch(draw);
+    } else {
+      draw();
+    }
   }
 
   function renderReview() {
