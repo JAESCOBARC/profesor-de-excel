@@ -525,8 +525,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .comparativa-table thead th.comparativa-col-jhony { border-radius: 10px 10px 0 0; }
   .comparativa-table tbody tr:last-child td.comparativa-col-jhony { border-radius: 0 0 10px 10px; }
+  .comparativa-scroll-hint { display: none; }
   @media (max-width: 640px) {
     .comparativa-table { min-width: 560px; }
+    .comparativa-scroll-hint {
+      display: block; text-align: center; font-size: 0.8rem; color: var(--muted);
+      margin-top: 0.75rem;
+    }
   }
 
   .servicios { background: var(--cream); }
@@ -1109,6 +1114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </tbody>
     </table>
   </div>
+  <p class="comparativa-scroll-hint">← Desliza para ver la tabla completa →</p>
 </section>
 
 <section class="precios" id="precios">
