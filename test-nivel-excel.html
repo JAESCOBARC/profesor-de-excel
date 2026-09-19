@@ -1115,16 +1115,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     try {
       var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxaoBbw2PlkY_xuccp8dZBKVOPbK_K1t17ZuWXI9tP58PxXCWDbjWFv06K1UhYc0uK0/exec';
       var p = new URLSearchParams(location.search);
-      var vid = '';
-      try {
-        vid = localStorage.getItem('tec_vid');
-        if (!vid) {
-          vid = (window.crypto && crypto.randomUUID)
-            ? crypto.randomUUID()
-            : 'v-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
-          localStorage.setItem('tec_vid', vid);
-        }
-      } catch (e) {}
       fetch(ENDPOINT, {
         method: 'POST', mode: 'no-cors',
         body: JSON.stringify({
@@ -1133,7 +1123,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           nivel: nivelLabel, plan: plan,
           fallos: buildFallosText(),
           resumen: buildResumenText(),
-          gclid: p.get('gclid') || '', gbraid: p.get('gbraid') || '', vid: vid, fbclid: p.get('fbclid') || '',
+          gclid: p.get('gclid') || '', gbraid: p.get('gbraid') || '', wbraid: p.get('wbraid') || '', fbclid: p.get('fbclid') || '',
           page: location.pathname
         })
       }).catch(function () {});
