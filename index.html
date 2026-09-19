@@ -186,6 +186,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://assets.calendly.com">
+<link rel="preconnect" href="https://calendly.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
 <style>
@@ -1453,32 +1455,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section-tag">Reserva directa</div>
   <h2>Reserva tu <em>clase de diagnóstico de Excel gratis</em>.</h2>
   <p class="section-lead">Elige el hueco que mejor te venga, sin escribir a nadie. Es la misma sesión gratuita de 15 minutos.</p>
-  <!-- Principio del widget integrado de Calendly (carga diferida al entrar en pantalla) -->
+  <!-- Principio del widget integrado de Calendly (carga inmediata para que esté listo al hacer scroll desde el CTA del hero) -->
   <div class="calendly-inline-widget" id="calendlyWidget" data-url="https://calendly.com/jhonya2000/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=faf8f3&text_color=0a2e1a&primary_color=1a5c36"></div>
-  <script>
-    (function () {
-      var loaded = false;
-      function loadCalendly() {
-        if (loaded) return;
-        loaded = true;
-        var s = document.createElement('script');
-        s.src = 'https://assets.calendly.com/assets/external/widget.js';
-        s.async = true;
-        document.body.appendChild(s);
-      }
-      var target = document.getElementById('calendlyWidget');
-      if ('IntersectionObserver' in window && target) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) { loadCalendly(); io.disconnect(); }
-          });
-        }, { rootMargin: '200px' });
-        io.observe(target);
-      } else {
-        loadCalendly();
-      }
-    })();
-  </script>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
   <!-- Final del widget integrado de Calendly -->
 </section>
 
