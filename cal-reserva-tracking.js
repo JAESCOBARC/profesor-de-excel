@@ -51,7 +51,7 @@
     try {
       var vid = visitorId();
       var a = readAttribution() || {};
-      var code = 'RESERVA' + vid.replace(/-/g, '').slice(0, 8).toUpperCase();
+      var code = 'RESERVA-' + vid.replace(/-/g, '').slice(0, 8).toUpperCase();
       fetch(ENDPOINT, {
         method: 'POST', mode: 'no-cors',
         body: JSON.stringify({
