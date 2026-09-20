@@ -621,6 +621,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .problemas .section-tag { color: var(--green-light); }
   .problemas h2 { color: white; }
   .problemas .section-lead { color: rgba(255,255,255,0.65); }
+  .problemas h2 em { color: var(--green-light); }
   .problemas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
   .problema-card {
     background: rgba(255,255,255,0.05);
@@ -696,7 +697,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .temario-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
   .temario-item { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; transition: border-color 0.2s; }
   .temario-item:hover { border-color: var(--green-light); }
-  .temario-num { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-light); width: 28px; flex-shrink: 0; }
+  .temario-num { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-mid); width: 28px; flex-shrink: 0; }
   .temario-text h4 { font-size: 0.88rem; font-weight: 500; color: var(--green-deep); }
   .temario-text p { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
 
@@ -811,10 +812,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display: flex;
       align-items: center; gap: 10px;
       position: fixed; bottom: 20px; right: 16px; z-index: 999;
-      background: #25D366; color: white;
+      background: #0E8143; color: white;
       padding: 13px 20px; border-radius: 100px;
       font-size: 0.95rem; font-weight: 600;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      box-shadow: 0 4px 20px rgba(14,129,67,0.45);
       text-decoration: none;
     }
     .whatsapp-float svg { width: 22px; height: 22px; flex-shrink: 0; }
@@ -928,7 +929,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .precio-pill--diagnostico .precio-amount { color: var(--green-mid); }
   .precio-badge {
     position: absolute; top: -14px;
-    background: var(--green-light); color: white;
+    background: var(--green-light); color: var(--green-deep);
     padding: 4px 16px; border-radius: 100px;
     font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em;
   }
