@@ -187,7 +187,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://app.cal.com">
-<link rel="preload" as="script" href="https://app.cal.com/embed/embed.js">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
 <style>
@@ -1479,28 +1478,57 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "15min", {origin:"https://app.cal.com"});
     Cal.config = Cal.config || {};
     Cal.config.forwardQueryParams = true;
 
-    Cal.ns["15min"]("inline", {
-      elementOrSelector:"#my-cal-inline-15min",
-      config: {"layout":"week_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
-      calLink: "jhony-alberto-escobar-castro-hhyscc/15min",
-    });
+    function initCalWidget() {
+      Cal("init", "15min", {origin:"https://app.cal.com"});
 
-    Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#0A2E1A"}},"hideEventTypeDetails":false,"layout":"week_view"});
+      Cal.ns["15min"]("inline", {
+        elementOrSelector:"#my-cal-inline-15min",
+        config: {"layout":"week_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+        calLink: "jhony-alberto-escobar-castro-hhyscc/15min",
+      });
+
+      Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#0A2E1A"}},"hideEventTypeDetails":false,"layout":"week_view"});
+    }
 
     (function () {
       var widget = document.getElementById('my-cal-inline-15min');
       var loading = document.getElementById('calLoading');
-      if (!widget || !loading) return;
-      var hide = function () { loading.classList.add('is-hidden'); };
-      var mo = new MutationObserver(function () {
-        if (widget.querySelector('iframe')) { hide(); mo.disconnect(); }
-      });
-      mo.observe(widget, { childList: true });
-      setTimeout(hide, 8000);
+      if (!widget) return;
+
+      var started = false;
+      function start() {
+        if (started) return;
+        started = true;
+        initCalWidget();
+      }
+
+      // Carga diferida: solo se descarga el bundle de Cal.com cuando el
+      // usuario se acerca a esta sección (rootMargin amplio para que, al
+      // hacer scroll desde el CTA del hero, ya esté en marcha con
+      // antelación) — así no penaliza la carga inicial de la home para
+      // quien nunca llega hasta aquí.
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { start(); io.disconnect(); }
+          });
+        }, { rootMargin: '800px' });
+        io.observe(widget);
+      } else {
+        start();
+      }
+
+      if (loading) {
+        var hide = function () { loading.classList.add('is-hidden'); };
+        var mo = new MutationObserver(function () {
+          if (widget.querySelector('iframe')) { hide(); mo.disconnect(); }
+        });
+        mo.observe(widget, { childList: true });
+        setTimeout(hide, 8000);
+      }
     })();
   </script>
   <!-- Cal inline embed code ends -->
