@@ -654,12 +654,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .agenda-directa .section-lead { max-width: 560px; margin: 0 auto; }
   .agenda-directa .cal-inline-widget {
     position: relative;
-    max-width: 660px; min-width: 320px; height: 880px;
+    max-width: 480px; min-width: 320px; height: 560px;
     margin: 2.5rem auto 0; border-radius: 16px; overflow: auto;
     box-shadow: 0 8px 32px rgba(10,46,26,0.1);
   }
   @media (max-width: 640px) {
-    .agenda-directa .cal-inline-widget { height: 880px; }
+    .agenda-directa .cal-inline-widget { height: 560px; }
   }
   .cal-loading {
     position: absolute; inset: 0; z-index: 1;
@@ -1485,11 +1485,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     Cal.ns["15min"]("inline", {
       elementOrSelector:"#my-cal-inline-15min",
-      config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+      config: {"layout":"week_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
       calLink: "jhony-alberto-escobar-castro-hhyscc/15min",
     });
 
-    Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#1A5C36"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#0A2E1A"}},"hideEventTypeDetails":false,"layout":"week_view"});
 
     (function () {
       var widget = document.getElementById('my-cal-inline-15min');
