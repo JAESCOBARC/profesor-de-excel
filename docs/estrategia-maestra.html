@@ -83,7 +83,7 @@
     <div><strong>Repositorio:</strong> github.com/JAESCOBARC/profesor-de-excel</div>
     <div><strong>Propietario:</strong> Jhony Alberto Escobar Castro</div>
     <div><strong>Dominio:</strong> www.trabajoenexcel.com</div>
-    <div><strong>Última actualización:</strong> 23 de septiembre de 2026 (CRO documentado bajo AIDA + LIFT Model)</div>
+    <div><strong>Última actualización:</strong> 23 de septiembre de 2026 (registro de resultados validados + playbook replicable)</div>
     <div><strong>Fuente:</strong> <span class="code">docs/estrategia-maestra.html</span> — regenerar el PDF tras cada cambio relevante</div>
   </div>
 </div>
@@ -102,6 +102,7 @@
     <li>Diseño</li>
     <li>E-E-A-T y cumplimiento</li>
     <li>Pendientes y roadmap</li>
+    <li>Playbook replicable — semilla para una skill de creación de sitios</li>
     <li>Cómo mantener este documento</li>
   </ol>
 </div>
@@ -317,6 +318,7 @@
   <li>En <code>index.html</code> el widget de Cal.com se embebe inline en la sección "agenda directa".</li>
   <li>Tracking paralelo (<code>cal-reserva-tracking.js</code>) asegura que este canal alimenta la misma hoja de atribución que WhatsApp.</li>
 </ul>
+<div class="callout"><strong>Resultado validado:</strong> tras el lanzamiento, este canal generó 2 conversiones en un solo día — ver "Registro de resultados validados" al final de esta sección. Reducir la fricción de "escribir un mensaje" a "elegir un hueco y reservar" movió conversión real, no solo teórica.</div>
 
 <h3>Tabla comparativa</h3>
 <p>Sección "Clases con Jhony vs. alternativas" (<code>.comparativa</code>) añadida en home y landing principal, con hint de scroll para móvil.</p>
@@ -336,6 +338,13 @@
 
 <h3>Página de pagos centralizada (<code>/pagos/</code>)</h3>
 <p>Reduce fricción en el cierre de venta: enlaces de pago de Revolut para cada producto (clase suelta, bono 5h, bono 10h), más Bizum y transferencia bancaria como alternativas, con mensajes de confianza (pago seguro y cifrado, datos de la pasarela regulada) para mitigar la ansiedad de pago.</p>
+
+<h3>Registro de resultados validados</h3>
+<p>Tabla acumulativa — solo tácticas con un efecto <strong>medido</strong>, no solo implementado. Añadir una fila cada vez que un cambio muestre un resultado real (conversiones, tasa, etc.), aunque sea informal.</p>
+<table>
+<tr><th>Fecha</th><th>Táctica</th><th>Resultado observado</th></tr>
+<tr><td>Sept. 2026</td><td>Segundo canal de conversión de baja fricción (Cal.com) en paralelo a WhatsApp</td><td>2 conversiones en 1 solo día tras el lanzamiento</td></tr>
+</table>
 </div>
 
 <!-- ============ 7. UX ============ -->
@@ -401,9 +410,68 @@
 </table>
 </div>
 
-<!-- ============ 11. MANTENIMIENTO ============ -->
+<!-- ============ 11. PLAYBOOK REPLICABLE ============ -->
 <div class="section-block">
-<h2 class="section-title"><span class="section-num">11</span>Cómo mantener este documento</h2>
+<h2 class="section-title"><span class="section-num">11</span>Playbook replicable — semilla para una skill de creación de sitios</h2>
+<p class="section-intro">Todo lo anterior es el registro de <em>qué</em> se hizo en <strong>este</strong> sitio. Esta sección es distinta a propósito: es la destilación <strong>genérica y accionable</strong> de esas decisiones, escrita para que sirva de checklist de partida al construir una skill que genere un sitio de conversión completo (landing + tracking + CRO) a partir de una sola instrucción, sin depender de Excel ni de este negocio concreto. Cada punto es una regla, no una anécdota.</p>
+
+<h3>1. Antes de escribir una sola línea</h3>
+<ul>
+  <li>Fijar la keyword/intención objetivo de la página — determina H1, título y estrategia de contenido.</li>
+  <li>Decidir el tipo de página (artículo/guía, herramienta interactiva, landing de producto) — cambia qué patrones del checklist aplican.</li>
+  <li>Decidir si captura leads con datos propios o usa el CTA de contacto genérico del sitio — condiciona si hace falta backend de leads.</li>
+  <li>Centralizar cualquier dato numérico que se repita en varias páginas (precio, horas, descuento) en un único fichero de configuración — nunca hardcodearlo en más de un sitio.</li>
+</ul>
+
+<h3>2. Estructura de página — AIDA</h3>
+<ol>
+  <li><strong>Atención:</strong> badge de contexto + H1 con promesa o tensión clara.</li>
+  <li><strong>Interés:</strong> subcopy + bloque de autoridad con credenciales reales.</li>
+  <li><strong>Deseo:</strong> contenido que conecta el problema real del usuario con la solución — dolor citado, comparativas, planes tangibles.</li>
+  <li><strong>Acción:</strong> CTA repetido en puntos de fricción decreciente (nav, hero, inline, final, flotante mobile) — nunca uno solo al final.</li>
+</ol>
+
+<h3>3. Conversión — LIFT Model (checklist obligatorio, no opcional)</h3>
+<p>Propuesta de valor explícita arriba · relevancia a una intención específica · claridad tipográfica y un CTA primario por sección · reducción de ansiedad (FAQ real, credenciales, reseñas reales) · reducción de distracción (nav minimalista, sin salidas dentro del contenido) · urgencia solo si es genuina.</p>
+
+<h3>4. Reglas de conversión probadas (no solo teoría)</h3>
+<ul>
+  <li><strong>Ofrecer un canal de baja fricción en paralelo al canal conversacional</strong> (ej. reserva directa de calendario junto a WhatsApp/chat) — probado: 2 conversiones en 1 día al añadirlo. Regla replicable: cuando el canal principal exige "escribir un mensaje", añadir siempre una alternativa de "un clic, sin escribir a nadie".</li>
+  <li>Ofrecer una entrada de bajo compromiso (diagnóstico/consulta gratuita) antes de pedir el compromiso de pago completo.</li>
+  <li>Centralizar todas las formas de pago en una única página de cierre (varias pasarelas/métodos), con mensajes explícitos de seguridad del pago junto a cada método.</li>
+  <li>Usar un imán de leads interactivo real (no un PDF estático) cuando el producto lo permite — genera su propio dato de intención (nivel/necesidad) útil para personalizar el mensaje de venta.</li>
+</ul>
+
+<h3>5. SEO técnico — no negociable en cada página nueva</h3>
+<ul>
+  <li>Sitemap con <code>lastmod</code> automatizado (no manual) + ping a buscadores tras cada cambio.</li>
+  <li>Jerarquía de encabezados sin saltos (h2→h3→h4, nunca h2→h4).</li>
+  <li>Datos estructurados con datos reales verificables — nunca cifras inventadas de reseñas o ratings.</li>
+  <li>Contraste de color verificado con la fórmula WCAG real (luminancia relativa), no a ojo.</li>
+  <li>og:image propia por página, alta en sitemap.xml — comprobar siempre al crear página nueva (fallo real ya cometido una vez en este sitio).</li>
+</ul>
+
+<h3>6. Rendimiento</h3>
+<ul>
+  <li>Cualquier script/widget de terceros (chat, calendario, mapas) se carga <strong>diferido</strong> (<code>IntersectionObserver</code>), nunca con <code>preload</code> eager — la precarga agresiva de un embed de terceros puede hundir el Core Web Vitals por sí sola.</li>
+  <li>Scripts propios pequeños (consentimiento de cookies, etc.) se inlinean en el <code>&lt;head&gt;</code> en vez de cargarse como petición externa bloqueante.</li>
+  <li>Fuentes web con patrón de carga no bloqueante.</li>
+</ul>
+
+<h3>7. Tracking y atribución</h3>
+<ul>
+  <li>Sistema de atribución propio (IDs publicitarios + ID de visitante) persistido en cliente, independiente del backend de analytics — sobrevive aunque el consentimiento de analytics se rechace, si es una decisión de negocio explícita y documentada.</li>
+  <li>Todo canal de conversión nuevo (ej. un segundo canal de baja fricción) debe alimentar el mismo sistema de atribución que el canal principal — nunca un silo de datos aparte.</li>
+  <li>Si una página navega fuera tras un evento de conversión, dar margen (retraso corto) antes de navegar para no cortar el píxel de conversión.</li>
+</ul>
+
+<h3>8. Principio de gobierno del checklist</h3>
+<div class="callout">Esta lista no es un catálogo de opciones — es un checklist que se aplica <strong>completo</strong> en cada página nueva, igual que ya exige la skill interna <code>/crear-url</code> de este proyecto. La futura skill de creación de sitios debería heredar exactamente esta disciplina: preguntar lo mínimo imprescindible, y no dar una página por terminada sin recorrer cada punto de las secciones 1 a 7.</div>
+</div>
+
+<!-- ============ 12. MANTENIMIENTO ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">12</span>Cómo mantener este documento</h2>
 <p>Este PDF se genera a partir de <code>docs/estrategia-maestra.html</code> (fuente editable, versionada en el repositorio). No se registra cada commit — solo cambios que afecten al estado real del negocio o la estrategia: nuevas páginas, nuevos canales de conversión, hallazgos de SEO/tracking, decisiones de diseño con impacto de marca, o bugs estructurales corregidos.</p>
 <h4>Proceso de actualización</h4>
 <ol>
