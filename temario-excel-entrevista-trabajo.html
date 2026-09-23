@@ -152,8 +152,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
     {
       "@type": "Question",
-      "name": "¿Cómo reservo mi plaza para este programa?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Escríbeme por WhatsApp contándome cuándo es tu entrevista y qué sector es. Te respondo en menos de 24 horas para empezar cuanto antes." }
+      "name": "¿Dónde puedo ver más sobre este programa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "En la home del sitio tienes toda la información de contacto y el resto de programas disponibles. Si no sabes qué nivel tienes, empieza por el test de nivel de Excel gratuito." }
     }
   ]
 }
@@ -196,82 +196,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Profesor particular de Excel online · Jhony Escobar",
-  "description": "Profesor particular de Excel online, clases 1:1 en vivo, nunca en grupo. Desde nivel básico hasta profesor de Excel avanzado: fórmulas, tablas dinámicas, macros VBA, Power Query.",
-  "url": "https://www.trabajoenexcel.com/temario-excel-entrevista-trabajo.html",
-  "provider": {
-    "@type": "Person",
-    "name": "Jhony Escobar",
-    "url": "https://www.trabajoenexcel.com"
-  },
-  "areaServed": { "@type": "Country", "name": "España" },
-  "availableChannel": {
-    "@type": "ServiceChannel",
-    "serviceType": "Online",
-    "availableLanguage": { "@type": "Language", "name": "Spanish" }
-  },
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Clase suelta · 1 hora",
-      "price": "20.00",
-      "priceCurrency": "EUR",
-      "description": "Sesión suelta sin compromiso",
-      "url": "https://www.trabajoenexcel.com/temario-excel-entrevista-trabajo.html#precios",
-      "availability": "https://schema.org/InStock"
-    },
-    {
-      "@type": "Offer",
-      "name": "Bono 5 horas",
-      "price": "90.00",
-      "priceCurrency": "EUR",
-      "description": "18€/hora · 10% descuento",
-      "url": "https://www.trabajoenexcel.com/temario-excel-entrevista-trabajo.html#precios",
-      "availability": "https://schema.org/InStock"
-    },
-    {
-      "@type": "Offer",
-      "name": "Bono 10 horas o más",
-      "price": "165.00",
-      "priceCurrency": "EUR",
-      "description": "16,50€/hora · 17% descuento",
-      "url": "https://www.trabajoenexcel.com/temario-excel-entrevista-trabajo.html#precios",
-      "availability": "https://schema.org/InStock"
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "bestRating": "5",
-    "worstRating": "1",
-    "reviewCount": "14"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Alberto" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Jhony es un experto top de Excel. En mi caso me ayudó enormemente para terminar un proyecto profesional. Lo que yo no conseguí en horas de trabajo por mi cuenta, él lo logró rápidamente, enseñándome en todo momento el proceso hasta llegar al resultado final."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Andrés Felipe" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Jhony es un profesor digno de confianza porque tiene todo el conocimiento en Excel avanzado; además, sabe como trasmitir este conocimiento y llevar al alumno a adquirir nuevas habilidades y fortalezas. Muy recomendado."
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Lennis" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Conozco a Jhony hace más de 14 años y es un profesional altamente calificado y competente. Como profesor cuenta con grandes habilidades para enseñar, como paciencia, responsabilidad y compromiso con el alumno."
-    }
-  ]
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
@@ -957,6 +881,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: white; color: var(--green-mid); border: 1px solid var(--green-pale);
     padding: 6px 14px; border-radius: 100px;
   }
+
+  .temario-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  .temario-detail-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem 1.75rem; }
+  .temario-detail-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 0.9rem; }
+  .temario-detail-num { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--green-light); flex-shrink: 0; }
+  .temario-detail-card h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.05rem; color: var(--green-deep); }
+  .temario-detail-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+  .temario-detail-card li { font-size: 0.88rem; color: var(--slate); line-height: 1.5; padding-left: 1.1rem; position: relative; }
+  .temario-detail-card li::before { content: '✓'; position: absolute; left: 0; color: var(--green-mid); font-weight: 700; font-size: 0.8rem; }
 </style>
 </head>
 <body>
@@ -968,14 +901,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav>
   <a href="/" class="nav-logo"><img src="/logo-pe.png" alt="" class="nav-logo-mark" width="28" height="28">Excel con Jhony</a>
   <ul class="nav-links">
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#precios">Precios</a></li>
-    <li><a href="#metodologia">Metodología</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="certificacion-microsoft-excel-especialista.html">Certificación</a></li>
   </ul>
-  <a href="#precios" class="nav-precios-cta">Precios</a>
-  <a href="#testimonios" class="nav-cta">Testimonios →</a>
+  <a href="/" class="nav-cta">Volver a la home →</a>
   <div class="nav-mobile-badge"><span>Programa 5h · Online 1:1 · Cualquier sector</span></div>
 </nav>
 
@@ -998,12 +927,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="hero-live-note">Practicamos con casos parecidos a los reales de tu sector — no ejercicios genéricos de manual.</p>
     <div class="hero-actions">
-      <a href="#" class="btn-primary" data-cal-link="jhony-alberto-escobar-castro-hhyscc/15min" data-cal-namespace="15min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}' data-track-reserva="1"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Reservar clase diagnóstico gratis →</a>
-      <a href="#precios" class="btn-ghost">Ver precios y bonos</a>
+      <a href="/test-nivel-excel.html" class="btn-primary">Valida tu nivel gratis →</a>
+      <a href="/" class="btn-ghost">Volver a la home</a>
     </div>
-    <p class="hero-wa-hint">Elige el hueco que mejor te venga, sin escribir a nadie.</p>
-    <p class="hero-price-hint"><strong>15 min · Gratis</strong> · Analizamos tu nivel y uno de tus archivos reales</p>
-    <p class="hero-urgency"><span id="urgencyEmoji">🟡</span> <strong id="urgencyText">Últimas Plazas</strong><br>Respondo en menos de 2h · Lunes a viernes</p>
+    <p class="hero-wa-hint">Test de nivel gratuito de 5 minutos, sin registro.</p>
     <div class="hero-trust">
       <div class="trust-item">
         <span class="trust-num">+200</span>
@@ -1081,195 +1008,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="coste-inaccion">
-  <div class="coste-eyebrow">Lo que pasa si llegas sin preparar</div>
-  <div class="coste-chain">
-    <div class="coste-step"><span class="coste-num"><strong>0h</strong></span><span class="coste-label">de práctica</span></div>
-    <span class="coste-arrow">→</span>
-    <div class="coste-step"><span class="coste-num"><strong>Bloqueo</strong></span><span class="coste-label">con el cronómetro</span></div>
-    <span class="coste-arrow">→</span>
-    <div class="coste-step"><span class="coste-num"><strong>Prueba</strong></span><span class="coste-label">fallida</span></div>
-    <span class="coste-arrow">→</span>
-    <div class="coste-step"><span class="coste-num"><strong>Oferta</strong></span><span class="coste-label">perdida</span></div>
-  </div>
-  <div class="coste-final">
-    <p>Las pruebas de Excel en procesos de selección eliminan candidatos por <strong>nervios y falta de práctica</strong>, no por falta de talento.</p>
-    <p class="coste-hook">Se soluciona con horas bien dirigidas, no con más CV.</p>
-  </div>
-</section>
-
-<section class="enfoque-8020" id="enfoque">
-  <div class="section-tag">Propuesta de valor</div>
-  <h2>El <em>80/20</em> aplicado a tu prueba de Excel</h2>
-  <p class="section-lead">No repasamos Excel entero: nos centramos en el 20% de fórmulas y herramientas que aparecen en el 80% de las pruebas de selección.</p>
-  <div class="ocho-grid">
-    <div class="ocho-card">
-      <div class="ocho-num">20<span>%</span></div>
-      <div class="ocho-title">del temario de Excel</div>
-      <div class="ocho-sub">Las fórmulas, tablas dinámicas y herramientas que usarás cada semana en tu trabajo</div>
-    </div>
-    <div class="ocho-arrow">→</div>
-    <div class="ocho-card">
-      <div class="ocho-num">80<span>%</span></div>
-      <div class="ocho-title">del trabajo real cubierto</div>
-      <div class="ocho-sub">Sin malgastar horas en funciones que probablemente nunca vas a necesitar</div>
-    </div>
-    <div class="ocho-arrow">→</div>
-    <div class="ocho-card ocho-card--result">
-      <div class="ocho-num">5<span>h</span></div>
-      <div class="ocho-title">para ver resultados reales</div>
-      <div class="ocho-sub">Productivo con Excel desde las primeras sesiones, aplicado a tu trabajo</div>
-    </div>
-  </div>
-  <p class="ocho-detail">
-    Es el criterio que aplico como profesor particular en cada sesión 1:1: <strong>priorizamos lo que de verdad usas</strong>, en el orden correcto, sobre tus archivos reales — sin temario de relleno.
-  </p>
-</section>
-
-<section class="problemas" id="problemas">
-  <div class="section-tag">¿Te identificas?</div>
-  <h2>Por qué fallan las pruebas de Excel<br>en <em>procesos de selección</em></h2>
-  <p class="section-lead">No es falta de nivel — es falta de práctica bajo presión y con el formato exacto de la prueba. Estas son las situaciones más habituales.</p>
-  <div class="problemas-grid">
-    <div class="problema-card">
-      <div class="problema-icon">⏱</div>
-      <h3>Llevas años sin tocar tablas dinámicas</h3>
-      <p>Repasamos justo lo que se oxida más rápido: tablas dinámicas, BUSCARV y fórmulas lógicas, con ejercicios cronometrados.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">😰</div>
-      <h3>Te bloqueas con el cronómetro delante</h3>
-      <p>Los 2 simulacros reproducen la presión real de la prueba, para que el día de la entrevista no sea la primera vez que sientes esa presión.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">❓</div>
-      <h3>No sabes qué nivel te van a pedir</h3>
-      <p>Analizamos juntos el puesto y el sector para enfocar las 5 horas en lo que de verdad te van a evaluar.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">📉</div>
-      <h3>Ya hiciste una prueba y no salió bien</h3>
-      <p>Identificamos qué falló exactamente — velocidad, fórmulas o nervios — y lo trabajamos de forma específica.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">🏢</div>
-      <h3>Cada sector pide cosas distintas</h3>
-      <p>Practicamos con datos parecidos a los de la empresa: turnos en hostelería, ventas en comercial, partidas en finanzas.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">📅</div>
-      <h3>Tu entrevista es en pocos días</h3>
-      <p>Podemos concentrar las 5 horas en los días que queden — cuanto antes empieces, más margen para repasar lo que falle.</p>
-    </div>
-  </div>
-</section>
-
-<section class="servicios" id="servicios">
-  <div class="section-tag">Cómo trabajamos juntos</div>
-  <h2>Todo incluido en el <em>programa de 5 horas</em></h2>
-  <p class="section-lead">Un programa cerrado y completo, sin sorpresas — esto es exactamente lo que incluye.</p>
-  <div class="servicios-grid">
-    <div class="servicio-card">
-      <span class="servicio-popular">Más popular</span>
-      <div class="servicio-icon">👤</div>
-      <h3>Clases particulares de Excel online</h3>
-      <p>Sesiones individuales en vivo por Google Meet, adaptadas a tu nivel y tus archivos reales.</p>
-      <ul>
-        <li>Temario 100% personalizado</li>
-        <li>Resolución de dudas en tiempo real</li>
-        <li>Grabación de cada sesión</li>
-        <li>Material y ejercicios propios</li>
-        <li>Desde nivel básico a avanzado</li>
-      </ul>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-icon">🏢</div>
-      <h3>Formación Excel para empresas</h3>
-      <p>Capacita a tu equipo con clases de Excel en vivo, adaptadas a los procesos de tu empresa.</p>
-      <ul>
-        <li>Grupos reducidos o equipos completos</li>
-        <li>Aplicado a vuestros propios datos</li>
-        <li>Dashboards y reportes a medida</li>
-        <li>Presupuesto personalizado</li>
-        <li>Certificado de formación</li>
-      </ul>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-icon">🤖</div>
-      <h3>Automatización y macros VBA</h3>
-      <p>Aprende a programar macros en Excel para eliminar tareas repetitivas y automatizar procesos.</p>
-      <ul>
-        <li>Grabación y edición de macros</li>
-        <li>VBA desde cero</li>
-        <li>Formularios automatizados</li>
-        <li>Conexión con otras herramientas</li>
-      </ul>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-icon">📊</div>
-      <h3>Consultoría y plantillas Excel</h3>
-      <p>Te diseño plantillas profesionales o resuelvo tus archivos complejos de Excel directamente.</p>
-      <ul>
-        <li>Dashboards e informes visuales</li>
-        <li>Modelos financieros</li>
-        <li>Plantillas reutilizables</li>
-        <li>Entrega en 48–72 horas</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="comparativa">
-  <div class="section-tag">Antes de decidir</div>
-  <h2>¿Seguro que quieres llegar a la prueba<br>solo con <em>vídeos de YouTube</em>?</h2>
-  <p class="section-lead">Cada opción tiene un coste distinto — de tiempo, de dinero o de una oferta de trabajo perdida. Compáralas tú mismo.</p>
-  <div class="comparativa-wrap">
-    <table class="comparativa-table">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col" class="comparativa-col-jhony"><span class="comparativa-badge">Recomendado</span>Clases con Jhony</th>
-          <th scope="col">Curso pregrabado</th>
-          <th scope="col">Tutoriales de YouTube</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">Personalización</th>
-          <td class="comparativa-col-jhony">Con tus propios archivos reales</td>
-          <td>Contenido genérico igual para todos</td>
-          <td>Ninguna</td>
-        </tr>
-        <tr>
-          <th scope="row">Dudas resueltas</th>
-          <td class="comparativa-col-jhony">En el momento, en vivo</td>
-          <td>Nunca (o en un foro, días después)</td>
-          <td>Nunca</td>
-        </tr>
-        <tr>
-          <th scope="row">Nivel del contenido</th>
-          <td class="comparativa-col-jhony">Adaptado a tu nivel real</td>
-          <td>Fijo, sin importar tu nivel</td>
-          <td>Disperso, sin progresión</td>
-        </tr>
-        <tr>
-          <th scope="row">Certificación del profesor</th>
-          <td class="comparativa-col-jhony">Microsoft Excel Expert</td>
-          <td>Variable</td>
-          <td>Ninguna</td>
-        </tr>
-        <tr>
-          <th scope="row">Precio</th>
-          <td class="comparativa-col-jhony">Desde 20€/hora, sin permanencia</td>
-          <td>20-40€ una vez, contenido fijo</td>
-          <td>Gratis, pero meses de tiempo perdido</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p class="comparativa-scroll-hint">← Desliza para ver la tabla completa →</p>
-</section>
-
 <section class="certificado-section">
   <div class="certificado-inner">
     <div class="certificado-visual">
@@ -1289,115 +1027,109 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="precios" id="precios">
-  <div class="section-tag">Tarifas</div>
-  <h2>Planes de <em>precio</em></h2>
-  <p class="section-lead">Sin permanencias ni suscripciones. Elige el bono que mejor se adapta a tu ritmo.</p>
-  <div class="precios-grid">
-    <div class="precio-pill precio-pill--diagnostico">
-      <div class="precio-badge">Empieza aquí</div>
-      <div class="precio-horas">Clase diagnóstico</div>
-      <div class="precio-amount">Gratis</div>
-      <div class="precio-desc">15 min · Analizamos tu nivel y uno de tus archivos reales, sin compromiso</div>
-      <a href="#" data-wa-msg="Hola Jhony, quiero reservar la clase diagnóstico gratuita de 15 min para ver mi nivel de Excel y ver cuál es el plan de aprendizaje que me interesa contratar." class="precio-cta" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Reservar gratis</a>
-    </div>
-    <div class="precio-pill">
-      <div class="precio-horas">1 hora</div>
-      <div class="precio-amount"><span data-plan="hora1" data-plan-field="precioHora">20€</span><span>/hora</span></div>
-      <div class="precio-desc">Sesión suelta, sin compromiso</div>
-      <a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="precio-cta" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Consulta disponibilidad</a>
-    </div>
-    <div class="precio-pill precio-pill--popular">
-      <div class="precio-badge">Más popular</div>
-      <div class="precio-horas">Bono 5 horas</div>
-      <div class="precio-amount"><span data-plan="bono5" data-plan-field="precioHora">18€</span><span>/hora</span></div>
-      <div class="precio-descuento"><span data-plan="bono5" data-plan-field="descuento">10</span>% descuento · <span data-plan="bono5" data-plan-field="total">90€</span> total</div>
-      <div class="precio-desc">Ideal para aprender a tu ritmo</div>
-      <a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="precio-cta" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Consulta disponibilidad</a>
-    </div>
-    <div class="precio-pill">
-      <div class="precio-horas">Bono 10 h o más</div>
-      <div class="precio-amount"><span data-plan="bono10" data-plan-field="precioHora">16,50€</span><span>/hora</span></div>
-      <div class="precio-descuento"><span data-plan="bono10" data-plan-field="descuento">17</span>% descuento · desde <span data-plan="bono10" data-plan-field="total">165€</span></div>
-      <div class="precio-desc">Para formaciones completas o equipos</div>
-      <a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="precio-cta" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Consulta disponibilidad</a>
-    </div>
-    <div class="precio-pill">
-      <div class="precio-horas">A medida</div>
-      <div class="precio-amount" style="font-size:1.8rem; line-height:1.2;">Trabajos<br>y asesorías</div>
-      <div class="precio-desc">Plantillas, automatizaciones, dashboards o consultoría personalizada según tu proyecto</div>
-      <a href="automatizacion-excel-empresas.html" class="precio-cta">Contactar</a>
-    </div>
-  </div>
-</section>
-
 <section class="temario" id="temario">
   <div class="section-tag">Contenidos</div>
   <h2>El temario completo, <em>bloque a bloque</em></h2>
   <p class="section-lead">8 bloques ordenados de menos a más, terminando con 2 simulacros de entrevista reales. Aplicable a cualquier sector.</p>
-  <div class="temario-cols">
-    <div class="temario-item">
-      <div class="temario-num">01</div>
-      <div class="temario-text">
+  <div class="temario-detail-grid">
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">01</span>
         <h3>Interfaz y navegación</h3>
-        <p>Cinta de opciones, rangos con nombre, imprimir archivos</p>
       </div>
+      <ul>
+        <li>Cinta de opciones, filas/columnas, hojas, guardar archivos</li>
+        <li>Nombrar rangos (cuadro de nombres)</li>
+        <li>Imprimir archivos</li>
+      </ul>
     </div>
-    <div class="temario-item">
-      <div class="temario-num">02</div>
-      <div class="temario-text">
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">02</span>
         <h3>Atajos de teclado esenciales</h3>
-        <p>Acciones básicas sobre celdas, filas/columnas y relleno mágico (Ctrl+E)</p>
       </div>
+      <ul>
+        <li>Acciones básicas sobre celdas, filas y columnas</li>
+        <li>Navegación sobre los datos</li>
+        <li>Relleno mágico (Ctrl+E)</li>
+      </ul>
     </div>
-    <div class="temario-item">
-      <div class="temario-num">03</div>
-      <div class="temario-text">
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">03</span>
         <h3>Formatos y tablas</h3>
-        <p>Formato de celda, tablas (Ctrl+T), filtros, formato condicional, CSV</p>
       </div>
+      <ul>
+        <li>Formatos de celda: número, porcentajes, decimales, bordes</li>
+        <li>Formatos de tabla (Ctrl+T)</li>
+        <li>Manejo de datos: filtros básicos, ordenar de mayor/menor</li>
+        <li>Formato condicional</li>
+        <li>Extracción de ficheros CSV (texto en columnas)</li>
+      </ul>
     </div>
-    <div class="temario-item">
-      <div class="temario-num">04</div>
-      <div class="temario-text">
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">04</span>
         <h3>Fórmulas básicas</h3>
-        <p>Suma, resta, promedio, máx/mín, concatenar, referencias absolutas (F4)</p>
       </div>
+      <ul>
+        <li>Suma, resta, multiplicación, división</li>
+        <li>Promedio</li>
+        <li>Máximo, mínimo</li>
+        <li>Recuento</li>
+        <li>Redondear</li>
+        <li>Mayúsculas / minúsculas</li>
+        <li>Concatenar</li>
+        <li>Referencias absolutas / relativas (F4)</li>
+      </ul>
     </div>
-    <div class="temario-item">
-      <div class="temario-num">05</div>
-      <div class="temario-text">
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">05</span>
         <h3>Fórmulas clave 🔑</h3>
-        <p>SI, Y/O, SI.ERROR, BUSCARV/BUSCARX, SUMAR.SI, CONTAR.SI, FILTRAR</p>
       </div>
+      <ul>
+        <li>SI (función lógica)</li>
+        <li>Y / O (función lógica)</li>
+        <li>SI.ERROR</li>
+        <li>BUSCARV · BUSCARX</li>
+        <li>SUMAR.SI, CONTAR.SI</li>
+        <li>TEXTO</li>
+        <li>Fechas</li>
+        <li>FILTRAR</li>
+      </ul>
     </div>
-    <div class="temario-item">
-      <div class="temario-num">06</div>
-      <div class="temario-text">
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">06</span>
         <h3>Tablas dinámicas</h3>
-        <p>Creación, análisis y actualización de datos dinámicos</p>
       </div>
+      <ul>
+        <li>Creación de tablas dinámicas</li>
+        <li>Analizar datos con tablas dinámicas</li>
+        <li>Actualizar datos dinámicos</li>
+      </ul>
     </div>
-    <div class="temario-item">
-      <div class="temario-num">07</div>
-      <div class="temario-text">
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">07</span>
         <h3>Gráficos</h3>
-        <p>Tipos de gráfico, gráficos de 2 ejes, gráficos dinámicos</p>
       </div>
+      <ul>
+        <li>Tipos de gráficos y usos</li>
+        <li>Gráficos de 2 ejes</li>
+        <li>Gráficos dinámicos</li>
+      </ul>
     </div>
-    <div class="temario-item">
-      <div class="temario-num">08</div>
-      <div class="temario-text">
-        <h3>Simulacro cronometrado 1</h3>
-        <p>Ejercicio completo contra el reloj, con feedback inmediato</p>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">08</span>
+        <h3>Simulacros</h3>
       </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">09</div>
-      <div class="temario-text">
-        <h3>Simulacro cronometrado 2</h3>
-        <p>Segunda vuelta con lo que falló en el primero, hasta que salga fluido</p>
-      </div>
+      <ul>
+        <li>Simulacro de entrevista de trabajo 1</li>
+        <li>Simulacro de entrevista de trabajo 2</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1415,122 +1147,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="sector-chip">Administración</span>
     <span class="sector-chip">Educación</span>
     <span class="sector-chip">Sanidad</span>
-  </div>
-</section>
-
-<section class="metodologia" id="metodologia">
-  <div class="section-tag">Mi forma de trabajar</div>
-  <h2>La metodología de un<br><em>profesor particular</em> real</h2>
-  <div class="metodo-grid">
-    <div class="metodo-steps">
-      <div class="metodo-step">
-        <div class="step-circle">1</div>
-        <div class="step-content">
-          <h3>Diagnóstico personalizado</h3>
-          <p>Primera sesión para entender tu nivel, tus objetivos y qué necesitas resolver con Excel.</p>
-        </div>
-      </div>
-      <div class="metodo-step">
-        <div class="step-circle">2</div>
-        <div class="step-content">
-          <h3>Plan de clases a tu medida</h3>
-          <p>Diseño un temario específico para ti, partiendo de tus archivos reales y casos concretos.</p>
-        </div>
-      </div>
-      <div class="metodo-step">
-        <div class="step-circle">3</div>
-        <div class="step-content">
-          <h3>Sesiones en vivo por Meet</h3>
-          <p>Nos conectamos, compartimos pantalla y trabajamos juntos. Preguntas en tiempo real, sin esperar.</p>
-        </div>
-      </div>
-      <div class="metodo-step">
-        <div class="step-circle">4</div>
-        <div class="step-content">
-          <h3>Seguimiento y material</h3>
-          <p>Grabación de cada sesión, ejercicios para practicar y soporte por WhatsApp entre clases.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="metodo-features">
-      <h3>¿Por qué un profesor particular y no un curso?</h3>
-      <div class="feature-row">
-        <div class="feature-icon">🎯</div>
-        <div class="feature-text"><strong>100% personalizado:</strong> temario adaptado a tus objetivos, no a un estándar genérico.</div>
-      </div>
-      <div class="feature-row">
-        <div class="feature-icon">⚡</div>
-        <div class="feature-text"><strong>Aprende 3x más rápido:</strong> resolver dudas en tiempo real elimina el bloqueo del aprendizaje solo.</div>
-      </div>
-      <div class="feature-row">
-        <div class="feature-icon">📂</div>
-        <div class="feature-text"><strong>Tus propios archivos:</strong> aplicamos cada concepto directamente a tu trabajo real.</div>
-      </div>
-      <div class="feature-row">
-        <div class="feature-icon">📹</div>
-        <div class="feature-text"><strong>Grabación incluida:</strong> repasa cada sesión cuando quieras, sin límite de tiempo.</div>
-      </div>
-      <div class="feature-row">
-        <div class="feature-icon">📍</div>
-        <div class="feature-text"><strong>Online, toda España:</strong> disponible para alumnos en Madrid, Barcelona, Valencia, Sevilla y todo el país.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="quien-soy" id="quien-soy">
-  <div class="section-tag">Sobre tu profesor particular</div>
-  <h2>¿Quién es tu <em>profesor de Excel</em>?</h2>
-  <p class="section-lead">
-    Soy profesor particular de Excel online con más de 15 años de experiencia real en empresa — marketing digital, finanzas y e-commerce. Analista de datos certificado por Microsoft que imparte clases particulares de Excel avanzado adaptadas a tus archivos y objetivos reales, no a ejercicios de manual.
-  </p>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-icon">🎓</div>
-      <div class="timeline-content">
-        <div class="timeline-date">2021 – hoy · Activo</div>
-        <div class="timeline-role">Fundador y Profesor</div>
-        <h3>Excel para Todos</h3>
-        <p>+200 alumnos formados en fórmulas, VBA, Power Query y dashboards.<span class="timeline-more"> He desarrollado más de 200 plantillas y aplicaciones en AppSheet para automatizar procesos en PYMEs.</span></p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">🛒</div>
-      <div class="timeline-content">
-        <div class="timeline-date">2018 – hoy · Vigente</div>
-        <div class="timeline-role">Ecommerce Manager Junior</div>
-        <h3>Perfumerías Coqueteo · Granada</h3>
-        <p>+1M€ de facturación anual y ROAS de 9x en e-commerce.<span class="timeline-more"> Análisis diario RFM, Pareto y ABC con Excel y BI para optimizar ventas y pricing.</span></p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">💰</div>
-      <div class="timeline-content">
-        <div class="timeline-date">2016 – 2017</div>
-        <div class="timeline-role">Analista de Costos y Presupuestos</div>
-        <h3>Audifarma S.A · Colombia</h3>
-        <p>Gestión presupuestaria y reporting financiero en el sector farmacéutico.<span class="timeline-more"> Trabajo intensivo con Excel para control de desviaciones.</span></p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">📊</div>
-      <div class="timeline-content">
-        <div class="timeline-date">2011 – 2016</div>
-        <div class="timeline-role">Auxiliar de Información Comercial</div>
-        <h3>Grupo Nutresa (Zenú) · Colombia</h3>
-        <p>Reporting de ventas y apoyo a decisiones comerciales.<span class="timeline-more"> Primeros años consolidando el análisis de datos como herramienta diaria.</span></p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-icon">⚙️</div>
-      <div class="timeline-content">
-        <div class="timeline-date">2007 – 2011</div>
-        <div class="timeline-role">Analista de Métodos y Tiempos</div>
-        <h3>Ayco Ltda · Colombia</h3>
-        <p>Planeación del ERP de producción e inventarios.<span class="timeline-more"> Aquí arrancó todo: la pasión por optimizar procesos con datos.</span></p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1557,8 +1173,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="faq-a">Sí, un certificado de finalización con tu nombre, las 5 horas cursadas y el temario exacto visto, verificable con código QR.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
-          <h3 class="faq-q">¿Cómo reservo mi plaza para este programa?</h3>
-          <div class="faq-a">Escríbeme por WhatsApp contándome cuándo es tu entrevista y qué sector es. Te respondo en menos de 24 horas para empezar cuanto antes.</div>
+          <h3 class="faq-q">¿Dónde puedo ver más sobre este programa?</h3>
+          <div class="faq-a">En la home del sitio tienes toda la información de contacto y el resto de programas disponibles. Si no sabes qué nivel tienes, empieza por el test de nivel de Excel gratuito.</div>
         </div>
       </div>
     </div>
@@ -1609,9 +1225,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="cta-box">
     <div class="cta-inner">
       <div class="cta-text">
-        <h2 style="font-size:1.8rem; text-align:center;">¿Empezamos con tu <em>clase diagnóstico?</em></h2>
-        <p>15 minutos, gratis. Analizamos tu nivel y uno de tus archivos reales, sin compromiso. Respondo en menos de 24h.</p>
-        <a href="#" class="btn-white" data-cal-link="jhony-alberto-escobar-castro-hhyscc/15min" data-cal-namespace="15min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}' data-track-reserva="1"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Reservar clase diagnóstico gratis</a>
+        <h2 style="font-size:1.8rem; text-align:center;">¿Quieres saber <em>qué nivel tienes</em>?</h2>
+        <p>Haz el test de nivel de Excel gratuito, 5 minutos, y descubre exactamente dónde estás antes de elegir programa.</p>
+        <a href="/test-nivel-excel.html" class="btn-white">Valida tu nivel gratis →</a>
+        <p style="margin-top:1rem;"><a href="/" style="color:rgba(255,255,255,0.8);">← Volver a la home</a></p>
       </div>
       <div class="cta-img">
         <img src="/clases-particuales-excel-online.png"
@@ -1650,10 +1267,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/prueba-excel-entrevista-trabajo.html">Guía y ejercicios de práctica</a>
       <a href="/curso-excel-nivel-intermedio.html">Temario nivel intermedio</a>
       <a href="/curso-excel-avanzado-power-bi.html">Temario Excel avanzado</a>
-      <a href="#precios">Precios</a>
       <a href="#faq">FAQ</a>
       <a href="/verificar-certificado/">Verificar certificado</a>
-      <a href="/pagos/">Pagos</a>
+      <a href="/test-nivel-excel.html">Test de nivel de Excel</a>
     </div>
     <div class="footer-social">
       <a href="https://www.linkedin.com/in/jaescobarc/" target="_blank" rel="noopener" class="social-link">
@@ -1677,24 +1293,7 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
 
 </script>
 
-<a href="#" data-wa-msg="Hola Jhony, quiero reservar la clase diagnóstico gratuita de 15 min para ver mi nivel de Excel y ver cuál es el plan de aprendizaje que me interesa contratar." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Reservar clase diagnóstico gratis">
-  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
-  Reservar
-</a>
 <script src="/planes-config.js"></script>
-<script src="/whatsapp-config.js"></script>
-<!-- Cal element-click embed code begins -->
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "15min", {origin:"https://app.cal.com"});
-  Cal.config = Cal.config || {};
-  Cal.config.forwardQueryParams = true;
-
-  Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#4DB87A"}},"hideEventTypeDetails":false,"layout":"month_view"});
-</script>
-<!-- Cal element-click embed code ends -->
-<script src="/cal-reserva-tracking.js"></script>
-<script src="/plazas-urgencia.js"></script>
 <script>
 (function () {
   var video = document.getElementById('mobileVideo');
