@@ -679,6 +679,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .certificado-visual img { width: 240px; transform: rotate(0deg); }
   }
 
+  .programas-section { padding: 4rem 5%; max-width: 1100px; margin: 0 auto; }
+  .programas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  .programa-card {
+    background: white; border: 1px solid var(--border); border-radius: 18px;
+    padding: 1.75rem; display: flex; flex-direction: column;
+    text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .programa-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(10,46,26,0.08); }
+  .programa-card-badge {
+    display: inline-flex; align-self: flex-start; font-size: 0.72rem; font-weight: 600;
+    color: var(--green-mid); background: var(--green-mist); border: 1px solid var(--green-pale);
+    padding: 3px 11px; border-radius: 100px; margin-bottom: 0.85rem;
+  }
+  .programa-card h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem; color: var(--green-deep); margin-bottom: 0.5rem; }
+  .programa-card p { font-size: 0.87rem; color: var(--slate); line-height: 1.6; margin-bottom: 1.1rem; flex: 1; }
+  .programa-card-link { font-size: 0.85rem; font-weight: 600; color: var(--green-mid); display: inline-flex; align-items: center; gap: 5px; }
+  .programa-card:hover .programa-card-link { color: var(--green-deep); }
+
   .servicios { background: var(--cream); }
   .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .servicio-card {
@@ -1312,6 +1330,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </ul>
       <a href="/verificar-certificado/" class="certificado-verify">Verificar un certificado <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
     </div>
+  </div>
+</section>
+
+<section class="programas-section">
+  <div class="section-tag">Elige tu punto de partida</div>
+  <h2>Tres programas, <em>temario completo publicado</em></h2>
+  <p class="section-lead">Nada de "temario a consultar" — mira exactamente qué se enseña en cada programa, módulo a módulo, antes de decidirte. Los tres se adaptan a tu sector.</p>
+  <div class="programas-grid">
+    <a href="/temario-excel-entrevista-trabajo.html" class="programa-card">
+      <span class="programa-card-badge">5 horas</span>
+      <h3>Entrevista de trabajo</h3>
+      <p>8 bloques y 2 simulacros cronometrados para superar cualquier prueba de Excel en un proceso de selección.</p>
+      <span class="programa-card-link">Ver temario completo →</span>
+    </a>
+    <a href="/curso-excel-nivel-intermedio.html" class="programa-card">
+      <span class="programa-card-badge">10 horas · Certificado</span>
+      <h3>Nivel intermedio</h3>
+      <p>8 bloques, de fórmulas clave a dashboards, para dejar de "ir tirando" y manejar Excel con soltura real.</p>
+      <span class="programa-card-link">Ver temario completo →</span>
+    </a>
+    <a href="/curso-excel-avanzado-power-bi.html" class="programa-card">
+      <span class="programa-card-badge">A medida</span>
+      <h3>Avanzado: Power Query, Power BI e IA</h3>
+      <p>Automatización de datos, Business Analytics, dashboards e inteligencia artificial aplicada a Excel.</p>
+      <span class="programa-card-link">Ver temario completo →</span>
+    </a>
   </div>
 </section>
 
