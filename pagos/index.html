@@ -66,10 +66,10 @@
   }
   .bizum-info { display: flex; align-items: center; gap: 12px; }
   .bizum-logo {
-    width: 40px; height: 40px; border-radius: 10px; background: #0086FF; color: white;
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-weight: 600; font-size: 0.8rem; flex-shrink: 0;
+    width: 40px; height: 40px; border-radius: 10px; background: #2AC7D2;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
   }
+  .bizum-logo svg { width: 22px; height: 22px; }
   .bizum-info h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem; color: var(--green-deep); margin-bottom: 0.2rem; }
   .bizum-info p { font-size: 0.85rem; color: var(--muted); }
   .bizum-info strong { color: var(--charcoal); font-variant-numeric: tabular-nums; }
@@ -293,7 +293,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="bizum-card">
     <div class="bizum-info">
-      <div class="bizum-logo">Bizum</div>
+      <div class="bizum-logo">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="6.5" cy="6.5" r="2" fill="white"/>
+          <rect x="9.2" y="4.3" width="3.6" height="10.4" rx="1.8" fill="white" transform="rotate(35 11 9.5)"/>
+          <rect x="12.8" y="10.5" width="3.2" height="7.4" rx="1.6" fill="white" transform="rotate(35 14.4 14.2)"/>
+          <circle cx="17.5" cy="17.5" r="2" fill="white"/>
+        </svg>
+      </div>
       <div>
         <h2>Envía a <strong>63056260</strong></h2>
         <p>Destinatario: Jhony Alberto Escobar Castro</p>
