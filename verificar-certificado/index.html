@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verificar certificado | trabajoenexcel.com</title>
+<meta name="description" content="Verifica la autenticidad de un certificado de formación emitido por Excel con Jhony.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.trabajoenexcel.com/verificar-certificado/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green-deep: #0a2e1a; --green-mid: #1a5c36; --green-light: #4db87a;
+    --green-pale: #d4f0e0; --green-mist: #f0faf4; --cream: #faf8f3;
+    --charcoal: #1c1c1c; --slate: #4a4a4a; --muted: #7a7a7a; --border: rgba(0,0,0,0.08);
+    --red-mist: #fdf1f0; --red-pale: #f6d3cf; --red-deep: #a33a2c;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.6; }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,248,243,0.96); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 60px;
+  }
+  .nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--green-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .nav-logo-mark { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .nav-back { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+  .nav-back:hover { color: var(--green-mid); }
+
+  .wrap { max-width: 560px; margin: 0 auto; padding: 3rem 5% 4rem; text-align: center; }
+  h1 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 300; color: var(--green-deep); margin-bottom: 0.75rem; }
+  .lead { font-size: 0.98rem; color: var(--slate); max-width: 440px; margin: 0 auto 2.25rem; }
+
+  .verify-form { display: flex; gap: 0.6rem; margin-bottom: 1.75rem; }
+  .verify-form input {
+    flex: 1; padding: 13px 16px; border-radius: 100px; border: 1px solid var(--border);
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; background: white; color: var(--charcoal);
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .verify-form input:focus { outline: none; border-color: var(--green-light); }
+  .verify-form button {
+    background: var(--green-mid); color: white; border: none; cursor: pointer;
+    padding: 13px 24px; border-radius: 100px; font-size: 0.88rem; font-weight: 600;
+    font-family: 'DM Sans', sans-serif; transition: background 0.2s; flex-shrink: 0;
+  }
+  .verify-form button:hover { background: var(--green-deep); }
+  .verify-form button:disabled { opacity: 0.6; cursor: default; }
+
+  .result { display: none; text-align: left; border-radius: 16px; padding: 1.5rem 1.75rem; border: 1px solid; }
+  .result.show { display: block; }
+  .result-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; font-weight: 700; font-size: 1rem; }
+  .result-header svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+  .result.valid { background: var(--green-mist); border-color: var(--green-pale); }
+  .result.valid .result-header { color: var(--green-deep); }
+  .result.invalid { background: var(--red-mist); border-color: var(--red-pale); }
+  .result.invalid .result-header { color: var(--red-deep); }
+
+  .result dl { display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1rem; font-size: 0.88rem; }
+  .result dt { color: var(--muted); }
+  .result dd { color: var(--charcoal); font-weight: 600; text-align: right; }
+
+  .verify-note { margin-top: 2.5rem; font-size: 0.85rem; color: var(--muted); }
+  .verify-note a { color: var(--green-mid); }
+
+  footer { background: var(--green-deep); padding: 2rem 5%; margin-top: 2rem; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; max-width: 1100px; margin: 0 auto; }
+  .footer-logo { font-family: 'Fraunces', serif; color: white; font-size: 0.95rem; }
+  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-links a:hover { color: white; }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); width: 100%; text-align: center; margin-top: 0.5rem; }
+
+  @media (max-width: 600px) {
+    .nav-logo span { display: none; }
+    .verify-form { flex-direction: column; }
+    footer .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+
+<script>
+(function () {
+  // Google Consent Mode v2 — defaults sincrónicos, antes de que cargue cualquier tag
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+
+  var stored = null;
+  try { stored = localStorage.getItem('cookieConsent'); } catch (e) {}
+  var granted = stored === 'all';
+
+  gtag('consent', 'default', {
+    analytics_storage:   granted ? 'granted' : 'denied',
+    ad_storage:          granted ? 'granted' : 'denied',
+    ad_user_data:        granted ? 'granted' : 'denied',
+    ad_personalization:  granted ? 'granted' : 'denied',
+    wait_for_update: 500
+  });
+
+  if (stored) return; // ya eligió, no mostrar banner
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var style = document.createElement('style');
+    style.textContent = [
+      '#ck-banner{',
+        'position:fixed;bottom:0;left:0;right:0;z-index:9999;',
+        'background:#0a2e1a;color:#fff;',
+        'padding:1rem 5%;',
+        'display:flex;align-items:center;justify-content:space-between;gap:1.5rem;',
+        'font-family:"DM Sans",sans-serif;font-size:0.875rem;line-height:1.5;',
+        'box-shadow:0 -2px 24px rgba(0,0,0,0.25);',
+        'transform:translateY(100%);transition:transform 0.35s ease;',
+      '}',
+      '#ck-banner.ck-visible{transform:translateY(0);}',
+      '#ck-banner p{margin:0;color:rgba(255,255,255,0.85);flex:1;}',
+      '.ck-actions{display:flex;gap:0.75rem;flex-shrink:0;}',
+      '#ck-essential{',
+        'background:transparent;border:1px solid rgba(255,255,255,0.3);',
+        'color:rgba(255,255,255,0.8);padding:8px 18px;border-radius:100px;',
+        'font-family:"DM Sans",sans-serif;font-size:0.85rem;cursor:pointer;',
+        'transition:border-color 0.2s,color 0.2s;',
+      '}',
+      '#ck-essential:hover{border-color:rgba(255,255,255,0.6);color:#fff;}',
+      '#ck-accept{',
+        'background:#c9a84c;border:none;color:#0a2e1a;',
+        'padding:8px 20px;border-radius:100px;',
+        'font-family:"DM Sans",sans-serif;font-size:0.85rem;font-weight:500;',
+        'cursor:pointer;transition:background 0.2s;',
+      '}',
+      '#ck-accept:hover{background:#d4b968;}',
+      '@media(max-width:600px){',
+        '#ck-banner{flex-direction:row;align-items:center;padding:0.65rem 4%;gap:0.75rem;}',
+        '#ck-banner p{font-size:0.78rem;line-height:1.3;}',
+        '.ck-actions{flex-shrink:0;gap:0.5rem;}',
+        '#ck-essential{padding:6px 10px;font-size:0.75rem;}',
+        '#ck-accept{padding:6px 12px;font-size:0.75rem;}',
+      '}'
+    ].join('');
+    document.head.appendChild(style);
+
+    var banner = document.createElement('div');
+    banner.id = 'ck-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Aviso de cookies');
+    banner.innerHTML =
+      '<p>Usamos cookies propias y de Google Ads para mostrarte publicidad relevante. Consulta nuestra <a href="/politica-privacidad.html" style="color:inherit;text-decoration:underline;">política de privacidad</a>.</p>' +
+      '<div class="ck-actions">' +
+        '<button id="ck-essential">Solo esenciales</button>' +
+        '<button id="ck-accept">Aceptar todo</button>' +
+      '</div>';
+    document.body.appendChild(banner);
+
+    setTimeout(function () {
+      requestAnimationFrame(function () { banner.classList.add('ck-visible'); });
+    }, 3500);
+
+    function applyConsent(choice) {
+      try { localStorage.setItem('cookieConsent', choice); } catch (e) {}
+      var ok = choice === 'all';
+      gtag('consent', 'update', {
+        analytics_storage:  ok ? 'granted' : 'denied',
+        ad_storage:         ok ? 'granted' : 'denied',
+        ad_user_data:       ok ? 'granted' : 'denied',
+        ad_personalization: ok ? 'granted' : 'denied'
+      });
+      banner.style.transform = 'translateY(100%)';
+      setTimeout(function () { banner.remove(); }, 350);
+    }
+
+    document.getElementById('ck-accept').addEventListener('click', function () {
+      applyConsent('all');
+    });
+    document.getElementById('ck-essential').addEventListener('click', function () {
+      applyConsent('essential');
+    });
+  });
+})();
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MNRMBXCM');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNRMBXCM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/logo-pe.png" alt="" class="nav-logo-mark" width="28" height="28"><span>Excel con Jhony</span></a>
+  <a href="/" class="nav-back">← Volver a la web</a>
+</nav>
+
+<div class="wrap">
+  <h1>Verificar certificado</h1>
+  <p class="lead">Introduce el ID que aparece en el certificado, o escanea el código QR incluido en el diploma para verificarlo automáticamente.</p>
+
+  <form class="verify-form" id="verify-form">
+    <input type="text" id="cert-id" placeholder="CERT-XXXXXXXX" autocomplete="off" required>
+    <button type="submit" id="verify-btn">Verificar</button>
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <p class="verify-note">¿Tienes dudas sobre un certificado? Escríbenos por <a href="/profesor-excel-online.html">WhatsApp</a>.</p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Excel con Jhony</div>
+    <div class="footer-links">
+      <a href="/aviso-legal.html">Aviso Legal</a>
+      <a href="/politica-privacidad.html">Política de Privacidad</a>
+      <a href="/pagos/">Pagos</a>
+    </div>
+    <div class="footer-copy">© 2026 · trabajoenexcel.com</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // ⚠️ PENDIENTE: sustituir por la URL real del Apps Script desplegado
+  // (Implementar > Nueva implementación > Aplicación web, en el Sheet de Certificados)
+  var ENDPOINT = 'https://script.google.com/macros/s/PENDIENTE_DESPLEGAR/exec';
+
+  var form = document.getElementById('verify-form');
+  var input = document.getElementById('cert-id');
+  var btn = document.getElementById('verify-btn');
+  var result = document.getElementById('result');
+
+  var iconOk = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>';
+  var iconFail = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
+
+  function verificar(id) {
+    btn.disabled = true;
+    btn.textContent = 'Verificando…';
+    result.classList.remove('show');
+
+    fetch(ENDPOINT + '?id=' + encodeURIComponent(id))
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.valido) {
+          result.innerHTML =
+            '<div class="result-header">' + iconOk + ' Certificado válido</div>' +
+            '<dl>' +
+              '<dt>Nombre</dt><dd>' + data.nombre + '</dd>' +
+              '<dt>Programa</dt><dd>' + data.programa + '</dd>' +
+              '<dt>Horas</dt><dd>' + data.horas + 'h</dd>' +
+              '<dt>Fecha de emisión</dt><dd>' + data.fecha + '</dd>' +
+            '</dl>';
+          result.className = 'result show valid';
+        } else {
+          result.innerHTML = '<div class="result-header">' + iconFail + ' Certificado no encontrado</div><p style="font-size:0.85rem;color:var(--muted)">Revisa que el ID esté escrito correctamente, tal como aparece en el diploma.</p>';
+          result.className = 'result show invalid';
+        }
+      })
+      .catch(function () {
+        result.innerHTML = '<div class="result-header">' + iconFail + ' No se pudo verificar</div><p style="font-size:0.85rem;color:var(--muted)">Ha ocurrido un error de conexión. Inténtalo de nuevo en unos segundos.</p>';
+        result.className = 'result show invalid';
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = 'Verificar';
+      });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var id = input.value.trim().toUpperCase();
+    if (id) verificar(id);
+  });
+
+  // Auto-verificar si llega ?id=... (desde el QR del diploma)
+  var params = new URLSearchParams(location.search);
+  var idParam = params.get('id');
+  if (idParam) {
+    input.value = idParam.toUpperCase();
+    verificar(idParam.toUpperCase());
+  }
+})();
+</script>
+
+</body>
+</html>

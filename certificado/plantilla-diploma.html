@@ -16,17 +16,16 @@
   }
   body { font-family: 'DM Sans', sans-serif; background: #e8e5db; }
 
-  .diploma {
+  .page {
     width: 297mm; height: 210mm; margin: 0 auto; position: relative;
-    background: var(--cream);
-    padding: 14mm;
+    background: var(--cream); page-break-after: always;
   }
-  .frame {
-    position: absolute; inset: 8mm; border: 1.5px solid var(--gold); border-radius: 4px;
-  }
-  .frame::before {
-    content: ''; position: absolute; inset: 5px; border: 1px solid rgba(201,168,76,0.4); border-radius: 2px;
-  }
+  .page:last-child { page-break-after: auto; }
+
+  /* ===== PÁGINA 1 — DIPLOMA ===== */
+  .diploma { padding: 14mm; height: 100%; }
+  .frame { position: absolute; inset: 8mm; border: 1.5px solid var(--gold); border-radius: 4px; }
+  .frame::before { content: ''; position: absolute; inset: 5px; border: 1px solid rgba(201,168,76,0.4); border-radius: 2px; }
 
   .content { position: relative; height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 16mm 24mm 10mm; }
 
@@ -46,15 +45,13 @@
     min-width: 140mm;
   }
 
-  .cuerpo { font-size: 10.5pt; color: #2a2a2a; line-height: 1.7; max-width: 190mm; margin-bottom: 8mm; }
+  .cuerpo { font-size: 10.5pt; color: #2a2a2a; line-height: 1.7; max-width: 190mm; margin-bottom: 6mm; }
   .cuerpo strong { color: var(--green-deep); }
   .programa { font-family: 'Fraunces', serif; font-size: 13pt; color: var(--green-mid); }
 
-  .temas {
-    font-size: 8.8pt; color: var(--muted); max-width: 200mm; margin-bottom: auto;
-    padding: 3mm 5mm; background: white; border-radius: 8px; border: 1px solid var(--green-pale);
+  .anexo-hint {
+    font-size: 8.5pt; color: var(--muted); font-style: italic; margin-bottom: auto;
   }
-  .temas strong { color: var(--green-deep); }
 
   .footer-row {
     width: 100%; display: flex; align-items: flex-end; justify-content: space-between;
@@ -72,48 +69,173 @@
   .qr-block { text-align: right; display: flex; flex-direction: column; align-items: center; gap: 1.5mm; }
   .qr-block img { width: 20mm; height: 20mm; }
   .qr-block span { font-size: 6.8pt; color: var(--muted); max-width: 24mm; }
+
+  /* ===== PÁGINA 2 — ANEXO TEMARIO ===== */
+  .anexo { padding: 12mm 18mm; height: 100%; display: flex; flex-direction: column; }
+  .anexo-header {
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 2px solid var(--green-deep); padding-bottom: 4mm; margin-bottom: 6mm;
+  }
+  .anexo-header .titulo { font-family: 'Fraunces', serif; font-size: 15pt; color: var(--green-deep); }
+  .anexo-header .titulo span { color: var(--gold); font-weight: 700; font-size: 8pt; letter-spacing: 2px; text-transform: uppercase; display: block; margin-bottom: 1mm; }
+  .anexo-header .meta { text-align: right; font-size: 8pt; color: var(--muted); }
+
+  .anexo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14mm; flex: 1; }
+  .modulo { break-inside: avoid; margin-bottom: 4.5mm; }
+  .modulo .num-titulo {
+    display: flex; align-items: baseline; gap: 2mm; font-family: 'Fraunces', serif;
+    font-size: 10pt; color: var(--green-mid); margin-bottom: 1.5mm; font-weight: 600;
+  }
+  .modulo .num-titulo .n { color: var(--gold); font-size: 8pt; }
+  .modulo ul { list-style: none; padding-left: 4mm; }
+  .modulo li {
+    font-size: 8.3pt; color: #333; line-height: 1.55; position: relative; padding-left: 3.5mm;
+  }
+  .modulo li::before { content: '·'; position: absolute; left: 0; color: var(--green-light); font-weight: 700; }
+
+  .anexo-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--green-pale); padding-top: 3mm; margin-top: 3mm;
+    font-size: 7.5pt; color: var(--muted);
+  }
 </style>
 </head>
 <body>
 
-<div class="diploma">
-  <div class="frame"></div>
-  <div class="content">
-    <div class="mark">PE</div>
-    <div class="eyebrow">Certificado de Formación</div>
-    <h1>Excel con Jhony</h1>
+<!-- ============ PÁGINA 1 — DIPLOMA ============ -->
+<div class="page">
+  <div class="diploma">
+    <div class="frame"></div>
+    <div class="content">
+      <div class="mark">PE</div>
+      <div class="eyebrow">Certificado de Formación</div>
+      <h1>Excel con Jhony</h1>
 
-    <div class="otorga">Se otorga el presente certificado a</div>
-    <div class="nombre">María González Pérez</div>
+      <div class="otorga">Se otorga el presente certificado a</div>
+      <div class="nombre">María González Pérez</div>
 
-    <div class="cuerpo">
-      por haber completado satisfactoriamente el programa <span class="programa">Excel Nivel Básico–Intermedio</span>,
-      con una intensidad horaria de <strong>10 horas</strong> de formación online personalizada 1:1,
-      impartidas por Jhony Alberto Escobar Castro, Microsoft Excel Expert certificado.
+      <div class="cuerpo">
+        por haber completado satisfactoriamente el programa <span class="programa">Excel Nivel Básico–Intermedio</span>,
+        con una intensidad horaria de <strong>10 horas</strong> de formación online personalizada 1:1,
+        impartidas por Jhony Alberto Escobar Castro, Microsoft Excel Expert certificado.
+      </div>
+
+      <div class="anexo-hint">El temario completo cursado se detalla en el anexo de la página siguiente.</div>
+
+      <div class="footer-row">
+        <div class="firma">
+          <div class="linea"></div>
+          <div class="nombre-f">Jhony Alberto Escobar Castro</div>
+          <div class="cargo">Microsoft Excel Expert · trabajoenexcel.com</div>
+        </div>
+
+        <div class="fecha-id">
+          <div class="fecha">Granada, España — 23 de septiembre de 2026</div>
+          <div class="id">ID de certificado: CERT-4F8A2C91</div>
+        </div>
+
+        <div class="qr-block">
+          <img src="data:image/png;base64,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" alt="QR de verificación">
+          <span>Verificar en trabajoenexcel.com/verificar-certificado</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PÁGINA 2 — ANEXO: TEMARIO COMPLETO ============ -->
+<div class="page">
+  <div class="anexo">
+    <div class="anexo-header">
+      <div class="titulo">
+        <span>Anexo — Excel con Jhony</span>
+        Temario completo cursado
+      </div>
+      <div class="meta">
+        María González Pérez · Excel Nivel Básico–Intermedio<br>
+        ID de certificado: CERT-4F8A2C91
+      </div>
     </div>
 
-    <div class="temas">
-      <strong>Temario cubierto:</strong> Interfaz y navegación · Atajos de teclado esenciales · Formatos y tablas ·
-      Validación de datos · Fórmulas básicas y clave (SI, BUSCARV, BUSCARX, SUMAR.SI, INDIRECTO) ·
-      Tablas dinámicas avanzadas · Gráficos · Dashboard en Excel · Seguridad de libro
+    <div class="anexo-grid">
+      <div>
+        <div class="modulo">
+          <div class="num-titulo"><span class="n">01</span> Interfaz y navegación</div>
+          <ul>
+            <li>Cinta de opciones, filas/columnas, hojas, guardar archivos</li>
+            <li>Nombrar rangos (cuadro de nombres)</li>
+            <li>Imprimir archivos</li>
+          </ul>
+        </div>
+        <div class="modulo">
+          <div class="num-titulo"><span class="n">02</span> Atajos de teclado esenciales</div>
+          <ul>
+            <li>Acciones básicas sobre celdas, filas y columnas</li>
+            <li>Navegación sobre los datos</li>
+            <li>Relleno mágico (Ctrl+E)</li>
+          </ul>
+        </div>
+        <div class="modulo">
+          <div class="num-titulo"><span class="n">03</span> Formatos y tablas</div>
+          <ul>
+            <li>Formatos de celda: número, porcentajes, decimales, bordes</li>
+            <li>Manejo de datos: filtros básicos, ordenar mayor/menor</li>
+            <li>Validación de datos</li>
+            <li>Extracción de ficheros CSV (texto en columnas)</li>
+            <li>Identificar y eliminar duplicados</li>
+            <li>Filtros de datos avanzados</li>
+          </ul>
+        </div>
+        <div class="modulo">
+          <div class="num-titulo"><span class="n">04</span> Fórmulas básicas</div>
+          <ul>
+            <li>Suma, resta, multiplicación, división</li>
+            <li>Promedio, máximo, mínimo, recuento, redondear</li>
+            <li>Mayúsculas / minúsculas, concatenar</li>
+            <li>Referencias absolutas / relativas (F4)</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="modulo">
+          <div class="num-titulo"><span class="n">05</span> Fórmulas clave</div>
+          <ul>
+            <li>SI, Y / O (funciones lógicas), SI.ERROR</li>
+            <li>BUSCARV · BUSCARX · BUSCARV avanzado</li>
+            <li>SUMAR.SI, CONTAR.SI · TEXTO · INDIRECTO</li>
+            <li>Fechas · FILTRAR</li>
+          </ul>
+        </div>
+        <div class="modulo">
+          <div class="num-titulo"><span class="n">06</span> Tablas dinámicas avanzadas</div>
+          <ul>
+            <li>Formatos de tabla (Ctrl+T) · creación de tablas dinámicas</li>
+            <li>Análisis con formatos condicionales y segmentaciones</li>
+            <li>Campos calculados · análisis comparativo</li>
+            <li>Actualización de datos dinámicos</li>
+          </ul>
+        </div>
+        <div class="modulo">
+          <div class="num-titulo"><span class="n">07</span> Gráficos</div>
+          <ul>
+            <li>Tipos de gráficos y usos · gráficos de 2 ejes</li>
+            <li>Gráficos dinámicos</li>
+          </ul>
+        </div>
+        <div class="modulo">
+          <div class="num-titulo"><span class="n">08</span> Dashboard y seguridad en Excel</div>
+          <ul>
+            <li>Metodología y construcción de un dashboard</li>
+            <li>Hacer que Excel parezca una app</li>
+            <li>Protección de hojas, rangos y libro</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
-    <div class="footer-row">
-      <div class="firma">
-        <div class="linea"></div>
-        <div class="nombre-f">Jhony Alberto Escobar Castro</div>
-        <div class="cargo">Microsoft Excel Expert · trabajoenexcel.com</div>
-      </div>
-
-      <div class="fecha-id">
-        <div class="fecha">Granada, España — 23 de septiembre de 2026</div>
-        <div class="id">ID de certificado: CERT-4F8A2C91</div>
-      </div>
-
-      <div class="qr-block">
-        <img src="data:image/png;base64,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" alt="QR de verificación">
-        <span>Verificar en trabajoenexcel.com/verificar-certificado</span>
-      </div>
+    <div class="anexo-footer">
+      <span>trabajoenexcel.com</span>
+      <span>Documento generado automáticamente — válido sin firma manuscrita en esta página</span>
     </div>
   </div>
 </div>
