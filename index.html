@@ -536,52 +536,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .mv-unmute.is-hidden { display: none; }
   .valor-strip { background: var(--cream); padding: 1.5rem 5%; }
   .valor-strip-inner {
-    position: relative; max-width: 1180px; margin: 0 auto;
-    background: #FAF9F2; border-radius: 0; box-shadow: 0 4px 24px rgba(10,46,26,0.09);
-    padding: 1.1rem 1.5rem;
+    max-width: 1100px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem;
   }
-  .valor-strip-track {
-    display: flex; gap: 1rem; justify-content: space-between;
-    overflow-x: visible;
-    scrollbar-width: none; -ms-overflow-style: none;
+  .valor-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 100px; padding: 9px 16px;
+    box-shadow: 0 2px 10px rgba(10,46,26,0.05);
   }
-  .valor-strip-track::-webkit-scrollbar { display: none; }
-  .valor-strip-arrow, .valor-strip-inner::before, .valor-strip-inner::after { display: none; }
-  .valor-card {
-    flex: 1 1 0; min-width: 0; padding: 0.15rem 0.5rem; text-align: center;
-  }
-  .valor-card-icon { color: var(--gold); margin-bottom: 0.5rem; }
-  .valor-card-icon svg { width: 22px; height: 22px; }
-  .valor-card-label { color: var(--green-deep); font-size: 0.76rem; font-weight: 400; line-height: 1.3; }
+  .valor-chip svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+  .valor-chip span { font-size: 0.8rem; color: var(--green-deep); font-weight: 500; white-space: nowrap; }
+  .valor-chip--certificado { border-color: var(--green-pale); background: var(--green-mist); }
+  .valor-chip--certificado svg { color: var(--green-mid); }
   @media (max-width: 768px) {
-    .valor-strip { padding: 0.75rem 0; }
-    .valor-strip-inner {
-      border-radius: 0; box-shadow: 0 2px 10px rgba(10,46,26,0.08); background: #FAF9F2;
-      max-width: none; padding: 0.75rem 0;
-    }
-    .valor-strip-inner::before, .valor-strip-inner::after {
-      content: ''; display: block; position: absolute; top: 0; bottom: 0; width: 48px;
-      pointer-events: none; z-index: 1;
-    }
-    .valor-strip-inner::before { left: 0; background: linear-gradient(to left, transparent, #FAF9F2); }
-    .valor-strip-inner::after { right: 0; background: linear-gradient(to right, transparent, #FAF9F2); }
-    .valor-strip-arrow {
-      display: flex; position: absolute; top: 50%; transform: translateY(-50%); z-index: 2;
-      width: 30px; height: 30px; border-radius: 50%;
-      background: #FAF9F2; border: 1.5px solid var(--gold);
-      color: var(--gold); align-items: center; justify-content: center;
-      cursor: pointer; padding: 0;
-    }
-    .valor-strip-arrow:hover { background: var(--gold); color: white; }
-    .valor-strip-arrow svg { width: 16px; height: 16px; }
-    .valor-strip-arrow--prev { left: 2px; }
-    .valor-strip-arrow--next { right: 2px; }
-    .valor-strip-track {
-      overflow-x: auto; scroll-snap-type: x proximity;
-      padding: 0 2.75rem; -webkit-overflow-scrolling: touch;
-      justify-content: flex-start;
-    }
-    .valor-card { flex: 0 0 auto; scroll-snap-align: start; width: 110px; }
+    .valor-strip { padding: 1.1rem 5%; }
+    .valor-strip-inner { gap: 0.5rem; }
+    .valor-chip { padding: 7px 13px; }
+    .valor-chip span { font-size: 0.76rem; }
   }
   .video-mobile { display: none; }
   .coste-final strong { color: white; }
@@ -1088,29 +1060,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="valor-strip">
  <div class="valor-strip-inner">
-  <button type="button" class="valor-strip-arrow valor-strip-arrow--prev" aria-label="Ver anterior" onclick="document.getElementById('valorStripTrack').scrollBy({left:-140,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-  <button type="button" class="valor-strip-arrow valor-strip-arrow--next" aria-label="Ver siguiente" onclick="document.getElementById('valorStripTrack').scrollBy({left:140,behavior:'smooth'})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
-  <div class="valor-strip-track" id="valorStripTrack">
-    <div class="valor-card">
-      <div class="valor-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <div class="valor-card-label">Clases personalizadas 1:1</div>
-    </div>
-    <div class="valor-card">
-      <div class="valor-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/></svg></div>
-      <div class="valor-card-label">Grabaciones de cada clase</div>
-    </div>
-    <div class="valor-card">
-      <div class="valor-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 3 5v16l6-2 6 2 6-2V3l-6 2-6-2z"/><path d="M9 3v16"/><path d="M15 5v16"/></svg></div>
-      <div class="valor-card-label">Plan de estudios personalizado</div>
-    </div>
-    <div class="valor-card">
-      <div class="valor-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg></div>
-      <div class="valor-card-label">Archivos de trabajo propio</div>
-    </div>
-    <div class="valor-card">
-      <div class="valor-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
-      <div class="valor-card-label">Metodología 80/20</div>
-    </div>
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <span>Clases personalizadas 1:1</span>
+  </div>
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/></svg>
+    <span>Grabaciones de cada clase</span>
+  </div>
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 3 5v16l6-2 6 2 6-2V3l-6 2-6-2z"/><path d="M9 3v16"/><path d="M15 5v16"/></svg>
+    <span>Plan de estudios personalizado</span>
+  </div>
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>
+    <span>Archivos de trabajo propio</span>
+  </div>
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+    <span>Metodología 80/20</span>
+  </div>
+  <div class="valor-chip valor-chip--certificado">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg>
+    <span>Certificado de finalización incluido</span>
   </div>
  </div>
 </section>
