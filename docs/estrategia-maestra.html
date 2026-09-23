@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Estrategia Maestra — trabajoenexcel.com</title>
+<style>
+  @page { size: A4; margin: 20mm 16mm 18mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #1c1c1c; font-size: 10.3pt; line-height: 1.5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  :root {
+    --green-deep:#0a2e1a; --green-mid:#1a5c36; --green-light:#4db87a;
+    --green-pale:#d4f0e0; --green-mist:#f0faf4; --gold:#c9a84c;
+    --muted:#6b6b6b; --border:#e2e2e2;
+  }
+
+  /* Portada */
+  .cover { height: 253mm; display: flex; flex-direction: column; justify-content: center; page-break-after: always; }
+  .cover .eyebrow { color: var(--gold); font-size: 10pt; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .cover h1 { font-size: 34pt; color: var(--green-deep); font-weight: 800; line-height: 1.15; margin-bottom: 10px; }
+  .cover .subtitle { font-size: 13pt; color: var(--muted); max-width: 400px; margin-bottom: 40px; }
+  .cover .meta-box { border-top: 2px solid var(--green-deep); padding-top: 16px; font-size: 9.5pt; color: var(--muted); max-width: 420px; }
+  .cover .meta-box div { margin-bottom: 4px; }
+  .cover .meta-box strong { color: #1c1c1c; }
+
+  /* Índice */
+  .toc { page-break-after: always; }
+  .toc h2 { font-size: 18pt; color: var(--green-deep); margin-bottom: 18px; }
+  .toc ol { list-style: none; counter-reset: toc; padding: 0; }
+  .toc li { counter-increment: toc; padding: 7px 0; border-bottom: 1px dotted var(--border); font-size: 11pt; display: flex; }
+  .toc li::before { content: counter(toc) "."; color: var(--gold); font-weight: 700; width: 26px; flex-shrink: 0; }
+
+  h2.section-title {
+    font-size: 17pt; color: var(--green-deep); margin: 0 0 4px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--green-deep);
+  }
+  .section-num { color: var(--gold); font-weight: 800; margin-right: 8px; }
+  .section-block { page-break-before: always; padding-top: 4mm; }
+  .section-intro { color: var(--muted); font-size: 10pt; margin: 10px 0 16px; }
+
+  h3 { font-size: 12.5pt; color: var(--green-mid); margin: 18px 0 6px; }
+  h4 { font-size: 10.8pt; color: var(--green-deep); margin: 12px 0 4px; }
+  p { margin: 0 0 8px; }
+  ul, ol { margin: 0 0 10px; padding-left: 18px; }
+  li { margin-bottom: 4px; }
+  code, .code { font-family: 'SF Mono', 'Courier New', monospace; background: var(--green-mist); color: var(--green-deep); padding: 1px 5px; border-radius: 3px; font-size: 9pt; }
+  .callout {
+    background: var(--green-mist); border-left: 3px solid var(--green-light);
+    padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: 9.5pt; margin: 10px 0;
+  }
+  .callout.warn { background: #fdf4e3; border-left-color: var(--gold); }
+  .status-tag {
+    display: inline-block; font-size: 7.5pt; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 100px; margin-left: 6px;
+  }
+  .status-done { background: var(--green-pale); color: var(--green-deep); }
+  .status-pending { background: #fdf4e3; color: #8a6d1f; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 10px 0 14px; }
+  th { background: var(--green-deep); color: white; text-align: left; padding: 6px 8px; font-size: 8.5pt; }
+  td { padding: 5px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: #fafafa; }
+
+  .kpi-row { display: flex; gap: 10px; margin: 14px 0; }
+  .kpi { flex: 1; background: var(--green-mist); border: 1px solid var(--green-pale); border-radius: 8px; padding: 10px 12px; }
+  .kpi .num { font-size: 15pt; font-weight: 800; color: var(--green-deep); }
+  .kpi .label { font-size: 8pt; color: var(--muted); }
+
+  footer.pagefoot { position: fixed; bottom: -14mm; left: 0; right: 0; font-size: 7.5pt; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- ============ PORTADA ============ -->
+<div class="cover">
+  <div class="eyebrow">Documento maestro · Vivo</div>
+  <h1>Estrategia digital<br>trabajoenexcel.com</h1>
+  <div class="subtitle">Registro consolidado de SEO técnico, SEM, CRO, UX, diseño y E-E-A-T implementados en el sitio, junto con su arquitectura y stack tecnológico.</div>
+  <div class="meta-box">
+    <div><strong>Repositorio:</strong> github.com/JAESCOBARC/profesor-de-excel</div>
+    <div><strong>Propietario:</strong> Jhony Alberto Escobar Castro</div>
+    <div><strong>Dominio:</strong> www.trabajoenexcel.com</div>
+    <div><strong>Última actualización:</strong> 23 de septiembre de 2026</div>
+    <div><strong>Fuente:</strong> <span class="code">docs/estrategia-maestra.html</span> — regenerar el PDF tras cada cambio relevante</div>
+  </div>
+</div>
+
+<!-- ============ ÍNDICE ============ -->
+<div class="toc">
+  <h2>Índice</h2>
+  <ol>
+    <li>Resumen ejecutivo</li>
+    <li>Arquitectura del sitio</li>
+    <li>Stack tecnológico</li>
+    <li>SEO técnico</li>
+    <li>SEM y atribución</li>
+    <li>CRO — optimización de conversión</li>
+    <li>UX</li>
+    <li>Diseño</li>
+    <li>E-E-A-T y cumplimiento</li>
+    <li>Pendientes y roadmap</li>
+    <li>Cómo mantener este documento</li>
+  </ol>
+</div>
+
+<!-- ============ 1. RESUMEN EJECUTIVO ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">01</span>Resumen ejecutivo</h2>
+<p class="section-intro">trabajoenexcel.com es un conjunto de landing pages y herramientas de captación de leads para clases particulares de Excel online (Jhony Escobar, Microsoft Excel Expert certificado, Granada). El canal de conversión principal es WhatsApp, con un segundo canal de reserva directa vía Cal.com añadido más recientemente. Un test de nivel de Excel interactivo actúa como imán de leads principal.</p>
+
+<div class="kpi-row">
+  <div class="kpi"><div class="num">14</div><div class="label">páginas públicas indexables + /pagos/ (noindex)</div></div>
+  <div class="kpi"><div class="num">2</div><div class="label">canales de conversión: WhatsApp y Cal.com (reserva directa)</div></div>
+  <div class="kpi"><div class="num">0€</div><div class="label">build step — HTML estático, deploy directo a GitHub Pages</div></div>
+</div>
+
+<h3>Qué cubre este documento</h3>
+<p>Cada bloque siguiente recoge <strong>qué se implementó, por qué, y el estado actual</strong> — no es un registro de commits, sino de decisiones de negocio y técnicas que afectan el funcionamiento real del sitio. Los elementos con <span class="status-tag status-pending">Pendiente</span> están identificados pero no resueltos; todo lo demás está implementado y en producción.</p>
+</div>
+
+<!-- ============ 2. ARQUITECTURA DEL SITIO ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">02</span>Arquitectura del sitio</h2>
+<p class="section-intro">Sitio estático servido directamente desde el repositorio, sin proceso de build ni framework. Cada archivo <code>.html</code> de la raíz es literalmente una URL pública.</p>
+
+<h3>Mapa de páginas</h3>
+<table>
+<tr><th>Página</th><th>Rol</th><th>Notas</th></tr>
+<tr><td><code>index.html</code></td><td>Home</td><td>Precios, hero, funnel general, reserva Cal.com inline</td></tr>
+<tr><td><code>profesor-excel-online.html</code></td><td>Landing principal "profesor particular"</td><td>Foco de mayor optimización: CTAs, FAQ, urgencia, Cal.com en hero y CTA final</td></tr>
+<tr><td><code>jhony-profesor-excel-online.html</code></td><td>Bio / autoridad (E-E-A-T)</td><td>Enlaza a <code>profesor-excel-online.html</code> (relación unidireccional)</td></tr>
+<tr><td><code>test-nivel-excel.html</code></td><td>Imán de leads — test interactivo</td><td>Motor de fórmulas HyperFormula, resultado diferenciado por nivel</td></tr>
+<tr><td><code>prueba-excel-entrevista-trabajo.html</code></td><td>SEO long-tail → funnel al test</td><td></td></tr>
+<tr><td><code>certificacion-microsoft-excel-especialista.html</code></td><td>Landing certificación MOS</td><td>Enlace bidireccional con la landing principal</td></tr>
+<tr><td><code>automatizacion-excel-empresas.html</code></td><td>Landing B2B automatización</td><td>Recibe CTA "Trabajos y asesorías" desde home y landing principal</td></tr>
+<tr><td><code>formacion-excel-empresas-fundae.html</code></td><td>Landing formación empresas (FUNDAE)</td><td></td></tr>
+<tr><td><code>programa-balanced-scorecard.html</code></td><td>Landing programa BSC</td><td></td></tr>
+<tr><td><code>plantillas/balanced-scorecard-excel.html</code></td><td>Plantilla descargable BSC</td><td>Enlace roto a <code>/plantillas/</code> (sin archivo índice) referenciado desde 2 páginas <span class="status-tag status-pending">Pendiente</span></td></tr>
+<tr><td><code>aprobar-examen-excel.html</code></td><td>Contenido SEO</td><td>Huérfana: sin enlaces internos entrantes <span class="status-tag status-pending">Pendiente</span></td></tr>
+<tr><td><code>pagos/index.html</code></td><td>Página de pagos (Revolut, Bizum, transferencia)</td><td><code>noindex, follow</code> — no forma parte del funnel SEO</td></tr>
+<tr><td><code>sobre-mi-jhony-escobar.html</code></td><td>Redirect (meta refresh) → <code>jhony-profesor-excel-online.html</code></td><td>Solo por compatibilidad de URLs antiguas; sin footer ni contenido propio</td></tr>
+<tr><td><code>aviso-legal.html</code> / <code>politica-privacidad.html</code></td><td>Legales</td><td>Excluidas del grafo de enlazado interno (ruido de footer)</td></tr>
+</table>
+
+<h3>Convenciones del repositorio</h3>
+<ul>
+  <li>No mover los <code>.html</code> de la raíz — GitHub Pages los sirve como URLs públicas directas. Moverlos rompería SEO, sitemap, anuncios y backlinks ya indexados.</li>
+  <li>JS e imágenes sueltas viven en la raíz, referenciados con rutas absolutas (<code>/logo-pe.png</code>, etc.) desde cada página. Se evaluó organizarlos en subcarpetas y se decidió no hacerlo — el riesgo de actualizar la ruta en ~15 páginas no compensaba el beneficio.</li>
+  <li><code>a64d1f7d8b1bf3c9feaaa4505087c349.txt</code> es un archivo de verificación de dominio (Search Console) — no tocar ni mover.</li>
+  <li>Flujo de git: un GitHub Action comitea directo a <code>main</code> (actualización de <code>lastmod</code> del sitemap), por lo que es normal que <code>git push</code> falle por no-fast-forward. Solución estándar: <code>git fetch origin main && git rebase origin/main && git push origin main</code>.</li>
+</ul>
+
+<h3>Infraestructura de red</h3>
+<ul>
+  <li><strong>Hosting:</strong> GitHub Pages, dominio propio vía <code>CNAME</code>.</li>
+  <li><strong>CDN:</strong> Cloudflare delante de GitHub Pages, con Cache Rule para assets estáticos (<code>*.js|*.css|*.png|...</code> vía <code>ends_with()</code>, por estar en plan Free sin regex avanzado).</li>
+  <li><strong>Toggles activos recomendados:</strong> Speed Brain, Early Hints, "Usar siempre HTTPS". <strong>Rocket Loader desaconsejado explícitamente</strong> por riesgo de romper el JS inline propio del sitio (handlers de tracking, Cal.com, consentimiento).</li>
+</ul>
+</div>
+
+<!-- ============ 3. STACK TECNOLÓGICO ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">03</span>Stack tecnológico</h2>
+<p class="section-intro">Deliberadamente minimalista: sin framework, sin bundler, sin dependencias de build. Cada librería externa se carga puntualmente donde se necesita.</p>
+
+<h3>Frontend</h3>
+<ul>
+  <li><strong>HTML5 + CSS3 + JavaScript vanilla</strong> — sin React/Vue/framework alguno.</li>
+  <li><strong>Tipografía:</strong> Google Fonts — <em>Fraunces</em> (display/serif) + <em>DM Sans</em> (cuerpo), cargadas con el patrón no bloqueante <code>media="print" onload="this.media='all'"</code>.</li>
+  <li><strong>Paleta de marca</strong> (CSS custom properties, consistente en todo el sitio): <code>--green-deep #0a2e1a</code>, <code>--green-mid #1a5c36</code>, <code>--green-light #4db87a</code>, <code>--green-pale #d4f0e0</code>, <code>--green-mist #f0faf4</code>, <code>--cream #faf8f3</code>, <code>--gold #c9a84c</code>.</li>
+  <li><strong>HyperFormula</strong> (CDN) — motor de cálculo real de fórmulas Excel en <code>test-nivel-excel.html</code>, con capa de traducción de sintaxis español→inglés.</li>
+</ul>
+
+<h3>Reservas y pagos</h3>
+<ul>
+  <li><strong>Cal.com</strong> — embed inline (home, sección "agenda directa") y embed de tipo popup (landing principal, hero + CTA final), namespace <code>15min</code>, carga diferida con <code>IntersectionObserver</code>.</li>
+  <li><strong>Revolut Business (checkout links)</strong> — 3 enlaces de pago fijos (clases sueltas, bono 5h, bono 10h) centralizados en <code>/pagos/</code>.</li>
+  <li><strong>Bizum</strong> y <strong>transferencia bancaria (IBAN/SWIFT vía Revolut Bank UAB)</strong> — opciones de pago manual añadidas en <code>/pagos/</code> junto a Revolut.</li>
+</ul>
+
+<h3>Tracking y datos</h3>
+<ul>
+  <li><strong>Google Tag Manager</strong> (<code>GTM-MNRMBXCM</code>) en todas las páginas del sitio, incluido el stub de redirección.</li>
+  <li><strong>Google Apps Script</strong> como backend de captura de leads — recibe POST (modo <code>no-cors</code>) desde <code>whatsapp-config.js</code>, <code>cal-reserva-tracking.js</code> y el test de nivel, y escribe en <strong>Google Sheets</strong> (<code>Leads_GCLID</code>, <code>Leads_Test</code>).</li>
+  <li><strong>Klaviyo, Meta Pixel, Microsoft Clarity</strong> — inyectados vía GTM (no en el HTML del repo), con triggers ya optimizados (<code>Window Loaded</code> / <code>Clic WhatsApp</code>).</li>
+</ul>
+
+<h3>Automatización (GitHub Actions)</h3>
+<ul>
+  <li><code>update-sitemap.yml</code> + <code>scripts/update_sitemap_lastmod.py</code> — actualiza el <code>lastmod</code> del sitemap según la fecha real del último commit de cada página.</li>
+  <li><code>ping-sitemap.yml</code> — cron diario que notifica el sitemap a Bing/IndexNow.</li>
+</ul>
+</div>
+
+<!-- ============ 4. SEO TÉCNICO ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">04</span>SEO técnico</h2>
+
+<h3>Indexación y descubrimiento</h3>
+<ul>
+  <li><code>sitemap.xml</code> mantenido y con <code>lastmod</code> automatizado por commit real (no manual).</li>
+  <li><code>robots.txt</code> configurado; <code>/pagos/</code> excluida vía <code>&lt;meta name="robots" content="noindex, follow"&gt;</code> por ser una página transaccional sin valor de contenido.</li>
+  <li>Ping diario a Bing/IndexNow tras cada actualización del sitemap.</li>
+  <li><code>&lt;link rel="canonical"&gt;</code> en todas las páginas, incluida <code>/pagos/</code>.</li>
+</ul>
+
+<h3>Datos estructurados (Schema.org)</h3>
+<ul>
+  <li><strong>FAQPage</strong> en la home, con preguntas/respuestas reales alineadas al copy visible.</li>
+  <li><strong>Person</strong> (Jhony Escobar) con <code>sameAs</code> verificado, incluyendo Google Business Profile.</li>
+  <li><strong>AggregateRating</strong> corregido: el <code>reviewCount</code> inventado inicialmente se sustituyó por el dato real (14 reseñas) extraído de Superprof, evitando un riesgo de penalización por datos estructurados falsos.</li>
+  <li><strong>areaServed</strong> con ciudades reales atendidas (Granada, Madrid, Barcelona, etc.).</li>
+</ul>
+
+<h3>Jerarquía de encabezados</h3>
+<div class="callout">Se auditó y corrigió un patrón de <code>&lt;h4&gt;</code> saltando directamente bajo <code>&lt;h2&gt;</code> sin pasar por <code>&lt;h3&gt;</code> — 14 instancias en <code>index.html</code> y 14 en <code>profesor-excel-online.html</code> (bloques de temario y pasos del proceso). Verificado sin impacto visual mediante captura antes/después.</div>
+
+<h3>Rendimiento / Core Web Vitals</h3>
+<ul>
+  <li><strong>Regresión real detectada y corregida:</strong> la precarga eager del script de Cal.com (<code>&lt;link rel="preload"&gt;</code> + carga inmediata) hundió el Performance score a 40/100 (LCP 13.7s). Solución: carga diferida con <code>IntersectionObserver</code> (<code>rootMargin: '800px'</code>), sin precarga. Verificado con Playwright: 0 peticiones a <code>cal.com</code> en la carga inicial, 1 sola al acercarse a la sección.</li>
+  <li><strong><code>cookie-consent.js</code> inlineado</strong> en el <code>&lt;head&gt;</code> de las 14 páginas del sitio — eliminada la petición externa bloqueante que antes retrasaba el render.</li>
+  <li>Fuentes de Google cargadas con patrón no bloqueante (<code>media="print" onload</code>).</li>
+  <li>Cache Rule de Cloudflare para todos los assets estáticos del sitio (ver sección de arquitectura).</li>
+</ul>
+
+<h3>Contraste de color (WCAG)</h3>
+<p>Auditoría sistemática con script propio de ratio de contraste WCAG (luminancia relativa), no estimación visual. Hallazgos corregidos en todo el sitio:</p>
+<table>
+<tr><th>Elemento</th><th>Ratio antes</th><th>Ratio después</th><th>Fix</th></tr>
+<tr><td><code>.problemas h2 em</code></td><td>1.85</td><td>5.96</td><td>Override a <code>--green-light</code></td></tr>
+<tr><td><code>.precio-badge</code></td><td>2.48</td><td>5.96</td><td>Texto a <code>--green-deep</code></td></tr>
+<tr><td><code>.temario-num</code></td><td>2.48</td><td>7.99</td><td>Texto a <code>--green-mid</code></td></tr>
+<tr><td><code>.whatsapp-float</code></td><td>1.98</td><td>4.95</td><td><code>#25D366</code> → <code>#0E8143</code></td></tr>
+</table>
+<p>Aplicado en <code>index.html</code> y extendido a <code>automatizacion-excel-empresas.html</code>, <code>formacion-excel-empresas-fundae.html</code>, <code>profesor-excel-online.html</code>, <code>programa-balanced-scorecard.html</code>, <code>plantillas/balanced-scorecard-excel.html</code>.</p>
+
+<h3>Enlazado interno</h3>
+<ul>
+  <li>Skill interna <code>/enlaces</code> genera un dashboard D3.js con el grafo completo de enlaces internos (páginas huérfanas, enlaces rotos, quién enlaza a quién), con extracción determinista vía script Python — no depende de que el modelo "cuente a mano".</li>
+  <li>Corregido: la home no enlazaba a <code>profesor-excel-online.html</code> pese a que esa página recibía enlaces de 9 páginas internas.</li>
+  <li>Corregido: relación <code>profesor-excel-online.html</code> ↔ <code>jhony-profesor-excel-online.html</code> hecha unidireccional (antes bidireccional, por decisión explícita de negocio).</li>
+  <li><span class="status-tag status-pending">Pendiente</span> <code>aprobar-examen-excel.html</code> sigue sin ningún enlace interno entrante.</li>
+  <li><span class="status-tag status-pending">Pendiente</span> enlace roto a <code>/plantillas/</code> (sin archivo índice), referenciado desde 2 páginas.</li>
+</ul>
+</div>
+
+<!-- ============ 5. SEM Y ATRIBUCIÓN ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">05</span>SEM y atribución</h2>
+
+<h3>Sistema de atribución propio</h3>
+<p>Implementado en <code>whatsapp-config.js</code> y replicado en <code>cal-reserva-tracking.js</code> para el canal de reserva directa:</p>
+<ul>
+  <li>Captura de <code>gclid</code>, <code>fbclid</code>, <code>gbraid</code>, <code>wbraid</code> desde la URL de llegada, persistidos <strong>60 días</strong> en <code>localStorage</code> (<code>tec_attr</code>).</li>
+  <li>ID de visitante propio (<code>tec_vid</code>) generado con <code>crypto.randomUUID()</code>, con fallback manual.</li>
+  <li>Contador de intentos por sesión de 24h (<code>tec_attempts</code>) para distinguir primer contacto de reintentos.</li>
+  <li>Cada lead se envía a un Google Apps Script (POST, <code>no-cors</code>) con: código de contacto, IDs publicitarios, página, dispositivo, landing e intento.</li>
+  <li>Códigos de contacto diferenciados por canal: <code>EXC-XXXXXX</code> (WhatsApp) vs. <code>RESERVA-XXXXXXXX</code> (Cal.com), ambos escritos en la misma hoja <code>Leads_GCLID</code> para análisis unificado.</li>
+</ul>
+
+<h3>Consent Mode v2</h3>
+<ul>
+  <li>Banner propio (esenciales / aceptar todo), implementado con Google Consent Mode v2, con <code>gtag('consent', 'default', ...)</code> síncrono antes de cargar cualquier tag.</li>
+  <li><strong>Decisión de negocio explícita:</strong> los identificadores publicitarios (gclid/fbclid/etc.) se capturan siempre, independientemente del consentimiento de analytics — solo <code>analytics_storage</code> y <code>ad_personalization</code> quedan sujetos al consentimiento real.</li>
+</ul>
+
+<h3>Integridad del tracking de conversión</h3>
+<ul>
+  <li><code>window.delayedNav()</code> — retraso de 300ms antes de navegar fuera de <code>test-nivel-excel.html</code>, para evitar que la navegación corte el píxel de conversión de Google Ads antes de registrarse (causa raíz de un tag "Fallida" detectado en GTM).</li>
+  <li><code>utm_source</code> estático (no reconstruido por JS) en los CTAs del test de nivel, para tracking de eventos fiable.</li>
+</ul>
+
+<h3>Investigación cerrada: 0 mensajes de WhatsApp</h3>
+<div class="callout warn">El propietario reportó 0 mensajes de WhatsApp Business en 2 semanas pese a tener visitas. Auditoría exhaustiva del código (número consistente, handler sin conflictos, sin overlays bloqueando el CTA, sin popup-blockers) no encontró ningún bug — el propio botón funciona correctamente para el propietario. Causa fuera del alcance del código: posible calidad de tráfico de Ads, cambios de campaña/audiencia, restricción de WhatsApp Business a nuevos contactos, o bloqueadores de anuncios del visitante.</div>
+
+<h3>Valores "TEST123" en Leads_GCLID</h3>
+<p>Investigado a fondo (auditoría de <code>git log</code> + código): <code>whatsapp-config.js</code> no ha cambiado su lógica de captura desde agosto. Concluido que se trata de una visita manual de prueba con parámetros de query falsos, persistidos 60 días en el <code>localStorage</code> de ese navegador concreto — no un bug de código.</p>
+</div>
+
+<!-- ============ 6. CRO ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">06</span>CRO — optimización de conversión</h2>
+
+<h3>Oferta de entrada: Clase Diagnóstico</h3>
+<p>Clase gratuita de 15 minutos implementada como oferta de conversión de bajo compromiso, presente en <strong>hero, sección de precios y CTA final</strong> de <code>index.html</code> y <code>profesor-excel-online.html</code>, integrada con <code>whatsapp-config.js</code> vía atributo <code>data-wa-msg</code>.</p>
+
+<h3>Segundo canal de conversión: reserva directa (Cal.com)</h3>
+<ul>
+  <li>En <code>profesor-excel-online.html</code>, el hero y el CTA final se migraron de WhatsApp (<code>data-wa-msg</code>) a un embed popup de Cal.com (<code>data-cal-link</code>), reduciendo fricción — el usuario reserva hueco directamente sin escribir a nadie.</li>
+  <li>Decisión tomada explícitamente por el propietario, seleccionando qué 2 de los 3 CTAs de la página pasaban a Cal.com (hero + CTA final; el CTA de la tarjeta de precio se mantuvo en WhatsApp).</li>
+  <li>En <code>index.html</code> el widget de Cal.com se embebe inline en la sección "agenda directa".</li>
+  <li>Tracking paralelo (<code>cal-reserva-tracking.js</code>) asegura que este canal alimenta la misma hoja de atribución que WhatsApp.</li>
+</ul>
+
+<h3>Tabla comparativa</h3>
+<p>Sección "Clases con Jhony vs. alternativas" (<code>.comparativa</code>) añadida en home y landing principal, con hint de scroll para móvil.</p>
+
+<h3>Franja de propuesta de valor</h3>
+<p>Tira horizontal de iconos (<code>.valor-strip</code>) bajo el hero, con varias iteraciones de diseño (de iconos emoji a iconos de línea SVG) hasta el estado final aprobado.</p>
+
+<h3>Urgencia</h3>
+<p><code>plazas-urgencia.js</code> — banner de plazas limitadas.</p>
+
+<h3>Imán de leads: test de nivel de Excel</h3>
+<ul>
+  <li>Motor de fórmulas real (no simulado) vía HyperFormula.</li>
+  <li>Baremo de nivel endurecido tras revisión: <strong>Avanzado</strong> (básico e intermedio perfectos + máx. 1 fallo en avanzado), <strong>Intermedio</strong> (básico perfecto + máx. 1 fallo en avanzado), <strong>Básico</strong> (resto).</li>
+  <li>Mensaje de resultado <strong>diferenciado por nivel</strong>, con gancho emocional validado contra sentimiento real extraído de un hilo de r/excel (no inventado): avanzado empuja a Power Query/Pivot/Macros/Power BI; intermedio detecta huecos concretos; básico normaliza no saber lo esencial conectándolo con requisitos silenciosos de ofertas de trabajo.</li>
+</ul>
+
+<h3>Página de pagos centralizada (<code>/pagos/</code>)</h3>
+<p>Reduce fricción en el cierre de venta: enlaces de pago de Revolut para cada producto (clase suelta, bono 5h, bono 10h), más Bizum y transferencia bancaria como alternativas, con mensajes de confianza (pago seguro y cifrado, datos de la pasarela regulada) para mitigar la ansiedad de pago.</p>
+</div>
+
+<!-- ============ 7. UX ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">07</span>UX</h2>
+
+<h3>Bugs de layout corregidos</h3>
+<ul>
+  <li><strong>Centrado móvil de la tarjeta de CTA final</strong> (<code>.cta-box</code>): padding asimétrico (<code>3rem 0 3rem 3.5rem</code>) sin override simétrico en el media query móvil — corregido en <code>index.html</code> y replicado en <code>profesor-excel-online.html</code>.</li>
+</ul>
+
+<h3>Iteración del embed de reservas</h3>
+<p>Varias rondas de ajuste de tamaño/layout de Cal.com (vista mensual vs. semanal, alto/ancho del contenedor) hasta estabilizar en la configuración final aprobada por el propietario, con overlay de carga (spinner) mientras el widget inicializa.</p>
+
+<h3>Accesibilidad</h3>
+<p>Ver auditoría de contraste WCAG en la sección de SEO técnico — el criterio se trató como accesibilidad y SEO a la vez, no como estética.</p>
+
+<h3>Copiar-al-portapapeles</h3>
+<p>En <code>/pagos/</code>, los datos de Bizum (número) y transferencia bancaria (IBAN) incluyen botón de copia directa, evitando errores de transcripción manual del usuario.</p>
+</div>
+
+<!-- ============ 8. DISEÑO ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">08</span>Diseño</h2>
+
+<h3>Sistema de marca</h3>
+<ul>
+  <li>Paleta verde/crema/dorado consistente vía CSS custom properties en todas las páginas (ver stack tecnológico).</li>
+  <li>Pareja tipográfica <em>Fraunces</em> (display, con peso variable para títulos) + <em>DM Sans</em> (cuerpo de texto).</li>
+  <li>Patrón de tarjeta reutilizado (borde sutil, radio 16px, sombra ligera) en pricing, pagos, y bloques de contenido — mismo lenguaje visual en toda la web.</li>
+  <li>Patrón de footer consistente (<code>.footer-inner</code> → logo + <code>.footer-links</code> + copyright) replicado en las 14 páginas con footer propio.</li>
+</ul>
+
+<h3>Iconografía de marca de terceros</h3>
+<p>El icono de Bizum en <code>/pagos/</code> se reprodujo como SVG fiel al isotipo oficial (símbolo teal <code>#17C4C4</code>, sin caja de fondo) en lugar de usar texto o un logo genérico, para transmitir confianza de marca reconocible.</p>
+
+<h3>Iteración de color con verificación</h3>
+<p>Tras un ajuste de color no aprobado explícitamente (cambio silencioso de <code>#e1dfdb</code> a <code>#ebe3cf</code> en la franja de valor), se estableció como norma de trabajo: <strong>cualquier cambio de valor subjetivo (color, tamaño) se muestra al propietario antes de sobreescribirlo</strong>, sin autocorrección silenciosa.</p>
+</div>
+
+<!-- ============ 9. E-E-A-T ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">09</span>E-E-A-T y cumplimiento</h2>
+<ul>
+  <li><strong>Aviso Legal</strong> y <strong>Política de Privacidad</strong> publicados y enlazados desde el footer de todo el sitio.</li>
+  <li><strong>Página de autoridad/bio</strong> (<code>jhony-profesor-excel-online.html</code>) con enlace hacia la landing principal, reforzando E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness).</li>
+  <li><strong>Reseñas reales:</strong> <code>reviewCount</code> del schema corregido de una cifra inventada a datos reales extraídos de Superprof (14 reseñas).</li>
+  <li><strong>Google Business Profile</strong> añadido al <code>sameAs</code> del schema <code>Person</code>.</li>
+  <li><strong>Confianza en el pago</strong> (<code>/pagos/</code>): mensajes explícitos de "pago 100% seguro y cifrado" y detalle de la pasarela regulada (Revolut Bank UAB, entidad bancaria autorizada en la Unión Europea), explicando que los datos de tarjeta nunca pasan por los servidores propios.</li>
+  <li>Certificación real del formador (Microsoft Office Specialist) enlazada en su propia landing (<code>certificacion-microsoft-excel-especialista.html</code>), con enlazado bidireccional a la landing principal.</li>
+</ul>
+</div>
+
+<!-- ============ 10. PENDIENTES ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">10</span>Pendientes y roadmap</h2>
+<table>
+<tr><th>Pendiente</th><th>Área</th><th>Nota</th></tr>
+<tr><td>Enlazar <code>aprobar-examen-excel.html</code> desde alguna página</td><td>SEO técnico</td><td>Sigue huérfana — 0 enlaces internos entrantes</td></tr>
+<tr><td>Arreglar o quitar el enlace roto a <code>/plantillas/</code></td><td>SEO técnico</td><td>Referenciado desde 2 páginas, sin archivo índice</td></tr>
+<tr><td>Investigar causa de los 0 mensajes de WhatsApp</td><td>SEM</td><td>Fuera del alcance del código — ver sección 5</td></tr>
+<tr><td>Reorganizar assets (imágenes/JS) en subcarpetas</td><td>Arquitectura</td><td>Solo si el propietario lo pide explícitamente, con script de reemplazo + verificación por grep</td></tr>
+</table>
+</div>
+
+<!-- ============ 11. MANTENIMIENTO ============ -->
+<div class="section-block">
+<h2 class="section-title"><span class="section-num">11</span>Cómo mantener este documento</h2>
+<p>Este PDF se genera a partir de <code>docs/estrategia-maestra.html</code> (fuente editable, versionada en el repositorio). No se registra cada commit — solo cambios que afecten al estado real del negocio o la estrategia: nuevas páginas, nuevos canales de conversión, hallazgos de SEO/tracking, decisiones de diseño con impacto de marca, o bugs estructurales corregidos.</p>
+<h4>Proceso de actualización</h4>
+<ol>
+  <li>Editar <code>docs/estrategia-maestra.html</code> (añadir/actualizar la sección correspondiente, y la fecha de "Última actualización" de la portada).</li>
+  <li>Regenerar el PDF: <span class="code">chromium --headless --disable-gpu --print-to-pdf=docs/estrategia-maestra.pdf docs/estrategia-maestra.html</span></li>
+  <li>Commit y push de ambos ficheros (<code>.html</code> y <code>.pdf</code>) a <code>main</code>.</li>
+</ol>
+</div>
+
+</body>
+</html>
