@@ -83,7 +83,7 @@
     <div><strong>Repositorio:</strong> github.com/JAESCOBARC/profesor-de-excel</div>
     <div><strong>Propietario:</strong> Jhony Alberto Escobar Castro</div>
     <div><strong>Dominio:</strong> www.trabajoenexcel.com</div>
-    <div><strong>Última actualización:</strong> 23 de septiembre de 2026</div>
+    <div><strong>Última actualización:</strong> 23 de septiembre de 2026 (CRO documentado bajo AIDA + LIFT Model)</div>
     <div><strong>Fuente:</strong> <span class="code">docs/estrategia-maestra.html</span> — regenerar el PDF tras cada cambio relevante</div>
   </div>
 </div>
@@ -283,6 +283,29 @@
 <!-- ============ 6. CRO ============ -->
 <div class="section-block">
 <h2 class="section-title"><span class="section-num">06</span>CRO — optimización de conversión</h2>
+
+<div class="callout"><strong>Marco estratégico base:</strong> toda página de venta del sitio (home, landing principal, y cada landing nueva creada con la skill <code>/crear-url</code>) se diseña y se audita explícitamente bajo <strong>AIDA</strong> (estructura de la página) + <strong>LIFT Model</strong> (los 6 factores de conversión). No son un criterio aplicado una vez: son el checklist recurrente contra el que se revisa cada landing existente y cada landing nueva antes de darla por terminada.</div>
+
+<h3>Framework AIDA — estructura de página</h3>
+<table>
+<tr><th>Fase</th><th>Cómo se implementa en el sitio</th></tr>
+<tr><td><strong>Atención</strong></td><td>Badge de contexto en el hero + H1 con promesa o tensión clara (no un titular genérico)</td></tr>
+<tr><td><strong>Interés</strong></td><td>Subcopy del hero (hero-lead) + bloque de autor con credenciales reales (certificación MOS, experiencia)</td></tr>
+<tr><td><strong>Deseo</strong></td><td>Contenido largo que conecta el problema real del usuario con la solución — bloques de dolor citado, tabla comparativa "Clases con Jhony vs. alternativas", planes con precio/horas tangibles (vía <code>planes-config.js</code>), nunca solo prosa</td></tr>
+<tr><td><strong>Acción</strong></td><td>CTA repetido en varios puntos de fricción decreciente — nav, hero (mobile y desktop), inline a mitad de contenido, CTA final, flotante en mobile — nunca un único CTA al final de la página</td></tr>
+</table>
+
+<h3>LIFT Model — los 6 factores, auditados de forma recurrente</h3>
+<table>
+<tr><th>Factor</th><th>Cómo se cubre / auditorías realizadas</th></tr>
+<tr><td><strong>Propuesta de valor</strong></td><td>Explícita arriba del todo, en el H1 + badge del hero — auditada en cada landing (home, landing principal, y cada landing nueva)</td></tr>
+<tr><td><strong>Relevancia</strong></td><td>Cada página apunta a una intención de búsqueda específica, no genérica — verificado en la entrevista previa de la skill <code>/crear-url</code> (keyword objetivo obligatoria antes de escribir una línea)</td></tr>
+<tr><td><strong>Claridad</strong></td><td>Jerarquía tipográfica fija (Fraunces/DM Sans), un solo CTA primario por sección — auditoría de jerarquía de encabezados (sección SEO técnico) nació de este mismo criterio</td></tr>
+<tr><td><strong>Reducir ansiedad</strong></td><td>FAQ que resuelve objeciones reales, credenciales visibles, reseñas reales (no inventadas), y en <code>/pagos/</code> los mensajes de "pago 100% seguro y cifrado" + detalle de la pasarela regulada</td></tr>
+<tr><td><strong>Reducir distracción</strong></td><td>Nav minimalista, sin enlaces salientes dentro del cuerpo del contenido</td></tr>
+<tr><td><strong>Urgencia</strong></td><td>Solo urgencia genuina (banner de plazas limitadas) — se descartó explícitamente cualquier urgencia falsa</td></tr>
+</table>
+<p>Este par de tablas es el criterio contra el que se han revisado, en distintos momentos, tanto <code>index.html</code> como <code>profesor-excel-online.html</code> y el resto de landings — de ahí salen directamente varias de las tácticas descritas abajo (oferta de baja fricción, segundo canal de conversión, tabla comparativa, franja de valor, reducción de ansiedad en el pago).</p>
 
 <h3>Oferta de entrada: Clase Diagnóstico</h3>
 <p>Clase gratuita de 15 minutos implementada como oferta de conversión de bajo compromiso, presente en <strong>hero, sección de precios y CTA final</strong> de <code>index.html</code> y <code>profesor-excel-online.html</code>, integrada con <code>whatsapp-config.js</code> vía atributo <code>data-wa-msg</code>.</p>
