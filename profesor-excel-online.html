@@ -174,6 +174,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "Question",
       "name": "¿Puedo cancelar sin coste?",
       "acceptedAnswer": { "@type": "Answer", "text": "Sí, no hay compromiso de permanencia. Puedes dejar de tomar clases cuando quieras, sin penalización ni letra pequeña." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo es la ruta de certificación en Excel con un profesor particular?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Avanzas por niveles según tus necesidades reales — básico, intermedio o avanzado — y al terminar cada programa recibes un certificado de finalización con tu nombre, la intensidad horaria y el temario exacto cursado, firmado por mí como Microsoft Excel Expert certificado. Es verificable con código QR en trabajoenexcel.com/verificar-certificado." }
     }
   ]
 }
@@ -681,6 +686,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   }
 
+  .certificado-section { background: var(--green-mist); }
+  .certificado-inner {
+    display: flex; align-items: center; gap: 3.5rem; max-width: 1000px; margin: 0 auto;
+  }
+  .certificado-visual { flex-shrink: 0; }
+  .certificado-visual img {
+    width: 300px; border-radius: 10px; box-shadow: 0 18px 40px rgba(10,46,26,0.18);
+    transform: rotate(-3deg); border: 6px solid white; display: block;
+  }
+  .certificado-copy { flex: 1; text-align: left; }
+  .certificado-copy h2 { margin-bottom: 0.9rem; }
+  .certificado-copy > p { color: var(--slate); margin-bottom: 1.25rem; max-width: 480px; }
+  .certificado-features { list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .certificado-features li {
+    display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: var(--charcoal);
+  }
+  .certificado-features svg { width: 18px; height: 18px; color: var(--green-mid); flex-shrink: 0; }
+  .certificado-verify { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--green-mid); text-decoration: none; font-weight: 600; }
+  .certificado-verify:hover { color: var(--green-deep); }
+  @media (max-width: 720px) {
+    .certificado-inner { flex-direction: column; text-align: center; gap: 2rem; }
+    .certificado-copy { text-align: center; }
+    .certificado-copy > p { margin-left: auto; margin-right: auto; }
+    .certificado-features { align-items: center; }
+    .certificado-visual img { width: 240px; transform: rotate(0deg); }
+  }
+
   .servicios { background: var(--cream); }
   .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .servicio-card {
@@ -737,6 +769,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faq-q { font-size: 1rem; font-weight: 500; color: var(--green-deep); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
   .faq-q::after { content: '+'; color: var(--green-mid); font-size: 1.2rem; flex-shrink: 0; }
   .faq-a { font-size: 0.93rem; color: var(--slate); line-height: 1.8; margin-top: 0.75rem; display: none; }
+  .faq-a a { color: var(--green-mid); text-decoration: underline; }
   .faq-item.open .faq-q::after { content: '−'; }
   .faq-item.open .faq-a { display: block; }
   .testi-stack { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
@@ -1294,6 +1327,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="comparativa-scroll-hint">← Desliza para ver la tabla completa →</p>
 </section>
 
+<section class="certificado-section">
+  <div class="certificado-inner">
+    <div class="certificado-visual">
+      <img src="/diploma-preview.jpg" alt="Certificado de finalización — Excel con Jhony" width="300" height="212" loading="lazy">
+    </div>
+    <div class="certificado-copy">
+      <div class="section-tag">Progresión con tu profesor particular</div>
+      <h2>Tu <em>ruta de certificación</em> en Excel</h2>
+      <p>Cada nivel que superas conmigo queda documentado: al terminar tu programa recibes un certificado de finalización con tu nombre, la intensidad horaria y el temario exacto cursado — tu progreso, respaldado y demostrable.</p>
+      <ul class="certificado-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Horas y temario exactos que cursaste</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Firmado por tu profesor, Microsoft Excel Expert</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Verificable con código QR — sin dudas de autenticidad</li>
+      </ul>
+      <a href="/verificar-certificado/" class="certificado-verify">Verificar un certificado <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+    </div>
+  </div>
+</section>
+
 <section class="precios" id="precios">
   <div class="section-tag">Tarifas</div>
   <h2>Planes de <em>precio</em></h2>
@@ -1571,6 +1623,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <h3 class="faq-q">¿Puedo cancelar sin coste?</h3>
           <div class="faq-a">Sí, no hay compromiso de permanencia. Puedes dejar de tomar clases cuando quieras, sin penalización ni letra pequeña.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Cómo es la ruta de certificación en Excel con un profesor particular?</h3>
+          <div class="faq-a">Avanzas por niveles según tus necesidades reales — básico, intermedio o avanzado — y al terminar cada programa recibes un <a href="#" onclick="event.stopPropagation();document.querySelector('.certificado-section').scrollIntoView({behavior:'smooth'});return false;">certificado de finalización</a> con tu nombre, la intensidad horaria y el temario exacto cursado, firmado por mí como Microsoft Excel Expert certificado. Es verificable con código QR en <a href="/verificar-certificado/" onclick="event.stopPropagation();">trabajoenexcel.com/verificar-certificado</a>.</div>
         </div>
       </div>
     </div>
