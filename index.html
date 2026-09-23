@@ -671,6 +671,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
   }
 
+  .certificado-section { background: var(--green-mist); }
+  .certificado-inner {
+    display: flex; align-items: center; gap: 3.5rem; max-width: 1000px; margin: 0 auto;
+  }
+  .certificado-visual { flex-shrink: 0; }
+  .certificado-visual img {
+    width: 300px; border-radius: 10px; box-shadow: 0 18px 40px rgba(10,46,26,0.18);
+    transform: rotate(-3deg); border: 6px solid white; display: block;
+  }
+  .certificado-copy { flex: 1; text-align: left; }
+  .certificado-copy h2 { margin-bottom: 0.9rem; }
+  .certificado-copy > p { color: var(--slate); margin-bottom: 1.25rem; max-width: 480px; }
+  .certificado-features { list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .certificado-features li {
+    display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: var(--charcoal);
+  }
+  .certificado-features svg { width: 18px; height: 18px; color: var(--green-mid); flex-shrink: 0; }
+  .certificado-verify { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--green-mid); text-decoration: none; font-weight: 600; }
+  .certificado-verify:hover { color: var(--green-deep); }
+  @media (max-width: 720px) {
+    .certificado-inner { flex-direction: column; text-align: center; gap: 2rem; }
+    .certificado-copy { text-align: center; }
+    .certificado-copy > p { margin-left: auto; margin-right: auto; }
+    .certificado-features { align-items: center; }
+    .certificado-visual img { width: 240px; transform: rotate(0deg); }
+  }
+
   .servicios { background: var(--cream); }
   .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
   .servicio-card {
@@ -1283,6 +1310,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </table>
   </div>
   <p class="comparativa-scroll-hint">← Desliza para ver la tabla completa →</p>
+</section>
+
+<section class="certificado-section">
+  <div class="certificado-inner">
+    <div class="certificado-visual">
+      <img src="/diploma-preview.jpg" alt="Certificado de finalización — Excel con Jhony" width="300" height="212" loading="lazy">
+    </div>
+    <div class="certificado-copy">
+      <div class="section-tag">Al terminar el programa</div>
+      <h2>Te llevas un <em>certificado de finalización</em></h2>
+      <p>Con tu nombre, la intensidad horaria cursada y el temario completo detallado — no es una promesa vacía, es un documento real que puedes enseñar.</p>
+      <ul class="certificado-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Horas y temario exactos que cursaste</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Firmado por tu profesor, Microsoft Excel Expert</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Verificable con código QR — sin dudas de autenticidad</li>
+      </ul>
+      <a href="/verificar-certificado/" class="certificado-verify">Verificar un certificado <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+    </div>
+  </div>
 </section>
 
 <section class="precios" id="precios">
