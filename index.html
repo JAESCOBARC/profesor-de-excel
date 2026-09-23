@@ -162,6 +162,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
     {
       "@type": "Question",
+      "name": "¿El curso de Excel incluye certificado?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Al terminar tu programa recibes un certificado de finalización con tu nombre, la intensidad horaria cursada y el temario completo, firmado por mí como Microsoft Excel Expert certificado. Además es verificable con un código QR en trabajoenexcel.com/verificar-certificado." }
+    },
+    {
+      "@type": "Question",
       "name": "¿Cómo reservo mi primera clase?",
       "acceptedAnswer": { "@type": "Answer", "text": "Escríbeme por WhatsApp o por email. Te respondo en menos de 24 horas para coordinar la primera sesión sin compromiso." }
     }
@@ -754,6 +759,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .faq-q { font-size: 1rem; font-weight: 500; color: var(--green-deep); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
   .faq-q::after { content: '+'; color: var(--green-mid); font-size: 1.2rem; flex-shrink: 0; }
   .faq-a { font-size: 0.93rem; color: var(--slate); line-height: 1.8; margin-top: 0.75rem; display: none; }
+  .faq-a a { color: var(--green-mid); text-decoration: underline; }
   .faq-item.open .faq-q::after { content: '−'; }
   .faq-item.open .faq-a { display: block; }
   .testi-stack { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
@@ -1319,7 +1325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="certificado-copy">
       <div class="section-tag">Al terminar el programa</div>
-      <h2>Te llevas un <em>certificado de finalización</em></h2>
+      <h2>Curso de Excel <em>con certificado</em> de finalización</h2>
       <p>Con tu nombre, la intensidad horaria cursada y el temario completo detallado — no es una promesa vacía, es un documento real que puedes enseñar.</p>
       <ul class="certificado-features">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Horas y temario exactos que cursaste</li>
@@ -1541,6 +1547,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <h3 class="faq-q">¿Ofrecéis clases de Excel para empresas en Madrid?</h3>
           <div class="faq-a">Sí. Ofrezco formación para empresas en toda España de forma online. Puedo adaptar el temario a los procesos de vuestra empresa y formar a equipos completos. Contacta para un presupuesto personalizado.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿El curso de Excel incluye certificado?</h3>
+          <div class="faq-a">Sí. Al terminar tu programa recibes un <a href="#" onclick="event.stopPropagation();document.querySelector('.certificado-section').scrollIntoView({behavior:'smooth'});return false;">certificado de finalización</a> con tu nombre, la intensidad horaria cursada y el temario completo, firmado por mí como Microsoft Excel Expert certificado. Además es verificable con un código QR en <a href="/verificar-certificado/" onclick="event.stopPropagation();">trabajoenexcel.com/verificar-certificado</a>.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <h3 class="faq-q">¿Cómo reservo mi primera clase?</h3>
