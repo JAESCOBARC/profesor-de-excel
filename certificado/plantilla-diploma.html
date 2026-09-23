@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Plantilla — Certificado de Formación</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;700&display=swap">
+<style>
+  @page { size: A4 landscape; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green-deep:#0a2e1a; --green-mid:#1a5c36; --green-light:#4db87a;
+    --green-pale:#d4f0e0; --cream:#faf8f3; --gold:#c9a84c; --muted:#6b6b6b;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: #e8e5db; }
+
+  .diploma {
+    width: 297mm; height: 210mm; margin: 0 auto; position: relative;
+    background: var(--cream);
+    padding: 14mm;
+  }
+  .frame {
+    position: absolute; inset: 8mm; border: 1.5px solid var(--gold); border-radius: 4px;
+  }
+  .frame::before {
+    content: ''; position: absolute; inset: 5px; border: 1px solid rgba(201,168,76,0.4); border-radius: 2px;
+  }
+
+  .content { position: relative; height: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 16mm 24mm 10mm; }
+
+  .mark {
+    width: 15mm; height: 15mm; border-radius: 6px; background: var(--green-deep);
+    color: white; display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 15pt; margin-bottom: 6mm;
+  }
+
+  .eyebrow { font-size: 8.5pt; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 4mm; }
+  h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 25pt; color: var(--green-deep); margin-bottom: 8mm; }
+
+  .otorga { font-size: 10pt; color: var(--muted); margin-bottom: 3mm; }
+  .nombre {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 27pt;
+    color: var(--green-deep); border-bottom: 1px solid var(--green-pale); padding: 0 6mm 3mm; margin-bottom: 8mm;
+    min-width: 140mm;
+  }
+
+  .cuerpo { font-size: 10.5pt; color: #2a2a2a; line-height: 1.7; max-width: 190mm; margin-bottom: 8mm; }
+  .cuerpo strong { color: var(--green-deep); }
+  .programa { font-family: 'Fraunces', serif; font-size: 13pt; color: var(--green-mid); }
+
+  .temas {
+    font-size: 8.8pt; color: var(--muted); max-width: 200mm; margin-bottom: auto;
+    padding: 3mm 5mm; background: white; border-radius: 8px; border: 1px solid var(--green-pale);
+  }
+  .temas strong { color: var(--green-deep); }
+
+  .footer-row {
+    width: 100%; display: flex; align-items: flex-end; justify-content: space-between;
+    margin-top: 8mm; padding-top: 6mm;
+  }
+  .firma { text-align: left; }
+  .firma .linea { width: 55mm; border-top: 1px solid #999; margin-bottom: 2mm; }
+  .firma .nombre-f { font-family: 'Fraunces', serif; font-size: 11pt; color: var(--green-deep); }
+  .firma .cargo { font-size: 7.5pt; color: var(--muted); }
+
+  .fecha-id { text-align: center; }
+  .fecha-id .fecha { font-size: 9pt; color: #2a2a2a; margin-bottom: 1mm; }
+  .fecha-id .id { font-size: 7.5pt; color: var(--muted); font-variant-numeric: tabular-nums; letter-spacing: 0.5px; }
+
+  .qr-block { text-align: right; display: flex; flex-direction: column; align-items: center; gap: 1.5mm; }
+  .qr-block img { width: 20mm; height: 20mm; }
+  .qr-block span { font-size: 6.8pt; color: var(--muted); max-width: 24mm; }
+</style>
+</head>
+<body>
+
+<div class="diploma">
+  <div class="frame"></div>
+  <div class="content">
+    <div class="mark">PE</div>
+    <div class="eyebrow">Certificado de Formación</div>
+    <h1>Excel con Jhony</h1>
+
+    <div class="otorga">Se otorga el presente certificado a</div>
+    <div class="nombre">María González Pérez</div>
+
+    <div class="cuerpo">
+      por haber completado satisfactoriamente el programa <span class="programa">Excel Nivel Básico–Intermedio</span>,
+      con una intensidad horaria de <strong>10 horas</strong> de formación online personalizada 1:1,
+      impartidas por Jhony Alberto Escobar Castro, Microsoft Excel Expert certificado.
+    </div>
+
+    <div class="temas">
+      <strong>Temario cubierto:</strong> Interfaz y navegación · Atajos de teclado esenciales · Formatos y tablas ·
+      Validación de datos · Fórmulas básicas y clave (SI, BUSCARV, BUSCARX, SUMAR.SI, INDIRECTO) ·
+      Tablas dinámicas avanzadas · Gráficos · Dashboard en Excel · Seguridad de libro
+    </div>
+
+    <div class="footer-row">
+      <div class="firma">
+        <div class="linea"></div>
+        <div class="nombre-f">Jhony Alberto Escobar Castro</div>
+        <div class="cargo">Microsoft Excel Expert · trabajoenexcel.com</div>
+      </div>
+
+      <div class="fecha-id">
+        <div class="fecha">Granada, España — 23 de septiembre de 2026</div>
+        <div class="id">ID de certificado: CERT-4F8A2C91</div>
+      </div>
+
+      <div class="qr-block">
+        <img src="data:image/png;base64,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" alt="QR de verificación">
+        <span>Verificar en trabajoenexcel.com/verificar-certificado</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
