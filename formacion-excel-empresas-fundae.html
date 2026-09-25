@@ -249,13 +249,6 @@
 
   .disclaimer { font-size: 0.75rem; color: var(--muted); max-width: 680px; margin: 1.5rem auto 0; line-height: 1.7; }
 
-  footer { background: var(--green-deep); padding: 2rem 5%; }
-  .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; max-width: 1100px; margin: 0 auto; }
-  .footer-logo { font-family: 'Fraunces', serif; color: white; font-size: 0.95rem; }
-  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-  .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.5); text-decoration: none; }
-  .footer-links a:hover { color: white; }
-  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.3); width: 100%; text-align: center; margin-top: 0.75rem; }
 
   @media (max-width: 768px) {
     nav { height: 48px; justify-content: center; }
@@ -280,7 +273,6 @@
     .incluye-grid { grid-template-columns: 1fr; }
     .autor-inner { flex-direction: column; text-align: center; }
     .autor-creds { justify-content: center; }
-    .footer-inner { flex-direction: column; align-items: center; text-align: center; }
     section { padding: 2.5rem 5%; }
     .btn-cta { width: 100%; }
   }
@@ -625,21 +617,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">Excel con Jhony</div>
-    <div class="footer-links">
-      <a href="/niveles/">Niveles Excel</a>
-      <a href="/">Inicio</a>
-      <a href="/automatizacion-excel-empresas.html">Automatización para empresas</a>
-      <a href="/test-nivel-excel.html">Test de nivel de Excel</a>
-      <a href="/profesor-excel-online.html">Profesor particular</a>
-      <a href="/jhony-profesor-excel-online.html">Sobre mí</a>
-      <a href="/pagos/">Pagos</a>
-    </div>
-    <div class="footer-copy">© 2026 · trabajoenexcel.com · Formación de Excel para empresas en España · <a href="/aviso-legal.html" style="color:rgba(255,255,255,0.55);">Aviso Legal</a> · <a href="/politica-privacidad.html" style="color:rgba(255,255,255,0.55);">Privacidad</a></div>
-  </div>
-</footer>
+<script src="/footer.js"></script>
 
 <script>
 document.querySelectorAll('.faq-item').forEach(item => {
