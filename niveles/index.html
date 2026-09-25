@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Programas de formación en Excel — Jhony Escobar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7F4EC;
+    --cream-2:#F0ECE0;
+    --ink:#1C2620;
+    --ink-soft:#4B584F;
+    --forest:#1F4B34;
+    --forest-deep:#163726;
+    --forest-tint:#E3EBE1;
+    --line:#DAD3C1;
+    --radius-sm:4px;
+    --radius-md:8px;
+    --radius-lg:16px;
+    --ease-out: cubic-bezier(.4,0,.2,1);
+    --ease-in: cubic-bezier(.4,0,1,1);
+    background:var(--cream);
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --cream:#161C18;
+      --cream-2:#1E2620;
+      --ink:#ECE7D9;
+      --ink-soft:#AEB8AE;
+      --forest:#6FBE93;
+      --forest-deep:#8ED4AC;
+      --forest-tint:#22322A;
+      --line:#33403A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#161C18;
+    --cream-2:#1E2620;
+    --ink:#ECE7D9;
+    --ink-soft:#AEB8AE;
+    --forest:#6FBE93;
+    --forest-deep:#8ED4AC;
+    --forest-tint:#22322A;
+    --line:#33403A;
+  }
+  html{ scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, 'Segoe UI', sans-serif;
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--forest); color:var(--cream); }
+  a{ color:inherit; }
+
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 20px; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:56px 0 40px;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 34px 34px;
+    background-position: center top;
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{ position:relative; }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    margin-bottom:28px;
+  }
+  .brand-mark{
+    width:40px; height:40px; border-radius:var(--radius-sm);
+    background:var(--forest); color:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-weight:700; font-size:18px;
+    flex:none;
+  }
+  .brand-name{ font-weight:600; font-size:15px; }
+  .brand-sub{ font-size:13px; color:var(--ink-soft); }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:39px;
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    margin:0 0 14px;
+    max-width:18ch;
+  }
+  .hero p.lede{
+    font-size:20px;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0;
+  }
+
+  /* ---------- SHEET TABS ---------- */
+  .tabbar-shell{
+    position:sticky; top:0; z-index:20;
+    background:var(--cream);
+    padding-top:14px;
+  }
+  .tabbar{
+    display:flex; gap:6px;
+    padding:0 20px;
+    max-width:1040px; margin:0 auto;
+    overflow-x:auto;
+    scrollbar-width:none;
+    border-bottom:2px solid var(--forest);
+  }
+  .tabbar::-webkit-scrollbar{ display:none; }
+  .tab{
+    flex:none;
+    appearance:none; border:1px solid var(--line); border-bottom:none;
+    background:var(--cream-2);
+    color:var(--ink-soft);
+    font-family:'Inter', sans-serif;
+    font-weight:600; font-size:14px;
+    padding:12px 18px;
+    min-height:44px;
+    border-radius:10px 10px 0 0;
+    cursor:pointer;
+    position:relative;
+    top:2px;
+    transition: background .18s var(--ease-out), color .18s var(--ease-out), top .18s var(--ease-out);
+    white-space:nowrap;
+  }
+  .tab:hover{ color:var(--ink); }
+  .tab:focus-visible{ outline:2px solid var(--forest); outline-offset:2px; }
+  .tab[aria-selected="true"]{
+    background:var(--forest);
+    color:var(--cream);
+    border-color:var(--forest);
+    top:0;
+  }
+  .tab .tab-emoji{ margin-right:6px; }
+
+  /* ---------- PANEL META ---------- */
+  .panel{ display:none; padding:28px 0 8px; }
+  .panel.is-active{ display:block; }
+
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-bottom:18px;
+  }
+  .chip{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--forest-tint);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:6px 12px;
+    font-size:13px; font-weight:500;
+    color:var(--ink-soft);
+  }
+  .chip b{ color:var(--ink); font-variant-numeric:tabular-nums; font-weight:700; }
+
+  .scope{
+    font-size:16px;
+    color:var(--ink-soft);
+    max-width:60ch;
+    margin:0 0 22px;
+  }
+
+  .search-row{ margin-bottom:18px; }
+  .search-input{
+    width:100%;
+    height:44px;
+    font-size:16px;
+    font-family:'Inter', sans-serif;
+    padding:0 14px 0 40px;
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    background:var(--cream) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="%234B584F" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>') no-repeat 14px center;
+    color:var(--ink);
+  }
+  .search-input:focus-visible{ outline:2px solid var(--forest); outline-offset:2px; }
+  .search-input::placeholder{ color:var(--ink-soft); }
+
+  /* ---------- MODULE ROWS (spreadsheet look) ---------- */
+  .sheet{
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    overflow:hidden;
+    background:var(--cream);
+  }
+  details.row{ border-top:1px solid var(--line); }
+  details.row:first-child{ border-top:none; }
+  details.row[open] summary{ background:var(--forest-tint); }
+  summary.row-head{
+    list-style:none;
+    display:flex; align-items:center; gap:14px;
+    padding:14px 16px;
+    cursor:pointer;
+    min-height:44px;
+    transition:background .15s var(--ease-out);
+  }
+  summary.row-head::-webkit-details-marker{ display:none; }
+  summary.row-head:hover{ background:var(--cream-2); }
+  summary.row-head:focus-visible{ outline:2px solid var(--forest); outline-offset:-2px; }
+  .row-num{
+    flex:none;
+    width:30px; text-align:center;
+    font-variant-numeric:tabular-nums;
+    font-size:13px; font-weight:600;
+    color:var(--ink-soft);
+    background:var(--cream-2);
+    border-radius:var(--radius-sm);
+    padding:4px 0;
+  }
+  .row-title{
+    flex:1;
+    font-weight:600; font-size:16px;
+  }
+  .row-count{
+    flex:none;
+    font-size:13px; color:var(--ink-soft);
+    font-variant-numeric:tabular-nums;
+  }
+  .row-caret{
+    flex:none; width:20px; height:20px;
+    transition: transform .2s var(--ease-out);
+    color:var(--forest);
+  }
+  details.row[open] .row-caret{ transform:rotate(90deg); }
+
+  .row-body{
+    padding:4px 16px 18px 60px;
+  }
+  .row-body ul{ margin:0; padding:0; list-style:none; }
+  .row-body li{
+    display:flex; align-items:flex-start; gap:10px;
+    padding:6px 0;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .row-body li .ck{
+    flex:none; width:16px; height:16px; margin-top:3px;
+    color:var(--forest);
+  }
+
+  .row.is-hidden{ display:none; }
+  .empty-state{
+    padding:32px 16px; text-align:center; color:var(--ink-soft); font-size:15px;
+  }
+
+  /* ---------- COMPARATIVA ---------- */
+  .compare{ padding:48px 0 64px; border-top:1px solid var(--line); margin-top:20px; }
+  .compare h2{
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size:31px; margin:0 0 6px;
+  }
+  .compare p{ color:var(--ink-soft); margin:0 0 24px; max-width:60ch; }
+
+  .matrix-scroll{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--radius-md); }
+  table.matrix{ border-collapse:collapse; width:100%; min-width:640px; }
+  table.matrix th, table.matrix td{
+    padding:12px 14px; text-align:center;
+    border-bottom:1px solid var(--line);
+    font-size:14px;
+  }
+  table.matrix thead th{
+    font-family:'Inter', sans-serif; font-weight:700;
+    background:var(--forest); color:var(--cream);
+    position:sticky; top:0;
+  }
+  table.matrix th:first-child, table.matrix td:first-child{
+    text-align:left;
+    position:sticky; left:0;
+    background:var(--cream-2);
+    min-width:230px;
+    font-weight:500;
+  }
+  table.matrix thead th:first-child{ background:var(--forest-deep); }
+  table.matrix tbody tr:nth-child(even) td:not(:first-child){ background:var(--cream-2); }
+  .yes{ color:var(--forest); font-weight:700; }
+  .no{ color:var(--ink-soft); opacity:.45; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:32px 0 calc(32px + env(safe-area-inset-bottom,0px));
+    border-top:1px solid var(--line);
+    font-size:14px; color:var(--ink-soft);
+    display:flex; flex-wrap:wrap; gap:8px 16px; justify-content:space-between;
+  }
+  footer a{ color:var(--forest); font-weight:600; text-decoration:none; }
+  footer a:hover{ text-decoration:underline; }
+
+  @media (max-width:600px){
+    h1{ font-size:31px; }
+    .hero{ padding:40px 0 32px; }
+    .hero p.lede{ font-size:16px; }
+    .row-body{ padding-left:44px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="brand">
+      <div class="brand-mark">PE</div>
+      <div>
+        <div class="brand-name">Jhony Escobar</div>
+        <div class="brand-sub">trabajoenexcel.com</div>
+      </div>
+    </div>
+    <h1>Programas de formación en Excel</h1>
+    <p class="lede">Tres itinerarios distintos según lo que necesites: hostelería y restauración, superar un test de entrevista, o dominar Excel a nivel de negocio. Elige una pestaña y revisa el contenido módulo a módulo.</p>
+  </div>
+</header>
+
+<div class="tabbar-shell">
+  <div class="tabbar" role="tablist" aria-label="Programas de formación" id="tabbar"></div>
+</div>
+
+<main class="wrap" id="panels"></main>
+
+<section class="wrap compare">
+  <h2>Comparativa rápida</h2>
+  <p>Qué bloques de contenido incluye cada programa, para decidir de un vistazo.</p>
+  <div class="matrix-scroll">
+    <table class="matrix" id="matrix"></table>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Jhony Escobar — Excel analyst &amp; tutor</span>
+    <a href="mailto:jhonya2000@gmail.com">jhonya2000@gmail.com</a>
+  </footer>
+</div>
+
+<script>
+const PROGRAMS = [
+  {
+    id: 'basico',
+    emoji: '🍽️',
+    tabLabel: 'Básico–Intermedio',
+    title: 'Formación Excel · Nivel Básico–Intermedio',
+    scope: 'Formación orientada a la restauración: lo esencial para llevar hojas de cálculo del día a día en un negocio de hostelería.',
+    level: 'Básico–Intermedio',
+    hours: 10,
+    hoursConfident: false,
+    modules: [
+      { title:'Interfaz y navegación', items:[
+        'Cinta de opciones, filas/columnas, hojas, guardar archivos',
+        'Nombrar rangos (cuadro de nombres)',
+        'Imprimir archivos'
+      ]},
+      { title:'Atajos de teclado esenciales', items:[
+        'Acciones básicas sobre celdas, filas y columnas',
+        'Navegación sobre los datos',
+        'Relleno mágico (Ctrl+E)'
+      ]},
+      { title:'Formatos y tablas', items:[
+        'Formatos de celda: número, porcentajes, decimales, bordes',
+        'Manejo de datos: filtros básicos, ordenar de mayor a menor',
+        'Validación de datos',
+        'Extracción de ficheros CSV (texto en columnas)',
+        'Identificar y eliminar duplicados',
+        'Filtros de datos avanzados'
+      ]},
+      { title:'Fórmulas básicas', items:[
+        'Suma, resta, multiplicación, división',
+        'Promedio',
+        'Máximo, mínimo',
+        'Recuento',
+        'Redondear',
+        'Mayúsculas / minúsculas',
+        'Concatenar',
+        'Referencias absolutas / relativas (F4)'
+      ]},
+      { title:'Fórmulas clave', items:[
+        'SI (función lógica)',
+        'Y / O (función lógica)',
+        'SI.ERROR',
+        'BUSCARV · BUSCARX',
+        'BUSCARV avanzado',
+        'SUMAR.SI, CONTAR.SI',
+        'TEXTO',
+        'INDIRECTO',
+        'Fechas',
+        'FILTRAR'
+      ]},
+      { title:'Controles de formulario y ActiveX', items:[
+        'Creación de tablas dinámicas'
+      ]},
+      { title:'Tablas dinámicas avanzadas', items:[
+        'Formatos de tabla (Ctrl+T)',
+        'Creación de tablas dinámicas',
+        'Analizar datos con tablas dinámicas (compartir, formatos condicionales, segmentaciones)',
+        'Campos calculados',
+        'Análisis comparativo en tablas dinámicas',
+        'Actualizar datos dinámicos'
+      ]},
+      { title:'Gráficos', items:[
+        'Tipos de gráficos y usos',
+        'Gráficos de 2 ejes',
+        'Gráficos dinámicos'
+      ]},
+      { title:'Dashboard en Excel', items:[
+        'Metodología y construcción de un dashboard',
+        'Hacer que Excel parezca una app'
+      ]},
+      { title:'Seguridad en Excel', items:[
+        'Protección de hojas y rangos',
+        'Protección de libro'
+      ]}
+    ]
+  },
+  {
+    id: 'express',
+    emoji: '🎯',
+    tabLabel: 'Entrevistas Exprés',
+    title: 'Preparación Exprés · Test de Excel en entrevistas de trabajo',
+    scope: 'Preparar al candidato para aprobar cualquier prueba de Excel en una entrevista de trabajo (nivel básico–intermedio), con simulacros incluidos.',
+    level: 'Básico–Intermedio',
+    hours: 5,
+    hoursConfident: false,
+    modules: [
+      { title:'Interfaz y navegación', items:[
+        'Cinta de opciones, filas/columnas, hojas, guardar archivos',
+        'Nombrar rangos (cuadro de nombres)',
+        'Imprimir archivos'
+      ]},
+      { title:'Atajos de teclado esenciales', items:[
+        'Acciones básicas sobre celdas, filas y columnas',
+        'Navegación sobre los datos',
+        'Relleno mágico (Ctrl+E)'
+      ]},
+      { title:'Formatos y tablas', items:[
+        'Formatos de celda: número, porcentajes, decimales, bordes',
+        'Formatos de tabla (Ctrl+T)',
+        'Manejo de datos: filtros básicos, ordenar de mayor a menor',
+        'Formato condicional',
+        'Extracción de ficheros CSV (texto en columnas)'
+      ]},
+      { title:'Fórmulas básicas', items:[
+        'Suma, resta, multiplicación, división',
+        'Promedio',
+        'Máximo, mínimo',
+        'Recuento',
+        'Redondear',
+        'Mayúsculas / minúsculas',
+        'Concatenar',
+        'Referencias absolutas / relativas (F4)'
+      ]},
+      { title:'Fórmulas clave', items:[
+        'SI (función lógica)',
+        'Y / O (función lógica)',
+        'SI.ERROR',
+        'BUSCARV · BUSCARX',
+        'SUMAR.SI, CONTAR.SI',
+        'TEXTO',
+        'Fechas',
+        'FILTRAR'
+      ]},
+      { title:'Tablas dinámicas', items:[
+        'Creación de tablas dinámicas',
+        'Analizar datos con tablas dinámicas',
+        'Actualizar datos dinámicos'
+      ]},
+      { title:'Gráficos', items:[
+        'Tipos de gráficos y usos',
+        'Gráficos de 2 ejes',
+        'Gráficos dinámicos'
+      ]},
+      { title:'Simulacros', items:[
+        'Simulacro de entrevista de trabajo 1',
+        'Simulacro de entrevista de trabajo 2'
+      ]}
+    ]
+  },
+  {
+    id: 'avanzado',
+    emoji: '📊',
+    tabLabel: 'Avanzado Business',
+    title: 'Excel Avanzado (Business)',
+    scope: 'Comprender todos los usos de Excel en distintas situaciones complejas de trabajo: automatización de datos, analítica de negocio, dashboards e IA.',
+    level: 'Avanzado',
+    hours: null,
+    hoursConfident: false,
+    modules: [
+      { title:'Interfaz y navegación', items:[
+        'Cinta de opciones, filas/columnas, hojas, guardar archivos',
+        'Nombrar rangos (cuadro de nombres)',
+        'Imprimir archivos'
+      ]},
+      { title:'Atajos de teclado esenciales', items:[
+        'Acciones básicas sobre celdas, filas y columnas',
+        'Navegación sobre los datos',
+        'Relleno mágico (Ctrl+E)'
+      ]},
+      { title:'Formatos y tablas', items:[
+        'Formatos de celda: número, porcentajes, decimales, bordes',
+        'Manejo de datos: filtros básicos, ordenar de mayor a menor',
+        'Validación de datos',
+        'Extracción de ficheros CSV (texto en columnas)',
+        'Filtros de datos avanzados'
+      ]},
+      { title:'Fórmulas básicas', items:[
+        'Suma, resta, multiplicación, división, potencia',
+        'Promedio',
+        'Máximo, mínimo',
+        'K-ésimo',
+        'Jerarquía',
+        'Recuento',
+        'Redondear',
+        'Mayúsculas / minúsculas',
+        'Concatenar',
+        'Referencias absolutas / relativas (F4)'
+      ]},
+      { title:'Fórmulas clave', items:[
+        'SI (función lógica)',
+        'Y / O (función lógica)',
+        'SI.ERROR',
+        'IZQUIERDA / DERECHA',
+        'EXTRAE',
+        'ENCONTRAR',
+        'SUSTITUIR',
+        'BUSCARV · BUSCARX',
+        'SUMAR.SI, CONTAR.SI',
+        'TEXTO',
+        'Fechas',
+        'ÚNICOS',
+        'FILTRAR'
+      ]},
+      { title:'Controles de formulario y ActiveX', items:[
+        'Creación de tablas dinámicas'
+      ]},
+      { title:'Tablas dinámicas avanzadas', items:[
+        'Formatos de tabla (Ctrl+T)',
+        'Creación de tablas dinámicas',
+        'Analizar datos con tablas dinámicas (compartir, formatos condicionales, segmentaciones)',
+        'Campos calculados',
+        'Análisis comparativo en tablas dinámicas',
+        'Actualizar datos dinámicos'
+      ]},
+      { title:'Gráficos', items:[
+        'Tipos de gráficos y usos',
+        'Gráficos de 2 ejes',
+        'Gráfico de cascada (Waterfall)',
+        'Gráfico real vs. objetivo',
+        'Representación gráfica de un cronograma (Gantt y Timeline)',
+        'Gráficos interactivos con control ActiveX',
+        'Gráficos dinámicos'
+      ]},
+      { title:'Power Query', items:[
+        'Concepto de ETL',
+        'Importación de datos',
+        'Data clean de datos',
+        'Combinar y apilar datos',
+        'Extraer datos estructurados desde una página web'
+      ]},
+      { title:'Business Analytics', items:[
+        'Análisis de Pareto (80/20)',
+        'Punto de equilibrio (Break-even)',
+        'CAGR',
+        'Plantilla de administración de sprints (proyectos Agile)'
+      ]},
+      { title:'Dashboard', items:[
+        'Metodología y construcción de un dashboard',
+        'Hacer que Excel parezca una app'
+      ]},
+      { title:'Seguridad en Excel', items:[
+        'Protección de hojas y rangos',
+        'Protección de libro'
+      ]},
+      { title:'IA en Excel', items:[
+        'Integración ChatGPT y Cloud en Excel',
+        'Framework Create para tareas en Excel',
+        'Automatizaciones con Skill'
+      ]},
+      { title:'Dashboard en Power BI', items:[
+        'Construcción de un dashboard en Power BI'
+      ]}
+    ]
+  }
+];
+
+const THEMES = [
+  { label:'Fundamentos de Excel (interfaz, atajos, formatos)', has:{basico:true, express:true, avanzado:true} },
+  { label:'Fórmulas y funciones clave', has:{basico:true, express:true, avanzado:true} },
+  { label:'Tablas dinámicas', has:{basico:true, express:true, avanzado:true} },
+  { label:'Gráficos', has:{basico:true, express:true, avanzado:true} },
+  { label:'Seguridad y protección de archivos', has:{basico:true, express:false, avanzado:true} },
+  { label:'Power Query (automatización de datos)', has:{basico:false, express:false, avanzado:true} },
+  { label:'Business Analytics (Pareto, CAGR, Break-even)', has:{basico:false, express:false, avanzado:true} },
+  { label:'Dashboards en Excel', has:{basico:true, express:false, avanzado:true} },
+  { label:'Dashboard en Power BI', has:{basico:false, express:false, avanzado:true} },
+  { label:'IA en Excel (ChatGPT, automatizaciones)', has:{basico:false, express:false, avanzado:true} },
+  { label:'Simulacros de entrevista de trabajo', has:{basico:false, express:true, avanzado:false} }
+];
+
+const CHECK_SVG = '<svg class="ck" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M6 10.2l2.6 2.6L14.2 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const CARET_SVG = '<svg class="row-caret" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 4l7 6-7 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+function norm(s){
+  return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+}
+
+function buildTabs(){
+  const bar = document.getElementById('tabbar');
+  PROGRAMS.forEach((p, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'tab';
+    btn.type = 'button';
+    btn.role = 'tab';
+    btn.id = 'tab-' + p.id;
+    btn.setAttribute('aria-controls', 'panel-' + p.id);
+    btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    btn.innerHTML = '<span class="tab-emoji">' + p.emoji + '</span>' + p.tabLabel;
+    btn.addEventListener('click', () => activate(p.id));
+    btn.addEventListener('keydown', (e) => {
+      if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+        e.preventDefault();
+        const idx = PROGRAMS.findIndex(x => x.id === p.id);
+        const next = e.key === 'ArrowRight' ? (idx+1) % PROGRAMS.length : (idx-1+PROGRAMS.length) % PROGRAMS.length;
+        activate(PROGRAMS[next].id);
+        document.getElementById('tab-' + PROGRAMS[next].id).focus();
+      }
+    });
+    bar.appendChild(btn);
+  });
+}
+
+function buildPanels(){
+  const container = document.getElementById('panels');
+  PROGRAMS.forEach((p, i) => {
+    const panel = document.createElement('section');
+    panel.className = 'panel' + (i === 0 ? ' is-active' : '');
+    panel.id = 'panel-' + p.id;
+    panel.role = 'tabpanel';
+    panel.setAttribute('aria-labelledby', 'tab-' + p.id);
+
+    const itemCount = p.modules.reduce((sum, m) => sum + m.items.length, 0);
+    const hoursChip = p.hours
+      ? '<span class="chip">Duración aprox. <b>' + p.hours + ' h</b></span>'
+      : '';
+
+    panel.innerHTML = `
+      <h2 style="font-family:'Fraunces',serif;font-weight:600;font-size:25px;margin:0 0 8px;">${p.title}</h2>
+      <p class="scope">${p.scope}</p>
+      <div class="meta-row">
+        <span class="chip">Nivel <b>${p.level}</b></span>
+        <span class="chip"><b>${p.modules.length}</b> módulos</span>
+        <span class="chip"><b>${itemCount}</b> temas / fórmulas</span>
+        ${hoursChip}
+      </div>
+      <div class="search-row">
+        <input type="text" class="search-input" placeholder="Buscar un tema o fórmula en este programa…" aria-label="Buscar dentro de ${p.title}">
+      </div>
+      <div class="sheet"></div>
+    `;
+
+    const sheet = panel.querySelector('.sheet');
+    p.modules.forEach((m, mi) => {
+      const row = document.createElement('details');
+      row.className = 'row';
+      row.dataset.search = norm(m.title + ' ' + m.items.join(' '));
+      const itemsHtml = m.items.map(it => `<li>${CHECK_SVG}<span>${it}</span></li>`).join('');
+      row.innerHTML = `
+        <summary class="row-head">
+          <span class="row-num">${mi+1}</span>
+          <span class="row-title">${m.title}</span>
+          <span class="row-count">${m.items.length}</span>
+          ${CARET_SVG}
+        </summary>
+        <div class="row-body"><ul>${itemsHtml}</ul></div>
+      `;
+      sheet.appendChild(row);
+    });
+
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = 'No hay módulos que coincidan con esa búsqueda.';
+    empty.style.display = 'none';
+    sheet.appendChild(empty);
+
+    panel.querySelector('.search-input').addEventListener('input', (e) => {
+      const q = norm(e.target.value.trim());
+      const rows = sheet.querySelectorAll('details.row');
+      let visible = 0;
+      rows.forEach(r => {
+        const match = !q || r.dataset.search.includes(q);
+        r.classList.toggle('is-hidden', !match);
+        if(match) visible++;
+        if(q && match) r.open = true;
+        if(!q) r.open = false;
+      });
+      empty.style.display = visible === 0 ? 'block' : 'none';
+    });
+
+    container.appendChild(panel);
+  });
+}
+
+function activate(id){
+  PROGRAMS.forEach(p => {
+    document.getElementById('tab-' + p.id).setAttribute('aria-selected', p.id === id ? 'true' : 'false');
+    document.getElementById('panel-' + p.id).classList.toggle('is-active', p.id === id);
+  });
+}
+
+function buildMatrix(){
+  const table = document.getElementById('matrix');
+  let thead = '<thead><tr><th>Contenido</th>';
+  PROGRAMS.forEach(p => { thead += `<th>${p.tabLabel}</th>`; });
+  thead += '</tr></thead>';
+
+  let tbody = '<tbody>';
+  THEMES.forEach(t => {
+    tbody += '<tr><td>' + t.label + '</td>';
+    PROGRAMS.forEach(p => {
+      const on = t.has[p.id];
+      tbody += `<td class="${on ? 'yes' : 'no'}">${on ? '✓' : '—'}</td>`;
+    });
+    tbody += '</tr>';
+  });
+  tbody += '</tbody>';
+  table.innerHTML = thead + tbody;
+}
+
+buildTabs();
+buildPanels();
+buildMatrix();
+</script>
+</body>
+</html>
