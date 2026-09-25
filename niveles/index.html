@@ -291,6 +291,31 @@
   .yes{ color:var(--forest); font-weight:700; }
   .no{ color:var(--ink-soft); opacity:.45; }
 
+  /* ---------- CTA FINAL ---------- */
+  .cta-final{ padding:0 0 64px; }
+  .cta-final-box{
+    background:var(--forest);
+    border-radius:var(--radius-lg);
+    padding:48px 40px;
+    text-align:center;
+  }
+  .cta-final-box h2{
+    font-family:'Fraunces', serif; font-weight:600;
+    font-size:28px; color:var(--cream); margin:0 0 8px;
+  }
+  .cta-final-box p{
+    color:rgba(247,244,236,0.8); margin:0 0 24px;
+  }
+  .cta-final-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--cream); color:var(--forest-deep);
+    font-weight:700; font-size:16px;
+    padding:14px 28px; border-radius:999px;
+    text-decoration:none;
+    transition:transform .15s var(--ease-out), background .15s var(--ease-out);
+  }
+  .cta-final-btn:hover{ background:#fff; transform:translateY(-1px); }
+
   /* ---------- FOOTER ---------- */
   footer a{ color:var(--forest); font-weight:600; text-decoration:none; }
   footer a:hover{ text-decoration:underline; }
@@ -330,6 +355,14 @@
   <p>Qué bloques de contenido incluye cada programa, para decidir de un vistazo.</p>
   <div class="matrix-scroll">
     <table class="matrix" id="matrix"></table>
+  </div>
+</section>
+
+<section class="wrap cta-final">
+  <div class="cta-final-box">
+    <h2>¿Listo para empezar?</h2>
+    <p>Vuelve a la home para ver el detalle de cada programa y dar el siguiente paso.</p>
+    <a href="/" class="cta-final-btn">Volver a la home →</a>
   </div>
 </section>
 
