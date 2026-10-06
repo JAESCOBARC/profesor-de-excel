@@ -270,6 +270,18 @@
   .incluye-item h4 { font-size: 0.88rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
   .incluye-item p { font-size: 0.81rem; color: var(--slate); line-height: 1.6; }
 
+  /* Ejemplos ya creados */
+  .ejemplos { background: var(--cream); }
+  .ejemplos-categorias { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+  .categoria-chip { background: white; border: 1px solid var(--border); color: var(--slate); font-size: 0.78rem; padding: 5px 13px; border-radius: 100px; }
+  .ejemplos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-top: 2rem; }
+  .ejemplo-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
+  .ejemplo-cat { display: inline-block; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green-mid); background: var(--green-mist); padding: 2px 9px; border-radius: 100px; margin-bottom: 0.5rem; }
+  .ejemplo-card h4 { font-size: 0.92rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
+  .ejemplo-card p { font-size: 0.81rem; color: var(--slate); line-height: 1.6; }
+  .ejemplos-note { font-size: 0.85rem; color: var(--slate); margin-top: 1.75rem; }
+  .ejemplos-note a { color: var(--green-mid); font-weight: 600; }
+
   /* Para quién */
   .quien { background: var(--cream); }
   .quien-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
@@ -350,6 +362,7 @@
     .coste-step { width: 100%; }
     .vs-grid { grid-template-columns: 1fr; }
     .incluye-grid { grid-template-columns: 1fr; }
+    .ejemplos-grid { grid-template-columns: 1fr; }
     .quien-grid { grid-template-columns: 1fr; }
     .paso { grid-template-columns: 40px 1fr; gap: 0.85rem; padding-bottom: 1.5rem; }
     .paso::before { left: 19px; top: 40px; }
@@ -497,6 +510,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p class="cta-hint">Respuesta personal · Sin compromiso · Presupuesto cerrado antes de empezar</p>
   <p class="cta-hint">¿Tu equipo repite el mismo proceso manual cada semana o cada mes? Mira <a href="/automatizacion-excel-empresas.html" style="color:var(--green-mid); font-weight:600;">automatización de Excel para empresas</a>.</p>
   <div class="hero-stats">
+    <div class="stat"><span class="stat-num">+250</span><span class="stat-label">Plantillas ya creadas</span></div>
     <div class="stat"><span class="stat-num">100%</span><span class="stat-label">A medida, sobre tu proceso</span></div>
     <div class="stat"><span class="stat-num">Power Query<br>VBA · Power BI</span><span class="stat-label">Según lo que necesite tu proyecto</span></div>
     <div class="stat"><span class="stat-num">A medida</span><span class="stat-label">Presupuesto según el alcance</span></div>
@@ -665,6 +679,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ══ EJEMPLOS YA CREADOS ══ -->
+<section class="ejemplos">
+  <div class="inner">
+    <div class="section-tag">Experiencia real</div>
+    <h2>Más de 250 plantillas creadas,<br>en <em>16 áreas distintas</em></h2>
+    <p class="section-lead">Estos son solo algunos ejemplos ya entregados — cada uno se adaptó al caso concreto del cliente, igual que haría con el tuyo. No son una tienda de descarga: te sirven para ver el tipo de trabajo que hago.</p>
+    <div class="ejemplos-categorias">
+      <span class="categoria-chip">Finanzas</span>
+      <span class="categoria-chip">Finanzas Personales</span>
+      <span class="categoria-chip">Contabilidad</span>
+      <span class="categoria-chip">Facturación y Cobros</span>
+      <span class="categoria-chip">Recursos Humanos</span>
+      <span class="categoria-chip">Gestión de Proyectos</span>
+      <span class="categoria-chip">Marketing y Ventas</span>
+      <span class="categoria-chip">Estrategia y Análisis</span>
+      <span class="categoria-chip">Compras e Inventarios</span>
+      <span class="categoria-chip">Costos y Producción</span>
+      <span class="categoria-chip">Operaciones y Calidad</span>
+      <span class="categoria-chip">Productividad y Organización</span>
+      <span class="categoria-chip">Educación</span>
+      <span class="categoria-chip">Salud y Bienestar</span>
+      <span class="categoria-chip">Calendarios</span>
+      <span class="categoria-chip">Herramientas y Utilidades</span>
+    </div>
+    <div class="ejemplos-grid">
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Finanzas</span>
+        <h4>Plan de viabilidad de proyectos</h4>
+        <p>Para validar si un plan de negocio es rentable antes de lanzarlo.</p>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Recursos Humanos</span>
+        <h4>Programación de turnos de trabajo</h4>
+        <p>Cuadrante de turnos anual y por horas, con control de horas por empleado.</p>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Facturación y Cobros</span>
+        <h4>Facturación con control de cobros</h4>
+        <p>Emisión de facturas con numeración automática y seguimiento de pagos pendientes.</p>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Finanzas Personales</span>
+        <h4>Presupuesto personal</h4>
+        <p>Control de ingresos y gastos mensuales con categorías y balance automático.</p>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Contabilidad</span>
+        <h4>Plantilla contable para negocios</h4>
+        <p>Registro contable y libro mayor adaptado a pequeños negocios.</p>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Gestión de Proyectos</span>
+        <h4>Administración de proyectos Agile</h4>
+        <p>Tablero de sprints y seguimiento de tareas bajo metodología Agile.</p>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Recursos Humanos</span>
+        <h4>Nómina en Excel</h4>
+        <p>Cálculo de nómina mensual con deducciones y generación de recibos.</p>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Finanzas</span>
+        <h4>Flujo de caja</h4>
+        <p>Proyección de entradas y salidas de efectivo mes a mes.</p>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Recursos Humanos</span>
+        <h4>Dashboard de ausentismo</h4>
+        <p>Panel visual para hacer seguimiento de bajas y faltas del equipo.</p>
+      </div>
+      <div class="ejemplo-card">
+        <span class="ejemplo-cat">Estrategia y Análisis</span>
+        <h4>Matriz DAFO</h4>
+        <p>Análisis de debilidades, amenazas, fortalezas y oportunidades, listo para presentar.</p>
+      </div>
+    </div>
+    <p class="ejemplos-note">¿Necesitas algo parecido a uno de estos, pero adaptado a tu caso? <a href="#" data-wa-msg="Hola Jhony, vi un ejemplo parecido a lo que necesito en tu web de plantillas, quiero algo similar pero adaptado a mi caso">Cuéntame tu caso por WhatsApp</a>.</p>
+  </div>
+</section>
+
 <!-- ══ PARA QUIÉN ══ -->
 <section class="quien">
   <div class="inner">
@@ -756,6 +850,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Más de 8 años trabajando con Excel a nivel profesional — formación y desarrollo de soluciones reales para empresas y profesionales de España y Latinoamérica. Cada plantilla parte de entender primero tu proceso, no de adaptar una plantilla que ya tenía hecha.</p>
       <div class="autor-creds">
         <span class="autor-cred">Certificado Microsoft Excel Expert</span>
+        <span class="autor-cred">+250 plantillas creadas</span>
         <span class="autor-cred">Power Query · VBA · Power BI</span>
         <span class="autor-cred">⭐ Súper Profesor Superprof</span>
       </div>
