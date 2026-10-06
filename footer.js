@@ -33,6 +33,7 @@
     </div>\
     <div class="footer-links">\
       <a href="/niveles/">Niveles Excel</a>\
+      <a href="/plantillas-excel.html">Plantillas a medida</a>\
       <a href="/jhony-profesor-excel-online.html">Sobre mí</a>\
       <a href="/certificacion-microsoft-excel-especialista.html">Certificación</a>\
       <a href="/test-nivel-excel.html">Test de nivel</a>\
