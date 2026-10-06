@@ -57,7 +57,7 @@
     {
       "@type": "Question",
       "name": "¿Qué formato tienen las plantillas del kit?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Archivos .xlsx y .xlsm (las que incluyen macros), compatibles con Microsoft Excel 2016 en adelante y con Excel 365. Algunas funciones avanzadas (macros VBA) requieren Excel de escritorio — no funcionan en la versión web gratuita de Excel." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Archivos .xlsx y .xlsm (las que incluyen macros), compatibles con Microsoft Excel 2016 en adelante y con Excel 365 en Windows. Importante: las plantillas que funcionan con macros no son compatibles con Excel para Mac — en Mac solo funcionarán correctamente las plantillas sin macros (.xlsx)." }
     },
     {
       "@type": "Question",
@@ -181,6 +181,7 @@
 
   /* Qué incluye — por categoría */
   .incluye { background: white; }
+  .mac-warning { background: rgba(245,166,35,0.12); border: 1px solid rgba(245,166,35,0.35); color: var(--charcoal); font-size: 0.88rem; line-height: 1.6; padding: 1rem 1.25rem; border-radius: 10px; margin-top: 1.5rem; max-width: 680px; }
   .incluye-categoria { margin-top: 2.5rem; }
   .incluye-categoria:first-of-type { margin-top: 2.5rem; }
   .incluye-categoria h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1rem; color: var(--green-deep); margin-bottom: 0.75rem; }
@@ -447,6 +448,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="section-tag">Qué incluye el kit</div>
     <h2>20 plantillas, agrupadas<br>por lo que <em>tu negocio necesita</em></h2>
     <p class="section-lead">Cada una ya está construida y probada — solo tienes que abrirla y meter tus datos.</p>
+    <div class="mac-warning">⚠️ Importante: algunas plantillas del kit funcionan con macros (archivos .xlsm) y requieren Excel para Windows — <strong>no son compatibles con Excel para Mac</strong>. Las plantillas de fórmulas estándar (.xlsx) sí funcionan en Mac sin problema.</div>
 
     <div class="incluye-categoria">
       <h3>Facturación y cobros</h3>
@@ -612,7 +614,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">¿Qué formato tienen las plantillas del kit?</div>
-        <div class="faq-a">Archivos .xlsx y .xlsm (las que incluyen macros), compatibles con Microsoft Excel 2016 en adelante y con Excel 365. Algunas funciones avanzadas (macros VBA) requieren Excel de escritorio — no funcionan en la versión web gratuita de Excel.</div>
+        <div class="faq-a">Archivos .xlsx y .xlsm (las que incluyen macros), compatibles con Microsoft Excel 2016 en adelante y con Excel 365 en Windows. Importante: las plantillas que funcionan con macros no son compatibles con Excel para Mac — en Mac solo funcionarán correctamente las plantillas sin macros (.xlsx).</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">¿Funcionan en Google Sheets?</div>
