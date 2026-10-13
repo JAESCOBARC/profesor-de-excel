@@ -8,6 +8,7 @@
   .site-footer .footer-logo { font-family: "Fraunces", serif; color: white; font-size: 1rem; font-weight: 400; }\
   .site-footer .footer-logo-email { font-size: 0.78rem; font-weight: 400; color: rgba(255,255,255,0.45); margin-top: 4px; }\
   .site-footer .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }\
+  .site-footer .footer-links h3 { margin: 0; font-weight: 400; font-size: inherit; line-height: inherit; }\
   .site-footer .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }\
   .site-footer .footer-links a:hover { color: white; }\
   .site-footer .footer-social { display: flex; gap: 1.25rem; align-items: center; }\
@@ -32,11 +33,11 @@
       <div class="footer-logo-email">jhonya2000@gmail.com</div>\
     </div>\
     <div class="footer-links">\
-      <a href="/niveles/">Niveles Excel</a>\
-      <a href="/plantillas-excel.html">Plantillas Excel</a>\
-      <a href="/jhony-profesor-excel-online.html">Sobre mí</a>\
-      <a href="/certificacion-microsoft-excel-especialista.html">Certificación</a>\
-      <a href="/test-nivel-excel.html">Test de nivel</a>\
+      <h3><a href="/niveles/">Niveles Excel</a></h3>\
+      <h3><a href="/plantillas-excel.html">Plantillas Excel</a></h3>\
+      <h3><a href="/jhony-profesor-excel-online.html">Sobre mí</a></h3>\
+      <h3><a href="/certificacion-microsoft-excel-especialista.html">Certificación</a></h3>\
+      <h3><a href="/test-nivel-excel.html">Test de nivel</a></h3>\
       <a href="/pagos/">Pagos</a>\
     </div>\
     <div class="footer-social">\
