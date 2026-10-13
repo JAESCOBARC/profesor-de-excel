@@ -282,6 +282,25 @@
   .ejemplos-note { font-size: 0.85rem; color: var(--slate); margin-top: 1.75rem; }
   .ejemplos-note a { color: var(--green-mid); font-weight: 600; }
 
+  /* Catálogo de productos */
+  .catalogo { background: var(--green-mist); }
+  .catalogo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.1rem; margin-top: 2.5rem; }
+  .producto-card {
+    display: block; background: white; border: 1px solid var(--border); border-radius: 16px;
+    padding: 1.75rem; text-decoration: none; color: inherit;
+    box-shadow: 0 2px 16px rgba(10,46,26,0.04);
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .producto-card:hover { box-shadow: 0 10px 32px rgba(10,46,26,0.1); transform: translateY(-3px); }
+  .producto-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green-mid); background: var(--green-mist); padding: 3px 10px; border-radius: 100px; margin-bottom: 0.9rem; }
+  .producto-card h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.05rem; color: var(--green-deep); margin-bottom: 0.5rem; }
+  .producto-card p { font-size: 0.87rem; color: var(--slate); line-height: 1.6; margin-bottom: 1.25rem; }
+  .producto-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .producto-precio { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--green-deep); }
+  .producto-precio span { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.72rem; color: var(--muted); display: block; margin-top: 1px; }
+  .producto-link { font-size: 0.82rem; font-weight: 600; color: var(--green-mid); }
+  .producto-card:hover .producto-link { color: var(--green-deep); }
+
   /* Para quién */
   .quien { background: var(--cream); }
   .quien-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
@@ -766,7 +785,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <p class="ejemplos-note">¿Necesitas algo parecido a uno de estos, pero adaptado a tu caso? <a href="#" data-wa-msg="Hola Jhony, vi un ejemplo parecido a lo que necesito en tu web de plantillas, quiero algo similar pero adaptado a mi caso">Cuéntame tu caso por WhatsApp</a>.</p>
-    <p class="ejemplos-note">¿Con una plantilla general ya te vale, sin personalizar? Mira el <a href="/kit-plantillas-excel-negocios.html">kit de 20 plantillas para negocios</a>, descarga inmediata por 100€.</p>
+    <p class="ejemplos-note">¿Con una plantilla general ya te vale, sin personalizar? Mira el <a href="#catalogo">catálogo de productos listos</a> más abajo.</p>
+  </div>
+</section>
+
+<!-- ══ CATÁLOGO DE PRODUCTOS ══ -->
+<!-- Sección pensada para crecer: cada producto nuevo que se publique se añade aquí como un .producto-card más dentro de .catalogo-grid -->
+<section class="catalogo" id="catalogo">
+  <div class="inner">
+    <div class="section-tag">Catálogo</div>
+    <h2>¿Prefieres algo <em>ya hecho</em>?</h2>
+    <p class="section-lead">Productos digitales listos para descargar, sin esperar a un desarrollo a medida. Aquí se irán sumando los próximos a medida que se publiquen.</p>
+    <div class="catalogo-grid">
+      <a href="/kit-plantillas-excel-negocios.html" class="producto-card">
+        <span class="producto-badge">Disponible ahora</span>
+        <h3>Pack de Plantillas Excel Premium</h3>
+        <p>24 plantillas profesionales para pymes y empresas: facturación, finanzas, RR. HH., proyectos y más. Descarga inmediata vía Hotmart.</p>
+        <div class="producto-footer">
+          <span class="producto-precio">100€ <span>pago único</span></span>
+          <span class="producto-link">Ver el pack →</span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
