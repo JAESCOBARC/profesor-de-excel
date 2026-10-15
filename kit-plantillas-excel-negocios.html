@@ -41,6 +41,21 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Pack de Plantillas Excel Premium: qué incluye en 30 segundos",
+  "description": "Resumen en vídeo del pack de 24 plantillas Excel profesionales para pymes: facturación, finanzas, contabilidad, recursos humanos, proyectos, compras, estrategia y productividad. Pago único de 100€ y descarga inmediata.",
+  "thumbnailUrl": "https://www.trabajoenexcel.com/videos/pack-plantillas-excel-poster.jpg",
+  "uploadDate": "2026-10-15",
+  "duration": "PT30S",
+  "contentUrl": "https://www.trabajoenexcel.com/videos/pack-plantillas-excel.mp4",
+  "inLanguage": "es",
+  "publisher": { "@type": "Organization", "name": "Excel con Jhony", "url": "https://www.trabajoenexcel.com" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Excel con Jhony", "item": "https://www.trabajoenexcel.com/" },
@@ -182,6 +197,16 @@
   .problema h2 em { color: var(--green-light); }
   .section-lead { font-size: 1rem; color: var(--slate); max-width: 620px; line-height: 1.8; }
 
+  /* Vídeo del pack */
+  .video-pack { background: white; border-top: 1px solid var(--border); }
+  .video-pack-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; gap: 3.5rem; align-items: center; }
+  .video-pack-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
+  .video-pack-list li { font-size: 0.92rem; color: var(--slate); display: flex; gap: 9px; align-items: flex-start; line-height: 1.5; }
+  .video-pack-list li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
+  .video-frame { width: 100%; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: var(--green-deep); box-shadow: 0 18px 50px rgba(10,46,26,0.22); border: 6px solid var(--green-deep); }
+  .video-frame video { width: 100%; height: 100%; display: block; object-fit: cover; background: var(--green-deep); }
+  .video-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 0.75rem; }
+
   .problema { background: var(--green-deep); }
   .problema .section-tag { color: var(--green-light); }
   .problema h2 { color: white; }
@@ -309,6 +334,13 @@
     .hero-lead { font-size: 0.97rem; margin-bottom: 1.25rem; }
     .hero-stats { gap: 1.5rem; margin-top: 1.5rem; padding-top: 1.5rem; }
     .problema-grid { grid-template-columns: 1fr; }
+    .video-pack-inner { grid-template-columns: 1fr; gap: 0; text-align: center; }
+    .video-pack-text { display: contents; }
+    .video-pack .section-tag { order: 1; }
+    .video-pack h2 { order: 2; }
+    .video-pack-media { order: 3; width: 100%; max-width: 320px; margin: 0.75rem auto 1.5rem; }
+    .video-pack .section-lead { order: 4; margin: 0 auto; }
+    .video-pack-list { order: 5; align-items: center; }
     .incluye-grid-cards { grid-template-columns: 1fr; }
     .quien-grid { grid-template-columns: 1fr; }
     .paso { grid-template-columns: 40px 1fr; gap: 0.85rem; padding-bottom: 1.5rem; }
@@ -445,6 +477,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="stat"><span class="stat-num">24</span><span class="stat-label">Plantillas incluidas</span></div>
     <div class="stat"><span class="stat-num">8</span><span class="stat-label">Áreas de tu negocio</span></div>
     <div class="stat"><span class="stat-num">100€</span><span class="stat-label">Valor real +350€ comprando cada plantilla por separado</span></div>
+  </div>
+</section>
+
+<!-- ══ VÍDEO ══ -->
+<section class="video-pack" id="video">
+  <div class="video-pack-inner">
+    <div class="video-pack-text">
+      <div class="section-tag">El pack en 30 segundos</div>
+      <h2>Mira lo que incluye<br><em>antes de comprar</em></h2>
+      <p class="section-lead">Un resumen rápido de las 24 plantillas, las 8 áreas que cubren y cómo se usan: tú pones tus datos y las fórmulas ya están hechas.</p>
+      <ul class="video-pack-list">
+        <li>Facturación, finanzas, contabilidad y RR. HH.</li>
+        <li>Proyectos, compras, estrategia y productividad</li>
+        <li>Pago único de 100€ y descarga inmediata</li>
+      </ul>
+    </div>
+    <div class="video-pack-media">
+      <div class="video-frame">
+        <video controls playsinline preload="none" width="720" height="1280"
+               poster="/videos/pack-plantillas-excel-poster.jpg"
+               aria-label="Vídeo: qué incluye el Pack de Plantillas Excel Premium">
+          <source src="/videos/pack-plantillas-excel.mp4" type="video/mp4">
+          <track kind="captions" src="/videos/pack-plantillas-excel.es.vtt" srclang="es" label="Español">
+        </video>
+      </div>
+      <p class="video-note">30 s · con sonido · subtítulos disponibles</p>
+    </div>
   </div>
 </section>
 
@@ -755,6 +814,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 document.querySelectorAll('.faq-item').forEach(item => {
   item.querySelector('.faq-q').addEventListener('click', () => item.classList.toggle('open'));
 });
+(function () {
+  var v = document.querySelector('.video-pack video');
+  if (!v) return;
+  var sent = {};
+  function track(name) {
+    if (sent[name]) return;
+    sent[name] = true;
+    try { (window.dataLayer = window.dataLayer || []).push({ event: name, video_title: 'pack-plantillas-excel' }); } catch (e) {}
+  }
+  v.addEventListener('play', function () { track('video_play'); });
+  v.addEventListener('ended', function () { track('video_complete'); });
+})();
 </script>
 
 <a href="#" data-wa-msg="Hola Jhony, tengo dudas sobre el kit de plantillas de Excel para negocios antes de comprarlo" class="whatsapp-float" aria-label="Escribir por WhatsApp">
