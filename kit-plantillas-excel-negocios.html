@@ -203,7 +203,19 @@
   .video-pack-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
   .video-pack-list li { font-size: 0.92rem; color: var(--slate); display: flex; gap: 9px; align-items: flex-start; line-height: 1.5; }
   .video-pack-list li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
-  .video-frame { width: 100%; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: var(--green-deep); box-shadow: 0 18px 50px rgba(10,46,26,0.22); border: 6px solid var(--green-deep); }
+  .video-frame { position: relative; width: 100%; aspect-ratio: 9 / 16; border-radius: 22px; overflow: hidden; background: var(--green-deep); box-shadow: 0 18px 50px rgba(10,46,26,0.22); border: 6px solid var(--green-deep); }
+  .video-unmute {
+    position: absolute; top: 14px; left: 50%; transform: translateX(-50%); z-index: 2;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green-light); color: var(--green-deep); border: 0; cursor: pointer;
+    padding: 10px 18px; border-radius: 100px; white-space: nowrap;
+    font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 700;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: transform 0.2s, background 0.2s;
+  }
+  .video-unmute:hover { background: white; transform: translateX(-50%) scale(1.04); }
+  .video-unmute:focus-visible { outline: 3px solid white; outline-offset: 2px; }
+  .video-unmute svg { width: 18px; height: 18px; }
+  .video-unmute[hidden] { display: none; }
   .video-frame video { width: 100%; height: 100%; display: block; object-fit: cover; background: var(--green-deep); }
   .video-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 0.75rem; }
 
@@ -495,14 +507,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="video-pack-media">
       <div class="video-frame">
-        <video controls playsinline preload="none" width="720" height="1280"
+        <button type="button" class="video-unmute" hidden>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05A4.5 4.5 0 0 0 16.5 12zM14 3.23v2.06a7 7 0 0 1 0 13.42v2.06a9 9 0 0 0 0-17.54z"/></svg>
+          Activar sonido
+        </button>
+        <video controls playsinline muted loop preload="metadata" width="720" height="1280"
                poster="/videos/pack-plantillas-excel-poster.jpg"
                aria-label="Vídeo: qué incluye el Pack de Plantillas Excel Premium">
           <source src="/videos/pack-plantillas-excel.mp4" type="video/mp4">
           <track kind="captions" src="/videos/pack-plantillas-excel.es.vtt" srclang="es" label="Español">
         </video>
       </div>
-      <p class="video-note">30 s · con sonido · subtítulos disponibles</p>
+      <p class="video-note">30 s · pulsa "Activar sonido" para escuchar la explicación</p>
     </div>
   </div>
 </section>
@@ -816,15 +832,42 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 (function () {
   var v = document.querySelector('.video-pack video');
-  if (!v) return;
+  var btn = document.querySelector('.video-unmute');
+  if (!v || !btn) return;
   var sent = {};
   function track(name) {
     if (sent[name]) return;
     sent[name] = true;
     try { (window.dataLayer = window.dataLayer || []).push({ event: name, video_title: 'pack-plantillas-excel' }); } catch (e) {}
   }
-  v.addEventListener('play', function () { track('video_play'); });
+  function unmuted() {
+    btn.hidden = true;
+    v.loop = false;
+  }
+  btn.addEventListener('click', function () {
+    v.muted = false;
+    v.currentTime = 0;
+    unmuted();
+    v.play().catch(function () {});
+    track('video_unmute');
+  });
+  v.addEventListener('volumechange', function () { if (!v.muted && !btn.hidden) { unmuted(); track('video_unmute'); } });
+  v.addEventListener('play', function () { if (!v.muted) track('video_play'); });
   v.addEventListener('ended', function () { track('video_complete'); });
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (reduce || saveData || !('IntersectionObserver' in window)) return;
+  btn.hidden = false;
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) {
+        if (v.muted && v.paused) v.play().then(function () { track('video_autoplay'); }).catch(function () {});
+      } else if (v.muted && !v.paused) {
+        v.pause();
+      }
+    });
+  }, { threshold: 0.2 }).observe(v);
 })();
 </script>
 
