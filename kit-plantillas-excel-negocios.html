@@ -245,6 +245,22 @@
   .incluye-card-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .incluye-card-list li { font-size: 0.87rem; color: var(--slate); display: flex; gap: 9px; align-items: flex-start; line-height: 1.5; }
   .incluye-card-list li svg { width: 16px; height: 16px; color: var(--green-mid); flex-shrink: 0; margin-top: 2px; }
+  /* Acordeón de plantillas */
+  .incluye-grid-cards { align-items: start; }
+  .incluye-card-list { gap: 0; }
+  .incluye-card-list li { display: block; border-top: 1px solid var(--border); }
+  .incluye-card-list li:first-child { border-top: 0; }
+  .plantilla-det summary { list-style: none; cursor: pointer; display: flex; gap: 9px; align-items: flex-start; padding: 0.6rem 0; font-size: 0.87rem; color: var(--slate); line-height: 1.5; transition: color 0.2s; }
+  .plantilla-det summary::-webkit-details-marker { display: none; }
+  .plantilla-det summary:hover { color: var(--green-deep); }
+  .plantilla-det summary:focus-visible { outline: 2px solid var(--green-light); outline-offset: 2px; border-radius: 6px; }
+  .plantilla-det .det-name { flex: 1; }
+  .det-chev { flex-shrink: 0; width: 18px; height: 18px; margin-top: 1px; position: relative; color: var(--green-mid); }
+  .det-chev::before, .det-chev::after { content: ''; position: absolute; left: 3px; right: 3px; top: 50%; height: 2px; margin-top: -1px; background: currentColor; border-radius: 2px; transition: transform 0.2s; }
+  .det-chev::after { transform: rotate(90deg); }
+  .plantilla-det[open] .det-chev::after { transform: rotate(0deg); }
+  .plantilla-det[open] summary { color: var(--green-deep); font-weight: 600; }
+  .plantilla-det p { font-size: 0.83rem; color: var(--slate); line-height: 1.7; margin: 0 0 0.85rem 25px; }
   .incluye-story { font-size: 0.85rem; color: var(--slate); line-height: 1.65; font-style: italic; margin-bottom: 1.1rem; padding-left: 0.9rem; border-left: 2px solid var(--green-pale); }
 
   /* Entrega */
@@ -533,7 +549,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="inner">
     <div class="section-tag">Qué incluye el kit</div>
     <h2>24 plantillas Excel profesionales,<br>agrupadas por lo que <em>tu pyme necesita</em></h2>
-    <p class="section-lead">Cada una ya está construida y probada — solo tienes que abrirla y meter tus datos.</p>
+    <p class="section-lead">Cada una ya está construida y probada — solo tienes que abrirla y meter tus datos. Pulsa en cada plantilla para ver qué hace.</p>
     <div class="mac-warning">⚠️ Importante: algunas plantillas del kit funcionan con macros (archivos .xlsm) y requieren Excel para Windows — <strong>no son compatibles con Excel para Mac</strong>. Las plantillas de fórmulas estándar (.xlsx) sí funcionan en Mac sin problema.</div>
 
     <div class="incluye-grid-cards">
@@ -547,10 +563,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <p class="incluye-story">Es lunes a primera hora y tienes que facturar a cinco clientes antes del mediodía. Abres la plantilla, rellenas los datos, y el cobro queda bajo control desde el primer minuto — sin reconstruir nada desde cero.</p>
         <ul class="incluye-card-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Plantilla de facturación con base de datos</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Plantilla de cotización de servicios</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Control de pagos y cuentas por cobrar</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Formato de cuenta de cobro</li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Plantilla de facturación con base de datos</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla de facturación guarda en una base de datos los clientes y los conceptos que facturas, para que no tengas que volver a escribirlos en cada factura. Con la plantilla emites facturas ordenadas y consistentes, y conservas en un mismo archivo el historial de lo que has facturado.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Plantilla de cotización de servicios</span><span class="det-chev" aria-hidden="true"></span></summary><p>Una plantilla para preparar presupuestos claros y con aspecto profesional antes de empezar un trabajo. Con esta plantilla de cotización detallas servicios, cantidades y precios, y envías al cliente una propuesta lista para aprobar.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Control de pagos y cuentas por cobrar</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla te muestra qué clientes te deben dinero, cuánto y desde cuándo. Con la plantilla de cuentas por cobrar controlas los pagos recibidos y los pendientes, y detectas a tiempo qué cobros conviene reclamar.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Formato de cuenta de cobro</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla para emitir la cuenta de cobro con la que reclamas el pago de un servicio: datos de quien cobra, concepto y valor. Esta plantilla evita rehacer el documento cada vez y mantiene todas tus cuentas de cobro con el mismo formato.</p></details></li>
         </ul>
       </div>
 
@@ -564,10 +580,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <p class="incluye-story">Antes de aceptar un proyecto grande necesitas saber si tu caja aguanta el mes. Con estas plantillas ves tu flujo de caja real, tu punto de equilibrio y tu margen, sin abrir una calculadora aparte para cada cosa.</p>
         <ul class="incluye-card-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Plantilla de flujo de caja</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Calculadora de punto de equilibrio</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Plan de tesorería</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Calculadora de margen de utilidad</li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Plantilla de flujo de caja</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla de flujo de caja registra las entradas y salidas de dinero de tu negocio para que sepas cuánto efectivo tendrás en cada periodo. Con la plantilla ves de un vistazo si tu caja aguanta el mes antes de asumir un gasto o un proyecto nuevo.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Calculadora de punto de equilibrio</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla que calcula cuánto necesitas vender para cubrir tus costes y empezar a ganar dinero. Con esta plantilla pruebas distintos precios y volúmenes de venta antes de decidir, y sabes a partir de qué cifra tu negocio es rentable.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Plan de tesorería</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla de plan de tesorería te ayuda a prever tus cobros y pagos de los próximos meses y a anticipar los periodos de caja ajustada. Es la plantilla para decidir con tiempo cuándo financiarte o cuándo ajustar gastos.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Calculadora de margen de utilidad</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla para saber cuánto ganas realmente con cada producto o servicio una vez descontados los costes. Con esta plantilla comparas márgenes y ajustas tus precios con datos, no a ojo.</p></details></li>
         </ul>
       </div>
 
@@ -581,9 +597,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <p class="incluye-story">Cada trimestre tienes que cuadrar cuentas con tu gestor. En vez de mandarle un Excel improvisado de última hora, le entregas un libro contable ordenado, con el banco ya conciliado.</p>
         <ul class="incluye-card-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Plantilla contable para negocios</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Conciliación bancaria</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Estado de resultados</li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Plantilla contable para negocios</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla contable reúne en un solo libro los ingresos y gastos de tu negocio para llevar la contabilidad ordenada. Con la plantilla entregas a tu gestor la información clara y ahorras tiempo cada trimestre.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Conciliación bancaria</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla compara los movimientos de tu banco con los de tus registros para comprobar que cuadran y localizar las diferencias. Con la plantilla de conciliación bancaria detectas errores, cobros sin registrar y pagos duplicados.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Estado de resultados</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla que resume ingresos, costes y gastos para mostrar si tu negocio ha ganado o perdido dinero en un periodo. Con esta plantilla de estado de resultados entiendes tu rentabilidad y presentas cifras claras a socios, bancos o inversores.</p></details></li>
         </ul>
       </div>
 
@@ -597,10 +613,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <p class="incluye-story">Tu equipo crece y ya no puedes llevar los turnos de cabeza. Programas el mes completo en una tarde, calculas la nómina sin errores, y evalúas el desempeño sin depender de la memoria.</p>
         <ul class="incluye-card-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Programación de turnos de trabajo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Plantilla de nómina</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Registro de jornada laboral</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Evaluación de desempeño</li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Programación de turnos de trabajo</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla organiza quién trabaja, cuándo y en qué horario, para repartir los turnos de tu equipo sin solapes ni huecos sin cubrir. Con la plantilla de turnos planificas la semana o el mes en pocos minutos y todo el equipo ve su horario.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Plantilla de nómina</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla para calcular la nómina de tus empleados a partir del salario, los devengos y las deducciones. Con esta plantilla de nómina tienes los cálculos ordenados y el desglose listo para cada trabajador.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Registro de jornada laboral</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla registra las horas de entrada y salida de cada trabajador y calcula las horas trabajadas. Con la plantilla llevas el control de la jornada de tu equipo y mantienes el registro ordenado y al día.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Evaluación de desempeño</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla para valorar el rendimiento de cada empleado con criterios claros y una puntuación comparable. Con esta plantilla de evaluación preparas las reuniones de feedback con datos y detectas a quién reconocer o formar.</p></details></li>
         </ul>
       </div>
 
@@ -614,9 +630,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <p class="incluye-story">Un cliente te pide un proyecto con fecha de entrega fija. Lo planificas en un Gantt, repartes responsabilidades con una matriz RACI, y avanzas sin perder el hilo de quién hace qué.</p>
         <ul class="incluye-card-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Administración de proyectos Agile</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Matriz RACI</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Diagrama de Gantt</li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Administración de proyectos Agile</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla organiza el trabajo de un proyecto en tareas y ciclos cortos, siguiendo la metodología ágil. Con la plantilla ves qué está pendiente, en curso y terminado, y quién se encarga de cada tarea.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Matriz RACI</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla que define quién es Responsable, quién Aprueba, a quién se Consulta y a quién se Informa en cada tarea. Con esta plantilla de matriz RACI evitas duplicidades y dudas sobre quién debe hacer qué en un proyecto.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Diagrama de Gantt</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla muestra en un calendario visual las tareas de un proyecto, sus fechas de inicio y fin y su duración. Con la plantilla de Gantt planificas plazos, ves el avance y detectas los retrasos a tiempo.</p></details></li>
         </ul>
       </div>
 
@@ -630,8 +646,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <p class="incluye-story">Necesitas pedir material a tres proveedores distintos sin perder el rastro de qué pediste y cuándo. Registras cada proveedor y generas la orden de compra en el mismo sitio.</p>
         <ul class="incluye-card-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Registro y control de proveedores</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Orden de compra</li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Registro y control de proveedores</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla para tener en un solo archivo los datos de contacto, las condiciones y las compras de cada proveedor. Con esta plantilla localizas rápido a quién comprar y comparas condiciones sin buscar entre correos.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Orden de compra</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla genera órdenes de compra con el detalle de lo que pides a cada proveedor: productos, cantidades y precios. Con la plantilla formalizas tus pedidos y llevas el control de lo que has solicitado.</p></details></li>
         </ul>
       </div>
 
@@ -645,8 +661,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <p class="incluye-story">Una vez al trimestre paras a pensar hacia dónde va el negocio de verdad. Con un DAFO claro y un Balanced Scorecard, la estrategia deja de vivir solo en tu cabeza.</p>
         <ul class="incluye-card-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Matriz DAFO</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Balanced Scorecard (Cuadro de Mando Integral)</li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Matriz DAFO</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla para analizar las Debilidades, Amenazas, Fortalezas y Oportunidades de tu negocio en una sola vista. Con esta plantilla de DAFO ordenas tus ideas y preparas decisiones estratégicas sobre una base clara.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Balanced Scorecard (Cuadro de Mando Integral)</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla de Balanced Scorecard traduce la estrategia en indicadores medibles desde cuatro perspectivas: financiera, clientes, procesos internos y aprendizaje. Con la plantilla haces seguimiento de tus objetivos y compruebas si avanzas.</p></details></li>
         </ul>
       </div>
 
@@ -660,8 +676,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <p class="incluye-story">Entre reuniones y tareas sueltas, la semana se te escapa sin darte cuenta. Con tu agenda y tus minutas organizadas, nada importante se queda en el aire.</p>
         <ul class="incluye-card-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Agenda semanal</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>Formato de minuta de reunión</li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Agenda semanal</span><span class="det-chev" aria-hidden="true"></span></summary><p>Plantilla para planificar tu semana por días y franjas horarias, con tus tareas y prioridades. Con esta plantilla de agenda ves de un vistazo tu carga de trabajo y organizas mejor tu tiempo.</p></details></li>
+          <li><details class="plantilla-det"><summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span class="det-name">Formato de minuta de reunión</span><span class="det-chev" aria-hidden="true"></span></summary><p>Esta plantilla recoge los asistentes, los temas tratados, los acuerdos y los responsables de cada reunión. Con la plantilla de minuta dejas por escrito qué se decidió y quién hace qué, y todos pueden consultarlo después.</p></details></li>
         </ul>
       </div>
     </div>
