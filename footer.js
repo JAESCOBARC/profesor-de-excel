@@ -50,7 +50,7 @@
       </a>\
     </div>\
     <div class="footer-copy">\
-      © 2026 · Clases de Excel online particulares · España · trabajoenexcel.com · <a href="/aviso-legal.html">Aviso Legal</a> · <a href="/politica-privacidad.html">Privacidad</a>\
+      © 2026 · Clases de Excel online particulares · España · trabajoenexcel.com · <a href="/aviso-legal.html">Aviso Legal</a> · <a href="/politica-privacidad.html">Privacidad</a> · <a href="/condiciones-devolucion.html">Devoluciones</a>\
     </div>\
   </div>\
 </footer>';
