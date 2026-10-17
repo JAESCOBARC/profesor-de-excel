@@ -116,21 +116,27 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-
+<link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300 500;font-display:swap;src:url(/fonts/dm-sans.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/fraunces-italic.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica'),local('Liberation Sans');size-adjust:103%;ascent-override:96.3%;descent-override:30.1%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:normal;src:local('Times New Roman'),local('Liberation Serif'),local('Times');size-adjust:112%;ascent-override:87.3%;descent-override:22.8%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:italic;src:local('Times New Roman Italic'),local('Liberation Serif Italic'),local('Times-Italic');size-adjust:102.4%;ascent-override:95.5%;descent-override:24.9%;line-gap-override:0%}
+</style>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --green-deep: #0a2e1a; --green-mid: #1a5c36; --green-soft: #2d8653;
     --green-light: #4db87a; --green-pale: #d4f0e0; --green-mist: #f0faf4;
     --cream: #faf8f3; --charcoal: #1c1c1c; --slate: #4a4a4a;
-    --muted: #7a7a7a; --border: rgba(0,0,0,0.08); --gold: #c9a84c; --amber: #f5a623;
+    --muted: #6b6b6b; --border: rgba(0,0,0,0.08); --gold: #c9a84c; --amber: #f5a623;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+  body { font-family: 'DM Sans', 'DM Sans Fallback', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
 
   nav {
     position: sticky; top: 0; z-index: 100;
@@ -138,7 +144,7 @@
     border-bottom: 1px solid var(--border);
     padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 60px;
   }
-  .nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--green-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .nav-logo { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1rem; font-weight: 600; color: var(--green-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
   .nav-logo-mark { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
   .nav-btn {
     background: var(--green-mid); color: white;
@@ -176,7 +182,7 @@
     font-size: 0.78rem; font-weight: 500; margin-bottom: 1.25rem;
   }
   .hero-badge::before { content: '●'; color: var(--green-light); font-size: 0.55rem; }
-  h1 { font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--green-deep); margin-bottom: 1.25rem; text-wrap: balance; }
+  h1 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: clamp(1.9rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--green-deep); margin-bottom: 1.25rem; text-wrap: balance; }
   h1 em { font-style: italic; color: var(--green-mid); }
   .hero-lead { font-size: 1.1rem; color: var(--slate); line-height: 1.8; max-width: 640px; margin: 0 auto 2rem; }
   .hero-lead strong { color: var(--green-deep); }
@@ -194,13 +200,13 @@
 
   .hero-stats { display: flex; justify-content: center; gap: 2.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
   .stat { display: flex; flex-direction: column; }
-  .stat-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--green-mid); line-height: 1.2; }
+  .stat-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.4rem; font-weight: 600; color: var(--green-mid); line-height: 1.2; }
   .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
 
   section { padding: 3.5rem 5%; }
   .inner { max-width: 900px; margin: 0 auto; }
   .section-tag { display: inline-block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 0.85rem; }
-  h2 { font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); font-weight: 300; color: var(--green-deep); line-height: 1.2; margin-bottom: 0.85rem; text-wrap: balance; }
+  h2 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); font-weight: 300; color: var(--green-deep); line-height: 1.2; margin-bottom: 0.85rem; text-wrap: balance; }
   h2 em { font-style: italic; color: var(--green-mid); }
   .problema h2 em { color: var(--green-light); }
   .section-lead { font-size: 1rem; color: var(--slate); max-width: 620px; line-height: 1.8; }
@@ -217,7 +223,7 @@
   .coste { background: white; text-align: center; }
   .coste-chain { display: flex; align-items: center; justify-content: center; gap: 0.85rem; flex-wrap: wrap; margin: 2rem 0 1.5rem; }
   .coste-step { display: flex; flex-direction: column; align-items: center; background: var(--green-mist); border: 1px solid var(--green-pale); border-radius: 12px; padding: 0.9rem 1.25rem; min-width: 150px; }
-  .coste-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
+  .coste-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.4rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
   .coste-label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; text-align: center; }
   .coste-arrow { color: var(--green-light); font-size: 1.2rem; }
   .coste-final { background: var(--green-deep); border-radius: 14px; padding: 1.25rem 1.75rem; max-width: 680px; margin: 0 auto; }
@@ -230,7 +236,7 @@
   .vs-col { border-radius: 14px; padding: 1.75rem; }
   .vs-col--generica { background: var(--cream); border: 1px solid var(--border); }
   .vs-col--medida { background: var(--green-mist); border: 2px solid var(--green-light); }
-  .vs-col h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 1rem; color: var(--charcoal); }
+  .vs-col h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 1rem; color: var(--charcoal); }
   .vs-col--medida h3 { color: var(--green-deep); }
   .vs-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .vs-col li { font-size: 0.88rem; color: var(--slate); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
@@ -248,14 +254,14 @@
     width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
     background: white; border: 2px solid var(--green-light);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 600; color: var(--green-mid);
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.35rem; font-weight: 600; color: var(--green-mid);
     position: relative; z-index: 1;
   }
   .paso--4 .paso-node { background: var(--green-mid); border-color: var(--green-mid); color: white; }
   .paso-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
   .paso--4 .paso-card { background: var(--green-mist); border-color: var(--green-pale); }
-  .paso-num { display: inline-block; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--green-light); margin-bottom: 4px; }
-  .paso h4 { font-size: 0.95rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
+  .paso-num { display: inline-block; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.09em; color: var(--green-mid); margin-bottom: 4px; }
+  .paso h3 { font-size: 0.95rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
   .paso p { font-size: 0.85rem; color: var(--slate); line-height: 1.6; }
   .proceso-goal { display: flex; align-items: center; gap: 10px; margin-top: 0.5rem; padding-left: 76px; }
   .proceso-goal span { font-size: 0.85rem; font-weight: 600; color: var(--green-mid); }
@@ -266,7 +272,7 @@
   .incluye-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-top: 2.5rem; }
   .incluye-item { background: var(--green-mist); border: 1px solid var(--green-pale); border-radius: 10px; padding: 1.1rem 1.25rem; display: flex; gap: 0.85rem; align-items: flex-start; }
   .incluye-check { color: var(--green-mid); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-  .incluye-item h4 { font-size: 0.88rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
+  .incluye-item h3 { font-size: 0.88rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
   .incluye-item p { font-size: 0.81rem; color: var(--slate); line-height: 1.6; }
 
   /* Ejemplos ya creados */
@@ -276,7 +282,7 @@
   .ejemplos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.85rem; margin-top: 2rem; }
   .ejemplo-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.25rem; }
   .ejemplo-cat { display: inline-block; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green-mid); background: var(--green-mist); padding: 2px 9px; border-radius: 100px; margin-bottom: 0.5rem; }
-  .ejemplo-card h4 { font-size: 0.92rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
+  .ejemplo-card h3 { font-size: 0.92rem; font-weight: 600; color: var(--green-deep); margin-bottom: 3px; }
   .ejemplo-card p { font-size: 0.81rem; color: var(--slate); line-height: 1.6; }
   .ejemplo-card p a { color: var(--green-mid); font-weight: 600; }
   .ejemplos-note { font-size: 0.85rem; color: var(--slate); margin-top: 1.75rem; }
@@ -293,11 +299,11 @@
   }
   .producto-card:hover { box-shadow: 0 10px 32px rgba(10,46,26,0.1); transform: translateY(-3px); }
   .producto-badge { display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green-mid); background: var(--green-mist); padding: 3px 10px; border-radius: 100px; margin-bottom: 0.9rem; }
-  .producto-card h3 { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.05rem; color: var(--green-deep); margin-bottom: 0.5rem; }
+  .producto-card h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-weight: 600; font-size: 1.05rem; color: var(--green-deep); margin-bottom: 0.5rem; }
   .producto-card p { font-size: 0.87rem; color: var(--slate); line-height: 1.6; margin-bottom: 1.25rem; }
   .producto-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-  .producto-precio { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--green-deep); }
-  .producto-precio span { font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.72rem; color: var(--muted); display: block; margin-top: 1px; }
+  .producto-precio { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-weight: 600; font-size: 1.15rem; color: var(--green-deep); }
+  .producto-precio span { font-family: 'DM Sans', 'DM Sans Fallback', sans-serif; font-weight: 400; font-size: 0.72rem; color: var(--muted); display: block; margin-top: 1px; }
   .producto-link { font-size: 0.82rem; font-weight: 600; color: var(--green-mid); }
   .producto-card:hover .producto-link { color: var(--green-deep); }
 
@@ -305,7 +311,7 @@
   .quien { background: var(--cream); }
   .quien-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
   .quien-col { border-radius: 14px; padding: 1.75rem; background: white; border: 1px solid var(--border); }
-  .quien-col h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 400; color: var(--green-deep); margin-bottom: 1rem; }
+  .quien-col h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.05rem; font-weight: 400; color: var(--green-deep); margin-bottom: 1rem; }
   .quien-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .quien-col li { font-size: 0.88rem; color: var(--slate); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
   .quien-col--si li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
@@ -323,8 +329,8 @@
   .urgency-badge::before { content: '⚡'; }
   .cta-box h2 { color: white; margin-bottom: 0.5rem; }
   .cta-box .cta-sub { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 1.75rem; line-height: 1.7; }
-  .cta-price { font-family: 'Fraunces', serif; font-size: 2.1rem; font-weight: 600; color: white; line-height: 1.3; }
-  .cta-price-label { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-top: 4px; margin-bottom: 1.5rem; }
+  .cta-price { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 2.1rem; font-weight: 600; color: white; line-height: 1.3; }
+  .cta-price-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 4px; margin-bottom: 1.5rem; }
   .btn-cta-white {
     display: flex; align-items: center; justify-content: center; gap: 10px;
     background: #0E8143; color: white;
@@ -335,7 +341,7 @@
   .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
   .btn-cta-white svg { width: 22px; height: 22px; flex-shrink: 0; }
   .cta-risk { display: flex; flex-direction: column; gap: 4px; }
-  .cta-risk span { font-size: 0.75rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; justify-content: center; gap: 5px; }
+  .cta-risk span { font-size: 0.75rem; color: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; gap: 5px; }
   .cta-risk span::before { content: '✓'; color: var(--green-light); font-weight: 700; }
 
   /* FAQ */
@@ -352,7 +358,7 @@
   .autor { background: white; border-top: 1px solid var(--border); }
   .autor-inner { display: flex; align-items: center; gap: 2rem; max-width: 680px; margin: 0 auto; }
   .autor-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--green-light); flex-shrink: 0; }
-  .autor-text h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 400; color: var(--green-deep); margin-bottom: 4px; }
+  .autor-text h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.05rem; font-weight: 400; color: var(--green-deep); margin-bottom: 4px; }
   .autor-text p { font-size: 0.85rem; color: var(--slate); line-height: 1.7; }
   .autor-creds { display: flex; gap: 0.75rem; margin-top: 0.75rem; flex-wrap: wrap; }
   .autor-cred { font-size: 0.72rem; background: var(--green-pale); color: var(--green-mid); padding: 3px 10px; border-radius: 100px; font-weight: 500; }
@@ -424,7 +430,7 @@
         'background:#0a2e1a;color:#fff;',
         'padding:1rem 5%;',
         'display:flex;align-items:center;justify-content:space-between;gap:1.5rem;',
-        'font-family:"DM Sans",sans-serif;font-size:0.875rem;line-height:1.5;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.875rem;line-height:1.5;',
         'box-shadow:0 -2px 24px rgba(0,0,0,0.25);',
         'transform:translateY(100%);transition:transform 0.35s ease;',
       '}',
@@ -434,14 +440,14 @@
       '#ck-essential{',
         'background:transparent;border:1px solid rgba(255,255,255,0.3);',
         'color:rgba(255,255,255,0.8);padding:8px 18px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;cursor:pointer;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;cursor:pointer;',
         'transition:border-color 0.2s,color 0.2s;',
       '}',
       '#ck-essential:hover{border-color:rgba(255,255,255,0.6);color:#fff;}',
       '#ck-accept{',
         'background:#c9a84c;border:none;color:#0a2e1a;',
         'padding:8px 20px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;font-weight:500;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;font-weight:500;',
         'cursor:pointer;transition:background 0.2s;',
       '}',
       '#ck-accept:hover{background:#d4b968;}',
@@ -508,7 +514,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <nav>
-  <a href="/" class="nav-logo"><img src="/logo-pe.png" alt="" class="nav-logo-mark">Excel con Jhony</a>
+  <a href="/" class="nav-logo"><img width="28" height="28" src="/logo-pe.png" alt="" class="nav-logo-mark">Excel con Jhony</a>
   <a href="#" data-wa-msg="Hola Jhony, quiero una plantilla de Excel personalizada para mi negocio" class="nav-btn">Pedir presupuesto</a>
   <div class="nav-mobile-badge"><span>Plantillas Excel · A medida</span></div>
 </nav>
@@ -613,7 +619,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="paso-node">1</div>
         <div class="paso-card">
           <span class="paso-num">Paso 1</span>
-          <h4>Diagnóstico</h4>
+          <h3>Diagnóstico</h3>
           <p>Me cuentas tu proceso actual: de dónde salen tus datos, qué haces con ellos hoy y qué resultado final necesitas. Sin tecnicismos — en tu llamada hablamos de tu negocio, no de fórmulas.</p>
         </div>
       </div>
@@ -621,7 +627,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="paso-node">2</div>
         <div class="paso-card">
           <span class="paso-num">Paso 2</span>
-          <h4>Presupuesto y diseño</h4>
+          <h3>Presupuesto y diseño</h3>
           <p>Te paso un presupuesto cerrado con el alcance exacto: qué fórmulas, si hace falta Power Query, macros VBA o un dashboard en Power BI. Nada se añade después sin que lo sepas antes.</p>
         </div>
       </div>
@@ -629,7 +635,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="paso-node">3</div>
         <div class="paso-card">
           <span class="paso-num">Paso 3</span>
-          <h4>Desarrollo</h4>
+          <h3>Desarrollo</h3>
           <p>Construyo la plantilla sobre datos de ejemplo parecidos a los tuyos, probando que aguanta casos reales — no solo que "se ve bien" con datos perfectos.</p>
         </div>
       </div>
@@ -637,7 +643,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="paso-node">4</div>
         <div class="paso-card">
           <span class="paso-num">Paso 4</span>
-          <h4>Entrega y sesión de explicación</h4>
+          <h3>Entrega y sesión de explicación</h3>
           <p>Te entrego la plantilla terminada con una sesión donde te explico cómo usarla paso a paso — para que tú y tu equipo seáis autónomos, sin depender de mí para cada cambio.</p>
         </div>
       </div>
@@ -655,42 +661,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="incluye-item">
         <span class="incluye-check">✓</span>
         <div>
-          <h4>Estructura 100% adaptada a tu proceso</h4>
+          <h3>Estructura 100% adaptada a tu proceso</h3>
           <p>Sin plantilla genérica de base: cada fórmula y cada hoja parte de cómo trabajas tú realmente.</p>
         </div>
       </div>
       <div class="incluye-item">
         <span class="incluye-check">✓</span>
         <div>
-          <h4>Automatización con Power Query si la necesitas</h4>
+          <h3>Automatización con Power Query si la necesitas</h3>
           <p>Importa y limpia datos de varias fuentes con un clic, sin copiar y pegar a mano cada vez.</p>
         </div>
       </div>
       <div class="incluye-item">
         <span class="incluye-check">✓</span>
         <div>
-          <h4>Macros VBA para tareas repetitivas</h4>
+          <h3>Macros VBA para tareas repetitivas</h3>
           <p>Si hay un proceso manual que se repite cada semana, lo convierto en un botón.</p>
         </div>
       </div>
       <div class="incluye-item">
         <span class="incluye-check">✓</span>
         <div>
-          <h4>Dashboard en Power BI cuando aporta valor</h4>
+          <h3>Dashboard en Power BI cuando aporta valor</h3>
           <p>Para cuando varias personas necesitan ver el mismo informe actualizado, sin reenviar archivos.</p>
         </div>
       </div>
       <div class="incluye-item">
         <span class="incluye-check">✓</span>
         <div>
-          <h4>Sesión de explicación incluida</h4>
+          <h3>Sesión de explicación incluida</h3>
           <p>Te enseño a usar y mantener tu propia plantilla — no eres dependiente de mí para cada cambio pequeño.</p>
         </div>
       </div>
       <div class="incluye-item">
         <span class="incluye-check">✓</span>
         <div>
-          <h4>Soporte tras la entrega</h4>
+          <h3>Soporte tras la entrega</h3>
           <p>Si algo no termina de encajar en los primeros días de uso real, lo ajustamos juntos.</p>
         </div>
       </div>
@@ -725,62 +731,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="ejemplos-grid">
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Recursos Humanos</span>
-        <h4>Programación de turnos de trabajo</h4>
+        <h3>Programación de turnos de trabajo</h3>
         <p>La más pedida: cuadrante de turnos anual y por horas, con control de horas por empleado.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Recursos Humanos</span>
-        <h4>Evaluación de desempeño</h4>
+        <h3>Evaluación de desempeño</h3>
         <p>Formato para medir el rendimiento del equipo con criterios y puntuación objetiva.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Gestión de Proyectos</span>
-        <h4>Administración de proyectos Agile</h4>
+        <h3>Administración de proyectos Agile</h3>
         <p>Tablero de sprints y seguimiento de tareas bajo metodología Agile.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Finanzas</span>
-        <h4>Simulación de créditos</h4>
+        <h3>Simulación de créditos</h3>
         <p>Calcula cuotas, intereses y amortización antes de pedir un préstamo.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Finanzas Personales</span>
-        <h4>Presupuesto personal</h4>
+        <h3>Presupuesto personal</h3>
         <p>Control de ingresos y gastos mensuales con categorías y balance automático.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Recursos Humanos</span>
-        <h4>Ausentismo e incapacidades</h4>
+        <h3>Ausentismo e incapacidades</h3>
         <p>Seguimiento de bajas y faltas del equipo, con panel resumen por empleado.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Gestión de Proyectos</span>
-        <h4>Evaluación de proyectos</h4>
+        <h3>Evaluación de proyectos</h3>
         <p>Valora la viabilidad de un proyecto antes de invertir tiempo o presupuesto en él.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Estrategia y Análisis</span>
-        <h4>Balanced Scorecard (Cuadro de Mando Integral)</h4>
+        <h3>Balanced Scorecard (Cuadro de Mando Integral)</h3>
         <p>Si buscas implementarlo de verdad en tu empresa, mejor mira la <a href="/programa-balanced-scorecard.html">asesoría 1:1 de Balanced Scorecard</a>.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Gestión de Proyectos</span>
-        <h4>Ciclo PDCA</h4>
+        <h3>Ciclo PDCA</h3>
         <p>Planificar, hacer, verificar y actuar — mejora continua aplicada a tu proceso.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Facturación y Cobros</span>
-        <h4>Facturación con base de datos</h4>
+        <h3>Facturación con base de datos</h3>
         <p>Emisión de facturas con numeración automática y registro histórico de clientes.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Recursos Humanos</span>
-        <h4>Registro y control de asistencia</h4>
+        <h3>Registro y control de asistencia</h3>
         <p>Control diario de entradas y faltas del equipo, con resumen mensual.</p>
       </div>
       <div class="ejemplo-card">
         <span class="ejemplo-cat">Estrategia y Análisis</span>
-        <h4>Plan de negocios</h4>
+        <h3>Plan de negocios</h3>
         <p>Estructura financiera y estratégica para presentar o validar un nuevo negocio.</p>
       </div>
     </div>
@@ -905,7 +911,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="autor">
   <div class="section-tag" style="text-align:center; display:block;">Quién desarrolla tu plantilla</div>
   <div class="autor-inner">
-    <img src="/profesor-de-excel-online-thumb.jpg" alt="Jhony Escobar, desarrollador de plantillas de Excel a medida" class="autor-img" onerror="this.style.display='none'">
+    <img loading="lazy" decoding="async" width="200" height="200" src="/profesor-de-excel-online-thumb.jpg" alt="Jhony Escobar, desarrollador de plantillas de Excel a medida" class="autor-img" onerror="this.style.display='none'">
     <div class="autor-text">
       <h3>Jhony Escobar</h3>
       <p>Más de 8 años trabajando con Excel a nivel profesional — formación y desarrollo de soluciones reales para empresas y profesionales de España y Latinoamérica. Cada plantilla parte de entender primero tu proceso, no de adaptar una plantilla que ya tenía hecha.</p>
@@ -919,7 +925,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<script src="/footer.js?v=3"></script>
+<script src="/footer.js?v=4"></script>
 
 <script>
 document.querySelectorAll('.faq-item').forEach(item => {

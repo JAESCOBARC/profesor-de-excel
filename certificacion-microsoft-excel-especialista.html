@@ -44,7 +44,7 @@
         'background:#0a2e1a;color:#fff;',
         'padding:1rem 5%;',
         'display:flex;align-items:center;justify-content:space-between;gap:1.5rem;',
-        'font-family:"DM Sans",sans-serif;font-size:0.875rem;line-height:1.5;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.875rem;line-height:1.5;',
         'box-shadow:0 -2px 24px rgba(0,0,0,0.25);',
         'transform:translateY(100%);transition:transform 0.35s ease;',
       '}',
@@ -54,14 +54,14 @@
       '#ck-essential{',
         'background:transparent;border:1px solid rgba(255,255,255,0.3);',
         'color:rgba(255,255,255,0.8);padding:8px 18px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;cursor:pointer;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;cursor:pointer;',
         'transition:border-color 0.2s,color 0.2s;',
       '}',
       '#ck-essential:hover{border-color:rgba(255,255,255,0.6);color:#fff;}',
       '#ck-accept{',
         'background:#c9a84c;border:none;color:#0a2e1a;',
         'padding:8px 20px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;font-weight:500;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;font-weight:500;',
         'cursor:pointer;transition:background 0.2s;',
       '}',
       '#ck-accept:hover{background:#d4b968;}',
@@ -209,11 +209,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-
+<link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300 500;font-display:swap;src:url(/fonts/dm-sans.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/fraunces-italic.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica'),local('Liberation Sans');size-adjust:103%;ascent-override:96.3%;descent-override:30.1%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:normal;src:local('Times New Roman'),local('Liberation Serif'),local('Times');size-adjust:112%;ascent-override:87.3%;descent-override:22.8%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:italic;src:local('Times New Roman Italic'),local('Liberation Serif Italic'),local('Times-Italic');size-adjust:102.4%;ascent-override:95.5%;descent-override:24.9%;line-gap-override:0%}
+</style>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -227,7 +233,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     --cream: #faf8f3;
     --charcoal: #1c1c1c;
     --slate: #4a4a4a;
-    --muted: #7a7a7a;
+    --muted: #6b6b6b;
     --border: rgba(0,0,0,0.08);
     --gold: #c9a84c;
     --gold-pale: #fdf3dc;
@@ -245,11 +251,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+  body { font-family: 'DM Sans', 'DM Sans Fallback', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
 
   /* ── Nav ── */
   nav { position: sticky; top: 0; z-index: 100; background: rgba(250,248,243,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .nav-logo { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-deep); text-decoration: none;  display: inline-flex; align-items: center; gap: 8px; }
+  .nav-logo { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-deep); text-decoration: none;  display: inline-flex; align-items: center; gap: 8px; }
   .nav-logo-mark { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 0.88rem; font-weight: 400; color: var(--slate); text-decoration: none; transition: color 0.2s; }
@@ -268,9 +274,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-whatsapp svg { width: 18px; height: 18px; flex-shrink: 0; }
 
   /* ── Tipografía ── */
-  h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--green-deep); margin-bottom: 1.25rem; }
+  h1 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--green-deep); margin-bottom: 1.25rem; }
   h1 em { font-style: italic; color: var(--green-mid); }
-  h2 { font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 300; color: var(--green-deep); margin-bottom: 1rem; line-height: 1.2; }
+  h2 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 300; color: var(--green-deep); margin-bottom: 1rem; line-height: 1.2; }
   h2 em { font-style: italic; color: var(--green-mid); }
 
   /* ── Badge ── */
@@ -288,18 +294,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .mos-badge-card { background: var(--green-deep); border-radius: 20px; padding: 2rem 1.75rem; min-width: 220px; max-width: 240px; text-align: center; box-shadow: 0 8px 40px rgba(10,46,26,0.18); flex-shrink: 0; position: relative; overflow: hidden; }
   .mos-badge-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(201,168,76,0.2) 0%, transparent 70%); border-radius: 50%; }
   .mos-badge-icon { font-size: 2.8rem; margin-bottom: 0.75rem; display: block; }
-  .mos-badge-label { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
-  .mos-badge-name { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 400; color: white; line-height: 1.3; margin-bottom: 0.5rem; }
-  .mos-badge-expert { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold); line-height: 1.1; margin-bottom: 1rem; }
+  .mos-badge-label { font-size: 0.7rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
+  .mos-badge-name { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1rem; font-weight: 400; color: white; line-height: 1.3; margin-bottom: 0.5rem; }
+  .mos-badge-expert { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold); line-height: 1.1; margin-bottom: 1rem; }
   .mos-badge-divider { width: 32px; height: 1px; background: rgba(201,168,76,0.3); margin: 0.85rem auto; }
-  .mos-badge-id { font-size: 0.72rem; color: rgba(255,255,255,0.4); font-family: monospace; margin-bottom: 2px; }
+  .mos-badge-id { font-size: 0.72rem; color: rgba(255,255,255,0.6); font-family: monospace; margin-bottom: 2px; }
   .mos-badge-holder { font-size: 0.82rem; color: rgba(255,255,255,0.7); font-weight: 500; }
   .hero-desc { font-size: 1.1rem; color: var(--slate); line-height: 1.8; max-width: 580px; margin-bottom: 2rem; }
   .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 2.5rem; }
 
   .quick-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; }
   .quick-stat { display: flex; flex-direction: column; }
-  .quick-stat-num { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
+  .quick-stat-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.6rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
   .quick-stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
 
   /* ── Progreso visual ── */
@@ -315,14 +321,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   .level-card { position: relative; display: grid; grid-template-columns: 72px 1fr; gap: 0; margin-bottom: 0; }
   .level-connector { display: flex; flex-direction: column; align-items: center; }
-  .level-num { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; color: white; flex-shrink: 0; z-index: 1; }
+  .level-num { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.1rem; font-weight: 600; color: white; flex-shrink: 0; z-index: 1; }
   .level-line { width: 2px; flex: 1; min-height: 40px; }
   .level-card:last-child .level-line { display: none; }
 
   .level-body { padding: 0 0 3rem 1.5rem; }
   .level-header { margin-bottom: 1.25rem; }
   .level-tag { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; }
-  .level-title { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 400; color: var(--green-deep); margin-bottom: 4px; }
+  .level-title { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.4rem; font-weight: 400; color: var(--green-deep); margin-bottom: 4px; }
   .level-hours { font-size: 0.82rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
   .level-hours::before { content: '⏱'; font-size: 0.8rem; }
 
@@ -380,14 +386,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .mos-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; position: relative; }
   .mos-badge-wrap { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.25rem; }
   .mos-icon { width: 56px; height: 56px; background: var(--gold); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
-  .mos-title { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 300; color: white; line-height: 1.2; }
+  .mos-title { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.6rem; font-weight: 300; color: white; line-height: 1.2; }
   .mos-title strong { font-weight: 600; color: var(--gold); }
   .mos-desc { font-size: 0.92rem; color: rgba(255,255,255,0.7); line-height: 1.8; max-width: 520px; margin-bottom: 1.5rem; }
   .mos-topics { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.75rem; }
   .mos-topic-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7); padding: 4px 12px; border-radius: 100px; font-size: 0.78rem; }
   .mos-cert-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.3); border-radius: 16px; padding: 1.5rem; text-align: center; min-width: 180px; flex-shrink: 0; }
-  .mos-cert-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 600; color: var(--gold); }
-  .mos-cert-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+  .mos-cert-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 2rem; font-weight: 600; color: var(--gold); }
+  .mos-cert-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
   .mos-cert-divider { width: 40px; height: 1px; background: rgba(201,168,76,0.3); margin: 0.75rem auto; }
 
   /* ── CTA final ── */
@@ -430,7 +436,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <nav>
-  <a href="/" class="nav-logo"><img src="/logo-pe.png" alt="" class="nav-logo-mark">Excel con Jhony</a>
+  <a href="/" class="nav-logo"><img width="28" height="28" src="/logo-pe.png" alt="" class="nav-logo-mark">Excel con Jhony</a>
   <ul class="nav-links">
     <li><a href="/#servicios">Servicios</a></li>
     <li><a href="/#precios">Precios</a></li>
@@ -484,7 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="mos-badge-id">ID: 90082787</div>
     <div class="mos-badge-holder">Jhony Escobar</div>
     <div class="mos-badge-divider"></div>
-    <div style="font-size:0.72rem; color:rgba(255,255,255,0.4); line-height:1.5;">Certificación oficial<br>Microsoft · Julio 2023</div>
+    <div style="font-size:0.72rem; color:rgba(255,255,255,0.6); line-height:1.5;">Certificación oficial<br>Microsoft · Julio 2023</div>
   </div>
 </div>
 
@@ -714,7 +720,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </a>
 </div>
 
-<script src="/footer.js?v=3"></script>
+<script src="/footer.js?v=4"></script>
 
 <script src="/whatsapp-config.js"></script>
 </body>

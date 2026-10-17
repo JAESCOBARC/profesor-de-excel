@@ -49,7 +49,7 @@
         'background:#0a2e1a;color:#fff;',
         'padding:1rem 5%;',
         'display:flex;align-items:center;justify-content:space-between;gap:1.5rem;',
-        'font-family:"DM Sans",sans-serif;font-size:0.875rem;line-height:1.5;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.875rem;line-height:1.5;',
         'box-shadow:0 -2px 24px rgba(0,0,0,0.25);',
         'transform:translateY(100%);transition:transform 0.35s ease;',
       '}',
@@ -59,14 +59,14 @@
       '#ck-essential{',
         'background:transparent;border:1px solid rgba(255,255,255,0.3);',
         'color:rgba(255,255,255,0.8);padding:8px 18px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;cursor:pointer;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;cursor:pointer;',
         'transition:border-color 0.2s,color 0.2s;',
       '}',
       '#ck-essential:hover{border-color:rgba(255,255,255,0.6);color:#fff;}',
       '#ck-accept{',
         'background:#c9a84c;border:none;color:#0a2e1a;',
         'padding:8px 20px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;font-weight:500;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;font-weight:500;',
         'cursor:pointer;transition:background 0.2s;',
       '}',
       '#ck-accept:hover{background:#d4b968;}',
@@ -286,11 +286,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300 500;font-display:swap;src:url(/fonts/dm-sans.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/fraunces-italic.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica'),local('Liberation Sans');size-adjust:103%;ascent-override:96.3%;descent-override:30.1%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:normal;src:local('Times New Roman'),local('Liberation Serif'),local('Times');size-adjust:112%;ascent-override:87.3%;descent-override:22.8%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:italic;src:local('Times New Roman Italic'),local('Liberation Serif Italic'),local('Times-Italic');size-adjust:102.4%;ascent-override:95.5%;descent-override:24.9%;line-gap-override:0%}
+</style>
 <link rel="preconnect" href="https://app.cal.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -305,7 +312,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     --warm-white: #ffffff;
     --charcoal: #1c1c1c;
     --slate: #4a4a4a;
-    --muted: #7a7a7a;
+    --muted: #6b6b6b;
     --border: rgba(0,0,0,0.08);
     --accent: #e8f5ee;
     --gold: #c9a84c;
@@ -314,7 +321,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', 'DM Sans Fallback', sans-serif;
     background: var(--cream);
     color: var(--charcoal);
     line-height: 1.7;
@@ -331,7 +338,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     height: 64px;
   }
   .nav-logo {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Fraunces Fallback', serif;
     font-size: 1.1rem; font-weight: 600;
     color: var(--green-deep);
     text-decoration: none;
@@ -379,7 +386,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .nav-mobile-badge { display: none; }
   .hero-quickfeat { display: none; }
   h1 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Fraunces Fallback', serif;
     font-size: clamp(2.2rem, 4vw, 3.4rem);
     font-weight: 300; line-height: 1.15;
     color: var(--green-deep); margin-bottom: 1.5rem;
@@ -428,7 +435,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .trust-item { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; }
   .trust-num {
-    font-family: 'Fraunces', serif; font-size: 1.6rem;
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.6rem;
     font-weight: 600; color: var(--green-mid); line-height: 1;
   }
   .trust-label { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
@@ -465,7 +472,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     width: 44px; height: 44px; border-radius: 50%;
     background: var(--green-light); display: flex;
     align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-size: 1rem;
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1rem;
     font-weight: 600; color: var(--green-deep); flex-shrink: 0;
   }
   .session-info { flex: 1; }
@@ -488,7 +495,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     text-transform: uppercase; color: var(--green-mid); margin-bottom: 1rem;
   }
   h2 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Fraunces', 'Fraunces Fallback', serif;
     font-size: clamp(1.8rem, 3vw, 2.6rem);
     font-weight: 300; color: var(--green-deep);
     line-height: 1.2; margin-bottom: 1rem;
@@ -501,9 +508,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .coste-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-light); margin-bottom: 1rem; }
   .coste-chain { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
   .coste-step { display: flex; flex-direction: column; align-items: center; }
-  .coste-num { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 600; color: white; line-height: 1; }
+  .coste-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.6rem; font-weight: 600; color: white; line-height: 1; }
   .coste-num strong { color: var(--green-light); }
-  .coste-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 3px; }
+  .coste-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
   .coste-arrow { color: var(--green-light); font-size: 1.1rem; }
   .coste-final { display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.1rem 1.75rem; max-width: 640px; }
   .coste-final p { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
@@ -557,7 +564,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .video-mobile { display: none; }
   .coste-final strong { color: white; }
-  .coste-hook { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.2rem; color: var(--green-light); margin-top: 0.85rem; }
+  .coste-hook { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-style: italic; font-size: 1.2rem; color: var(--green-light); margin-top: 0.85rem; }
 
   /* ── Enfoque 80/20 ── */
   .enfoque-8020 { background: var(--cream); padding: 3.5rem 5%; border-bottom: 1px solid var(--border); }
@@ -574,7 +581,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .ocho-card:last-child { border-right: none; }
   .ocho-num {
-    font-family: 'Fraunces', serif; font-size: 3.8rem;
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 3.8rem;
     font-weight: 600; color: var(--green-mid); line-height: 1;
     margin-bottom: 0.5rem;
   }
@@ -590,8 +597,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ocho-card--result { background: var(--green-deep); }
   .ocho-card--result .ocho-num { color: var(--green-light); }
   .ocho-card--result .ocho-title { color: white; }
-  .ocho-card--result .ocho-sub { color: rgba(255,255,255,0.55); }
-  .ocho-card--result .ocho-arrow { color: rgba(255,255,255,0.2); }
+  .ocho-card--result .ocho-sub { color: rgba(255,255,255,0.6); }
+  .ocho-card--result .ocho-arrow { color: rgba(255,255,255,0.6); }
   .ocho-detail {
     font-size: 0.92rem; color: var(--muted); max-width: 640px;
     margin: 1.5rem auto 0; text-align: center; line-height: 1.8;
@@ -612,7 +619,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .problema-card:hover { background: rgba(255,255,255,0.08); }
   .problema-icon { display: none; }
   .problema-card h3 { font-size: 0.95rem; font-weight: 500; color: white; margin-bottom: 0.5rem; }
-  .problema-card p { font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+  .problema-card p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
 
   .comparativa { background: white; }
   .comparativa-wrap { overflow-x: auto; margin-top: 2.5rem; padding-top: 18px; }
@@ -622,7 +629,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-bottom: 1px solid var(--border); vertical-align: top;
   }
   .comparativa-table thead th {
-    font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 600;
+    font-family: 'DM Sans', 'DM Sans Fallback', sans-serif; font-size: 0.78rem; font-weight: 600;
     text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted);
     border-bottom: 2px solid var(--border); white-space: nowrap;
   }
@@ -693,7 +700,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     color: var(--green-mid); background: var(--green-mist); border: 1px solid var(--green-pale);
     padding: 3px 11px; border-radius: 100px; margin-bottom: 0.85rem;
   }
-  .programa-card h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem; color: var(--green-deep); margin-bottom: 0.5rem; }
+  .programa-card h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-weight: 500; font-size: 1.1rem; color: var(--green-deep); margin-bottom: 0.5rem; }
   .programa-card p { font-size: 0.87rem; color: var(--slate); line-height: 1.6; margin-bottom: 1.1rem; flex: 1; }
   .programa-card-link { font-size: 0.85rem; font-weight: 600; color: var(--green-mid); display: inline-flex; align-items: center; gap: 5px; }
   .programa-card:hover .programa-card-link { color: var(--green-deep); }
@@ -713,7 +720,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .servicio-card:hover { transform: translateY(-4px); border-color: var(--green-pale); }
   .servicio-card:hover::before { opacity: 1; }
   .servicio-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--green-mist); border: 1px solid var(--green-pale); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.25rem; }
-  .servicio-card h3 { font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 400; color: var(--green-deep); margin-bottom: 0.75rem; }
+  .servicio-card h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.15rem; font-weight: 400; color: var(--green-deep); margin-bottom: 0.75rem; }
   .servicio-card p { font-size: 0.93rem; color: var(--slate); line-height: 1.7; }
   .servicio-card ul { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 6px; }
   .servicio-card ul li { font-size: 0.88rem; color: var(--slate); display: flex; align-items: flex-start; gap: 8px; }
@@ -724,7 +731,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .temario-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
   .temario-item { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; transition: border-color 0.2s; }
   .temario-item:hover { border-color: var(--green-light); }
-  .temario-num { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-mid); width: 28px; flex-shrink: 0; }
+  .temario-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-mid); width: 28px; flex-shrink: 0; }
   .temario-text h3 { font-size: 0.88rem; font-weight: 500; color: var(--green-deep); }
   .temario-text p { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
 
@@ -735,11 +742,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .metodo-step:last-child { padding-bottom: 0; }
   .metodo-step::before { content: ''; position: absolute; left: 19px; top: 40px; bottom: 0; width: 1px; background: var(--border); }
   .metodo-step:last-child::before { display: none; }
-  .step-circle { width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); border: 2px solid var(--green-light); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 0.9rem; font-weight: 600; color: var(--green-mid); flex-shrink: 0; }
+  .step-circle { width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); border: 2px solid var(--green-light); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 0.9rem; font-weight: 600; color: var(--green-mid); flex-shrink: 0; }
   .step-content h3 { font-size: 0.95rem; font-weight: 500; color: var(--green-deep); margin-bottom: 4px; }
   .step-content p { font-size: 0.92rem; color: var(--slate); line-height: 1.7; }
   .metodo-features { background: var(--green-deep); border-radius: 24px; padding: 2.5rem; color: white; }
-  .metodo-features h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 300; margin-bottom: 1.5rem; color: white; }
+  .metodo-features h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.3rem; font-weight: 300; margin-bottom: 1.5rem; color: white; }
   .feature-row { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .feature-row:last-child { border: none; }
   .feature-icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
@@ -762,7 +769,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; }
   .testi-text { font-size: 0.93rem; color: var(--slate); line-height: 1.8; font-style: italic; margin-bottom: 1.25rem; }
   .testi-author { display: flex; align-items: center; gap: 10px; }
-  .testi-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-size: 0.85rem; font-weight: 600; color: var(--green-mid); }
+  .testi-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 0.85rem; font-weight: 600; color: var(--green-mid); }
   .testi-name { font-size: 0.85rem; font-weight: 500; color: var(--green-deep); }
   .testi-role { font-size: 0.75rem; color: var(--muted); }
 
@@ -805,6 +812,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .cta-text { text-align: left; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
   .cta-text .btn-white { align-self: center; }
   .cta-text h2 { color: white; }
+  .cta-text h2 em { color: var(--green-light); }
   .cta-text p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 0.95rem; }
   .cta-img { display: flex; justify-content: flex-end; }
   .cta-img img { width: 100%; border-radius: 16px; display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
@@ -817,7 +825,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .nav-precios-cta { display: none; }
   .wa-icon { display: none; }
   .trust-superprof { text-decoration: none; }
-  .superprof-badge { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--gold); line-height: 1; }
+  .superprof-badge { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1rem; font-weight: 600; color: var(--gold); line-height: 1; }
   .trust-ms { text-decoration: none; }
   .ms-badge { display: flex; align-items: center; gap: 5px; font-size: 0.88rem; font-weight: 600; color: var(--green-deep); line-height: 1; }
 
@@ -951,14 +959,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .precio-horas { font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 0.5rem; }
   .precio-pill--popular .precio-horas { color: rgba(255,255,255,0.6); }
   .precio-amount {
-    font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 600;
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 3rem; font-weight: 600;
     color: var(--green-deep); line-height: 1;
   }
   .precio-amount span { font-size: 1rem; font-weight: 400; color: var(--muted); }
   .precio-pill--popular .precio-amount { color: white; }
-  .precio-pill--popular .precio-amount span { color: rgba(255,255,255,0.55); }
+  .precio-pill--popular .precio-amount span { color: rgba(255,255,255,0.6); }
   .precio-descuento { font-size: 0.78rem; font-weight: 500; color: var(--green-mid); background: var(--green-pale); padding: 3px 12px; border-radius: 100px; }
-  .precio-pill--popular .precio-descuento { background: rgba(77,184,122,0.2); color: var(--green-light); }
+  .precio-pill--popular .precio-descuento { background: rgba(77,184,122,0.2); color: #8fe0b0; }
   .precio-desc { font-size: 0.9rem; color: var(--slate); line-height: 1.5; }
   .precio-pill--popular .precio-desc { color: rgba(255,255,255,0.65); }
   .precio-cta {
@@ -1620,9 +1628,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#" data-wa-msg="Hola Jhony, vengo desde tu web, quería preguntarte algo sobre las clases de Excel antes de decidirme" class="btn-white" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.529 5.847L0 24l6.335-1.509A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.36-.214-3.733.889.939-3.629-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>Escríbeme por WhatsApp</a>
       </div>
       <div class="cta-img">
-        <img src="/clases-particuales-excel-online.png"
-             alt="clases-particulares-excel"
-             width="600" height="400"
+        <img src="/clases-particuales-excel-online.webp"
+             alt="Clases particulares de Excel online con Jhony Escobar"
+             width="600" height="400" loading="lazy" decoding="async"
              style="width:100%; height:auto; border-radius:16px; display:block;">
       </div>
     </div>
@@ -1709,12 +1717,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       ¿Necesitas algo más que formación? También ofrezco servicios de <strong style="color:white;">automatización y consultoría de datos</strong> adaptados a tu negocio. Construyo automatizaciones con <strong style="color:white;">macros VBA y Python</strong>, bases de datos y consultas en <strong style="color:white;">SQL</strong>, y dashboards profesionales en <strong style="color:white;">Power BI, Google Data Studio y Tableau</strong>. Si buscas una solución sin código, desarrollo aplicaciones personalizadas con <strong style="color:white;">AppSheet</strong> conectadas a tus datos. Dime qué necesitas y te propongo la solución más eficiente.
     </p>
     <p style="color:rgba(255,255,255,0.65); line-height:1.9; font-size:0.92rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:3rem;">
-      ¿Buscas un <strong style="color:white;">profesor de Excel cerca de ti</strong>? Con las clases online la distancia no existe. Desde <strong style="color:white;">Granada</strong> imparto sesiones en directo a alumnos de <strong style="color:white;">Madrid, Barcelona, Valencia, Sevilla, Bilbao, Zaragoza, Málaga, Murcia</strong> y cualquier punto de España. Mismo profesor, misma calidad, misma cercanía — solo necesitas conexión a internet. Si buscas un <a href="profesor-excel-online.html" style="color:white; text-decoration-color:rgba(255,255,255,0.4);"><strong>profesor de Excel cerca de ti online</strong></a>, ya me has encontrado.
+      ¿Buscas un <strong style="color:white;">profesor de Excel cerca de ti</strong>? Con las clases online la distancia no existe. Desde <strong style="color:white;">Granada</strong> imparto sesiones en directo a alumnos de <strong style="color:white;">Madrid, Barcelona, Valencia, Sevilla, Bilbao, Zaragoza, Málaga, Murcia</strong> y cualquier punto de España. Mismo profesor, misma calidad, misma cercanía — solo necesitas conexión a internet. Si buscas un <a href="profesor-excel-online.html" style="color:white; text-decoration-color:rgba(255,255,255,0.6);"><strong>profesor de Excel cerca de ti online</strong></a>, ya me has encontrado.
     </p>
   </div>
 </section>
 
-<script src="/footer.js?v=3"></script>
+<script src="/footer.js?v=4"></script>
 
 <script>
 document.querySelectorAll('.animate-in').forEach((el, i) => {

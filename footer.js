@@ -5,17 +5,17 @@
 <style>\
   .site-footer { background: var(--green-deep, #0a2e1a); padding: 2.5rem 5%; border-top: 1px solid rgba(255,255,255,0.05); }\
   .site-footer .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; max-width: 1100px; margin: 0 auto; }\
-  .site-footer .footer-logo { font-family: "Fraunces", serif; color: white; font-size: 1rem; font-weight: 400; }\
-  .site-footer .footer-logo-email { font-size: 0.78rem; font-weight: 400; color: rgba(255,255,255,0.45); margin-top: 4px; }\
+  .site-footer .footer-logo { font-family: "Fraunces", "Fraunces Fallback", serif; color: white; font-size: 1rem; font-weight: 400; }\
+  .site-footer .footer-logo-email { font-size: 0.78rem; font-weight: 400; color: rgba(255,255,255,0.6); margin-top: 4px; }\
   .site-footer .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }\
   .site-footer .footer-links h3 { margin: 0; font-weight: 400; font-size: inherit; line-height: inherit; }\
-  .site-footer .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }\
+  .site-footer .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }\
   .site-footer .footer-links a:hover { color: white; }\
   .site-footer .footer-social { display: flex; gap: 1.25rem; align-items: center; }\
-  .site-footer .social-link { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }\
+  .site-footer .social-link { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }\
   .site-footer .social-link:hover { color: white; }\
-  .site-footer .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); width: 100%; text-align: center; margin-top: 1rem; }\
-  .site-footer .footer-copy a { color: rgba(255,255,255,0.55); text-decoration: none; }\
+  .site-footer .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.6); width: 100%; text-align: center; margin-top: 1rem; }\
+  .site-footer .footer-copy a { color: rgba(255,255,255,0.8); text-decoration: underline; }\
   .site-footer .footer-copy a:hover { text-decoration: underline; }\
   @media (max-width: 768px) {\
     .site-footer .footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }\

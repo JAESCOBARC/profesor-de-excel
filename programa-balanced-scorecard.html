@@ -76,21 +76,27 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-
+<link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300 500;font-display:swap;src:url(/fonts/dm-sans.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/fraunces-italic.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica'),local('Liberation Sans');size-adjust:103%;ascent-override:96.3%;descent-override:30.1%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:normal;src:local('Times New Roman'),local('Liberation Serif'),local('Times');size-adjust:112%;ascent-override:87.3%;descent-override:22.8%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:italic;src:local('Times New Roman Italic'),local('Liberation Serif Italic'),local('Times-Italic');size-adjust:102.4%;ascent-override:95.5%;descent-override:24.9%;line-gap-override:0%}
+</style>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --green-deep: #0a2e1a; --green-mid: #1a5c36; --green-soft: #2d8653;
     --green-light: #4db87a; --green-pale: #d4f0e0; --green-mist: #f0faf4;
     --cream: #faf8f3; --charcoal: #1c1c1c; --slate: #4a4a4a;
-    --muted: #7a7a7a; --border: rgba(0,0,0,0.08); --gold: #c9a84c; --amber: #f5a623;
+    --muted: #6b6b6b; --border: rgba(0,0,0,0.08); --gold: #c9a84c; --amber: #f5a623;
   }
   html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+  body { font-family: 'DM Sans', 'DM Sans Fallback', sans-serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
 
   nav {
     position: sticky; top: 0; z-index: 100;
@@ -98,7 +104,7 @@
     border-bottom: 1px solid var(--border);
     padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 60px;
   }
-  .nav-logo { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--green-deep); text-decoration: none;  display: inline-flex; align-items: center; gap: 8px; }
+  .nav-logo { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1rem; font-weight: 600; color: var(--green-deep); text-decoration: none;  display: inline-flex; align-items: center; gap: 8px; }
   .nav-logo-mark { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
   .nav-btn {
     background: var(--green-mid); color: white;
@@ -136,7 +142,7 @@
     font-size: 0.78rem; font-weight: 500; margin-bottom: 1.25rem;
   }
   .hero-badge::before { content: '●'; color: var(--green-light); font-size: 0.55rem; }
-  h1 { font-family: 'Fraunces', serif; font-size: clamp(1.9rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--green-deep); margin-bottom: 1.25rem; text-wrap: balance; }
+  h1 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: clamp(1.9rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--green-deep); margin-bottom: 1.25rem; text-wrap: balance; }
   h1 em { font-style: italic; color: var(--green-mid); }
   .hero-lead { font-size: 1.1rem; color: var(--slate); line-height: 1.8; max-width: 640px; margin: 0 auto 2rem; }
   .hero-lead strong { color: var(--green-deep); }
@@ -154,13 +160,13 @@
 
   .hero-stats { display: flex; justify-content: center; gap: 2.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
   .stat { display: flex; flex-direction: column; }
-  .stat-num { font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
+  .stat-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.6rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
   .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
 
   section { padding: 3.5rem 5%; }
   .inner { max-width: 900px; margin: 0 auto; }
   .section-tag { display: inline-block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-mid); margin-bottom: 0.85rem; }
-  h2 { font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); font-weight: 300; color: var(--green-deep); line-height: 1.2; margin-bottom: 0.85rem; text-wrap: balance; }
+  h2 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: clamp(1.5rem, 2.6vw, 2.2rem); font-weight: 300; color: var(--green-deep); line-height: 1.2; margin-bottom: 0.85rem; text-wrap: balance; }
   h2 em { font-style: italic; color: var(--green-mid); }
   .problema h2 em { color: var(--green-light); }
   .section-lead { font-size: 1rem; color: var(--slate); max-width: 620px; line-height: 1.8; }
@@ -176,7 +182,7 @@
   .coste-bsc { background: white; text-align: center; }
   .coste-bsc-chain { display: flex; align-items: center; justify-content: center; gap: 0.85rem; flex-wrap: wrap; margin: 2rem 0 1.5rem; }
   .coste-bsc-step { display: flex; flex-direction: column; align-items: center; background: var(--green-mist); border: 1px solid var(--green-pale); border-radius: 12px; padding: 0.9rem 1.25rem; min-width: 150px; }
-  .coste-bsc-num { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
+  .coste-bsc-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.4rem; font-weight: 600; color: var(--green-mid); line-height: 1; }
   .coste-bsc-label { font-size: 0.75rem; color: var(--muted); margin-top: 4px; text-align: center; }
   .coste-bsc-arrow { color: var(--green-light); font-size: 1.2rem; }
   .coste-bsc-final { background: var(--green-deep); border-radius: 14px; padding: 1.25rem 1.75rem; max-width: 680px; margin: 0 auto; }
@@ -190,7 +196,7 @@
   .vs-col { border-radius: 14px; padding: 1.75rem; }
   .vs-col--curso { background: var(--cream); border: 1px solid var(--border); }
   .vs-col--programa { background: var(--green-mist); border: 2px solid var(--green-light); }
-  .vs-col h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 1rem; color: var(--charcoal); }
+  .vs-col h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 1rem; color: var(--charcoal); }
   .vs-col--programa h3 { color: var(--green-deep); }
   .vs-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .vs-col li { font-size: 0.88rem; color: var(--slate); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
@@ -208,7 +214,7 @@
     width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
     background: white; border: 2px solid var(--green-light);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 600; color: var(--green-mid);
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.35rem; font-weight: 600; color: var(--green-mid);
     position: relative; z-index: 1;
   }
   .semana--11 .roadmap-node { background: var(--green-mid); border-color: var(--green-mid); color: white; }
@@ -233,7 +239,7 @@
   .quien { background: var(--cream); }
   .quien-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
   .quien-col { border-radius: 14px; padding: 1.75rem; background: white; border: 1px solid var(--border); }
-  .quien-col h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 400; color: var(--green-deep); margin-bottom: 1rem; }
+  .quien-col h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.05rem; font-weight: 400; color: var(--green-deep); margin-bottom: 1rem; }
   .quien-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .quien-col li { font-size: 0.88rem; color: var(--slate); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
   .quien-col--si li::before { content: '✓'; color: var(--green-mid); font-weight: 700; flex-shrink: 0; }
@@ -251,8 +257,8 @@
   .urgency-badge::before { content: '⚡'; }
   .cta-box h2 { color: white; margin-bottom: 0.5rem; }
   .cta-box .cta-sub { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 1.75rem; line-height: 1.7; }
-  .cta-price { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 600; color: white; line-height: 1; }
-  .cta-price-label { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-top: 4px; margin-bottom: 1.5rem; }
+  .cta-price { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 3rem; font-weight: 600; color: white; line-height: 1; }
+  .cta-price-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 4px; margin-bottom: 1.5rem; }
   .btn-cta-white {
     display: flex; align-items: center; justify-content: center; gap: 10px;
     background: #0E8143; color: white;
@@ -263,7 +269,7 @@
   .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
   .btn-cta-white svg { width: 22px; height: 22px; flex-shrink: 0; }
   .cta-risk { display: flex; flex-direction: column; gap: 4px; }
-  .cta-risk span { font-size: 0.75rem; color: rgba(255,255,255,0.45); display: flex; align-items: center; justify-content: center; gap: 5px; }
+  .cta-risk span { font-size: 0.75rem; color: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; gap: 5px; }
   .cta-risk span::before { content: '✓'; color: var(--green-light); font-weight: 700; }
 
   /* FAQ */
@@ -280,7 +286,7 @@
   .autor { background: white; border-top: 1px solid var(--border); }
   .autor-inner { display: flex; align-items: center; gap: 2rem; max-width: 680px; margin: 0 auto; }
   .autor-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--green-light); flex-shrink: 0; }
-  .autor-text h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 400; color: var(--green-deep); margin-bottom: 4px; }
+  .autor-text h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.05rem; font-weight: 400; color: var(--green-deep); margin-bottom: 4px; }
   .autor-text p { font-size: 0.85rem; color: var(--slate); line-height: 1.7; }
   .autor-creds { display: flex; gap: 0.75rem; margin-top: 0.75rem; flex-wrap: wrap; }
   .autor-cred { font-size: 0.72rem; background: var(--green-pale); color: var(--green-mid); padding: 3px 10px; border-radius: 100px; font-weight: 500; }
@@ -352,7 +358,7 @@
         'background:#0a2e1a;color:#fff;',
         'padding:1rem 5%;',
         'display:flex;align-items:center;justify-content:space-between;gap:1.5rem;',
-        'font-family:"DM Sans",sans-serif;font-size:0.875rem;line-height:1.5;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.875rem;line-height:1.5;',
         'box-shadow:0 -2px 24px rgba(0,0,0,0.25);',
         'transform:translateY(100%);transition:transform 0.35s ease;',
       '}',
@@ -362,14 +368,14 @@
       '#ck-essential{',
         'background:transparent;border:1px solid rgba(255,255,255,0.3);',
         'color:rgba(255,255,255,0.8);padding:8px 18px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;cursor:pointer;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;cursor:pointer;',
         'transition:border-color 0.2s,color 0.2s;',
       '}',
       '#ck-essential:hover{border-color:rgba(255,255,255,0.6);color:#fff;}',
       '#ck-accept{',
         'background:#c9a84c;border:none;color:#0a2e1a;',
         'padding:8px 20px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;font-weight:500;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;font-weight:500;',
         'cursor:pointer;transition:background 0.2s;',
       '}',
       '#ck-accept:hover{background:#d4b968;}',
@@ -436,7 +442,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <nav>
-  <a href="/" class="nav-logo"><img src="/logo-pe.png" alt="" class="nav-logo-mark">Excel con Jhony</a>
+  <a href="/" class="nav-logo"><img width="28" height="28" src="/logo-pe.png" alt="" class="nav-logo-mark">Excel con Jhony</a>
   <a href="#" data-wa-msg="Hola Jhony, quiero agendar la llamada de diagnóstico de la asesoría Balanced Scorecard" class="nav-btn">Agendar llamada</a>
   <div class="nav-mobile-badge"><span>Asesoría 1:1 · Balanced Scorecard</span></div>
 </nav>
@@ -711,7 +717,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="autor">
   <div class="section-tag" style="text-align:center; display:block;">Tu asesor durante todo el proceso</div>
   <div class="autor-inner">
-    <img src="/profesor-de-excel-online-thumb.jpg" alt="Jhony Escobar, asesor del programa Balanced Scorecard" class="autor-img" onerror="this.style.display='none'">
+    <img loading="lazy" decoding="async" width="200" height="200" src="/profesor-de-excel-online-thumb.jpg" alt="Jhony Escobar, asesor del programa Balanced Scorecard" class="autor-img" onerror="this.style.display='none'">
     <div class="autor-text">
       <h3>Jhony Escobar</h3>
       <p>Más de 8 años formando a profesionales y empresas de España y Latinoamérica. +200 alumnos. Esta metodología nace de implementar el Balanced Scorecard en proyectos reales de consultoría — con los errores ya cometidos y resueltos para que tú no los repitas.</p>
@@ -724,7 +730,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<script src="/footer.js?v=3"></script>
+<script src="/footer.js?v=4"></script>
 
 <script>
 document.querySelectorAll('.faq-item').forEach(item => {

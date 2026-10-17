@@ -374,22 +374,29 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;1,300&family=DM+Sans:wght@400;500;700&display=swap"></noscript>
+<link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/dm-sans.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/fraunces-italic.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica'),local('Liberation Sans');size-adjust:103%;ascent-override:96.3%;descent-override:30.1%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:normal;src:local('Times New Roman'),local('Liberation Serif'),local('Times');size-adjust:112%;ascent-override:87.3%;descent-override:22.8%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:italic;src:local('Times New Roman Italic'),local('Liberation Serif Italic'),local('Times-Italic');size-adjust:102.4%;ascent-override:95.5%;descent-override:24.9%;line-gap-override:0%}
+</style>
 <style>
 :root{
   --green-deep:#0a2e1a;--green-mid:#1a5c36;--green-soft:#2d8653;--green-light:#4db87a;--green-pale:#d4f0e0;--green-mist:#f0faf4;
   --gold:#c9a84c;--red:#c0392b;
   --ink:#1c1c1c;--ink-2:#4a4a4a;--line:#e6e1d4;--bg:#ffffff;--bg-2:#faf8f3;
-  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --serif:"Fraunces","Fraunces Fallback",Georgia,"Times New Roman",serif;
   --radius:18px;--shadow:0 18px 50px -18px rgba(10,46,26,.35);
   --max:1160px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:"DM Sans","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
+body{margin:0;font-family:"DM Sans","DM Sans Fallback","Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:17px}
 img,video{max-width:100%;height:auto;display:block}
 a{color:var(--green-mid)}
 h1,h2,h3{line-height:1.15;letter-spacing:-.02em;margin:0 0 .5em}
@@ -412,7 +419,7 @@ section{padding:84px 0}
 .btn-primary:hover{transform:translateY(-2px);background:#6fcf97}
 .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35)}
 .btn-ghost:hover{border-color:#fff}
-.btn small{display:block;font-weight:600;font-size:.78rem;opacity:.8}
+.btn small{display:block;font-weight:600;font-size:.78rem}
 .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
 
 /* cabecera */
@@ -505,6 +512,7 @@ thead th{background:var(--green-deep);color:#fff;font-weight:700}
 thead th.us{background:var(--gold);color:var(--green-deep)}
 td.us{background:#faf5e4;font-weight:700}
 .yes{color:var(--green-soft);font-weight:700}
+td.us .yes{color:var(--green-mid)}
 .no{color:var(--red);font-weight:700}
 .mid{color:var(--ink-2)}
 
@@ -604,7 +612,7 @@ footer a{color:#cfe6d9}
         'background:#0a2e1a;color:#fff;',
         'padding:1rem 5%;',
         'display:flex;align-items:center;justify-content:space-between;gap:1.5rem;',
-        'font-family:"DM Sans",sans-serif;font-size:0.875rem;line-height:1.5;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.875rem;line-height:1.5;',
         'box-shadow:0 -2px 24px rgba(0,0,0,0.25);',
         'transform:translateY(100%);transition:transform 0.35s ease;',
       '}',
@@ -614,14 +622,14 @@ footer a{color:#cfe6d9}
       '#ck-essential{',
         'background:transparent;border:1px solid rgba(255,255,255,0.3);',
         'color:rgba(255,255,255,0.8);padding:8px 18px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;cursor:pointer;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;cursor:pointer;',
         'transition:border-color 0.2s,color 0.2s;',
       '}',
       '#ck-essential:hover{border-color:rgba(255,255,255,0.6);color:#fff;}',
       '#ck-accept{',
         'background:#c9a84c;border:none;color:#0a2e1a;',
         'padding:8px 20px;border-radius:100px;',
-        'font-family:"DM Sans",sans-serif;font-size:0.85rem;font-weight:500;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;font-weight:500;',
         'cursor:pointer;transition:background 0.2s;',
       '}',
       '#ck-accept:hover{background:#d4b968;}',
@@ -713,7 +721,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <video preload="none" playsinline poster="assets/img/poster-instalacion-16x9.webp" aria-label="Vídeo: descarga, instala y usa Budget Plan Pro en 40 segundos" width="1280" height="720">
           <source src="assets/video/budget-plan-pro-instalacion-16x9.mp4" type="video/mp4">
         </video>
-        <button class="play" type="button" aria-label="Reproducir vídeo de 40 segundos">
+        <button class="play" type="button" aria-label="Descarga, instala y planifica · 40 s: reproducir vídeo">
           <span class="circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="#0a2e1a" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="lbl">Descarga, instala y planifica · 40 s</span>
         </button>
@@ -806,7 +814,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <video preload="none" playsinline poster="assets/img/poster-demo-16x9.webp" aria-label="Vídeo: recorrido por Budget Plan Pro en 40 segundos" width="1280" height="720">
           <source src="assets/video/budget-plan-pro-demo-16x9.mp4" type="video/mp4">
         </video>
-        <button class="play" type="button" aria-label="Reproducir demostración de 40 segundos">
+        <button class="play" type="button" aria-label="Ver la demostración · 40 s: reproducir vídeo">
           <span class="circle"><svg width="34" height="34" viewBox="0 0 24 24" fill="#0a2e1a" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
           <span class="lbl">Ver la demostración · 40 s</span>
         </button>
@@ -1030,7 +1038,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 </main>
 
-<script src="/footer.js?v=3"></script>
+<script src="/footer.js?v=4"></script>
 <div class="sticky-spacer" aria-hidden="true"></div>
 
 <div class="sticky-cta" id="sticky" aria-hidden="true">

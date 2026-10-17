@@ -4,10 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Programas de formación en Excel — Jhony Escobar</title>
+<meta name="description" content="Programas de formación en Excel por niveles: hostelería y restauración, prueba de entrevista y Excel a nivel de negocio. Compara temarios y elige tu ruta.">
+<link rel="canonical" href="https://www.trabajoenexcel.com/niveles/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-tight.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Inter Tight';font-style:normal;font-weight:600 800;font-display:swap;src:url(/fonts/inter-tight.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Inter Fallback';src:local('Arial'),local('Helvetica'),local('Liberation Sans');size-adjust:105.8%;ascent-override:91.6%;descent-override:22.8%;line-gap-override:0%}
+@font-face{font-family:'Inter Tight Fallback';src:local('Arial'),local('Helvetica'),local('Liberation Sans');size-adjust:94.9%;ascent-override:102.1%;descent-override:25.4%;line-gap-override:0%}
+</style>
 <style>
   :root{
     --cream:#F7F4EC;
@@ -55,7 +62,7 @@
     margin:0;
     background:var(--cream);
     color:var(--ink);
-    font-family:'Inter', -apple-system, 'Segoe UI', sans-serif;
+    font-family:'Inter', 'Inter Fallback', -apple-system, 'Segoe UI', sans-serif;
     font-size:16px;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
@@ -95,7 +102,7 @@
   .brand-sub{ font-size:13px; color:var(--ink-soft); }
 
   h1{
-    font-family:'Inter Tight', sans-serif;
+    font-family:'Inter Tight', 'Inter Tight Fallback', sans-serif;
     font-weight:600;
     font-size:39px;
     line-height:1.08;
@@ -130,7 +137,7 @@
     appearance:none; border:1px solid var(--line); border-bottom:none;
     background:var(--cream-2);
     color:var(--ink-soft);
-    font-family:'Inter', sans-serif;
+    font-family:'Inter', 'Inter Fallback', sans-serif;
     font-weight:600; font-size:14px;
     padding:12px 18px;
     min-height:44px;
@@ -152,6 +159,10 @@
   .tab .tab-emoji{ margin-right:6px; }
 
   /* ---------- PANEL META ---------- */
+  /* espacio reservado: las pestañas y paneles se construyen con JS y empujaban el contenido de debajo (CLS) */
+  .tabbar-shell{ min-height:60px; }
+  #panels{ min-height:900px; }
+  @media (min-width:601px){ #panels{ min-height:800px; } }
   .panel{ display:none; padding:28px 0 8px; }
   .panel.is-active{ display:block; }
 
@@ -182,7 +193,7 @@
     width:100%;
     height:44px;
     font-size:16px;
-    font-family:'Inter', sans-serif;
+    font-family:'Inter', 'Inter Fallback', sans-serif;
     padding:0 14px 0 40px;
     border:1px solid var(--line);
     border-radius:var(--radius-md);
@@ -262,7 +273,7 @@
   /* ---------- COMPARATIVA ---------- */
   .compare{ padding:48px 0 64px; border-top:1px solid var(--line); margin-top:20px; }
   .compare h2{
-    font-family:'Inter Tight', sans-serif; font-weight:600;
+    font-family:'Inter Tight', 'Inter Tight Fallback', sans-serif; font-weight:600;
     font-size:31px; margin:0 0 6px;
   }
   .compare p{ color:var(--ink-soft); margin:0 0 24px; max-width:60ch; }
@@ -275,7 +286,7 @@
     font-size:14px;
   }
   table.matrix thead th{
-    font-family:'Inter', sans-serif; font-weight:700;
+    font-family:'Inter', 'Inter Fallback', sans-serif; font-weight:700;
     background:var(--forest); color:var(--cream);
     position:sticky; top:0;
   }
@@ -300,7 +311,7 @@
     text-align:center;
   }
   .cta-final-box h2{
-    font-family:'Inter Tight', sans-serif; font-weight:600;
+    font-family:'Inter Tight', 'Inter Tight Fallback', sans-serif; font-weight:600;
     font-size:28px; color:var(--cream); margin:0 0 8px;
   }
   .cta-final-box p{
@@ -332,7 +343,7 @@
 
 <header class="hero">
   <div class="wrap hero-inner">
-    <a class="brand" href="/" aria-label="Ir a la home de trabajoenexcel.com">
+    <a class="brand" href="/" aria-label="Jhony Escobar, trabajoenexcel.com: ir a la home">
       <img class="brand-mark" src="/logo-pe.png" alt="Jhony Escobar — profesor de Excel" width="40" height="40">
       <div>
         <div class="brand-name">Jhony Escobar</div>
@@ -366,7 +377,7 @@
   </div>
 </section>
 
-<script src="/footer.js?v=3"></script>
+<script src="/footer.js?v=4"></script>
 
 <script>
 const PROGRAMS = [
@@ -677,7 +688,7 @@ function buildPanels(){
       : '';
 
     panel.innerHTML = `
-      <h2 style="font-family:'Inter Tight',sans-serif;font-weight:600;font-size:25px;margin:0 0 8px;">${p.title}</h2>
+      <h2 style="font-family:'Inter Tight','Inter Tight Fallback',sans-serif;font-weight:600;font-size:25px;margin:0 0 8px;">${p.title}</h2>
       <p class="scope">${p.scope}</p>
       <div class="meta-row">
         <span class="chip">Nivel <b>${p.level}</b></span>
