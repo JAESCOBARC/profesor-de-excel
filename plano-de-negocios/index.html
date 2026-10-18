@@ -552,6 +552,9 @@ summary::after{content:"+";position:absolute;right:22px;top:50%;transform:transl
 details[open] summary::after{content:"–"}
 details .ans{padding:0 22px 18px;color:var(--ink-2)}
 details .ans p{margin:0}
+.mods{max-width:900px;margin:36px auto 0}
+.mods summary h3{display:inline;margin:0;font-family:inherit;font-size:1rem;font-weight:700;letter-spacing:0;line-height:inherit;color:inherit}
+.mods .ans p{margin:0 0 8px}.mods .ans ul{margin:0;padding-left:20px}.mods .ans li{margin:6px 0}
 
 /* cierre */
 .final{background:linear-gradient(180deg,#0f3d23,#0a2e1a);color:#fff;text-align:center}
@@ -912,6 +915,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="feature-media"><img src="/plan-negocio/assets/img/app-grafico-cascada-pyg-800.webp" srcset="/plan-negocio/assets/img/app-grafico-cascada-pyg-800.webp 800w, /plan-negocio/assets/img/app-grafico-cascada-pyg.webp 1200w" sizes="(max-width:980px) 100vw, 600px" width="1200" height="694" loading="lazy" decoding="async" alt="Gráfico de cascata da DRE gerado pelo Budget Plan Pro"></div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué contiene cada módulo (acordeón con h3 por módulo) -->
+  <section aria-labelledby="modulos-t" id="modulos">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">O que contém</span>
+        <h2 id="modulos-t">O que cada módulo do Budget Plan Pro contém</h2>
+        <p class="lead">Cada módulo é uma tela do software, conectada às demais. Abra o que quiser para ver o que você insere e o que obtém.</p>
+      </div>
+      <div class="mods">
+        <details open><summary><h3>Parâmetros</h3></summary><div class="ans"><p>Ajustes gerais do plano.</p><ul><li>Aqui você define a alíquota do imposto sobre o lucro que o software aplica ao calcular o resultado.</li></ul></div></details>
+        <details><summary><h3>Planejamento</h3></summary><div class="ans"><p>A parte estratégica do plano de negócios, organizada em seis abas.</p><ul><li><strong>Direção estratégica:</strong> missão, visão e objetivos do projeto, e a moeda usada em todo o software e nos relatórios.</li><li><strong>Análise SWOT (FOFA):</strong> cada fator tem um peso (cada quadrante soma 100%) e uma nota de 0 a 10; a nota do quadrante é a média ponderada. Você pode se comparar com até 2 concorrentes.</li><li><strong>Persona:</strong> até 4 perfis de cliente.</li><li><strong>Funil de vendas:</strong> as etapas pelas quais o cliente passa até comprar.</li><li><strong>Pesquisa de mercado:</strong> TAM, SAM, SOM, concorrência e análise PESTEL.</li><li><strong>Cronograma:</strong> você define data de início e de fim, adiciona atividades com início, fim e % de avanço, e o software desenha o diagrama de Gantt.</li></ul></div></details>
+        <details><summary><h3>Investimentos</h3></summary><div class="ans"><p>Os ativos que você precisa comprar para iniciar e manter o negócio.</p><ul><li>O que você compra, quando e quanto custa cada ativo.</li><li>O software calcula as depreciações e seu efeito no balanço e no fluxo de caixa.</li></ul></div></details>
+        <details><summary><h3>Financiamento</h3></summary><div class="ans"><p>Como você paga esses investimentos e o negócio.</p><ul><li>Capital próprio e empréstimos.</li><li>O software calcula o quadro de empréstimos e seu efeito no balanço e no fluxo de caixa.</li></ul></div></details>
+        <details><summary><h3>Receitas</h3></summary><div class="ans"><p>O que você vende e a que preço.</p><ul><li>Até 10 produtos ou serviços.</li><li>Para cada ano: preço de venda líquido e unidades vendidas, com o total.</li><li>Dias de crédito aos clientes, que afetam o momento do recebimento.</li></ul></div></details>
+        <details><summary><h3>Compras e Estoque</h3></summary><div class="ans"><p>As compras de mercadorias associadas às suas vendas.</p><ul><li>O custo delas é uma das variáveis que você pode mexer na análise de sensibilidade (custo de compra).</li></ul></div></details>
+        <details><summary><h3>Pessoal</h3></summary><div class="ans"><p>A equipe do projeto.</p><ul><li>Os dados de pessoal que você insere entram nos custos, na DRE e no fluxo de caixa.</li></ul></div></details>
+        <details><summary><h3>Despesas Operacionais</h3></summary><div class="ans"><p>Os gastos de funcionamento do negócio.</p><ul><li>São somados aos custos e aparecem na DRE e no fluxo de caixa.</li></ul></div></details>
+        <details><summary><h3>Demonstrativo de Custos</h3></summary><div class="ans"><p>O resumo dos custos do projeto, ano a ano.</p><ul><li>É calculado automaticamente a partir do que você inseriu em compras, pessoal e despesas.</li></ul></div></details>
+        <details><summary><h3>DRE (Demonstração de Resultados)</h3></summary><div class="ans"><p>A demonstração de resultados para 5-10 anos, calculada pelo software.</p><ul><li>Inclui EBITDA, EBIT e resultado.</li><li>Linhas expansíveis com «Expandir tudo» e «Recolher tudo» para ver o detalhe.</li></ul></div></details>
+        <details><summary><h3>Fluxo de Caixa</h3></summary><div class="ans"><p>O dinheiro que entra e sai, e quanto você tem disponível.</p><ul><li>Saldo inicial, total de recebimentos, total de pagamentos, saldo do período e disponível em caixa, ano a ano.</li><li>Com uma linha de partida (START) antes do primeiro ano.</li></ul></div></details>
+        <details><summary><h3>Balanço Patrimonial</h3></summary><div class="ans"><p>A situação patrimonial do projeto, ano a ano.</p><ul><li>A validação contábil confere se o balanço fecha e o painel de alertas avisa se não fechar.</li></ul></div></details>
+        <details><summary><h3>Fluxo de Caixa e KPIs</h3></summary><div class="ans"><p>A resposta sobre a viabilidade do projeto.</p><ul><li><strong>TIR</strong> e <strong>VPL</strong> (com desconto real), com o critério de viabilidade à vista.</li><li><strong>Ponto de equilíbrio</strong>: as vendas mínimas necessárias.</li><li>Fluxo de caixa líquido e índices por período: capital de giro, liquidez, endividamento, giro do ativo, margem operacional, ROA e ROE.</li><li>Análise automática com semáforo que explica o que muda de um ano para o outro.</li><li>Verificação contábil: a diferença máxima do plano.</li></ul></div></details>
+        <details><summary><h3>Sensibilidade e Cenários</h3></summary><div class="ans"><p>O que acontece com o seu plano se algo mudar.</p><ul><li>Controles de preço médio de venda, volume, custo de compra e taxa de juros: a TIR e o VPL se recalculam na hora.</li><li>Tabela de sensibilidade preço × volume de 5 × 5.</li><li>Salve cenários pessimista, base e otimista e compare-os.</li></ul></div></details>
+        <details><summary><h3>Gráficos</h3></summary><div class="ans"><p>O plano em imagens, pronto para apresentar.</p><ul><li>Vendas vs. custos, cascata da DRE, fluxo de caixa acumulado, ponto de equilíbrio e KPIs.</li></ul></div></details>
       </div>
     </div>
   </section>
