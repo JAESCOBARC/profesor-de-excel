@@ -687,8 +687,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .certificado-visual img { width: 100%; max-width: 420px; height: auto; transform: rotate(0deg); }
   }
 
-  .programas-section { padding: 4rem 5%; max-width: 1100px; margin: 0 auto; }
+  .programas-section { padding: 4rem 5%; max-width: 1240px; margin: 0 auto; }
   .programas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  @media (min-width: 1024px) { .programas-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; } }
   .programa-card {
     background: white; border: 1px solid var(--border); border-radius: 18px;
     padding: 1.75rem; display: flex; flex-direction: column;
