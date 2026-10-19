@@ -1,8 +1,9 @@
 (function () {
   window.PLANES = {
-    hora1: { id: 'hora1', horas: 1, precioHora: 20, total: null },
-    bono5: { id: 'bono5', horas: 5, precioHora: 18, total: 90, descuento: 10 },
-    bono10: { id: 'bono10', horas: 10, precioHora: 16.5, total: 165, descuento: 17 }
+    hora1: { id: 'hora1', horas: 1, precioHora: 25, total: null },
+    bono5: { id: 'bono5', horas: 5, precioHora: 20, total: 100, descuento: 20 },
+    // El id 'bono10' se mantiene por compatibilidad (test de nivel, Google Sheet); el plan actual es de 15 horas.
+    bono10: { id: 'bono10', horas: 15, precioHora: 18, total: 270, descuento: 28 }
   };
 
   function fmtPrecio(n) {
