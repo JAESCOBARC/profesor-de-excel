@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de Excel Avanzado para Directivos y Analistas de Negocio</title>
+<meta name="description" content="Curso de Excel avanzado 1:1 para directivos y analistas de negocio: 30 horas a medida, Power Query, dashboards, Power BI e IA. 580 €. Reserva tu llamada.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.trabajoenexcel.com/curso-excel-para-directivos.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.trabajoenexcel.com/curso-excel-para-directivos.html">
+<meta property="og:title" content="Curso de Excel Avanzado para Directivos y Analistas de Negocio">
+<meta property="og:description" content="Curso de Excel avanzado 1:1 para directivos y analistas de negocio: 30 horas a medida, Power Query, dashboards, Power BI e IA. 580 €. Reserva tu llamada.">
+<meta property="og:image" content="https://www.trabajoenexcel.com/clases_excel_particulas_tarjeta.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Excel con Jhony">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Curso de Excel Avanzado para Directivos y Analistas de Negocio">
+<meta name="twitter:description" content="Curso de Excel avanzado 1:1 para directivos y analistas de negocio: 30 horas a medida, Power Query, dashboards, Power BI e IA. 580 €. Reserva tu llamada.">
+<meta name="twitter:image" content="https://www.trabajoenexcel.com/clases_excel_particulas_tarjeta.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<script>
+(function () {
+  // Google Consent Mode v2 — defaults sincrónicos, antes de que cargue cualquier tag
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+
+  var stored = null;
+  try { stored = localStorage.getItem('cookieConsent'); } catch (e) {}
+  var granted = stored === 'all';
+
+  gtag('consent', 'default', {
+    analytics_storage:   granted ? 'granted' : 'denied',
+    ad_storage:          granted ? 'granted' : 'denied',
+    ad_user_data:        granted ? 'granted' : 'denied',
+    ad_personalization:  granted ? 'granted' : 'denied',
+    wait_for_update: 500
+  });
+
+  if (stored) return; // ya eligió, no mostrar banner
+
+  // Banner UI — espera al DOM
+  document.addEventListener('DOMContentLoaded', function () {
+    var style = document.createElement('style');
+    style.textContent = [
+      '#ck-banner{',
+        'position:fixed;bottom:0;left:0;right:0;z-index:9999;',
+        'background:#0a2e1a;color:#fff;',
+        'padding:1rem 5%;',
+        'display:flex;align-items:center;justify-content:space-between;gap:1.5rem;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.875rem;line-height:1.5;',
+        'box-shadow:0 -2px 24px rgba(0,0,0,0.25);',
+        'transform:translateY(100%);transition:transform 0.35s ease;',
+      '}',
+      '#ck-banner.ck-visible{transform:translateY(0);}',
+      '#ck-banner p{margin:0;color:rgba(255,255,255,0.85);flex:1;}',
+      '.ck-actions{display:flex;gap:0.75rem;flex-shrink:0;}',
+      '#ck-essential{',
+        'background:transparent;border:1px solid rgba(255,255,255,0.3);',
+        'color:rgba(255,255,255,0.8);padding:8px 18px;border-radius:100px;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;cursor:pointer;',
+        'transition:border-color 0.2s,color 0.2s;',
+      '}',
+      '#ck-essential:hover{border-color:rgba(255,255,255,0.6);color:#fff;}',
+      '#ck-accept{',
+        'background:#c9a84c;border:none;color:#0a2e1a;',
+        'padding:8px 20px;border-radius:100px;',
+        'font-family:"DM Sans","DM Sans Fallback",sans-serif;font-size:0.85rem;font-weight:500;',
+        'cursor:pointer;transition:background 0.2s;',
+      '}',
+      '#ck-accept:hover{background:#d4b968;}',
+      '@media(max-width:600px){',
+        '#ck-banner{flex-direction:row;align-items:center;padding:0.65rem 4%;gap:0.75rem;}',
+        '#ck-banner p{font-size:0.78rem;line-height:1.3;}',
+        '.ck-actions{flex-shrink:0;gap:0.5rem;}',
+        '#ck-essential{padding:6px 10px;font-size:0.75rem;}',
+        '#ck-accept{padding:6px 12px;font-size:0.75rem;}',
+      '}'
+    ].join('');
+    document.head.appendChild(style);
+
+    var banner = document.createElement('div');
+    banner.id = 'ck-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Aviso de cookies');
+    banner.innerHTML =
+      '<p>Usamos cookies propias y de Google Ads para mostrarte publicidad relevante. Consulta nuestra <a href="/politica-privacidad.html" style="color:inherit;text-decoration:underline;">política de privacidad</a>.</p>' +
+      '<div class="ck-actions">' +
+        '<button id="ck-essential">Solo esenciales</button>' +
+        '<button id="ck-accept">Aceptar todo</button>' +
+      '</div>';
+    document.body.appendChild(banner);
+
+    setTimeout(function () {
+      requestAnimationFrame(function () { banner.classList.add('ck-visible'); });
+    }, 3500);
+
+    function applyConsent(choice) {
+      try { localStorage.setItem('cookieConsent', choice); } catch (e) {}
+      var ok = choice === 'all';
+      gtag('consent', 'update', {
+        analytics_storage:  ok ? 'granted' : 'denied',
+        ad_storage:         ok ? 'granted' : 'denied',
+        ad_user_data:       ok ? 'granted' : 'denied',
+        ad_personalization: ok ? 'granted' : 'denied'
+      });
+      banner.style.transform = 'translateY(100%)';
+      setTimeout(function () { banner.remove(); }, 350);
+    }
+
+    document.getElementById('ck-accept').addEventListener('click', function () {
+      applyConsent('all');
+    });
+    document.getElementById('ck-essential').addEventListener('click', function () {
+      applyConsent('essential');
+    });
+  });
+})();
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MNRMBXCM');</script>
+<!-- End Google Tag Manager -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "@id": "https://www.trabajoenexcel.com/curso-excel-para-directivos.html#course",
+  "name": "Curso de Excel avanzado para directivos y analistas de negocio",
+  "description": "Programa individual de 30 horas de Excel avanzado para directivos y analistas de negocio: fórmulas clave, tablas dinámicas, Power Query, Business Analytics, dashboards, IA aplicada a Excel y Power BI, sobre tus propios archivos.",
+  "url": "https://www.trabajoenexcel.com/curso-excel-para-directivos.html",
+  "inLanguage": "es",
+  "educationalLevel": "Advanced",
+  "teaches": [
+    "Microsoft Excel",
+    "Tablas dinámicas",
+    "Power Query",
+    "Business Analytics",
+    "Dashboards",
+    "Power BI",
+    "IA aplicada a Excel"
+  ],
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Directivos y analistas de negocio"
+  },
+  "image": "https://www.trabajoenexcel.com/clases_excel_particulas_tarjeta.png",
+  "provider": {
+    "@id": "https://www.trabajoenexcel.com/jhony-profesor-excel-online.html#person"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "580.00",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://www.trabajoenexcel.com/curso-excel-para-directivos.html#oferta",
+    "category": "Programa individual de 30 horas"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT30H",
+    "instructor": {
+      "@id": "https://www.trabajoenexcel.com/jhony-profesor-excel-online.html#person"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta el curso de Excel avanzado para directivos y analistas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El programa completo cuesta 580 € por 30 horas de clases individuales online, lo que equivale a 19,33 € por hora."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye el programa de 30 horas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Incluye 30 horas de clases 1:1 en directo, un plan de estudios a medida, trabajo sobre tus propios archivos, la grabación de cada clase y un certificado de finalización con las horas y el temario exactos cursados, verificable con código QR."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se organizan las 30 horas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Son 30 horas de clase en directo, de tú a tú, con calendario y ritmo que acordamos contigo. En una llamada previa de 15 minutos definimos tus objetivos y qué bloques del temario trabajar más."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué temario incluye el curso de Excel avanzado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fórmulas clave de búsqueda y texto, tablas dinámicas avanzadas, gráficos para presentar, Power Query, Business Analytics (Pareto, punto de equilibrio, CAGR), dashboards, IA aplicada a Excel, seguridad y un dashboard en Power BI."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es un curso en grupo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Es un programa individual: las clases son solo para ti, con tus archivos y datos reales, y el temario se ajusta a tu puesto y a tu punto de partida."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué nivel de Excel necesito para empezar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Necesitas dominar Excel a nivel intermedio. Power Query y Power BI se explican desde cero; si aún no tienes ese nivel, te recomiendo empezar por el curso de nivel intermedio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se adapta a mi sector y a mi puesto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. El temario y la metodología son los mismos para todos los sectores; lo que cambia son los datos y los casos prácticos, que se ajustan a tu trabajo como directivo o analista."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Recibo un certificado al terminar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Recibes un certificado de finalización con tu nombre, las horas cursadas y el temario exacto visto, firmado por tu profesor, Microsoft Excel Expert, y verificable con código QR."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo reservo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reserva en esta página una llamada gratuita de 15 minutos. Tras la llamada, si el programa encaja contigo, acordamos el calendario y la forma de pago."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Excel con Jhony",
+      "item": "https://www.trabajoenexcel.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Curso de Excel para directivos",
+      "item": "https://www.trabajoenexcel.com/curso-excel-para-directivos.html"
+    }
+  ]
+}
+</script>
+
+
+<link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:300 500;font-display:swap;src:url(/fonts/dm-sans.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 600;font-display:swap;src:url(/fonts/fraunces.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300;font-display:swap;src:url(/fonts/fraunces-italic.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'DM Sans Fallback';src:local('Arial'),local('Helvetica'),local('Liberation Sans');size-adjust:103%;ascent-override:96.3%;descent-override:30.1%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:normal;src:local('Times New Roman'),local('Liberation Serif'),local('Times');size-adjust:112%;ascent-override:87.3%;descent-override:22.8%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';font-style:italic;src:local('Times New Roman Italic'),local('Liberation Serif Italic'),local('Times-Italic');size-adjust:102.4%;ascent-override:95.5%;descent-override:24.9%;line-gap-override:0%}
+</style>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-deep: #0a2e1a;
+    --green-mid: #1a5c36;
+    --green-soft: #2d8653;
+    --green-light: #4db87a;
+    --green-pale: #d4f0e0;
+    --green-mist: #f0faf4;
+    --cream: #faf8f3;
+    --warm-white: #ffffff;
+    --charcoal: #1c1c1c;
+    --slate: #4a4a4a;
+    --muted: #6b6b6b;
+    --border: rgba(0,0,0,0.08);
+    --accent: #e8f5ee;
+    --gold: #c9a84c;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', 'DM Sans Fallback', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,248,243,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Fraunces', 'Fraunces Fallback', serif;
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--green-deep);
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .nav-logo-mark { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.88rem; font-weight: 400; color: var(--slate);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green-mid); }
+  .nav-cta {
+    background: none; color: var(--slate) !important;
+    padding: 0; border-radius: 0;
+    font-size: 0.88rem !important; font-weight: 400 !important;
+    transition: color 0.2s !important;
+  }
+  .nav-cta:hover { background: none !important; color: var(--green-mid) !important; }
+
+  .hero {
+    min-height: auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 4rem;
+    padding: 3.5rem 5% 3.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, var(--green-pale) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.5; pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green-pale); color: var(--green-mid);
+    padding: 6px 16px; border-radius: 100px;
+    font-size: 0.82rem; font-weight: 500; margin-bottom: 1.5rem;
+  }
+  .hero-badge::before { content: '●'; color: var(--green-light); font-size: 0.6rem; }
+  .badge-br { display: none; }
+  .nav-mobile-badge { display: none; }
+  .hero-quickfeat { display: none; }
+  h1 {
+    font-family: 'Fraunces', 'Fraunces Fallback', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300; line-height: 1.15;
+    color: var(--green-deep); margin-bottom: 1.5rem;
+  }
+  h1 em { font-style: italic; color: var(--green-mid); }
+  .hero-desc {
+    font-size: 1.1rem; color: var(--slate); line-height: 1.8;
+    max-width: 500px; margin-bottom: 0.85rem;
+  }
+  .hero-desc-row { display: contents; }
+  .hero-live-note {
+    display: flex; align-items: center; gap: 7px;
+    margin-bottom: 2.2rem;
+    font-size: 0.95rem; font-weight: 500; color: var(--green-mid);
+  }
+  .hero-live-note::before { content: '●'; color: var(--green-light); font-size: 0.6rem; flex-shrink: 0; }
+  .hero-photo-col { display: none; }
+  .hero-photo-mobile { display: none; }
+  .ms-badge-under-photo { display: none; }
+  .hero-price-hint { display: none; }
+  .hero-wa-hint { font-size: 0.8rem; color: var(--muted); margin-top: 0.6rem; }
+  .hero-urgency { font-size: 0.88rem; color: var(--slate); margin-top: 0.5rem; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--green-mid); color: white;
+    padding: 14px 32px; border-radius: 100px;
+    text-decoration: none; font-weight: 500; font-size: 0.95rem;
+    transition: all 0.2s; display: inline-block;
+    box-shadow: 0 4px 20px rgba(45,134,83,0.25);
+  }
+  .btn-primary:hover { background: var(--green-deep); transform: translateY(-1px); }
+  .btn-ghost {
+    color: var(--green-mid); font-size: 0.9rem; font-weight: 400;
+    text-decoration: none; display: flex; align-items: center; gap: 6px;
+    transition: gap 0.2s;
+  }
+  .btn-ghost:hover { gap: 10px; }
+  .btn-ghost::after { content: '→'; }
+  .hero-trust {
+    margin-top: 3rem;
+    display: flex; gap: 2rem; align-items: center;
+  }
+  .trust-item { display: flex; flex-direction: column; align-items: flex-start; text-decoration: none; }
+  .trust-num {
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.6rem;
+    font-weight: 600; color: var(--green-mid); line-height: 1;
+  }
+  .trust-label { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  .trust-divider { width: 1px; height: 36px; background: var(--border); }
+
+  .hero-visual { display: flex; flex-direction: column; gap: 1rem; position: relative; }
+  .excel-card {
+    background: white; border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  .excel-card-label {
+    font-size: 0.72rem; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.75rem;
+  }
+  .formula-bar {
+    background: #f8f9fa; border: 1px solid #e8eaed;
+    border-radius: 8px; padding: 8px 12px;
+    font-family: 'Courier New', monospace; font-size: 0.85rem;
+    color: var(--green-mid); margin-bottom: 0.5rem;
+  }
+  .cell-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-size: 0.78rem; }
+  .cell { padding: 4px 8px; border-radius: 4px; text-align: center; font-weight: 400; background: #f8f9fa; color: var(--slate); }
+  .cell.header { background: var(--green-deep); color: white; font-weight: 500; }
+  .cell.highlight { background: var(--green-pale); color: var(--green-deep); font-weight: 500; }
+  .cell.formula { background: #fff8e1; color: #7c5e00; }
+  .session-card {
+    background: var(--green-deep); color: white;
+    border-radius: 16px; padding: 1.25rem 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .session-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--green-light); display: flex;
+    align-items: center; justify-content: center;
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1rem;
+    font-weight: 600; color: var(--green-deep); flex-shrink: 0;
+  }
+  .session-info { flex: 1; }
+  .session-title { font-size: 0.88rem; font-weight: 500; margin-bottom: 2px; }
+  .session-sub { font-size: 0.75rem; opacity: 0.65; }
+  .live-badge {
+    background: #ef4444; color: white;
+    padding: 4px 10px; border-radius: 100px;
+    font-size: 0.7rem; font-weight: 600;
+    display: flex; align-items: center; gap: 5px;
+    animation: pulse 2s infinite;
+  }
+  .live-badge::before { content: '●'; font-size: 0.55rem; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.7} }
+
+  section { padding: 3.5rem 5%; }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--green-mid); margin-bottom: 1rem;
+  }
+  h2 {
+    font-family: 'Fraunces', 'Fraunces Fallback', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 300; color: var(--green-deep);
+    line-height: 1.2; margin-bottom: 1rem;
+  }
+  h2 em { font-style: italic; color: var(--green-mid); }
+  .section-lead { font-size: 1.05rem; color: var(--slate); max-width: 560px; line-height: 1.8; }
+
+  /* ── Coste de la inacción (LIFT: Valor + pérdida cuantificada) ── */
+  .coste-inaccion { background: var(--green-deep); padding: 3rem 5%; text-align: center; }
+  .coste-eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--green-light); margin-bottom: 1rem; }
+  .coste-chain { display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .coste-step { display: flex; flex-direction: column; align-items: center; }
+  .coste-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.6rem; font-weight: 600; color: white; line-height: 1; }
+  .coste-num strong { color: var(--green-light); }
+  .coste-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
+  .coste-arrow { color: var(--green-light); font-size: 1.1rem; }
+  .coste-final { display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.1rem 1.75rem; max-width: 640px; }
+  .coste-final p { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
+
+  /* ── Video en hero (LIFT: Claridad + reduce ansiedad antes del contacto) ── */
+  .hero-video-wrap {
+    position: relative; width: 100%; aspect-ratio: 16 / 10;
+    border-radius: 16px; overflow: hidden;
+    box-shadow: 0 20px 50px rgba(10,46,26,0.15);
+  }
+  .hero-video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .hero-video-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; background: #000; }
+  .mv-unmute {
+    position: absolute; bottom: 12px; right: 12px; z-index: 2;
+    width: 38px; height: 38px; border-radius: 50%; border: none;
+    background: rgba(0,0,0,0.55); color: #fff; font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+  }
+  .mv-play {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 68px; height: 48px; border-radius: 14px; border: none;
+    background: #ff0000; color: #fff; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; padding-left: 5px; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .mv-play:hover { background: #cc0000; transform: translate(-50%, -50%) scale(1.06); }
+  .mv-play.is-hidden { display: none; }
+  .mv-unmute.is-hidden { display: none; }
+  .valor-strip { background: var(--cream); padding: 1.5rem 5%; }
+  .valor-strip-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 0.65rem;
+  }
+  .valor-chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--warm-white); border: 1px solid var(--border);
+    border-radius: 100px; padding: 9px 16px;
+    box-shadow: 0 2px 10px rgba(10,46,26,0.05);
+  }
+  .valor-chip svg { width: 16px; height: 16px; color: var(--gold); flex-shrink: 0; }
+  .valor-chip span { font-size: 0.8rem; color: var(--green-deep); font-weight: 500; white-space: nowrap; }
+  .valor-chip--certificado { border-color: var(--green-pale); background: var(--green-mist); }
+  .valor-chip--certificado svg { color: var(--green-mid); }
+  @media (max-width: 768px) {
+    .valor-strip { padding: 1.1rem 5%; }
+    .valor-strip-inner { gap: 0.5rem; }
+    .valor-chip { padding: 7px 13px; }
+    .valor-chip span { font-size: 0.76rem; }
+  }
+  .video-mobile { display: none; }
+  .coste-final strong { color: white; }
+  .coste-hook { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-style: italic; font-size: 1.2rem; color: var(--green-light); margin-top: 0.85rem; }
+
+  /* ── Enfoque 80/20 ── */
+  .enfoque-8020 { background: var(--cream); padding: 3.5rem 5%; border-bottom: 1px solid var(--border); }
+  .ocho-grid {
+    display: flex; align-items: stretch; justify-content: center;
+    gap: 0; margin-top: 2.5rem; flex-wrap: wrap;
+    background: white; border-radius: 20px; border: 1px solid var(--border);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05); overflow: hidden;
+  }
+  .ocho-card {
+    flex: 1; min-width: 180px; padding: 2rem 2rem 1.75rem;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; border-right: 1px solid var(--border);
+  }
+  .ocho-card:last-child { border-right: none; }
+  .ocho-num {
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 3.8rem;
+    font-weight: 600; color: var(--green-mid); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .ocho-num span { font-size: 2.2rem; }
+  .ocho-card--result .ocho-num { color: var(--green-deep); }
+  .ocho-title { font-weight: 500; font-size: 0.9rem; color: var(--charcoal); margin-bottom: 0.4rem; }
+  .ocho-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.6; max-width: 180px; }
+  .ocho-arrow {
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 0.5rem; color: var(--green-pale); font-size: 1.8rem;
+    font-weight: 300; flex-shrink: 0;
+  }
+  .ocho-card--result { background: var(--green-deep); }
+  .ocho-card--result .ocho-num { color: var(--green-light); }
+  .ocho-card--result .ocho-title { color: white; }
+  .ocho-card--result .ocho-sub { color: rgba(255,255,255,0.6); }
+  .ocho-card--result .ocho-arrow { color: rgba(255,255,255,0.6); }
+  .ocho-detail {
+    font-size: 0.92rem; color: var(--muted); max-width: 640px;
+    margin: 1.5rem auto 0; text-align: center; line-height: 1.8;
+  }
+  .ocho-detail strong { color: var(--green-mid); }
+
+  .problemas { background: var(--green-deep); }
+  .problemas h2 em { color: var(--green-light); }
+  .problemas .section-tag { color: var(--green-light); }
+  .problemas h2 { color: white; }
+  .problemas .section-lead { color: rgba(255,255,255,0.65); }
+  .problemas-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .problema-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 1.75rem 1.5rem; transition: background 0.3s;
+  }
+  .problema-card:hover { background: rgba(255,255,255,0.08); }
+  .problema-icon { display: none; }
+  .problema-card h3 { font-size: 0.95rem; font-weight: 500; color: white; margin-bottom: 0.5rem; }
+  .problema-card p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+  .comparativa { background: white; }
+  .comparativa-wrap { overflow-x: auto; margin-top: 2.5rem; padding-top: 18px; }
+  .comparativa-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 640px; }
+  .comparativa-table th, .comparativa-table td {
+    padding: 1rem 1.25rem; text-align: left; font-size: 0.92rem;
+    border-bottom: 1px solid var(--border); vertical-align: top;
+  }
+  .comparativa-table thead th {
+    font-family: 'DM Sans', 'DM Sans Fallback', sans-serif; font-size: 0.78rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted);
+    border-bottom: 2px solid var(--border); white-space: nowrap;
+  }
+  .comparativa-table th:first-child, .comparativa-table td:first-child { color: var(--slate); font-weight: 500; }
+  .comparativa-table td:not(:first-child), .comparativa-table th:not(:first-child) { color: var(--muted); }
+  .comparativa-table tbody tr:last-child th,
+  .comparativa-table tbody tr:last-child td { border-bottom: none; }
+  .comparativa-col-jhony {
+    background: var(--green-deep) !important; color: white !important;
+    position: relative;
+  }
+  .comparativa-table td.comparativa-col-jhony, .comparativa-table th.comparativa-col-jhony { color: white !important; font-weight: 500; }
+  .comparativa-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: var(--green-deep); font-size: 0.68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.05em; padding: 3px 14px; border-radius: 100px;
+    white-space: nowrap;
+  }
+  .comparativa-table thead th.comparativa-col-jhony { border-radius: 10px 10px 0 0; }
+  .comparativa-table tbody tr:last-child td.comparativa-col-jhony { border-radius: 0 0 10px 10px; }
+  .comparativa-scroll-hint { display: none; }
+  @media (max-width: 640px) {
+    .comparativa-table { min-width: 560px; }
+    .comparativa-scroll-hint {
+      display: block; text-align: center; font-size: 0.8rem; color: var(--muted);
+      margin-top: 0.75rem;
+    }
+  }
+
+  .certificado-section { background: var(--green-mist); }
+  .certificado-inner {
+    display: flex; align-items: center; gap: 3.5rem; max-width: 1000px; margin: 0 auto;
+  }
+  .certificado-visual { flex-shrink: 0; }
+  .certificado-visual img {
+    width: 300px; border-radius: 10px; box-shadow: 0 18px 40px rgba(10,46,26,0.18);
+    transform: rotate(-3deg); border: 6px solid white; display: block;
+  }
+  .certificado-copy { flex: 1; text-align: left; }
+  .certificado-copy h2 { margin-bottom: 0.9rem; }
+  .certificado-copy > p { color: var(--slate); margin-bottom: 1.25rem; max-width: 480px; }
+  .certificado-features { list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .certificado-features li {
+    display: flex; align-items: center; gap: 10px; font-size: 0.92rem; color: var(--charcoal);
+  }
+  .certificado-features svg { width: 18px; height: 18px; color: var(--green-mid); flex-shrink: 0; }
+  .certificado-verify { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--green-mid); text-decoration: none; font-weight: 600; }
+  .certificado-verify:hover { color: var(--green-deep); }
+  @media (max-width: 720px) {
+    .certificado-inner { flex-direction: column; text-align: center; gap: 2rem; }
+    .certificado-copy { text-align: center; }
+    .certificado-copy > p { margin-left: auto; margin-right: auto; }
+    .certificado-features { align-items: center; }
+    .certificado-visual { width: 100%; }
+    .certificado-visual img { width: 100%; max-width: 420px; height: auto; transform: rotate(0deg); }
+  }
+
+  .servicios { background: var(--cream); }
+  .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .servicio-card {
+    background: white; border-radius: 20px;
+    border: 1px solid var(--border); padding: 2rem;
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .servicio-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: linear-gradient(90deg, var(--green-mid), var(--green-light));
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .servicio-card:hover { transform: translateY(-4px); border-color: var(--green-pale); }
+  .servicio-card:hover::before { opacity: 1; }
+  .servicio-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--green-mist); border: 1px solid var(--green-pale); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.25rem; }
+  .servicio-card h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.15rem; font-weight: 400; color: var(--green-deep); margin-bottom: 0.75rem; }
+  .servicio-card p { font-size: 0.93rem; color: var(--slate); line-height: 1.7; }
+  .servicio-card ul { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 6px; }
+  .servicio-card ul li { font-size: 0.88rem; color: var(--slate); display: flex; align-items: flex-start; gap: 8px; }
+  .servicio-card ul li::before { content: '✓'; color: var(--green-mid); font-weight: 600; flex-shrink: 0; margin-top: 1px; }
+  .servicio-popular { position: absolute; top: 1.25rem; right: 1.25rem; background: var(--green-pale); color: var(--green-mid); padding: 4px 12px; border-radius: 100px; font-size: 0.72rem; font-weight: 500; }
+
+  .temario { background: var(--green-mist); }
+  .temario-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
+  .temario-item { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; transition: border-color 0.2s; }
+  .temario-item:hover { border-color: var(--green-light); }
+  .temario-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-mid); width: 28px; flex-shrink: 0; }
+  .temario-text h3 { font-size: 0.88rem; font-weight: 500; color: var(--green-deep); }
+  .temario-text p { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+
+  .metodologia { background: white; }
+  .metodo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+  .metodo-steps { display: flex; flex-direction: column; gap: 0; }
+  .metodo-step { display: flex; gap: 1.5rem; position: relative; padding-bottom: 2rem; }
+  .metodo-step:last-child { padding-bottom: 0; }
+  .metodo-step::before { content: ''; position: absolute; left: 19px; top: 40px; bottom: 0; width: 1px; background: var(--border); }
+  .metodo-step:last-child::before { display: none; }
+  .step-circle { width: 40px; height: 40px; border-radius: 50%; background: var(--green-pale); border: 2px solid var(--green-light); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 0.9rem; font-weight: 600; color: var(--green-mid); flex-shrink: 0; }
+  .step-content h3 { font-size: 0.95rem; font-weight: 500; color: var(--green-deep); margin-bottom: 4px; }
+  .step-content p { font-size: 0.92rem; color: var(--slate); line-height: 1.7; }
+  .metodo-features { background: var(--green-deep); border-radius: 24px; padding: 2.5rem; color: white; }
+  .metodo-features h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.3rem; font-weight: 300; margin-bottom: 1.5rem; color: white; }
+  .feature-row { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .feature-row:last-child { border: none; }
+  .feature-icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+  .feature-text { font-size: 0.93rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+  .feature-text strong { color: white; font-weight: 500; }
+
+  .faq-testi { background: var(--cream); }
+  .faq-testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .faq-col, .testi-col {}
+  .faq-list { margin-top: 2.5rem; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 1.5rem 0; cursor: pointer; }
+  .faq-q { font-size: 1rem; font-weight: 500; color: var(--green-deep); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .faq-q::after { content: '+'; color: var(--green-mid); font-size: 1.2rem; flex-shrink: 0; }
+  .faq-a { font-size: 0.93rem; color: var(--slate); line-height: 1.8; margin-top: 0.75rem; display: none; }
+  .faq-a a { color: var(--green-mid); text-decoration: underline; }
+  .faq-item.open .faq-q::after { content: '−'; }
+  .faq-item.open .faq-a { display: block; }
+  .testi-stack { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
+  .testi-card { background: white; border-radius: 20px; border: 1px solid var(--border); padding: 1.5rem; }
+  .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; }
+  .testi-text { font-size: 0.93rem; color: var(--slate); line-height: 1.8; font-style: italic; margin-bottom: 1.25rem; }
+  .testi-author { display: flex; align-items: center; gap: 10px; }
+  .testi-avatar { width: 36px; height: 36px; border-radius: 50%; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 0.85rem; font-weight: 600; color: var(--green-mid); }
+  .testi-name { font-size: 0.85rem; font-weight: 500; color: var(--green-deep); }
+  .testi-role { font-size: 0.75rem; color: var(--muted); }
+
+  .keywords-seo { background: var(--green-deep); padding: 4rem 5%; }
+  .keywords-seo h2 { color: white; margin-bottom: 2rem; }
+  .kw-list { display: flex; flex-wrap: wrap; gap: 10px; }
+  .kw-tag { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.75); padding: 6px 16px; border-radius: 100px; font-size: 0.82rem; border: 1px solid rgba(255,255,255,0.15); transition: all 0.2s; }
+  .kw-tag:hover { background: rgba(255,255,255,0.15); color: white; }
+  .keywords-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; margin-top: 0; }
+  .keywords-grid-divider { width: 1px; background: rgba(255,255,255,0.1); }
+
+  .cta-final { background: white; padding: 3.5rem 5%; }
+  .cta-box { max-width: 960px; margin: 0 auto; background: var(--green-deep); border-radius: 28px; padding: 3rem 0 3rem 3.5rem; overflow: hidden; }
+  .cta-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .cta-text { text-align: left; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .cta-text .btn-white { align-self: center; }
+  .cta-text h2 { color: white; }
+  .cta-text h2 em { color: var(--green-light); }
+  .cta-text p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 0.95rem; }
+  .cta-img { display: flex; justify-content: flex-end; }
+  .cta-img img { width: 100%; border-radius: 16px; display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+  .cta-box h2 { color: white; margin-bottom: 1rem; }
+  .cta-box p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; font-size: 0.95rem; }
+  .btn-white { background: white; color: var(--green-deep); padding: 14px 36px; border-radius: 100px; text-decoration: none; font-weight: 600; font-size: 0.95rem; display: inline-block; transition: all 0.2s; }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+
+  .nav-sobre-mi { display: none; }
+  .nav-precios-cta { display: none; }
+  .wa-icon { display: none; }
+  .trust-superprof { text-decoration: none; }
+  .superprof-badge { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1rem; font-weight: 600; color: var(--gold); line-height: 1; }
+  .trust-ms { text-decoration: none; }
+  .ms-badge { display: flex; align-items: center; gap: 5px; font-size: 0.88rem; font-weight: 600; color: var(--green-deep); line-height: 1; }
+
+  /* Floating WhatsApp button - mobile only */
+  .whatsapp-float {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      display: flex;
+      align-items: center; gap: 10px;
+      position: fixed; bottom: 20px; right: 16px; z-index: 999;
+      background: #0E8143; color: white;
+      padding: 13px 20px; border-radius: 100px;
+      font-size: 0.95rem; font-weight: 600;
+      box-shadow: 0 4px 20px rgba(14,129,67,0.45);
+      text-decoration: none;
+    }
+    .whatsapp-float svg { width: 22px; height: 22px; flex-shrink: 0; }
+  }
+
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; padding: 1.4rem 5% 2rem; }
+    .hero-visual { display: none; }
+    .hero-desc-row { display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; margin-bottom: 0; }
+    .hero-content { min-width: 0; }
+    .hero-desc-row, .hero-desc { min-width: 0; }
+    .hero-desc { font-size: 0.98rem; margin-bottom: 0.6rem; }
+    .hero-live-note { font-size: clamp(0.72rem, 3.5vw, 0.88rem); justify-content: center; white-space: nowrap; margin: 0.5rem 0 0.75rem; }
+    .hero-live-note::before { content: none; }
+    .hero-badge { display: table; margin: 0 auto 1.1rem; border-radius: 14px; padding: 6px 14px; text-align: center; line-height: 1.45; font-size: 0.78rem; }
+    .badge-br { display: inline; }
+    .badge-dot-mid { display: none; }
+    .hero-photo-col { display: flex !important; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .hero-photo-mobile { display: block; width: 115px; height: 115px; border-radius: 50%; object-fit: cover; object-position: center top; border: 3px solid var(--green-light); flex-shrink: 0; }
+    .ms-badge-under-photo { display: flex !important; align-items: center; gap: 4px; font-size: 0.7rem; font-weight: 600; color: var(--green-deep); text-decoration: none; white-space: nowrap; }
+    .hero-price-hint { font-size: 0.88rem; color: var(--muted); margin-top: 0.4rem; margin-bottom: 0; }
+    .hero-urgency { display: block; font-size: 0.85rem; margin-top: 0.25rem; text-align: center; }
+    .hero-price-hint strong { color: var(--green-deep); }
+    .hero-trust { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem; margin-top: 1.25rem; }
+    .trust-ms { display: none; }
+    .hero-trust .trust-item, .hero-trust a.trust-item { padding: 0.5rem; margin: -0.5rem; }
+    .video-mobile { display: block; text-align: center; padding: 0.75rem 6% 2.25rem; }
+    .video-mobile h2 { font-size: 1.5rem; margin-bottom: 1.1rem; }
+    .video-mobile .hero-video-wrap { max-width: 480px; margin: 0 auto; }
+    section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    .enfoque-8020 { padding-top: 2rem; padding-bottom: 2rem; }
+    .coste-inaccion { padding: 2.25rem 6%; }
+    .coste-chain { gap: 0.4rem; }
+    .coste-arrow { display: none; }
+    .coste-step { flex-direction: row; gap: 5px; }
+    .coste-num { font-size: 1.15rem; }
+    .coste-label { margin-top: 0; }
+    .coste-final { padding: 1rem 1.25rem; }
+    .coste-final p { font-size: 0.9rem; }
+    .coste-hook { font-size: 1.05rem; }
+    .trust-divider { display: none; }
+    .trust-item { min-width: unset; }
+    .metodo-grid { grid-template-columns: 1fr; }
+    .temario-cols { grid-template-columns: 1fr; }
+    .precios-grid { flex-direction: column; }
+    .precio-pill { min-width: 100%; transform: none !important; }
+    .faq-testi-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .cta-box { padding: 2.5rem 1.75rem; }
+    .cta-inner { grid-template-columns: 1fr; }
+    .cta-text { text-align: center; align-items: center; }
+    .nav-links { display: none; }
+    .nav-logo { display: none; }
+    .nav-sobre-mi { display: none; }
+    .nav-precios-cta { display: none; }
+    .nav-cta { display: none; }
+    nav { justify-content: center; height: 48px; }
+    .nav-mobile-badge {
+      display: table; margin: 0 auto; text-align: center; line-height: 1.35;
+      background: var(--green-pale); color: var(--green-mid);
+      padding: 5px 14px; border-radius: 14px;
+      font-size: 0.72rem; font-weight: 500;
+    }
+    .hero-badge { display: none; }
+    .hero { padding-top: 0.9rem; }
+    .hero-quickfeat {
+      display: block; text-align: center; white-space: nowrap;
+      font-size: clamp(1rem, 5.5vw, 1.3rem); font-weight: 700;
+      color: var(--green-mid); margin: 0 0 0.4rem;
+    }
+    .hero-wa-hint { font-size: 0.78rem; margin-top: 0.4rem; }
+    .btn-ghost--sobre-mi { display: none; }
+    .hero-actions { justify-content: center; }
+    .btn-primary { border-radius: 6px; width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .wa-icon { display: inline-block; width: 18px; height: 18px; flex-shrink: 0; }
+    .precio-cta { display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .btn-white { display: flex; align-items: center; justify-content: center; gap: 8px; }
+    h1 { font-size: 1.7rem; margin-bottom: 1rem; text-align: center; }
+    .ocho-grid { flex-direction: column; }
+    .ocho-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .ocho-card:last-child { border-bottom: none; }
+    .ocho-arrow { transform: rotate(90deg); padding: 0; height: 2rem; }
+    .problemas-grid { grid-template-columns: repeat(2, 1fr); }
+    .keywords-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .keywords-grid p:nth-child(2), .keywords-grid p:nth-child(3) { border-left: none !important; padding-left: 0 !important; }
+    .keywords-grid p { border-left: none !important; padding-left: 0 !important; }
+  }
+
+  .precios { background: var(--cream); }
+  .precios-grid { display: flex; gap: 1.25rem; margin-top: 3rem; flex-wrap: wrap; }
+  .precio-pill {
+    flex: 1; min-width: 220px;
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 24px; padding: 2rem 1.75rem;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 0.5rem; position: relative;
+    transition: all 0.3s;
+  }
+  .precio-pill:hover { transform: translateY(-4px); border-color: var(--green-light); box-shadow: 0 8px 32px rgba(45,134,83,0.12); }
+  .precio-pill--popular {
+    background: var(--green-deep); border-color: var(--green-deep);
+    transform: scale(1.04);
+  }
+  .precio-pill--popular:hover { transform: scale(1.04) translateY(-4px); }
+  .precio-pill--diagnostico { border-color: var(--gold); border-width: 2px; }
+  .precio-pill--diagnostico .precio-badge { background: var(--gold); }
+  .precio-pill--diagnostico .precio-amount { color: var(--green-mid); }
+  .precio-badge {
+    position: absolute; top: -14px;
+    background: var(--green-light); color: var(--green-deep);
+    padding: 4px 16px; border-radius: 100px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em;
+  }
+  .precio-horas { font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-top: 0.5rem; }
+  .precio-pill--popular .precio-horas { color: rgba(255,255,255,0.6); }
+  .precio-amount {
+    font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 3rem; font-weight: 600;
+    color: var(--green-deep); line-height: 1;
+  }
+  .precio-amount span { font-size: 1rem; font-weight: 400; color: var(--muted); }
+  .precio-pill--popular .precio-amount { color: white; }
+  .precio-pill--popular .precio-amount span { color: rgba(255,255,255,0.6); }
+  .precio-descuento { font-size: 0.78rem; font-weight: 500; color: var(--green-mid); background: var(--green-pale); padding: 3px 12px; border-radius: 100px; }
+  .precio-pill--popular .precio-descuento { background: rgba(77,184,122,0.2); color: var(--green-light); }
+  .precio-desc { font-size: 0.9rem; color: var(--slate); line-height: 1.5; }
+  .precio-pill--popular .precio-desc { color: rgba(255,255,255,0.65); }
+  .precio-cta {
+    margin-top: 0.75rem; width: 100%;
+    background: var(--green-mid); color: white;
+    padding: 10px 0; border-radius: 100px;
+    text-decoration: none; font-size: 0.88rem; font-weight: 500;
+    transition: background 0.2s; display: block;
+  }
+  .precio-cta:hover { background: var(--green-deep); }
+  .precio-pill--popular .precio-cta { background: white; color: var(--green-deep); }
+  .precio-pill--popular .precio-cta:hover { background: var(--green-pale); }
+
+  .quien-soy { background: white; }
+  .timeline { margin-top: 2.5rem; max-width: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 2rem; }
+  .timeline-item { break-inside: avoid; display: flex; gap: 1rem; position: relative; padding-bottom: 0; }
+  .timeline-icon {
+    width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+    background: var(--green-mist); border: 2px solid var(--green-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; position: relative; z-index: 1;
+  }
+  .timeline-content { flex: 1; padding-top: 2px; }
+  .timeline-date { font-size: 0.74rem; color: var(--muted); margin-bottom: 2px; }
+  .timeline-role { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green-soft); margin-bottom: 3px; }
+  .timeline-content h3 { font-family: 'DM Sans', 'DM Sans Fallback', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--charcoal); margin-bottom: 4px; }
+  .timeline-content p { font-size: 0.87rem; color: var(--slate); line-height: 1.6; }
+  .timeline-more { display: inline; }
+  @media (max-width: 768px) {
+    .timeline { display: block; margin-top: 2rem; }
+    .timeline-item { padding-bottom: 1.5rem; gap: 0.85rem; }
+    .timeline-icon { width: 36px; height: 36px; font-size: 1.05rem; }
+    .timeline-item:not(:last-child) .timeline-icon::after {
+      content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      width: 1px; height: 1.4rem; background: var(--border);
+    }
+    .timeline-content p { font-size: 0.85rem; }
+    .timeline-more { display: none; }
+  }
+
+  .animate-in { opacity: 0; transform: translateY(20px); animation: fadeUp 0.6s ease forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+  .sector-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem auto 0; max-width: 760px; justify-content: center; }
+  .sector-chip {
+    display: inline-flex; align-items: center; font-size: 0.8rem; font-weight: 500;
+    background: white; color: var(--green-mid); border: 1px solid var(--green-pale);
+    padding: 6px 14px; border-radius: 100px;
+  }
+
+  .temario-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  .temario-detail-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem 1.75rem; }
+  .temario-detail-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 0.9rem; }
+  .temario-detail-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-weight: 600; font-size: 1.15rem; color: var(--green-light); flex-shrink: 0; }
+  .temario-detail-card h3 { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-weight: 500; font-size: 1.05rem; color: var(--green-deep); }
+  .temario-detail-card ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+  .temario-detail-card li { font-size: 0.88rem; color: var(--slate); line-height: 1.5; padding-left: 1.1rem; position: relative; }
+  .temario-detail-card li::before { content: '✓'; position: absolute; left: 0; color: var(--green-mid); font-weight: 700; font-size: 0.8rem; }
+  .agenda-directa { background: var(--cream); text-align: center; }
+  .agenda-directa .section-lead { max-width: 560px; margin: 0 auto; }
+  .agenda-directa .cal-inline-widget {
+    position: relative;
+    max-width: 480px; min-width: 320px; height: 720px;
+    margin: 2.5rem auto 0; border-radius: 16px; overflow: auto;
+    box-shadow: 0 8px 32px rgba(10,46,26,0.1);
+  }
+  @media (max-width: 640px) {
+    .agenda-directa .cal-inline-widget { height: 720px; }
+  }
+  .cal-loading {
+    position: absolute; inset: 0; z-index: 1;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.85rem; background: #faf8f3;
+    transition: opacity 0.25s ease;
+  }
+  .cal-loading.is-hidden { opacity: 0; pointer-events: none; }
+  .cal-spinner {
+    width: 34px; height: 34px; border-radius: 50%;
+    border: 3px solid rgba(10,46,26,0.15); border-top-color: var(--green-mid);
+    animation: cal-spin 0.8s linear infinite;
+  }
+  @keyframes cal-spin { to { transform: rotate(360deg); } }
+  .cal-loading p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+  .hero-pricebox{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin:1.25rem 0 .25rem;padding:1rem 1.25rem;background:var(--green-mist);border:1px solid var(--green-pale);border-radius:16px;width:fit-content;max-width:100%}
+  .hero-pricebox .price{font-family:'Fraunces','Fraunces Fallback',serif;font-size:2.4rem;font-weight:600;color:var(--green-deep);line-height:1}
+  .hero-pricebox .price-note{font-size:.9rem;color:var(--slate);font-weight:500}
+  .hero-card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:1.75rem;box-shadow:0 18px 50px -20px rgba(10,46,26,.35)}
+  .hero-card h2{font-size:1.25rem;margin:0 0 1rem;color:var(--green-deep)}
+  .hero-card ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.7rem}
+  .hero-card li{display:flex;gap:.75rem;align-items:flex-start;font-size:.95rem;color:var(--slate);line-height:1.45}
+  .hero-card li::before{content:'✓';flex:none;width:22px;height:22px;border-radius:50%;background:var(--green-mid);color:#fff;display:grid;place-items:center;font-size:.75rem;font-weight:700;margin-top:1px}
+  .paraquien{background:#fff;padding:5rem 5%}
+  .paraquien .inner{max-width:1000px;margin:0 auto;text-align:center}
+  .pq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem;text-align:left}
+  .pq-card{border:1px solid var(--border);border-radius:20px;padding:1.75rem;background:var(--cream)}
+  .pq-card h3{font-family:'Fraunces','Fraunces Fallback',serif;font-size:1.3rem;font-weight:600;color:var(--green-deep);margin:0 0 .6rem}
+  .pq-card p{margin:0;color:var(--slate);line-height:1.7;font-size:.96rem}
+  .pq-req{margin:1.5rem auto 0;max-width:640px;font-size:.92rem;color:var(--slate)}
+  .cmp-sec{background:var(--cream);padding:5rem 5%}
+  .cmp-sec .inner{max-width:900px;margin:0 auto;text-align:center}
+  .cmp-wrap{overflow-x:auto;margin-top:2.25rem;border-radius:18px;background:#fff;box-shadow:0 8px 32px rgba(10,46,26,.1);text-align:left}
+  .cmp-wrap table{width:100%;border-collapse:collapse;min-width:560px;font-size:.95rem}
+  .cmp-wrap th,.cmp-wrap td{padding:.95rem 1.15rem;border-bottom:1px solid var(--border);vertical-align:top}
+  .cmp-wrap thead th{background:var(--green-deep);color:#fff;font-weight:600}
+  .cmp-wrap thead th.us{background:var(--gold);color:var(--green-deep)}
+  .cmp-wrap td.us{background:#faf5e4;font-weight:600;color:var(--green-deep)}
+  .cmp-wrap td:first-child{font-weight:600;color:var(--green-deep)}
+  .cmp-wrap td.mid{color:var(--slate)}
+  .oferta{background:var(--green-deep);padding:5rem 5%}
+  .oferta .inner{max-width:760px;margin:0 auto;text-align:center}
+  .oferta .section-tag{color:var(--green-light)}
+  .oferta h2{color:#fff}.oferta h2 em{color:var(--green-light)}
+  .oferta-card{margin-top:2rem;background:#fff;border:3px solid var(--gold);border-radius:24px;padding:2.25rem;text-align:left;box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+  .oferta-card h3{font-family:'Fraunces','Fraunces Fallback',serif;font-size:1.3rem;font-weight:600;margin:0 0 .75rem;color:var(--green-deep)}
+  .oferta-card ul{list-style:none;padding:0;margin:0 0 1.5rem}
+  .oferta-card li{display:flex;gap:.75rem;padding:.7rem 0;border-bottom:1px dashed var(--border);color:var(--slate);line-height:1.5}
+  .oferta-card li:last-child{border:0}
+  .oferta-card li::before{content:'✓';flex:none;width:22px;height:22px;border-radius:50%;background:var(--green-mid);color:#fff;display:grid;place-items:center;font-size:.75rem;font-weight:700;margin-top:2px}
+  .oferta-price{display:flex;align-items:baseline;justify-content:center;gap:.8rem;flex-wrap:wrap;margin:.25rem 0 1.25rem}
+  .oferta-price .amount{font-family:'Fraunces','Fraunces Fallback',serif;font-size:3.6rem;font-weight:600;color:var(--green-deep);letter-spacing:-.03em;line-height:1}
+  .oferta-price .per{font-weight:600;color:var(--slate)}
+  .oferta-card .btn-primary{display:flex;justify-content:center;width:100%}
+  .oferta-note{margin:1rem 0 0;font-size:.88rem;color:var(--slate);text-align:center}
+  .faq-testi-grid{grid-template-columns:1fr !important;max-width:820px;margin:0 auto}
+  @media (max-width:760px){.pq-grid{grid-template-columns:1fr}.oferta-card{padding:1.5rem}.oferta-price .amount{font-size:3rem}}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNRMBXCM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <a href="/" class="nav-logo"><img src="/logo-pe.png" alt="" class="nav-logo-mark" width="28" height="28">Excel con Jhony</a>
+  <ul class="nav-links">
+    <li><a href="#temario">Temario</a></li>
+    <li><a href="#oferta">Precio</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#agenda-directa" class="nav-cta">Reservar llamada →</a>
+  <div class="nav-mobile-badge"><span>Directivos y analistas · 1:1 · 30 h</span></div>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="hero-content animate-in">
+    <div role="navigation" aria-label="Ruta de navegación" style="font-size:.82rem;color:var(--muted);margin-bottom:.75rem"><a href="/" style="color:inherit">Excel con Jhony</a> › Curso de Excel para directivos</div>
+    <div class="hero-badge"><span>Directivos y analistas<span class="badge-dot-mid"> · </span><br class="badge-br">1:1 · A medida</span></div>
+    <p class="hero-quickfeat">⚡ <strong>Decide con tus propios datos</strong></p>
+    <h1>Curso de Excel avanzado para directivos y analistas de negocio.</h1>
+    <div class="hero-desc-row">
+      <p class="hero-desc">
+        Programa individual de 30 horas para directivos y analistas que ya usan Excel y necesitan analizar, automatizar y presentar datos con criterio profesional: tablas dinámicas, Power Query, dashboards, Power BI e IA aplicada. Trabajas sobre tus propios archivos, no sobre ejercicios de manual.
+      </p>
+      <div class="hero-photo-col">
+        <img loading="lazy" decoding="async" src="/profesor-de-excel-online-thumb.jpg" alt="Jhony Escobar, profesor de Excel online" class="hero-photo-mobile" width="115" height="115" />
+        <a href="https://www.credly.com/badges/1c1f769f-8c03-463f-9133-9019380efc4a/public_url" target="_blank" rel="noopener" class="ms-badge-under-photo" aria-label="Microsoft Excel Expert: verificar certificación en Credly">
+          <svg width="12" height="12" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="0" y="0" width="10" height="10" fill="#F25022"/><rect x="11" y="0" width="10" height="10" fill="#7FBA00"/><rect x="0" y="11" width="10" height="10" fill="#00A4EF"/><rect x="11" y="11" width="10" height="10" fill="#FFB900"/></svg>
+          <span>Microsoft Excel Expert</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-pricebox"><span class="price">580 €</span><span class="price-note">Programa completo · 30 horas · 1:1 online</span></div>
+    <p class="hero-live-note">Programa a medida, definido en una llamada.</p>
+    <div class="hero-actions">
+      <a href="#agenda-directa" class="btn-primary">Reserva tu llamada de 15 min →</a>
+      <a href="#temario" class="btn-ghost">Ver el temario</a>
+    </div>
+    <p class="hero-wa-hint">Llamada gratuita y sin compromiso.</p>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-num">+200</span><span class="trust-label">Alumnos formados</span></div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><span class="trust-num">98%</span><span class="trust-label">Satisfacción en Superprof</span></div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><span class="trust-num">+15 años</span><span class="trust-label">De experiencia</span></div>
+      <div class="trust-divider"></div>
+      <a href="https://www.superprof.es/clases-excel-particulares-desde-basico-avanzado-profesor-certificado-resultados-garantizados.html" target="_blank" rel="noopener" class="trust-item trust-superprof"><span class="superprof-badge">⭐ Súper Profesor</span><span class="trust-label">en Superprof</span></a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card">
+      <h2>Tu programa en cifras</h2>
+      <ul>
+        <li><span><strong>30 horas</strong> de clases 1:1 en directo, online</span></li>
+        <li><span><strong>580 €</strong> el programa completo (19,33 € por hora)</span></li>
+        <li><span>Plan de estudios <strong>a medida</strong> de tu puesto</span></li>
+        <li><span>Grabación de cada clase y <strong>certificado</strong> de finalización</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="valor-strip">
+ <div class="valor-strip-inner">
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    <span>Clases personalizadas 1:1</span>
+  </div>
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-4v12l-6-4"/></svg>
+    <span>Grabaciones de cada clase</span>
+  </div>
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 3 5v16l6-2 6 2 6-2V3l-6 2-6-2z"/><path d="M9 3v16"/><path d="M15 5v16"/></svg>
+    <span>Plan de estudios personalizado</span>
+  </div>
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/></svg>
+    <span>Archivos de trabajo propio</span>
+  </div>
+  <div class="valor-chip">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>
+    <span>Metodología 80/20</span>
+  </div>
+  <div class="valor-chip valor-chip--certificado">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg>
+    <span>Certificado de finalización incluido</span>
+  </div>
+ </div>
+</section>
+
+<section class="paraquien" id="para-quien">
+  <div class="inner">
+    <div class="section-tag">Para quién es</div>
+    <h2>Pensado para quien <em>decide y analiza</em> con datos</h2>
+    <p class="section-lead" style="margin:0 auto;">Un programa individual para dos perfiles que trabajan con números cada día.</p>
+    <div class="pq-grid">
+      <div class="pq-card">
+        <h3>Directivos y mandos</h3>
+        <p>Quieres leer, cuestionar y presentar tus propios números sin depender de que otro te prepare el informe. Construyes cuadros de mando con tus datos y aprendes a interpretar tablas dinámicas, gráficos y análisis de punto de equilibrio.</p>
+      </div>
+      <div class="pq-card">
+        <h3>Analistas de negocio</h3>
+        <p>Ya usas Excel a diario y quieres automatizar la preparación de datos con Power Query, estructurar análisis (Pareto, CAGR, break-even) y llevar el resultado a dashboards y a Power BI.</p>
+      </div>
+    </div>
+    <p class="pq-req"><strong>Requisito:</strong> dominar Excel a nivel intermedio. Power Query y Power BI se explican desde cero.</p>
+  </div>
+</section>
+
+<section class="certificado-section">
+  <div class="certificado-inner">
+    <div class="certificado-visual">
+      <img src="/diploma-preview.jpg" alt="Certificado de finalización — Excel con Jhony" width="300" height="212" loading="lazy">
+    </div>
+    <div class="certificado-copy">
+      <div class="section-tag">Al terminar el programa</div>
+      <h2>Certificado de <em>finalización</em> incluido</h2>
+      <p>Al terminar el programa recibes un certificado con tu nombre, las horas cursadas y el temario exacto visto — tu nivel avanzado, documentado y demostrable.</p>
+      <ul class="certificado-features">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Horas y temario exactos que cursaste</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Firmado por tu profesor, Microsoft Excel Expert</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Verificable con código QR — sin dudas de autenticidad</li>
+      </ul>
+      <a href="/verificar-certificado/" class="certificado-verify">Verificar un certificado <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="temario" id="temario">
+  <div class="section-tag">Contenidos</div>
+  <h2>El temario del programa, <em>bloque a bloque</em></h2>
+  <p class="section-lead">Diez bloques para quien ya domina Excel y necesita analizar, automatizar y presentar datos a nivel profesional. En la llamada inicial decidimos cuáles trabajar más.</p>
+  <div class="temario-detail-grid">
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">01</span>
+        <h3>Base sólida y productividad</h3>
+      </div>
+      <ul>
+        <li>Atajos de teclado esenciales y relleno mágico (Ctrl+E)</li>
+        <li>Formatos de celda, validación de datos y filtros avanzados</li>
+        <li>Extracción de ficheros CSV (texto en columnas)</li>
+        <li>Nombres de rango</li>
+      </ul>
+    </div>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">02</span>
+        <h3>Fórmulas clave</h3>
+      </div>
+      <ul>
+        <li>SI, Y / O y SI.ERROR</li>
+        <li>BUSCARV y BUSCARX</li>
+        <li>SUMAR.SI y CONTAR.SI</li>
+        <li>IZQUIERDA, DERECHA, EXTRAE, ENCONTRAR, SUSTITUIR y TEXTO</li>
+        <li>Fechas, ÚNICOS y FILTRAR</li>
+      </ul>
+    </div>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">03</span>
+        <h3>Tablas dinámicas avanzadas</h3>
+      </div>
+      <ul>
+        <li>Formatos de tabla (Ctrl+T) y creación de tablas dinámicas</li>
+        <li>Formatos condicionales y segmentaciones</li>
+        <li>Campos calculados</li>
+        <li>Análisis comparativo y actualización de datos</li>
+      </ul>
+    </div>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">04</span>
+        <h3>Gráficos para presentar</h3>
+      </div>
+      <ul>
+        <li>Tipos de gráficos y sus usos</li>
+        <li>Gráficos de 2 ejes y cascada (Waterfall)</li>
+        <li>Real vs. Objetivo</li>
+        <li>Gantt y Timeline</li>
+        <li>Gráficos dinámicos e interactivos con controles</li>
+      </ul>
+    </div>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">05</span>
+        <h3>Power Query</h3>
+      </div>
+      <ul>
+        <li>Concepto de ETL</li>
+        <li>Importación de datos</li>
+        <li>Limpieza de datos</li>
+        <li>Combinar y apilar datos</li>
+        <li>Extraer datos estructurados desde una página web</li>
+      </ul>
+    </div>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">06</span>
+        <h3>Business Analytics</h3>
+      </div>
+      <ul>
+        <li>Análisis de Pareto (80/20)</li>
+        <li>Punto de equilibrio (Break-even)</li>
+        <li>CAGR</li>
+        <li>Plantilla de gestión de sprints y proyectos Agile</li>
+      </ul>
+    </div>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">07</span>
+        <h3>Dashboards</h3>
+      </div>
+      <ul>
+        <li>Metodología y construcción de un dashboard</li>
+        <li>Hacer que Excel parezca una app</li>
+      </ul>
+    </div>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">08</span>
+        <h3>IA en Excel</h3>
+      </div>
+      <ul>
+        <li>Integración de asistentes de IA (como ChatGPT) en Excel</li>
+        <li>Framework «Create» para tareas en Excel</li>
+        <li>Automatizaciones con IA</li>
+      </ul>
+    </div>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">09</span>
+        <h3>Seguridad en Excel</h3>
+      </div>
+      <ul>
+        <li>Protección de hojas y rangos</li>
+        <li>Protección de libro</li>
+      </ul>
+    </div>
+    <div class="temario-detail-card">
+      <div class="temario-detail-head">
+        <span class="temario-detail-num">10</span>
+        <h3>Dashboard en Power BI</h3>
+      </div>
+      <ul>
+        <li>Construcción de un dashboard en Power BI</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="enfoque-8020" style="padding-top:0;">
+  <div class="section-tag">Para cualquier sector</div>
+  <h2>Se adapta a <em>tu área</em>, sea cual sea</h2>
+  <p class="section-lead" style="margin:0 auto;">El temario y la metodología son los mismos — los datos y los casos prácticos se adaptan al área en la que diriges o analizas:</p>
+  <div class="sector-chips">
+    <span class="sector-chip">Hostelería</span>
+    <span class="sector-chip">Financiero</span>
+    <span class="sector-chip">Comercial</span>
+    <span class="sector-chip">Digital</span>
+    <span class="sector-chip">Producción</span>
+    <span class="sector-chip">Administración</span>
+    <span class="sector-chip">Educación</span>
+    <span class="sector-chip">Sanidad</span>
+  </div>
+</section>
+
+<section class="cmp-sec" id="comparativa">
+  <div class="inner">
+    <div class="section-tag">Compara</div>
+    <h2>Programa 1:1 a medida frente a <em>un curso en grupo</em></h2>
+    <div class="cmp-wrap">
+      <table>
+        <caption class="sr-only" style="position:absolute;left:-9999px">Comparativa entre el programa individual de 30 horas y un curso de Excel en grupo</caption>
+        <thead><tr><th scope="col">Lo que necesitas</th><th scope="col" class="us">Programa 1:1 de 30 h</th><th scope="col">Curso en grupo</th></tr></thead>
+        <tbody>
+          <tr><td>Formato</td><td class="us">Tú y yo, en directo y online</td><td class="mid">Grupo de varios alumnos</td></tr>
+          <tr><td>Datos de trabajo</td><td class="us">Tus archivos y casos reales</td><td class="mid">Ejercicios comunes para todos</td></tr>
+          <tr><td>Temario</td><td class="us">Ajustado a tu puesto y a tu punto de partida</td><td class="mid">Fijo para todo el grupo</td></tr>
+          <tr><td>Calendario</td><td class="us">Lo acordamos contigo</td><td class="mid">Fechas y horario del grupo</td></tr>
+          <tr><td>Grabaciones</td><td class="us">De cada clase</td><td class="mid">Según el centro</td></tr>
+          <tr><td>Certificado</td><td class="us">Con horas y temario exactos, verificable con QR</td><td class="mid">Según el centro</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="oferta" id="oferta">
+  <div class="inner">
+    <div class="section-tag">Tu programa</div>
+    <h2>Programa de Excel avanzado de <em>30 horas</em>, a tu medida</h2>
+    <div class="oferta-card">
+      <h3>Qué incluye</h3>
+      <ul>
+        <li><span><strong>30 horas de clases 1:1</strong> en directo y online, solo para ti.</span></li>
+        <li><span><strong>Plan de estudios a medida</strong>, definido contigo en la llamada inicial.</span></li>
+        <li><span><strong>Trabajo sobre tus propios archivos</strong> y datos reales.</span></li>
+        <li><span><strong>Grabación de cada clase</strong> para repasar cuando quieras.</span></li>
+        <li><span><strong>Certificado de finalización</strong> con tus horas y el temario exacto, verificable con código QR.</span></li>
+      </ul>
+      <div class="oferta-price"><span class="amount">580 €</span><span class="per">programa completo · 19,33 € por hora</span></div>
+      <a href="#agenda-directa" class="btn-primary">Reserva tu llamada de 15 min →</a>
+      <p class="oferta-note">Primero la llamada gratuita; si el programa encaja contigo, acordamos calendario y forma de pago.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq-testi" id="faq">
+  <div class="faq-testi-grid">
+    <div class="faq-col">
+      <div class="section-tag">Preguntas frecuentes</div>
+      <h2>Todo lo que necesitas <em>saber</em></h2>
+      <div class="faq-list">
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Cuánto cuesta el curso de Excel avanzado para directivos y analistas?</h3>
+          <div class="faq-a">El programa completo cuesta 580 € por 30 horas de clases individuales online, lo que equivale a 19,33 € por hora.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Qué incluye el programa de 30 horas?</h3>
+          <div class="faq-a">Incluye 30 horas de clases 1:1 en directo, un plan de estudios a medida, trabajo sobre tus propios archivos, la grabación de cada clase y un certificado de finalización con las horas y el temario exactos cursados, verificable con código QR.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Cómo se organizan las 30 horas?</h3>
+          <div class="faq-a">Son 30 horas de clase en directo, de tú a tú, con calendario y ritmo que acordamos contigo. En una llamada previa de 15 minutos definimos tus objetivos y qué bloques del temario trabajar más.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Qué temario incluye el curso de Excel avanzado?</h3>
+          <div class="faq-a">Fórmulas clave de búsqueda y texto, tablas dinámicas avanzadas, gráficos para presentar, Power Query, Business Analytics (Pareto, punto de equilibrio, CAGR), dashboards, IA aplicada a Excel, seguridad y un dashboard en Power BI.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Es un curso en grupo?</h3>
+          <div class="faq-a">No. Es un programa individual: las clases son solo para ti, con tus archivos y datos reales, y el temario se ajusta a tu puesto y a tu punto de partida.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Qué nivel de Excel necesito para empezar?</h3>
+          <div class="faq-a">Necesitas dominar Excel a nivel intermedio. Power Query y Power BI se explican desde cero; si aún no tienes ese nivel, te recomiendo empezar por el <a href="/curso-excel-nivel-intermedio.html">curso de nivel intermedio</a>.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Se adapta a mi sector y a mi puesto?</h3>
+          <div class="faq-a">Sí. El temario y la metodología son los mismos para todos los sectores; lo que cambia son los datos y los casos prácticos, que se ajustan a tu trabajo como directivo o analista.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Recibo un certificado al terminar?</h3>
+          <div class="faq-a">Sí. Recibes un certificado de finalización con tu nombre, las horas cursadas y el temario exacto visto, firmado por tu profesor, Microsoft Excel Expert, y verificable con código QR.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <h3 class="faq-q">¿Cómo reservo?</h3>
+          <div class="faq-a">Reserva en esta página una llamada gratuita de 15 minutos. Tras la llamada, si el programa encaja contigo, acordamos el calendario y la forma de pago.</div>
+        </div>
+      </div>
+      <p style="margin-top:1.5rem;font-size:.9rem;"><a href="https://www.superprof.es/clases-excel-particulares-desde-basico-avanzado-profesor-certificado-resultados-garantizados.html" target="_blank" rel="noopener" style="color:var(--green-mid);">Ver las reseñas de mis alumnos en Superprof →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="agenda-directa" id="agenda-directa">
+  <div class="section-tag">Reserva directa</div>
+  <h2>Reserva tu <em>llamada de 15 minutos</em>.</h2>
+  <p class="section-lead">Elige el hueco que mejor te venga, sin escribir a nadie. En la llamada definimos tus objetivos y qué bloques del temario trabajar.</p>
+  <!-- Cal inline embed code begins -->
+  <div class="cal-inline-widget" id="my-cal-inline-15min">
+    <div class="cal-loading" id="calLoading">
+      <div class="cal-spinner"></div>
+      <p>Cargando calendario…</p>
+    </div>
+  </div>
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+
+    function initCalWidget() {
+      Cal("init", "15min", {origin:"https://app.cal.com"});
+
+      Cal.ns["15min"]("inline", {
+        elementOrSelector:"#my-cal-inline-15min",
+        config: {"layout":"week_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+        calLink: "jhony-alberto-escobar-castro-hhyscc/15min",
+      });
+
+      Cal.ns["15min"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#0A2E1A"}},"hideEventTypeDetails":false,"layout":"week_view"});
+    }
+
+    (function () {
+      var widget = document.getElementById('my-cal-inline-15min');
+      var loading = document.getElementById('calLoading');
+      if (!widget) return;
+
+      var started = false;
+      function start() {
+        if (started) return;
+        started = true;
+        initCalWidget();
+      }
+
+      // Carga diferida: solo se descarga el bundle de Cal.com cuando el
+      // usuario se acerca a esta sección (rootMargin amplio para que, al
+      // hacer scroll desde el CTA del hero, ya esté en marcha con
+      // antelación) — así no penaliza la carga inicial de la home para
+      // quien nunca llega hasta aquí.
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { start(); io.disconnect(); }
+          });
+        }, { rootMargin: '800px' });
+        io.observe(widget);
+      } else {
+        start();
+      }
+
+      if (loading) {
+        var hide = function () { loading.classList.add('is-hidden'); };
+        var mo = new MutationObserver(function () {
+          if (widget.querySelector('iframe')) { hide(); mo.disconnect(); }
+        });
+        mo.observe(widget, { childList: true });
+        setTimeout(hide, 8000);
+      }
+    })();
+  </script>
+  <!-- Cal inline embed code ends -->
+</section>
+
+<section class="keywords-seo">
+  <div class="section-tag" style="color:var(--green-light)">Sobre este programa</div>
+  <h2 style="color:white; font-size:1.5rem; margin-bottom:2rem;">Curso de Excel avanzado para directivos y analistas de negocio</h2>
+  <div class="keywords-grid">
+    <p style="color:rgba(255,255,255,0.65); line-height:1.9; font-size:0.92rem;">
+      Este <strong style="color:white;">curso de Excel avanzado para directivos</strong> y <strong style="color:white;">analistas de negocio</strong> cubre tablas dinámicas, Power Query, Business Analytics, dashboards, IA aplicada a Excel y un dashboard en <strong style="color:white;">Power BI</strong>, a medida de tu puesto.
+    </p>
+    <p style="color:rgba(255,255,255,0.65); line-height:1.9; font-size:0.92rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:3rem;">
+      Son 30 horas de clases individuales con tus propios datos. Si buscas algo más corto, mira el <a href="/curso-excel-avanzado-power-bi.html" style="color:white;">programa avanzado a medida</a> o la <a href="/formacion-excel-empresas-fundae.html" style="color:white;">formación para empresas</a>.
+    </p>
+    <p style="color:rgba(255,255,255,0.65); line-height:1.9; font-size:0.92rem; border-left:1px solid rgba(255,255,255,0.1); padding-left:3rem;">
+      Clases online en directo desde <strong style="color:white;">Granada</strong> para alumnos de <strong style="color:white;">Madrid, Barcelona, Valencia, Sevilla</strong> y cualquier punto de España.
+    </p>
+  </div>
+</section>
+
+<script src="/footer.js?v=5"></script>
+
+<script>
+document.querySelectorAll('.animate-in').forEach((el, i) => {
+  el.style.animationDelay = (i * 0.15) + 's';
+});
+</script>
+</body>
+</html>
