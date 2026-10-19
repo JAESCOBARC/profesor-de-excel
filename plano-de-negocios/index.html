@@ -590,6 +590,13 @@ footer a{color:#cfe6d9}
   .top .btn span.long{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* Blindaje: el CSS del widget de Hotmart no debe alterar el diseño de nuestros botones */
+a.btn.btn-primary[data-hotmart]{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:10px!important;font-family:"DM Sans","DM Sans Fallback","Segoe UI",system-ui,sans-serif!important;font-weight:700!important;font-size:1.08rem!important;line-height:1.2!important;text-transform:none!important;letter-spacing:normal!important;text-shadow:none!important;text-decoration:none!important;text-align:center!important;border:0!important;border-radius:999px!important;padding:18px 32px!important;min-width:0!important;min-height:0!important;height:auto!important;width:auto!important;margin:0!important;background:var(--green-light)!important;background-image:none!important;color:var(--green-deep)!important;box-shadow:0 10px 28px -8px rgba(77,184,122,.6)!important}
+a.btn.btn-primary[data-hotmart]:hover,a.btn.btn-primary[data-hotmart]:focus{background:#6fcf97!important;background-image:none!important;color:var(--green-deep)!important}
+.top a.btn.btn-primary[data-hotmart]{padding:10px 20px!important;font-size:.95rem!important}
+.sticky-cta a.btn.btn-primary[data-hotmart]{padding:13px 22px!important;font-size:1rem!important}
+.offer-card a.btn.btn-primary[data-hotmart]{width:100%!important;font-size:1.2rem!important;padding:22px!important;flex-direction:column!important;gap:4px!important}
+@media (max-width:700px){.hero-ctas a.btn.btn-primary[data-hotmart]{width:100%!important}}
 </style>
 <script>
 (function () {
@@ -1133,6 +1140,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     new IntersectionObserver(function (e) { offerIn = e[0].isIntersecting; render(); }).observe(offer);
   }
 })();
+</script>
+<a onclick="return false;" href="https://pay.hotmart.com/X108099377U?checkoutMode=2" class="hotmart-fb hotmart__button-checkout" id="hotmart-trigger" style="display:none!important" tabindex="-1" aria-hidden="true"></a>
+<script type="text/javascript">
+	function importHotmart(){ 
+ 		var imported = document.createElement('script'); 
+ 		imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
+		imported.onload = function () { window.hotmartReady = true; };
+ 		document.head.appendChild(imported); 
+		var link = document.createElement('link'); 
+		link.rel = 'stylesheet'; 
+		link.type = 'text/css'; 
+		link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css'; 
+		document.head.appendChild(link);	} 
+ 	importHotmart(); 
+ </script>
+<script>
+  // Nuestros botones abren el checkout incrustado de Hotmart a través del disparador oculto;
+  // si el widget no ha cargado, funcionan como un enlace normal al pago.
+  document.querySelectorAll('a[data-hotmart]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var t = document.getElementById('hotmart-trigger');
+      if (window.hotmartReady && t) { e.preventDefault(); t.click(); }
+    });
+  });
 </script>
 </body>
 </html>
