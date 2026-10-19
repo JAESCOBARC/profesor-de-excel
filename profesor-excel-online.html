@@ -674,6 +674,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .problema-icon { display: none; }
   .problema-card h3 { font-size: 0.95rem; font-weight: 500; color: white; margin-bottom: 0.5rem; }
   .problema-card p { font-size: 0.92rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+  .problema-card summary { list-style: none; }
+  .problema-card summary::-webkit-details-marker { display: none; }
+  @media (min-width: 769px) { .problema-card summary { pointer-events: none; cursor: default; } }
+  @media (max-width: 768px) {
+    .problemas .problemas-grid { grid-template-columns: 1fr; gap: 0.6rem; margin-top: 1.75rem; }
+    .problema-card { padding: 0; }
+    .problema-card summary { cursor: pointer; position: relative; padding: 1rem 2.8rem 1rem 1.1rem; }
+    .problema-card summary::after { content: '+'; position: absolute; right: 1.1rem; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: var(--green-light); }
+    .problema-card[open] summary::after { content: '–'; }
+    .problema-card h3 { margin: 0; }
+    .problema-card p { padding: 0 1.1rem 1.1rem; }
+  }
 
   .comparativa { background: white; }
   .comparativa-wrap { overflow-x: auto; margin-top: 2.5rem; padding-top: 18px; }
@@ -1202,46 +1214,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2>Por qué un curso grabado<br>no sustituye a un <em>profesor particular</em></h2>
   <p class="section-lead">Un vídeo no puede ver tu pantalla ni corregirte en el momento. Estas son las situaciones donde un profesor de Excel particular marca la diferencia real.</p>
   <div class="problemas-grid">
-    <div class="problema-card">
-      <div class="problema-icon">⏱</div>
-      <h3>Sigues copiando y pegando a mano</h3>
-      <p>Un profesor particular te enseña, sobre tu propio archivo, qué fórmula o macro elimina ese trabajo repetitivo — no la fórmula genérica de un vídeo.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">⚠️</div>
-      <h3>No confías del todo en tus propias fórmulas</h3>
-      <p>En clase particular revisamos tu hoja en directo: vemos juntos dónde falla y por qué, algo que ningún curso pregrabado puede hacer con tu archivo.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">📺</div>
-      <h3>Ya probaste cursos grabados y no fue suficiente</h3>
-      <p>Un curso enseña Excel en general. Un profesor particular enseña TU Excel: tus archivos, tu sector, tus dudas concretas, en tiempo real.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">📉</div>
-      <h3>Piden "nivel avanzado" y no sabes si llegas</h3>
-      <p>Con un profesor de Excel avanzado defines exactamente qué te falta para ese nivel, en vez de adivinarlo por tu cuenta.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">📝</div>
-      <h3>Tienes un examen o prueba de nivel cerca</h3>
-      <p>Como profesor particular preparo contigo exactamente lo que entra en tu examen o prueba, sin perder tiempo en lo que no te van a evaluar.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">🎓</div>
-      <h3>Un trabajo universitario o TFG con Excel</h3>
-      <p>Trabajamos directamente sobre tu entrega real: análisis de datos, tablas dinámicas o gráficos, con la mirada de un profesor particular guiándote.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">💼</div>
-      <h3>Un test de Excel en una entrevista de trabajo</h3>
-      <p>Te preparo 1:1 para ese tipo concreto de prueba, con simulacros reales — no una lista genérica de fórmulas para memorizar.</p>
-    </div>
-    <div class="problema-card">
-      <div class="problema-icon">🚨</div>
-      <h3>Necesitas resolver algo hoy, no la semana que viene</h3>
-      <p>Un archivo que falla, un informe que entregar. Como profesor particular puedo dar sesiones urgentes centradas solo en resolver ese problema.</p>
-    </div>
+    <details class="problema-card" open><summary><span class="problema-icon">⏱</span><h3>Sigues copiando y pegando a mano</h3></summary><p>Un profesor particular te enseña, sobre tu propio archivo, qué fórmula o macro elimina ese trabajo repetitivo — no la fórmula genérica de un vídeo.</p></details>
+    <details class="problema-card" open><summary><span class="problema-icon">⚠️</span><h3>No confías del todo en tus propias fórmulas</h3></summary><p>En clase particular revisamos tu hoja en directo: vemos juntos dónde falla y por qué, algo que ningún curso pregrabado puede hacer con tu archivo.</p></details>
+    <details class="problema-card" open><summary><span class="problema-icon">📺</span><h3>Ya probaste cursos grabados y no fue suficiente</h3></summary><p>Un curso enseña Excel en general. Un profesor particular enseña TU Excel: tus archivos, tu sector, tus dudas concretas, en tiempo real.</p></details>
+    <details class="problema-card" open><summary><span class="problema-icon">📉</span><h3>Piden "nivel avanzado" y no sabes si llegas</h3></summary><p>Con un profesor de Excel avanzado defines exactamente qué te falta para ese nivel, en vez de adivinarlo por tu cuenta.</p></details>
+    <details class="problema-card" open><summary><span class="problema-icon">📝</span><h3>Tienes un examen o prueba de nivel cerca</h3></summary><p>Como profesor particular preparo contigo exactamente lo que entra en tu examen o prueba, sin perder tiempo en lo que no te van a evaluar.</p></details>
+    <details class="problema-card" open><summary><span class="problema-icon">🎓</span><h3>Un trabajo universitario o TFG con Excel</h3></summary><p>Trabajamos directamente sobre tu entrega real: análisis de datos, tablas dinámicas o gráficos, con la mirada de un profesor particular guiándote.</p></details>
+    <details class="problema-card" open><summary><span class="problema-icon">💼</span><h3>Un test de Excel en una entrevista de trabajo</h3></summary><p>Te preparo 1:1 para ese tipo concreto de prueba, con simulacros reales — no una lista genérica de fórmulas para memorizar.</p></details>
+    <details class="problema-card" open><summary><span class="problema-icon">🚨</span><h3>Necesitas resolver algo hoy, no la semana que viene</h3></summary><p>Un archivo que falla, un informe que entregar. Como profesor particular puedo dar sesiones urgentes centradas solo en resolver ese problema.</p></details>
   </div>
 </section>
 
@@ -1786,6 +1766,17 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
       });
     }, { threshold: 0.2 }).observe(v);
   });
+})();
+</script>
+<script>
+(function () {
+  // Acordeón de dolores solo en móvil: en escritorio las tarjetas se ven siempre abiertas.
+  var mq = window.matchMedia('(max-width: 768px)');
+  var cards = document.querySelectorAll('.problema-card');
+  function sync() { cards.forEach(function (c) { if (mq.matches) c.removeAttribute('open'); else c.setAttribute('open', ''); }); }
+  cards.forEach(function (c) { c.querySelector('summary').addEventListener('click', function (e) { if (!mq.matches) e.preventDefault(); }); });
+  sync();
+  if (mq.addEventListener) mq.addEventListener('change', sync);
 })();
 </script>
 </body>
