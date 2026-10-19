@@ -200,10 +200,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
     {
       "@type": "Question",
-      "name": "¿Qué temario incluye el curso de Excel avanzado?",
+      "name": "¿Qué módulos incluye el curso de Excel avanzado?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Fórmulas clave de búsqueda y texto, tablas dinámicas avanzadas, gráficos para presentar, Power Query, Business Analytics (Pareto, punto de equilibrio, CAGR), dashboards, IA aplicada a Excel, seguridad y un dashboard en Power BI."
+        "text": "Diez módulos: fórmulas clave de búsqueda y texto, tablas dinámicas avanzadas, gráficos para presentar, Power Query, Business Analytics (Pareto, punto de equilibrio, CAGR), dashboards, IA aplicada a Excel, seguridad y un dashboard en Power BI."
       }
     },
     {
@@ -1028,6 +1028,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .oferta-note{margin:1rem 0 0;font-size:.88rem;color:var(--slate);text-align:center}
   .faq-testi-grid{grid-template-columns:1fr !important;max-width:820px;margin:0 auto}
   @media (max-width:760px){.pq-grid{grid-template-columns:1fr}.oferta-card{padding:1.5rem}.oferta-price .amount{font-size:3rem}}
+  .temario{text-align:center;padding:4rem 5%}
+  .mod-acc{max-width:820px;margin:2rem auto 0;display:flex;flex-direction:column;gap:.75rem;text-align:center}
+  .mod-acc details{background:#fff;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+  .mod-acc summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.75rem;padding:1rem 3rem;position:relative}
+  .mod-acc summary::-webkit-details-marker{display:none}
+  .mod-acc summary::after{content:'+';position:absolute;right:1.25rem;top:50%;transform:translateY(-50%);font-size:1.4rem;color:var(--green-mid)}
+  .mod-acc details[open] summary::after{content:'–'}
+  .mod-acc summary h3{margin:0;font-family:'Fraunces','Fraunces Fallback',serif;font-size:1.15rem;font-weight:600;color:var(--green-deep)}
+  .mod-num{font-family:'Fraunces','Fraunces Fallback',serif;font-weight:600;color:var(--green-light);font-size:1rem}
+  .mod-acc ul{list-style:none;display:inline-block;text-align:left;margin:0 auto;padding:0 1.5rem 1.4rem}
+  .mod-acc li{font-size:.92rem;color:var(--slate);line-height:1.5;padding-left:1.2rem;position:relative;margin:.35rem 0}
+  .mod-acc li::before{content:'✓';position:absolute;left:0;color:var(--green-mid);font-weight:700;font-size:.8rem}
   @media (min-width:769px){
     .hero{max-width:1240px;margin-left:auto;margin-right:auto;grid-template-columns:1.1fr .9fr;gap:3rem;padding-left:2rem;padding-right:2rem}
     .hero h1{font-size:clamp(2.2rem,3.4vw,3rem)}
@@ -1043,6 +1055,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .valor-strip .valor-chip{justify-content:center;text-align:center;white-space:normal;font-size:.78rem;padding:.55rem .6rem;gap:.4rem}
     .paraquien,.cmp-sec,.oferta{padding-top:2.5rem;padding-bottom:2.5rem}
     .temario,.certificado-section,.faq-testi,.agenda-directa,.keywords-seo{padding-top:2.5rem;padding-bottom:2.5rem}
+    .mod-acc summary{padding:.9rem 2.4rem;gap:.5rem}.mod-acc summary h3{font-size:1.02rem}.mod-acc ul{padding:0 1rem 1.2rem}
     .pq-grid,.cmp-wrap,.oferta-card{margin-top:1.5rem}
     .temario-detail-grid{margin-top:1.5rem}
   }
@@ -1057,7 +1070,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav>
   <a href="/" class="nav-logo"><img src="/logo-pe.png" alt="" class="nav-logo-mark" width="28" height="28">Excel con Jhony</a>
   <ul class="nav-links">
-    <li><a href="#temario">Temario</a></li>
+    <li><a href="#modulos">Módulos</a></li>
     <li><a href="#oferta">Precio</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -1087,7 +1100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="hero-live-note">Programa a medida, definido en una llamada.</p>
     <div class="hero-actions">
       <a href="#agenda-directa" class="btn-primary">Reserva tu llamada de 15 min →</a>
-      <a href="#temario" class="btn-ghost">Ver el temario</a>
+      <a href="#modulos" class="btn-ghost">Ver los módulos</a>
     </div>
     <p class="hero-wa-hint">Llamada gratuita y sin compromiso.</p>
     <div class="hero-trust">
@@ -1181,126 +1194,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="temario" id="temario">
+<section class="temario" id="modulos">
   <div class="section-tag">Contenidos</div>
-  <h2>El temario del programa, <em>bloque a bloque</em></h2>
-  <p class="section-lead">Diez bloques para quien ya domina Excel y necesita analizar, automatizar y presentar datos a nivel profesional. En la llamada inicial decidimos cuáles trabajar más.</p>
-  <div class="temario-detail-grid">
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">01</span>
-        <h3>Base sólida y productividad</h3>
-      </div>
-      <ul>
-        <li>Atajos de teclado esenciales y relleno mágico (Ctrl+E)</li>
-        <li>Formatos de celda, validación de datos y filtros avanzados</li>
-        <li>Extracción de ficheros CSV (texto en columnas)</li>
-        <li>Nombres de rango</li>
-      </ul>
-    </div>
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">02</span>
-        <h3>Fórmulas clave</h3>
-      </div>
-      <ul>
-        <li>SI, Y / O y SI.ERROR</li>
-        <li>BUSCARV y BUSCARX</li>
-        <li>SUMAR.SI y CONTAR.SI</li>
-        <li>IZQUIERDA, DERECHA, EXTRAE, ENCONTRAR, SUSTITUIR y TEXTO</li>
-        <li>Fechas, ÚNICOS y FILTRAR</li>
-      </ul>
-    </div>
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">03</span>
-        <h3>Tablas dinámicas avanzadas</h3>
-      </div>
-      <ul>
-        <li>Formatos de tabla (Ctrl+T) y creación de tablas dinámicas</li>
-        <li>Formatos condicionales y segmentaciones</li>
-        <li>Campos calculados</li>
-        <li>Análisis comparativo y actualización de datos</li>
-      </ul>
-    </div>
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">04</span>
-        <h3>Gráficos para presentar</h3>
-      </div>
-      <ul>
-        <li>Tipos de gráficos y sus usos</li>
-        <li>Gráficos de 2 ejes y cascada (Waterfall)</li>
-        <li>Real vs. Objetivo</li>
-        <li>Gantt y Timeline</li>
-        <li>Gráficos dinámicos e interactivos con controles</li>
-      </ul>
-    </div>
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">05</span>
-        <h3>Power Query</h3>
-      </div>
-      <ul>
-        <li>Concepto de ETL</li>
-        <li>Importación de datos</li>
-        <li>Limpieza de datos</li>
-        <li>Combinar y apilar datos</li>
-        <li>Extraer datos estructurados desde una página web</li>
-      </ul>
-    </div>
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">06</span>
-        <h3>Business Analytics</h3>
-      </div>
-      <ul>
-        <li>Análisis de Pareto (80/20)</li>
-        <li>Punto de equilibrio (Break-even)</li>
-        <li>CAGR</li>
-        <li>Plantilla de gestión de sprints y proyectos Agile</li>
-      </ul>
-    </div>
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">07</span>
-        <h3>Dashboards</h3>
-      </div>
-      <ul>
-        <li>Metodología y construcción de un dashboard</li>
-        <li>Hacer que Excel parezca una app</li>
-      </ul>
-    </div>
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">08</span>
-        <h3>IA en Excel</h3>
-      </div>
-      <ul>
-        <li>Integración de asistentes de IA (como ChatGPT) en Excel</li>
-        <li>Framework «Create» para tareas en Excel</li>
-        <li>Automatizaciones con IA</li>
-      </ul>
-    </div>
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">09</span>
-        <h3>Seguridad en Excel</h3>
-      </div>
-      <ul>
-        <li>Protección de hojas y rangos</li>
-        <li>Protección de libro</li>
-      </ul>
-    </div>
-    <div class="temario-detail-card">
-      <div class="temario-detail-head">
-        <span class="temario-detail-num">10</span>
-        <h3>Dashboard en Power BI</h3>
-      </div>
-      <ul>
-        <li>Construcción de un dashboard en Power BI</li>
-      </ul>
-    </div>
+  <h2>Los <em>módulos</em> del programa</h2>
+  <p class="section-lead" style="margin:0 auto;">Diez módulos para quien ya domina Excel y necesita analizar, automatizar y presentar datos a nivel profesional. En la llamada inicial decidimos cuáles trabajar más.</p>
+  <div class="mod-acc">
+    <details open><summary><span class="mod-num">01</span><h3>Base sólida y productividad</h3></summary><ul><li>Atajos de teclado esenciales y relleno mágico (Ctrl+E)</li><li>Formatos de celda, validación de datos y filtros avanzados</li><li>Extracción de ficheros CSV (texto en columnas)</li><li>Nombres de rango</li></ul></details>
+    <details><summary><span class="mod-num">02</span><h3>Fórmulas clave</h3></summary><ul><li>SI, Y / O y SI.ERROR</li><li>BUSCARV y BUSCARX</li><li>SUMAR.SI y CONTAR.SI</li><li>IZQUIERDA, DERECHA, EXTRAE, ENCONTRAR, SUSTITUIR y TEXTO</li><li>Fechas, ÚNICOS y FILTRAR</li></ul></details>
+    <details><summary><span class="mod-num">03</span><h3>Tablas dinámicas avanzadas</h3></summary><ul><li>Formatos de tabla (Ctrl+T) y creación de tablas dinámicas</li><li>Formatos condicionales y segmentaciones</li><li>Campos calculados</li><li>Análisis comparativo y actualización de datos</li></ul></details>
+    <details><summary><span class="mod-num">04</span><h3>Gráficos para presentar</h3></summary><ul><li>Tipos de gráficos y sus usos</li><li>Gráficos de 2 ejes y cascada (Waterfall)</li><li>Real vs. Objetivo</li><li>Gantt y Timeline</li><li>Gráficos dinámicos e interactivos con controles</li></ul></details>
+    <details><summary><span class="mod-num">05</span><h3>Power Query</h3></summary><ul><li>Concepto de ETL</li><li>Importación de datos</li><li>Limpieza de datos</li><li>Combinar y apilar datos</li><li>Extraer datos estructurados desde una página web</li></ul></details>
+    <details><summary><span class="mod-num">06</span><h3>Business Analytics</h3></summary><ul><li>Análisis de Pareto (80/20)</li><li>Punto de equilibrio (Break-even)</li><li>CAGR</li><li>Plantilla de gestión de sprints y proyectos Agile</li></ul></details>
+    <details><summary><span class="mod-num">07</span><h3>Dashboards</h3></summary><ul><li>Metodología y construcción de un dashboard</li><li>Hacer que Excel parezca una app</li></ul></details>
+    <details><summary><span class="mod-num">08</span><h3>IA en Excel</h3></summary><ul><li>Integración de asistentes de IA (como ChatGPT) en Excel</li><li>Framework «Create» para tareas en Excel</li><li>Automatizaciones con IA</li></ul></details>
+    <details><summary><span class="mod-num">09</span><h3>Seguridad en Excel</h3></summary><ul><li>Protección de hojas y rangos</li><li>Protección de libro</li></ul></details>
+    <details><summary><span class="mod-num">10</span><h3>Dashboard en Power BI</h3></summary><ul><li>Construcción de un dashboard en Power BI</li></ul></details>
   </div>
 </section>
 
@@ -1380,8 +1288,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="faq-a">Son 30 horas de clase en directo, de tú a tú, con calendario y ritmo que acordamos contigo. En una llamada previa de 15 minutos definimos tus objetivos y qué bloques del temario trabajar más.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
-          <h3 class="faq-q">¿Qué temario incluye el curso de Excel avanzado?</h3>
-          <div class="faq-a">Fórmulas clave de búsqueda y texto, tablas dinámicas avanzadas, gráficos para presentar, Power Query, Business Analytics (Pareto, punto de equilibrio, CAGR), dashboards, IA aplicada a Excel, seguridad y un dashboard en Power BI.</div>
+          <h3 class="faq-q">¿Qué módulos incluye el curso de Excel avanzado?</h3>
+          <div class="faq-a">Diez módulos: fórmulas clave de búsqueda y texto, tablas dinámicas avanzadas, gráficos para presentar, Power Query, Business Analytics (Pareto, punto de equilibrio, CAGR), dashboards, IA aplicada a Excel, seguridad y un dashboard en Power BI.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <h3 class="faq-q">¿Es un curso en grupo?</h3>
