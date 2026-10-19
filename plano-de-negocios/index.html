@@ -1134,29 +1134,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 })();
 </script>
-<a onclick="return false;" href="https://pay.hotmart.com/X108099377U?checkoutMode=2" class="hotmart-fb hotmart__button-checkout" id="hotmart-trigger" style="display:none!important" tabindex="-1" aria-hidden="true"></a>
-<script type="text/javascript">
-	function importHotmart(){ 
- 		var imported = document.createElement('script'); 
- 		imported.src = 'https://static.hotmart.com/checkout/widget.min.js'; 
-		imported.onload = function () { window.hotmartReady = true; };
- 		document.head.appendChild(imported); 
-		var link = document.createElement('link'); 
-		link.rel = 'stylesheet'; 
-		link.type = 'text/css'; 
-		link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css'; 
-		document.head.appendChild(link);	} 
- 	importHotmart(); 
- </script>
-<script>
-  // Nuestros botones abren el checkout incrustado de Hotmart a través del disparador oculto;
-  // si el widget no ha cargado, funcionan como un enlace normal al pago.
-  document.querySelectorAll('a[data-hotmart]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      var t = document.getElementById('hotmart-trigger');
-      if (window.hotmartReady && t) { e.preventDefault(); t.click(); }
-    });
-  });
-</script>
 </body>
 </html>
