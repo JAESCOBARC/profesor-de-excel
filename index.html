@@ -732,6 +732,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .temario-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
   .temario-item { background: white; border-radius: 12px; border: 1px solid var(--border); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem; transition: border-color 0.2s; }
   .temario-item:hover { border-color: var(--green-light); }
+  .temario-acc { margin-top: 1.75rem; max-width: 900px; display: flex; flex-direction: column; gap: 0.6rem; }
+  .temario-acc details { background: white; border: 1px solid var(--border); border-radius: 12px; transition: border-color 0.2s; }
+  .temario-acc details:hover, .temario-acc details[open] { border-color: var(--green-light); }
+  .temario-acc summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 1rem; padding: 0.9rem 3rem 0.9rem 1.25rem; position: relative; }
+  .temario-acc summary::-webkit-details-marker { display: none; }
+  .temario-acc summary::after { content: '+'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.3rem; color: var(--green-mid); }
+  .temario-acc details[open] summary::after { content: '–'; }
+  .temario-acc summary h3 { font-size: 0.98rem; font-weight: 500; color: var(--green-deep); margin: 0; }
+  .temario-acc p { font-size: 0.92rem; color: var(--slate); line-height: 1.6; padding: 0 1.25rem 1rem calc(1.25rem + 28px + 1rem); margin: 0; }
+  @media (max-width: 768px) { .temario-acc p { padding-left: 1.25rem; } }
   .temario-num { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.1rem; font-weight: 600; color: var(--green-mid); width: 28px; flex-shrink: 0; }
   .temario-text h3 { font-size: 0.88rem; font-weight: 500; color: var(--green-deep); }
   .temario-text p { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
@@ -1425,77 +1435,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="section-tag">Contenidos</div>
   <h2>¿Qué aprenderás en las <em>clases de Excel</em>?</h2>
   <p class="section-lead">Las clases para aprender a usar excel son adaptadas a tu necesidad. Como profesor de excel online tengo la capacidad de profundizar en todos estos temas.</p>
-  <div class="temario-cols">
-    <div class="temario-item">
-      <div class="temario-num">01</div>
-      <div class="temario-text">
-        <h3>Excel desde cero para principiantes</h3>
-        <p>Interfaz, fórmulas básicas, formato y organización de datos</p>
-      </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">02</div>
-      <div class="temario-text">
-        <h3>Fórmulas y funciones avanzadas</h3>
-        <p>BUSCARV, ÍNDICE, COINCIDIR, SI anidado, SUMAR.SI, CONTAR.SI</p>
-      </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">03</div>
-      <div class="temario-text">
-        <h3>Tablas dinámicas y gráficos</h3>
-        <p>Análisis de datos, segmentación, gráficos profesionales</p>
-      </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">04</div>
-      <div class="temario-text">
-        <h3>Macros y VBA en Excel</h3>
-        <p>Automatización de procesos, formularios, botones interactivos</p>
-      </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">05</div>
-      <div class="temario-text">
-        <h3>Power Query y Power Pivot</h3>
-        <p>Transformación y modelado de datos masivos sin fórmulas</p>
-      </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">06</div>
-      <div class="temario-text">
-        <h3>Dashboards e informes visuales</h3>
-        <p>KPIs, gráficos interactivos, paneles de control profesionales</p>
-      </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">07</div>
-      <div class="temario-text">
-        <h3>Excel para finanzas y contabilidad</h3>
-        <p>Presupuestos, flujos de caja, amortizaciones, análisis financiero</p>
-      </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">08</div>
-      <div class="temario-text">
-        <h3>Excel para recursos humanos y RRHH</h3>
-        <p>Control de turnos, nóminas, gestión de equipo, KPIs de RRHH</p>
-      </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">09</div>
-      <div class="temario-text">
-        <h3>Inteligencia artificial aplicada a Excel</h3>
-        <p>Usa Copilot, ChatGPT y Claude para generar fórmulas, analizar datos y automatizar tareas con IA</p>
-      </div>
-    </div>
-    <div class="temario-item">
-      <div class="temario-num">10</div>
-      <div class="temario-text">
-        <h3>Crea tus propias plantillas de Excel</h3>
-        <p>Diseña plantillas reutilizables y profesionales adaptadas a tu trabajo o negocio</p>
-      </div>
-    </div>
+  <div class="temario-acc">
+    <details open><summary><span class="temario-num">01</span><h3>Excel desde cero para principiantes</h3></summary><p>Interfaz, fórmulas básicas, formato y organización de datos</p></details>
+    <details><summary><span class="temario-num">02</span><h3>Fórmulas y funciones avanzadas</h3></summary><p>BUSCARV, ÍNDICE, COINCIDIR, SI anidado, SUMAR.SI, CONTAR.SI</p></details>
+    <details><summary><span class="temario-num">03</span><h3>Tablas dinámicas y gráficos</h3></summary><p>Análisis de datos, segmentación, gráficos profesionales</p></details>
+    <details><summary><span class="temario-num">04</span><h3>Macros y VBA en Excel</h3></summary><p>Automatización de procesos, formularios, botones interactivos</p></details>
+    <details><summary><span class="temario-num">05</span><h3>Power Query y Power Pivot</h3></summary><p>Transformación y modelado de datos masivos sin fórmulas</p></details>
+    <details><summary><span class="temario-num">06</span><h3>Dashboards e informes visuales</h3></summary><p>KPIs, gráficos interactivos, paneles de control profesionales</p></details>
+    <details><summary><span class="temario-num">07</span><h3>Excel para finanzas y contabilidad</h3></summary><p>Presupuestos, flujos de caja, amortizaciones, análisis financiero</p></details>
+    <details><summary><span class="temario-num">08</span><h3>Excel para recursos humanos y RRHH</h3></summary><p>Control de turnos, nóminas, gestión de equipo, KPIs de RRHH</p></details>
+    <details><summary><span class="temario-num">09</span><h3>Inteligencia artificial aplicada a Excel</h3></summary><p>Usa Copilot, ChatGPT y Claude para generar fórmulas, analizar datos y automatizar tareas con IA</p></details>
+    <details><summary><span class="temario-num">10</span><h3>Crea tus propias plantillas de Excel</h3></summary><p>Diseña plantillas reutilizables y profesionales adaptadas a tu trabajo o negocio</p></details>
   </div>
 </section>
 
