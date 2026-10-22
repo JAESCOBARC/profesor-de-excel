@@ -33,12 +33,12 @@
       <div class="footer-logo-email">jhonya2000@gmail.com</div>\
     </div>\
     <div class="footer-links">\
-      <h3><a href="/niveles/">Niveles Excel</a></h3>\
-      <h3><a href="/plantillas-excel.html">Plantillas Excel</a></h3>\
+      <h3><a href="/cursos/">Clases y cursos</a></h3>\
+      <h3><a href="/plantillas/">Plantillas y aplicaciones</a></h3>\
+      <h3><a href="/empresas/">Para empresas</a></h3>\
       <h3><a href="/jhony-profesor-excel-online.html">Sobre mí</a></h3>\
       <h3><a href="/certificacion-microsoft-excel-especialista.html">Certificación</a></h3>\
       <h3><a href="/test-nivel-excel.html">Test de nivel</a></h3>\
-      <a href="/pagos/">Pagos</a>\
     </div>\
     <div class="footer-social">\
       <a href="https://www.linkedin.com/in/jaescobarc/" target="_blank" rel="noopener" class="social-link">\
@@ -50,7 +50,7 @@
       </a>\
     </div>\
     <div class="footer-copy">\
-      © 2026 · Clases de Excel online particulares · España · trabajoenexcel.com · <a href="/aviso-legal.html">Aviso Legal</a> · <a href="/politica-privacidad.html">Privacidad</a> · <a href="/condiciones-devolucion.html">Devoluciones</a>\
+      © 2026 · Clases de Excel online particulares · España · trabajoenexcel.com · <a href="/aviso-legal.html">Aviso Legal</a> · <a href="/politica-privacidad.html">Privacidad</a> · <a href="/condiciones-devolucion.html">Devoluciones</a> · <a href="/pagos/">Pagos</a>\
     </div>\
   </div>\
 </footer>';
