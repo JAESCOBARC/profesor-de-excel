@@ -34,7 +34,7 @@
     </div>\
     <div class="footer-links">\
       <h3><a href="/cursos/">Clases y cursos</a></h3>\
-      <h3><a href="/plantillas/">Plantillas y aplicaciones</a></h3>\
+      <h3><a href="/plantillas-excel.html">Plantillas Excel</a></h3>\
       <h3><a href="/empresas/">Para empresas</a></h3>\
       <h3><a href="/jhony-profesor-excel-online.html">Sobre mí</a></h3>\
       <h3><a href="/certificacion-microsoft-excel-especialista.html">Certificación</a></h3>\
