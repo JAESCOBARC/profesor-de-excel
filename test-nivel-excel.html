@@ -633,7 +633,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   };
 </script>
 
-<script src="/planes-config.js?v=75a3cc37"></script>
+<script src="/planes-config.js?v=640d0cf1"></script>
 <script src="/whatsapp-config.js?v=8299b8e7"></script>
 <script src="https://cdn.jsdelivr.net/npm/hyperformula@2.7.1/dist/hyperformula.full.min.js"></script>
 
@@ -985,8 +985,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (avanzadoOk) {
       nivel = 'avanzado'; nivelLabel = 'Nivel Avanzado';
       desc = 'Cuanto más se sabe de Excel, más claro se ve lo que aún falta por dominar — y tú ya estás en ese punto. Manejas bien fórmulas lógicas y tablas dinámicas: <strong>tu siguiente salto real es profundizar en Power Query, Power Pivot, macros y Power BI</strong>, el terreno donde se separa quien usa Excel de quien automatiza y analiza datos a otro nivel.';
-      plan = 'Bono 5 horas';
-      planDesc = bono5.precioHora + '€/hora (' + bono5.descuento + '% dto., ' + bono5.total + '€ total). Ideal para dar el salto a Power Query, Power Pivot, macros o Power BI a tu ritmo.';
+      plan = 'Bono 6 horas';
+      planDesc = String(bono5.precioHora).replace('.', ',') + '€/hora (' + bono5.descuento + '% dto., ' + bono5.total + '€ total). Ideal para dar el salto a Power Query, Power Pivot, macros o Power BI a tu ritmo.';
       ctaText = 'Dar el salto a Power Query y BI →';
     } else if (intermedioOk) {
       nivel = 'intermedio'; nivelLabel = 'Nivel Intermedio';
