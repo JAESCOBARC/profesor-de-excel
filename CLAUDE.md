@@ -11,3 +11,9 @@ Sitio estático (HTML) publicado en GitHub Pages detrás de Cloudflare. Los HTML
 - Precios de clases: única fuente `planes-config.js` (ids `hora1`, `bono5`, `bono10`; el id `bono10` es hoy el bono de 15 horas). En metas y JSON-LD los precios van como texto fijo y hay que actualizarlos a mano.
 - Antes de `git push`: `git fetch origin main && git rebase origin/main` (una acción actualiza el sitemap tras cada push).
 - Páginas en carpeta usan `index.html`; GitHub Pages distingue mayúsculas.
+
+## Arquitectura de silos (obligatorio al crear o editar páginas)
+- Nodos: `/cursos/` ("cursos excel"; subnodo `/empresas/` = "formación empresas"), `/plantillas-excel.html` ("plantillas excel"). La home capta "clases de Excel" y no se retoca para otras keywords. Principal de clases: `profesor-excel-online.html`.
+- Cada página hija: tarjeta en su nodo (+ ItemList JSON-LD), enlace de vuelta al nodo, migas visibles + BreadcrumbList (empresas: Inicio › Cursos y clases › Para empresas › X), bloque "Sigue explorando" (nodo + 2–3 hermanas), título ≤ 60 caracteres, og:image, alta en sitemap.
+- Una intención = una página (p. ej. FUNDAE = "bonificado", no "formación empresas"). Footer solo con nodos + Sobre mí, Certificación, Test; legales en la línea pequeña.
+- URLs hijas planas; no mover URLs con tráfico (301 solo en Cloudflare). `/niveles/` redirige a `/cursos/`.
