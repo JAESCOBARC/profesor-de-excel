@@ -528,6 +528,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .nu-20 small{font-size:.78rem;line-height:1.4;color:#43360d}
   .nu-80 .nu-pct{color:rgba(255,255,255,.35)}
   .nu-80 p{margin:0;font-size:.9rem;line-height:1.5}
+.nu-txt{display:flex;flex-direction:column;gap:.35rem}
+.nu-caps{display:none;flex-direction:column;gap:.5rem;max-width:980px;margin:.7rem auto 0;text-align:left}.nu-caps p{margin:0;font-size:.88rem;line-height:1.5;color:rgba(255,255,255,.8);padding-left:1.1rem;position:relative}.nu-caps p::before{content:"";position:absolute;left:0;top:.4em;width:10px;height:10px;border-radius:3px;background:#c9a84c}.nu-caps p.g::before{background:rgba(255,255,255,.3)}.nu-caps b{color:#fff}
   .nu-core{max-width:980px;margin:.6rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
   .nu-core div{background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.5);border-radius:12px;padding:.8rem 1rem;text-align:left}
   .nu-core b{display:block;color:#f1d98d;font-family:'Fraunces','Fraunces Fallback',serif;font-weight:400;font-size:1.1rem;margin-bottom:.2rem}
@@ -542,7 +544,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .nu-paths i{font-style:normal;color:var(--gl)}
   .nu-paths em{font-style:normal;color:#e7c873;font-weight:700;font-size:.9rem}
   .nu-cta{display:inline-block;margin-top:1.75rem;background:var(--gl);color:var(--gd);font-weight:700;border-radius:999px;padding:.85rem 1.8rem;text-decoration:none}
-  @media(max-width:760px){.nucleo{padding:2.5rem 6%}.nu-bar{grid-template-columns:1fr}.nu-20,.nu-80{border-radius:14px}.nu-20{flex-direction:row;align-items:center;gap:.8rem;flex-wrap:wrap}.nu-core{grid-template-columns:1fr}}
+  @media(max-width:760px){.nucleo{padding:2.5rem 6%}.nu-bar{gap:4px}.nu-20,.nu-80{padding:.8rem .6rem;justify-content:center;align-items:center;border-radius:10px 4px 4px 10px}.nu-80{border-radius:4px 10px 10px 4px;align-items:flex-start;padding-left:.9rem}.nu-pct{white-space:nowrap}.nu-20 .nu-pct,.nu-80 .nu-pct{font-size:1.3rem}.nu-20{padding:.8rem .3rem}.nu-txt{display:none}.nu-caps{display:flex}.nu-core{grid-template-columns:1fr}}
   .coste-final { display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.1rem 1.75rem; max-width: 640px; }
   .coste-final p { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
 
@@ -1185,9 +1187,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <h2 class="nu-big">80<span>/</span>20</h2>
   <p class="nu-sub">En Excel, un <strong>20 % resuelve casi todo</strong>. No necesitas cursos de 30 o 50 horas: necesitas ese núcleo y saber <strong>plantear problemas de tu profesión</strong>.</p>
   <div class="nu-bar" role="img" aria-label="El 20 por ciento de Excel resuelve la mayor parte de los problemas; el 80 por ciento restante casi no se usa">
-    <div class="nu-20"><span class="nu-pct">20 %</span><span class="nu-lbl">El núcleo</span><small>lo que usarás cada día</small></div>
-    <div class="nu-80"><span class="nu-pct">80 %</span><p>El resto de Excel: cientos de funciones que casi nunca vas a necesitar… y que aprenderás en minutos el día que sí.</p></div>
+    <div class="nu-20"><span class="nu-pct">20 %</span><span class="nu-txt"><span class="nu-lbl">El núcleo</span><small>lo que usarás cada día</small></span></div>
+    <div class="nu-80"><span class="nu-pct">80 %</span><p class="nu-txt">El resto de Excel: cientos de funciones que casi nunca vas a necesitar… y que aprenderás en minutos el día que sí.</p></div>
   </div>
+  <div class="nu-caps"><p><b>20 % · El núcleo:</b> lo que usarás cada día.</p><p class="g"><b>80 % · El resto de Excel:</b> cientos de funciones que casi nunca vas a necesitar… y que aprenderás en minutos el día que sí.</p></div>
   <div class="nu-core">
     <div><b>Plantear y resolver</b><span>Convertir un problema de tu trabajo en una hoja que funcione</span></div>
     <div><b>Datos y tablas dinámicas</b><span>Bases de datos, grandes volúmenes, reporting</span></div>
