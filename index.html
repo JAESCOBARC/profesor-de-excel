@@ -512,6 +512,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .coste-num strong { color: var(--green-light); }
   .coste-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
   .coste-arrow { color: var(--green-light); font-size: 1.1rem; }
+  .coste-ano { max-width: 720px; margin: 0 auto 1.75rem; }
+  .ano-title { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.5rem; color: white; margin-bottom: 1rem; }
+  .ano-title strong { color: var(--green-light); font-weight: 600; }
+  .ano-title span { display: block; font-family: 'DM Sans', sans-serif; font-size: .85rem; color: rgba(255,255,255,.6); margin-top: .25rem; }
+  .ano-grid { display: flex; flex-direction: column; gap: 6px; }
+  .ano-row { display: grid; grid-template-columns: 4.2rem 1fr; align-items: center; gap: .6rem; }
+  .ano-mes { font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,.5); text-align: right; }
+  .ano-row--lost .ano-mes { color: #e7c873; font-weight: 600; }
+  .ano-cells { display: grid; grid-template-columns: repeat(13, 1fr); gap: 5px; }
+  .ano-cells i { display: block; aspect-ratio: 1; border-radius: 4px; background: rgba(255,255,255,.12); }
+  .ano-cells i.lost { background: #c9a84c; box-shadow: 0 0 10px rgba(201,168,76,.35); }
+  .ano-cells i.half { background: linear-gradient(90deg, #c9a84c 50%, rgba(255,255,255,.12) 50%); box-shadow: none; }
+  .ano-legend { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .4rem .5rem; margin-top: 1rem; font-size: .78rem; color: rgba(255,255,255,.65); }
+  .ano-key { width: 11px; height: 11px; border-radius: 3px; background: rgba(255,255,255,.12); margin-left: .6rem; }
+  .ano-key--lost { background: #c9a84c; margin-left: 0; }
   .coste-final { display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.1rem 1.75rem; max-width: 640px; }
   .coste-final p { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
 
@@ -907,6 +922,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
     .enfoque-8020 { padding-top: 2rem; padding-bottom: 2rem; }
     .coste-inaccion { padding: 2.25rem 6%; }
+    .ano-title { font-size: 1.25rem; }
+    .ano-row { grid-template-columns: 1fr; }
+    .ano-mes { display: none; }
+    .ano-cells { gap: 3px; }
     .coste-chain { gap: 0.4rem; }
     .coste-arrow { display: none; }
     .coste-step { flex-direction: row; gap: 5px; }
@@ -1161,14 +1180,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="coste-inaccion">
   <div class="coste-eyebrow">Lo que de verdad te está costando</div>
-  <div class="coste-chain">
-    <div class="coste-step"><span class="coste-num"><strong>2h</strong></span><span class="coste-label">al día</span></div>
-    <span class="coste-arrow">→</span>
-    <div class="coste-step"><span class="coste-num"><strong>10h</strong></span><span class="coste-label">a la semana</span></div>
-    <span class="coste-arrow">→</span>
-    <div class="coste-step"><span class="coste-num"><strong>40h</strong></span><span class="coste-label">al mes</span></div>
-    <span class="coste-arrow">→</span>
-    <div class="coste-step"><span class="coste-num"><strong>500h</strong></span><span class="coste-label">al año</span></div>
+  <div class="coste-ano" role="img" aria-label="Tu año laboral en 52 semanas: unas 12 semanas, un trimestre entero, se pierden en tareas manuales de Excel">
+    <div class="ano-title"><strong>500 h</strong> al año <span>≈ 2 h al día en tareas manuales</span></div>
+    <div class="ano-grid"><div class="ano-row ano-row--lost"><span class="ano-mes">Ene–Mar</span><div class="ano-cells"><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost"></i><i class="lost half"></i></div></div><div class="ano-row"><span class="ano-mes">Abr–Jun</span><div class="ano-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="ano-row"><span class="ano-mes">Jul–Sep</span><div class="ano-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="ano-row"><span class="ano-mes">Oct–Dic</span><div class="ano-cells"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+    <div class="ano-legend"><span class="ano-key ano-key--lost"></span>12,5 semanas perdidas<span class="ano-key"></span>el resto del año</div>
   </div>
   <div class="coste-final">
     <p>Más de 500 horas al año — casi <strong>3 meses de tu vida laboral</strong> — perdidos en tareas que podrías resolver en segundos si dominaras Excel de verdad.</p>
