@@ -559,37 +559,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .coste-num strong { color: var(--green-light); }
   .coste-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
   .coste-arrow { color: var(--green-light); font-size: 1.1rem; }
-  .historia { padding: 3.5rem 5%; }
-  .hist-title { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-weight: 400; color: white; font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 auto 2rem; max-width: 640px; }
-  .hist-line { list-style: none; margin: 0 auto 2rem; padding: 0; max-width: 1100px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; position: relative; text-align: left; }
-  .hist-scene { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 1.1rem; display: flex; flex-direction: column; gap: .6rem; }
-  .hist-scene time { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.35rem; color: #e7c873; line-height: 1; }
-  .hist-scene h3 { font-size: 1rem; color: white; margin: .2rem 0 0; font-weight: 600; }
-  .hist-scene p { font-size: .88rem; color: rgba(255,255,255,.72); line-height: 1.6; margin: 0; }
-  .hist-vis { background: #f7f6f1; border-radius: 8px; min-height: 88px; padding: .6rem; display: flex; align-items: center; justify-content: center; color: #26352c; font-size: .75rem; font-family: 'DM Sans', sans-serif; }
-  .hist-sheet { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; align-content: center; }
-  .hist-sheet b { background: #dcd9cc; text-align: center; border-radius: 2px; font-weight: 600; }
-  .hist-sheet span { background: white; border: 1px solid #d8d5c8; padding: 3px 5px; border-radius: 2px; white-space: nowrap; overflow: hidden; }
-  .hist-sheet .err { color: #b3261e; background: #fdecea; border-color: #f0b8b3; font-weight: 600; }
-  .hist-copy { flex-direction: column; gap: 4px; }
-  .hist-copy .t { width: 80%; height: 14px; border-radius: 3px; background: repeating-linear-gradient(90deg, #d8d5c8 0 22px, #fff 22px 26px); }
-  .hist-copy em { font-style: normal; font-weight: 600; color: #1a5c36; }
-  .hist-copy i { font-style: normal; color: #b3261e; font-weight: 600; }
-  .hist-video { flex-direction: column; gap: 6px; background: #17211b; color: #cfd8d2; }
-  .hist-video .play { width: 30px; height: 30px; border-radius: 50%; background: #fff; color: #17211b; display: grid; place-items: center; font-size: .75rem; }
-  .hist-video .bar { width: 85%; height: 4px; background: #44514a; border-radius: 2px; }
-  .hist-video .bar div { width: 8%; height: 100%; background: #e5513f; border-radius: 2px; }
-  .hist-total { flex-direction: column; gap: 3px; }
-  .hist-total strong { font-size: 1.15rem; font-family: 'Fraunces', 'Fraunces Fallback', serif; }
-  .hist-total em { color: #b3261e; font-style: normal; font-weight: 600; }
-  .hist-giro { max-width: 760px; margin: 0 auto; background: var(--green-mid); border: 1px solid rgba(255,255,255,.2); border-radius: 16px; padding: 1.5rem 1.75rem; }
-  .hist-giro > strong { font-family: 'Fraunces', 'Fraunces Fallback', serif; font-size: 1.4rem; font-weight: 600; color: white; display: block; margin-bottom: .75rem; }
-  .hist-giro ul { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem .5rem; }
-  .hist-giro li { background: rgba(255,255,255,.1); border-radius: 999px; padding: .4rem .9rem; font-size: .88rem; color: white; }
-  .hist-giro li::before { content: "✓ "; color: var(--green-light); font-weight: 700; }
-  .hist-giro p { color: rgba(255,255,255,.88); margin: 0; font-size: 1rem; line-height: 1.6; }
-  @media (max-width: 960px) { .hist-line { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .historia { padding: 2.25rem 6%; } .hist-line { grid-template-columns: 1fr; gap: .75rem; } .hist-giro { padding: 1.25rem; } }
+  .nucleo{--gd:#0a2e1a;--gm:#1a5c36;--gl:#4db87a;--gold:#c9a84c;background:var(--gd);color:#fff;padding:3.5rem 5%;font-family:'DM Sans','DM Sans Fallback',sans-serif;text-align:center}
+  .nucleo *{box-sizing:border-box}
+  .nucleo h2{font-family:'Fraunces','Fraunces Fallback',serif;font-weight:400;margin:0}
+  .nu-eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gl);margin-bottom:.4rem}
+  .nucleo .nu-big{font-size:clamp(4rem,12vw,8rem);line-height:1;letter-spacing:-.02em;color:#fff}
+  .nu-big span{color:#e7c873;font-style:italic}
+  .nu-sub{color:rgba(255,255,255,.8);max-width:640px;margin:.6rem auto 2rem;line-height:1.65;font-size:1.05rem}
+  .nu-sub strong{color:#fff}
+  .nu-bar{max-width:980px;margin:0 auto;display:grid;grid-template-columns:2fr 8fr;gap:6px;text-align:left}
+  .nu-20{background:linear-gradient(160deg,#d9b955,#b8932f);color:#2a2105;border-radius:14px 4px 4px 14px;padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.35rem}
+  .nu-80{background:rgba(255,255,255,.07);border:1px dashed rgba(255,255,255,.22);border-radius:4px 14px 14px 4px;padding:1.1rem 1.4rem;display:flex;flex-direction:column;justify-content:center;gap:.35rem;color:rgba(255,255,255,.55)}
+  .nu-pct{font-family:'Fraunces','Fraunces Fallback',serif;font-size:2.2rem;line-height:1;font-weight:600}
+  .nu-lbl{font-weight:700;font-size:.95rem}
+  .nu-20 small{font-size:.78rem;line-height:1.4;color:#43360d}
+  .nu-80 .nu-pct{color:rgba(255,255,255,.35)}
+  .nu-80 p{margin:0;font-size:.9rem;line-height:1.5}
+  .nu-core{max-width:980px;margin:.6rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+  .nu-core div{background:rgba(201,168,76,.14);border:1px solid rgba(201,168,76,.5);border-radius:12px;padding:.8rem 1rem;text-align:left}
+  .nu-core b{display:block;color:#f1d98d;font-family:'Fraunces','Fraunces Fallback',serif;font-weight:400;font-size:1.1rem;margin-bottom:.2rem}
+  .nu-core span{font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.82)}
+  .nu-core code{font-family:ui-monospace,Menlo,monospace;font-size:.78rem;color:#e7c873}
+  .nu-pyg{max-width:760px;margin:1.75rem auto 0;display:flex;align-items:center;gap:1rem;justify-content:center;flex-wrap:wrap;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:.9rem 1.2rem;text-align:left}
+  .nu-fx{background:#f7f6f1;color:#1a5c36;border-radius:8px;padding:.45rem .8rem;font-family:ui-monospace,Menlo,monospace;font-size:.9rem;white-space:nowrap}
+  .nu-pyg p{margin:0;flex:1 1 280px;font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.88)}
+  .nu-pyg b{color:#f1d98d;font-weight:600}
+  .nu-paths{margin:1.5rem auto 0;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.5rem}
+  .nu-paths span{background:#f7f6f1;color:#17211b;border-radius:999px;padding:.45rem 1rem;font-weight:600;font-size:.88rem}
+  .nu-paths i{font-style:normal;color:var(--gl)}
+  .nu-paths em{font-style:normal;color:#e7c873;font-weight:700;font-size:.9rem}
+  .nu-cta{display:inline-block;margin-top:1.75rem;background:var(--gl);color:var(--gd);font-weight:700;border-radius:999px;padding:.85rem 1.8rem;text-decoration:none}
+  @media(max-width:760px){.nucleo{padding:2.5rem 6%}.nu-bar{grid-template-columns:1fr}.nu-20,.nu-80{border-radius:14px}.nu-20{flex-direction:row;align-items:center;gap:.8rem;flex-wrap:wrap}.nu-core{grid-template-columns:1fr}}
   .coste-final { display: inline-block; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 1.1rem 1.75rem; max-width: 640px; }
   .coste-final p { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin: 0; }
 
@@ -1218,72 +1218,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="coste-inaccion historia">
-  <div class="coste-eyebrow">¿Te suena este lunes?</div>
-  <h2 class="hist-title">Un día cualquiera con Excel de por medio</h2>
-  <ol class="hist-line">
-    <li class="hist-scene">
-      <time>09:05</time>
-      <div class="hist-vis hist-sheet" aria-hidden="true"><b>A</b><b>B</b><b>C</b><span>Ventas</span><span class="err">#N/A</span><span>1.240</span><span>Coste</span><span class="err">#¡REF!</span><span class="err">#¡VALOR!</span></div>
-      <h3>«Lo necesito para hoy»</h3>
-      <p>Tu jefe te reenvía un Excel de 14 pestañas. Ninguna fórmula es tuya y varias ya dan error.</p>
-    </li>
-    <li class="hist-scene">
-      <time>11:30</time>
-      <div class="hist-vis hist-copy" aria-hidden="true"><span class="t"></span><em>Ctrl+C → Ctrl+V</em><span class="t"></span><i>↻ cada semana</i></div>
-      <h3>Copiar, pegar, repetir</h3>
-      <p>Una hora pasando datos a mano de una hoja a otra. Lo mismo que hiciste la semana pasada.</p>
-    </li>
-    <li class="hist-scene">
-      <time>13:10</time>
-      <div class="hist-vis hist-video" aria-hidden="true"><span class="play">▶</span><div class="bar"><div></div></div><small>Lección 3 · 38 min</small></div>
-      <h3>La respuesta está «en algún vídeo»</h3>
-      <p>Buscas en un curso grabado. El ejemplo no se parece a tu archivo y nadie te puede preguntar.</p>
-    </li>
-    <li class="hist-scene">
-      <time>19:40</time>
-      <div class="hist-vis hist-total" aria-hidden="true"><small>Total</small><strong>=SUMA(…)</strong><em>¿Estará bien?</em></div>
-      <h3>Todos se han ido. Tú no.</h3>
-      <p>Revisas por tercera vez un total del que no te fías. Mañana lo entregas igual.</p>
-    </li>
-  </ol>
-  <div class="hist-giro">
-    <strong>Y si el próximo lunes fuera otro</strong>
-    <ul>
-      <li>Sabes qué fórmula usar y por qué funciona</li>
-      <li>Lo automatizas una vez y se actualiza solo</li>
-      <li>Sales a tu hora, con el Excel entregado</li>
-    </ul>
-    <p>Eso es lo que trabajamos en clase: un profesor que <strong>ve tu pantalla</strong> y resuelve tu archivo, no uno de ejemplo.</p>
+<section class="nucleo" id="nucleo">
+  <div class="nu-eyebrow">El enfoque</div>
+  <h2 class="nu-big">80<span>/</span>20</h2>
+  <p class="nu-sub">En Excel, un <strong>20 % resuelve casi todo</strong>. No necesitas cursos de 30 o 50 horas: necesitas ese núcleo y saber <strong>plantear problemas de tu profesión</strong>.</p>
+  <div class="nu-bar" role="img" aria-label="El 20 por ciento de Excel resuelve la mayor parte de los problemas; el 80 por ciento restante casi no se usa">
+    <div class="nu-20"><span class="nu-pct">20 %</span><span class="nu-lbl">El núcleo</span><small>lo que usarás cada día</small></div>
+    <div class="nu-80"><span class="nu-pct">80 %</span><p>El resto de Excel: cientos de funciones que casi nunca vas a necesitar… y que aprenderás en minutos el día que sí.</p></div>
   </div>
-</section>
-
-<section class="enfoque-8020" id="enfoque">
-  <div class="section-tag">Propuesta de valor</div>
-  <h2>El principio <em>80/20</em> aplicado a Excel</h2>
-  <p class="section-lead">Como tu profesor particular no te voy a enseñar Excel entero: nos centramos en el 20% de funciones y herramientas que cubren el 80% de tu trabajo real.</p>
-  <div class="ocho-grid">
-    <div class="ocho-card">
-      <div class="ocho-num">20<span>%</span></div>
-      <div class="ocho-title">del temario de Excel</div>
-      <div class="ocho-sub">Las fórmulas, tablas dinámicas y herramientas que usarás cada semana en tu trabajo</div>
-    </div>
-    <div class="ocho-arrow">→</div>
-    <div class="ocho-card">
-      <div class="ocho-num">80<span>%</span></div>
-      <div class="ocho-title">del trabajo real cubierto</div>
-      <div class="ocho-sub">Sin malgastar horas en funciones que probablemente nunca vas a necesitar</div>
-    </div>
-    <div class="ocho-arrow">→</div>
-    <div class="ocho-card ocho-card--result">
-      <div class="ocho-num">5<span>h</span></div>
-      <div class="ocho-title">para ver resultados reales</div>
-      <div class="ocho-sub">Productivo con Excel desde las primeras sesiones, aplicado a tu trabajo</div>
-    </div>
+  <div class="nu-core">
+    <div><b>Plantear y resolver</b><span>Convertir un problema de tu trabajo en una hoja que funcione</span></div>
+    <div><b>Datos y tablas dinámicas</b><span>Bases de datos, grandes volúmenes, reporting</span></div>
+    <div><b>Funciones core</b><span><code>BUSCARX</code> · <code>SI</code> · <code>SUMAR.SI.CONJUNTO</code> · referencias · validación · formatos condicionales</span></div>
   </div>
-  <p class="ocho-detail">
-    Es el criterio que aplico como profesor particular en cada sesión 1:1: <strong>priorizamos lo que de verdad usas</strong>, en el orden correcto, sobre tus archivos reales — sin temario de relleno.
-  </p>
+  <div class="nu-pyg">
+    <span class="nu-fx">=Ingresos − Costes</span>
+    <p>Una cuenta de resultados solo lleva sumas y restas. <b>Lo difícil es plantearla.</b> Eso es lo que no te enseñan los cursos de funciones, y lo que trabajamos en clase.</p>
+  </div>
+  <div class="nu-paths"><span>Busco empleo</span><span>Preparo un examen u oposición</span><span>Lo necesito en mi trabajo</span><i>→</i><em>el mismo 20 %</em></div>
+  <a class="nu-cta" href="#" data-cal-link="jhony-alberto-escobar-castro-hhyscc/15min" data-cal-namespace="15min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"}' data-track-reserva="1">Reserva tu clase diagnóstico gratis</a>
 </section>
 
 <section class="problemas" id="problemas">
