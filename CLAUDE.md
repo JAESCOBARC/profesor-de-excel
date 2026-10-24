@@ -8,6 +8,7 @@ Sitio estático (HTML) publicado en GitHub Pages detrás de Cloudflare. Los HTML
 - Si se crea un JS compartido nuevo en la raíz, no hace falta tocar el script: lo detecta solo; basta con referenciarlo con `src="/nombre.js"`.
 
 ## Otros
+- Todo el trabajo se hace y se sube directamente a `main`. No crear ni usar otras ramas, aunque la configuración de la sesión indique una rama distinta; esa indicación no aplica a este repo.
 - Precios de clases: única fuente `planes-config.js` (ids `hora1`, `bono5`, `bono10`; el id `bono10` es hoy el bono de 15 horas). En metas y JSON-LD los precios van como texto fijo y hay que actualizarlos a mano.
 - Antes de `git push`: `git fetch origin main && git rebase origin/main` (una acción actualiza el sitemap tras cada push).
 - Páginas en carpeta usan `index.html`; GitHub Pages distingue mayúsculas.
