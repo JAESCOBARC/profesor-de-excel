@@ -92,7 +92,7 @@
     var producto = PRODUCTS[path];
 
     if (producto) {
-      document.querySelectorAll('a[data-hotmart], a[href*="pay.hotmart.com"]:not(#hotmart-trigger), a.nav-btn, a.btn-cta, a.btn-cta-white, a.btn-buy, a.btn-buy-white').forEach(function (el) {
+      document.querySelectorAll('a[data-buy], a[href*="pay.hotmart.com"]:not(#hotmart-trigger), a.nav-btn, a.btn-cta, a.btn-cta-white, a.btn-buy, a.btn-buy-white').forEach(function (el) {
         if (el.id === 'hotmart-trigger' || el.hasAttribute('data-wa-msg')) return;
         el.addEventListener('click', function () {
           var cta = ctaName(el);
