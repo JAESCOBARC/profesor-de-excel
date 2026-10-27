@@ -1218,7 +1218,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       e.preventDefault();
       var t = document.getElementById('hotmart-trigger');
       if (window.hotmartReady && t) { t.click(); }
-      else { location.href = 'https://pay.hotmart.com/' + a.getAttribute('data-buy'); }
+      else {
+        // Sin el widget, el pago se abre en una pestaña nueva y esta página se queda donde está.
+        var url = 'https://pay.hotmart.com/' + a.getAttribute('data-buy');
+        var w = window.open(url, '_blank');
+        if (w) { w.opener = null; } else { location.href = url; } // si el navegador bloquea la pestaña, vamos en la misma
+      }
     });
   });
 </script>
