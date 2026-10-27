@@ -464,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="/plantillas-excel.html" class="nav-back">← Plantillas</a>
   <div class="nav-price-cta">
     <span class="nav-price">15,99€</span>
-    <a href="https://pay.hotmart.com/V93641317B" class="nav-btn" target="_blank" rel="noopener">Descargar ahora</a>
+    <a href="#" class="nav-btn" data-buy="V93641317B" rel="nofollow">Descargar ahora</a>
   </div>
 </nav>
 <nav class="crumbs" aria-label="Migas de pan"><ol><li><a href="/">Inicio</a></li><li><a href="/plantillas-excel.html">Plantillas Excel</a></li><li aria-current="page">Plantilla Balanced Scorecard</li></ol></nav>
@@ -505,7 +505,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="price-label">Pago único · Sin suscripción</span>
     </div>
 
-    <a href="https://pay.hotmart.com/V93641317B" class="btn-buy" target="_blank" rel="noopener">
+    <a href="#" class="btn-buy" data-buy="V93641317B" rel="nofollow">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
       Descargar plantilla ahora
     </a>
@@ -696,7 +696,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="cta-price-main">15,99€</div>
       <div class="cta-price-label">Pago único · Sin suscripción · Acceso permanente</div>
     </div>
-    <a href="https://pay.hotmart.com/V93641317B" class="btn-buy-white" target="_blank" rel="noopener">
+    <a href="#" class="btn-buy-white" data-buy="V93641317B" rel="nofollow">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
       Descargar plantilla — 15,99€
     </a>
@@ -765,5 +765,14 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 </script>
 
+<script>
+  // Botones de compra: el enlace de pago de Hotmart no va en el href para que ningún bloqueador ni estilo externo los esconda.
+  document.querySelectorAll('a[data-buy]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.open('https://pay.hotmart.com/' + a.getAttribute('data-buy'), '_blank', 'noopener');
+    });
+  });
+</script>
 </body>
 </html>
