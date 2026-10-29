@@ -167,6 +167,17 @@ body{margin:0;font-family:'DM Sans','DM Sans Fallback',Arial,sans-serif;backgrou
 .cta-btn{display:inline-block;margin-top:.5rem;background:var(--green-light);color:var(--green-deep)!important;font-weight:700;padding:.8rem 1.6rem;border-radius:999px;text-decoration:none}
 .faq details{border-top:1px solid var(--border);padding:.8rem 0}.faq summary{cursor:pointer;font-weight:600;color:var(--green-deep)}.faq p{margin:.5rem 0 0}
 .author{margin-top:2.5rem;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1rem 1.25rem}.author p{margin:.3rem 0 0;font-size:.95rem}
+.demo-form{display:grid;gap:12px;max-width:460px;margin:1rem 0;background:#fff;border:1px solid var(--border);border-radius:16px;padding:1.2rem}
+.demo-form .tf{display:grid;gap:4px}.demo-form label{font-weight:700;font-size:.9rem}
+.demo-form input,.demo-form select{width:100%;font:inherit;padding:11px 13px;border:1.5px solid rgba(10,46,26,.25);border-radius:10px;background:#fff;color:var(--charcoal)}
+.demo-form input:focus-visible,.demo-form select:focus-visible{outline:3px solid var(--green-light);outline-offset:1px}
+.demo-form .tf-err{display:none;color:#b3261e;font-size:.82rem}.demo-form .tf.has-error input,.demo-form .tf.has-error select{border-color:#b3261e}.demo-form .tf.has-error .tf-err{display:block}
+.demo-submit{border:0;cursor:pointer;font-family:inherit;font-size:1rem;display:flex;flex-direction:column;gap:2px;margin:0;width:100%;text-align:center}
+.demo-submit small{font-weight:600;font-size:.78rem}
+.demo-consent{font-size:.78rem;color:var(--muted);margin:0}
+.demo-ok{background:var(--green-mist);border:1px solid var(--green-pale);border-radius:10px;padding:.7rem 1rem;margin:0}
+.demo-form.is-done .tf,.demo-form.is-done .demo-submit,.demo-form.is-done .demo-consent{display:none}
+.demo-warn{background:#fff8e6;border:1px solid #f0dfa8;border-radius:10px;padding:.7rem 1rem;font-size:.92rem}
 .sr{position:absolute;left:-9999px}
 @media(max-width:600px){.top{padding:10px 5%}.nav-logo span{display:none}}
 </style>
@@ -289,7 +300,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>Cómo hacer un plan de negocio <em>paso a paso</em></h1>
     <p class="art-meta">Por <a href="/jhony-profesor-excel-online.html">Jhony Escobar</a>, analista de datos y profesor de Excel · Actualizado el 29 de octubre de 2026</p>
     <p class="art-lead">Un plan de negocio te dice si tu idea puede funcionar antes de que inviertas dinero. Esta guía recorre qué debe incluir, cómo hacerlo en orden y qué cifras calcular, con un ejemplo y una plantilla para empezar.</p>
-    <nav class="toc" aria-label="Índice de la guía"><strong>En esta guía</strong><ol><li><a href="#que-es">¿Qué es un plan de negocio?</a></li><li><a href="#partes">Partes de un plan de negocio</a></li><li><a href="#pasos">Cómo hacerlo, paso a paso</a></li><li><a href="#financiero">El plan financiero: qué calcular</a></li><li><a href="#ejemplo">Ejemplo con cifras: punto de equilibrio, VAN y TIR</a></li><li><a href="#errores">Errores frecuentes</a></li><li><a href="#herramienta">Excel o una aplicación</a></li><li><a href="#faq">Preguntas frecuentes</a></li></ol></nav>
+    <nav class="toc" aria-label="Índice de la guía"><strong>En esta guía</strong><ol><li><a href="#que-es">¿Qué es un plan de negocio?</a></li><li><a href="#partes">Partes de un plan de negocio</a></li><li><a href="#pasos">Cómo hacerlo, paso a paso</a></li><li><a href="#financiero">El plan financiero: qué calcular</a></li><li><a href="#ejemplo">Ejemplo con cifras: punto de equilibrio, VAN y TIR</a></li><li><a href="#errores">Errores frecuentes</a></li><li><a href="#herramienta">Excel o una aplicación</a></li><li><a href="#demo">Prueba la demo gratis</a></li><li><a href="#faq">Preguntas frecuentes</a></li></ol></nav>
   </header>
 
   <section id="que-es">
@@ -389,8 +400,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="cta-t">¿Prefieres no construir las fórmulas?</p>
       <p>Budget Plan Pro hace los cálculos de esta guía por ti. Pago único de 95 €, con 7 días de garantía.</p>
       <p><a class="cta-btn" href="/plan-negocio/">Ver Budget Plan Pro</a></p>
+      <p>o <a href="#demo" style="color:#cfe6d9">prueba primero la demo gratuita</a></p>
     </div>
     <p>Si buscas otras plantillas para gestionar tu negocio (flujo de caja, DAFO, control de pagos…), mira el <a href="/kit-plantillas-excel-negocios.html">pack de plantillas Excel para negocios</a>.</p>
+  </section>
+
+  <section id="demo">
+    <h2>Prueba Budget Plan Pro gratis</h2>
+    <p>Para ver cómo se construye un plan de negocio con la aplicación, descarga la demo gratuita. Te deja ver todos los módulos y trabajar con <strong>Planeación</strong> y <strong>Sensibilidad y Escenarios</strong>. Está disponible en español, inglés y portugués, para Windows 10 y 11 (64 bits).</p>
+    <form class="demo-form" data-demo-form data-url="https://github.com/JAESCOBARC/profesor-de-excel/releases/latest/download/BudgetPlanPro_Demo_Setup_v1.8.10.exe" data-product="Budget Plan Pro" data-plan="Demo" novalidate>
+      <div class="tf" data-f="nombre"><label for="df-n">Nombre *</label><input id="df-n" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required><span class="tf-err">Escribe tu nombre.</span></div>
+      <div class="tf" data-f="email"><label for="df-e">Email *</label><input id="df-e" name="email" type="email" placeholder="tu@email.com" autocomplete="email" required><span class="tf-err">Escribe un email válido (ej. tu@email.com).</span></div>
+      <div class="tf" data-f="pais"><label for="df-p">País *</label><select id="df-p" name="pais" required><option value="">Selecciona tu país</option><option value="España">España</option><option value="México">México</option><option value="Colombia">Colombia</option><option value="Argentina">Argentina</option><option value="Chile">Chile</option><option value="Perú">Perú</option><option value="Ecuador">Ecuador</option><option value="Venezuela">Venezuela</option><option value="Estados Unidos">Estados Unidos</option><option value="Brasil">Brasil</option><option value="Portugal">Portugal</option><option value="Otro">Otro</option></select><span class="tf-err">Selecciona tu país.</span></div>
+      <button class="cta-btn demo-submit" type="submit">Descargar la demo para Windows<small>Budget Plan Pro · v1.8.10 · 48 MB</small></button>
+      <p class="demo-consent">Al descargar, autorizas el tratamiento de tus datos para enviarte información sobre Budget Plan Pro. No los compartimos con terceros. <a href="/politica-privacidad.html">Política de privacidad</a>.</p>
+      <p class="demo-ok" data-ok hidden>¡Listo! Tu descarga empieza ahora. <a href="https://github.com/JAESCOBARC/profesor-de-excel/releases/latest/download/BudgetPlanPro_Demo_Setup_v1.8.10.exe" rel="noopener">Si no empieza, pulsa aquí</a></p>
+    </form>
+    <p class="demo-warn"><strong>Si Windows muestra un aviso</strong> (SmartScreen): haz clic en <strong>Más información</strong> y después en <strong>Ejecutar de todas formas</strong>. Es una aplicación para Windows: descárgala desde tu ordenador.</p>
+    <p>¿Te convence? <a href="/plan-negocio/">Mira Budget Plan Pro</a> y consigue la versión completa por 95 € (pago único, 7 días de garantía).</p>
   </section>
 
   <section id="faq">
@@ -405,6 +432,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <section class="related" aria-labelledby="rel-h"><h2 id="rel-h">Sigue explorando</h2><ul><li><a href="/plan-negocio/"><strong>Plantilla de plan de negocios</strong><span>Plan de negocios sin fórmulas</span></a></li><li><a href="/kit-plantillas-excel-negocios.html"><strong>Plantillas de Excel para negocios</strong><span>Pack de 24 plantillas listas para usar</span></a></li><li><a href="/plantillas-excel.html"><strong>Ver todo: Plantillas Excel</strong><span>Volver al índice</span></a></li></ul></section>
+<script src="/demo-lead.js?v=deca337a"></script>
 <script src="/footer.js?v=73822ced"></script>
 <script src="/whatsapp-config.js?v=8299b8e7"></script>
 </body>
