@@ -227,6 +227,14 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "Existe uma demo gratuita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Você pode baixar uma demo gratuita para Windows, disponível em português, espanhol e inglês. Ela permite ver todos os módulos e trabalhar com as seções de Planejamento e de Sensibilidade e Cenários. Para usar o restante do aplicativo, obtenha a versão completa."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "O que é o Budget Plan Pro?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -574,6 +582,26 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-bet
 footer a{color:#cfe6d9}
 
 /* barra fija móvil */
+.trial{background:var(--cream)}
+.trial-card{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:start;background:#fff;border:1px solid rgba(10,46,26,.12);border-radius:24px;padding:40px;box-shadow:0 18px 50px -24px rgba(10,46,26,.25)}
+.trial-text h2{margin:0 0 14px}
+.trial-list{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:10px}
+.trial-list li{position:relative;padding-left:28px}
+.trial-list li::before{content:"";position:absolute;left:0;top:.45em;width:16px;height:16px;border-radius:50%;background:var(--green-light) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a2e1a' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.trial-note{font-size:.95rem;color:var(--ink-2);margin:0}
+.trial-dl{display:grid;gap:14px}
+.trial-dl .btn{width:100%;flex-direction:column;gap:2px}
+.trial-warn{background:#fff8e6;border:1px solid #f0dfa8;border-radius:12px;padding:12px 14px;font-size:.92rem;margin:0}
+.trial-win{font-size:.85rem;color:var(--ink-2);margin:0}
+.trial-hash{font-size:.82rem;margin:0;color:var(--ink-2)}
+.trial-hash code{display:block;margin:4px 0 6px;padding:8px 10px;background:#f2f0ea;border-radius:8px;font-size:.78rem;overflow-wrap:anywhere;word-break:normal;color:#222}
+.trial-buy{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(10,46,26,.1);padding-top:14px}
+.trial-buy span{font-weight:700}
+.trial-buy .btn{flex:1;min-width:220px;padding:14px 22px;font-size:1rem;width:auto}
+.hero-trial{margin:-4px 0 14px}
+.hero-trial a{color:#cfe6d9;font-size:.95rem;text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;gap:6px}
+.hero-trial a:hover{color:#fff}
+@media(max-width:820px){.trial-card{grid-template-columns:1fr;padding:24px 20px;gap:22px}}
 .sticky-spacer{height:84px;background:var(--green-deep)}
 .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(10,46,26,.96);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .25s ease;border-top:1px solid rgba(255,255,255,.1)}
 .sticky-cta.show{transform:none}
@@ -749,6 +777,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="btn btn-ghost" href="#demo" data-cta="hero-demo">Ver o software em 40 s</a>
         </div>
+        <p class="hero-trial"><a href="#prueba" data-cta="hero-prueba"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 12l6 6 6-6M5 21h14"/></svg>Baixar a demo grátis</a></p>
         <ul class="trust">
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2.5" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Garantia de 7 dias</li>
           <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2.5" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>Pagamento único e seguro com a Hotmart</li>
@@ -865,6 +894,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p style="margin-top:32px"><a class="btn btn-primary" href="#comprar" rel="nofollow" data-buy="X108099377U" data-cta="demo">Eu quero · €&nbsp;95</a></p>
     </div>
   </section>
+
+  <!-- Demo descargable -->
+  <section class="trial" id="prueba" aria-labelledby="prueba-t">
+    <div class="wrap">
+      <div class="trial-card">
+        <div class="trial-text">
+          <span class="eyebrow">Demo gratuita</span>
+          <h2 id="prueba-t">Experimente no seu computador, grátis</h2>
+          <ul class="trial-list"><li>Percorra todos os módulos do aplicativo</li><li>Experimente as seções <strong>Planejamento</strong> e <strong>Sensibilidade e Cenários</strong></li><li>Disponível em português, espanhol e inglês</li><li>Aplicativo para Windows 10 e 11 (64 bits)</li></ul>
+          <p class="trial-note">A demo permite ver todos os módulos e trabalhar com Planejamento e Sensibilidade e Cenários. A versão completa libera o restante do aplicativo.</p>
+        </div>
+        <div class="trial-dl">
+          <a class="btn btn-primary" href="https://github.com/JAESCOBARC/profesor-de-excel/releases/latest/download/BudgetPlanPro_Demo_Setup_v1.8.10.exe" rel="nofollow noopener" data-demo data-cta="demo-descarga" download>Baixar a demo para Windows<small>Budget Plan Pro · v1.8.10 · 48 MB</small></a>
+          <p class="trial-warn"><strong>Se o Windows mostrar um aviso</strong> (SmartScreen): clique em <strong>Mais informações</strong> e depois em <strong>Executar assim mesmo</strong>.</p>
+          <p class="trial-win">É um aplicativo para Windows: baixe-o no seu computador.</p>
+          <p class="trial-hash">Soma de verificação SHA-256: <code>e5f7dfb64f30145a86f79df4686836a175960c7cc572dde9b748d7a2b6684a9e</code>Para conferir no PowerShell: <code>Get-FileHash .\BudgetPlanPro_Demo_Setup_v1.8.10.exe -Algorithm SHA256</code></p>
+          <div class="trial-buy"><span>Gostou?</span><a class="btn btn-primary" href="#comprar" rel="nofollow" data-buy="X108099377U" data-cta="demo-compra">Obtenha a versão completa · €&nbsp;95</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ===================== D · DESEO (beneficios con pruebas reales) ===================== -->
   <section aria-labelledby="funciones">
@@ -1098,6 +1149,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <details><summary>O que é a avaliação financeira de um projeto de investimento?</summary><div class="ans"><p>É a análise que responde se um projeto vale a pena: compara o investimento com os fluxos de caixa que ele gera e calcula indicadores como o VPL (valor presente líquido), a TIR (taxa interna de retorno) e o ponto de equilíbrio. O Budget Plan Pro calcula os três automaticamente a partir dos seus dados.</p></div></details>
         <details><summary>Como fazer um plano de investimento?</summary><div class="ans"><p>Um plano de investimento lista os ativos que você precisa comprar, quando e quanto custam, como são financiados (capital próprio ou empréstimos) e como são depreciados. No Budget Plan Pro você preenche nas seções Investimentos e Financiamento e o software gera o quadro de depreciação e amortização e seu efeito no balanço e no fluxo de caixa.</p></div></details>
         <details><summary>Preciso saber finanças ou contabilidade?</summary><div class="ans"><p>Não. Você só precisa conhecer o seu negócio: o que vai vender, a que preço, quanto custa e o que precisa comprar. O software faz os cálculos, valida se o balanço fecha, avisa sobre inconsistências e inclui ajuda em cada seção e um projeto de exemplo completo.</p></div></details>
+        <details><summary>Existe uma demo gratuita?</summary><div class="ans"><p>Sim. Você pode baixar uma demo gratuita para Windows, disponível em português, espanhol e inglês. Ela permite ver todos os módulos e trabalhar com as seções de Planejamento e de Sensibilidade e Cenários. Para usar o restante do aplicativo, obtenha a versão completa.</p></div></details>
         <details><summary>Funciona no Mac?</summary><div class="ans"><p>Não por enquanto. O Budget Plan Pro funciona no Windows 10 e no Windows 11 de 64 bits.</p></div></details>
         <details><summary>O pagamento é único? Em quantos computadores posso instalar?</summary><div class="ans"><p>Sim: você paga €95 uma única vez, sem assinaturas. A licença é para um PC.</p></div></details>
         <details><summary>O que recebo depois de pagar?</summary><div class="ans"><p>A Hotmart envia por e-mail o acesso para baixar o instalador do Budget Plan Pro para Windows e o manual do usuário em PDF.</p></div></details>
@@ -1121,7 +1173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <section class="related" aria-labelledby="rel-h"><h2 id="rel-h">Sigue explorando</h2><ul><li><a href="/plan-negocio/"><strong>Plantilla de plan de negocios</strong><span>Plan de negocios sin fórmulas</span></a></li><li><a href="/kit-plantillas-excel-negocios.html"><strong>Plantillas de Excel para negocios</strong><span>Pack de 24 plantillas listas para usar</span></a></li><li><a href="/plantillas-excel.html"><strong>Plantillas de Excel</strong><span>Catálogo de plantillas</span></a></li><li><a href="/plantillas-excel.html"><strong>Ver todo: Plantillas Excel</strong><span>Volver al índice</span></a></li></ul></section>
-<script src="/producto-clics-tracking.js?v=3ae1eb62"></script>
+<script src="/producto-clics-tracking.js?v=ad559716"></script>
 <script src="/footer.js?v=73822ced"></script>
 <div class="sticky-spacer" aria-hidden="true"></div>
 

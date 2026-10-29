@@ -99,6 +99,13 @@
       });
     }
 
+    // Descarga de la demo de Budget Plan Pro
+    document.querySelectorAll('a[data-demo]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        send('DEMO-' + rnd(), 'clic_demo', (PRODUCTS[path] || 'Budget Plan Pro') + ' · demo', 'demo-descarga');
+      });
+    });
+
     // Catálogo: clics en las fichas de producto (hub de plantillas)
     document.querySelectorAll('a.producto-card').forEach(function (el) {
       var key = CATALOG[norm((el.getAttribute('href') || '').split('#')[0])];
