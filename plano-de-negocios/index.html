@@ -593,7 +593,7 @@ footer a{color:#cfe6d9}
 .trial-dl .btn{width:100%;flex-direction:column;gap:2px}
 .trial-warn{background:#fff8e6;border:1px solid #f0dfa8;border-radius:12px;padding:12px 14px;font-size:.92rem;margin:0}
 .trial-win{font-size:.85rem;color:var(--ink-2);margin:0}
-.trial-hash{font-size:.82rem;margin:0;color:var(--ink-2)}
+.trial-hash{font-size:.82rem;margin:0;color:var(--ink-2)}.trial-hash summary{cursor:pointer;font-weight:600;color:var(--green-mid)}.trial-hash p{margin:8px 0 0}
 .trial-hash code{display:block;margin:4px 0 6px;padding:8px 10px;background:#f2f0ea;border-radius:8px;font-size:.78rem;overflow-wrap:anywhere;word-break:normal;color:#222}
 .trial-buy{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid rgba(10,46,26,.1);padding-top:14px}
 .trial-buy span{font-weight:700}
@@ -929,7 +929,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </form>
           <p class="trial-warn"><strong>Se o Windows mostrar um aviso</strong> (SmartScreen): clique em <strong>Mais informações</strong> e depois em <strong>Executar assim mesmo</strong>.</p>
           <p class="trial-win">É um aplicativo para Windows: baixe-o no seu computador.</p>
-          <p class="trial-hash">Soma de verificação SHA-256: <code>e5f7dfb64f30145a86f79df4686836a175960c7cc572dde9b748d7a2b6684a9e</code>Para conferir no PowerShell: <code>Get-FileHash .\BudgetPlanPro_Demo_Setup_v1.8.10.exe -Algorithm SHA256</code></p>
+          <details class="trial-hash"><summary>Verificar o download (opcional)</summary><p>Soma de verificação SHA-256: <code>e5f7dfb64f30145a86f79df4686836a175960c7cc572dde9b748d7a2b6684a9e</code>Para conferir no PowerShell: <code>Get-FileHash .\BudgetPlanPro_Demo_Setup_v1.8.10.exe -Algorithm SHA256</code></p></details>
           <div class="trial-buy"><span>Gostou?</span><a class="btn btn-primary" href="#comprar" rel="nofollow" data-buy="X108099377U" data-cta="demo-compra">Obtenha a versão completa · €&nbsp;95</a></div>
         </div>
       </div>
