@@ -43,13 +43,11 @@
     '/kit-plantillas-excel-negocios.html': 'Pack de plantillas Excel para negocios',
     '/plan-negocio/': 'Budget Plan Pro (ES)',
     '/business-plan-software/': 'Budget Plan Pro (EN)',
-    '/plano-de-negocios/': 'Budget Plan Pro (PT)',
-    '/plantillas/balanced-scorecard-excel.html': 'Plantilla Balanced Scorecard'
-  };
+    '/plano-de-negocios/': 'Budget Plan Pro (PT)'
+      };
   var CATALOG = {
     '/kit-plantillas-excel-negocios.html': 'KIT',
-    '/plan-negocio/': 'BPP',
-    '/plantillas/balanced-scorecard-excel.html': 'BSC'
+    '/plan-negocio/': 'BPP'
   };
 
   function norm(path) { return path.replace(/index\.html$/, ''); }
