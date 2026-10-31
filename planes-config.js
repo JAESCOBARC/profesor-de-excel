@@ -3,7 +3,7 @@
     hora1: { id: 'hora1', horas: 1, precioHora: 25, total: null },
     bono5: { id: 'bono5', horas: 6, precioHora: 20, total: 120, descuento: 20 },
     // El id 'bono10' se mantiene por compatibilidad (test de nivel, Google Sheet); el plan actual es de 15 horas.
-    bono10: { id: 'bono10', horas: 15, precioHora: 18, total: 270, descuento: 28 }
+    bono10: { id: 'bono10', horas: 15, precioHora: 16.67, total: 250, descuento: 33 }
   };
 
   function fmtPrecio(n) {
