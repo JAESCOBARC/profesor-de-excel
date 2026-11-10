@@ -1,0 +1,135 @@
+/* Home: reglas específicas de index.html */
+.problemas .section-tag,.comparativa .section-tag{display:table!important;margin-left:auto!important;margin-right:auto!important}
+nav{background:rgba(251,249,244,.92)}
+.hero-badge::before{color:var(--green-mid)}
+.hero-desc{color:var(--slate)}
+.hero-live-note{color:var(--green-mid);font-weight:600}
+.hero-live-note::before{color:var(--green-mid)}
+.trust-card{background:var(--card);border-radius:18px;box-shadow:none}
+.trust-num{font-weight:800;letter-spacing:-.03em;color:var(--green-mid)}
+.hero-video-wrap{border-radius:18px;box-shadow:0 20px 50px rgba(28,30,29,.10);border:1px solid var(--border)}
+@media (min-width:769px){
+  .hero{padding:0;gap:0;align-items:stretch;grid-template-columns:minmax(0,46fr) minmax(0,54fr);border-bottom:1px solid var(--border)}
+  .hero::before{display:none}
+  .hero-content{background:var(--cream-2);padding:3.5rem 3rem 3rem 5vw}
+  .hero-visual{background:var(--card);border-left:1px solid var(--border);padding:3.5rem 5vw 3.5rem 3.5rem;justify-content:center}
+  .trust-card{display:block}
+  .hero-trust{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:1.1rem 2rem}
+  .hero-trust .trust-divider{display:none}
+}
+.valor-strip{background:var(--cream-2);padding:0;border-bottom:1px solid var(--border)}
+.valor-strip-inner{max-width:1240px;margin:0 auto;gap:1px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));background:var(--border)}
+@media (min-width:769px){.valor-strip-inner{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1100px){.valor-strip-inner{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.valor-chip{border:0;border-radius:0;background:var(--cream-2);box-shadow:none;padding:1.1rem 1.25rem;justify-content:center}
+.valor-chip span{white-space:normal;font-weight:600;font-size:.85rem;color:var(--green-deep)}
+.valor-chip svg{color:var(--green-mid)}
+.valor-chip--certificado{background:var(--green-pale)}
+/* 80/20 */
+.nucleo{background:var(--cream);color:var(--charcoal);font-family:var(--f)}
+.nucleo .nu-eyebrow{color:var(--green-mid)}
+.nucleo .nu-big{color:var(--green-deep);font-weight:800;letter-spacing:-.05em}
+.nucleo .nu-big span{color:var(--green-mid);font-style:normal}
+.nucleo .nu-sub{color:var(--slate)}.nucleo .nu-sub strong{color:var(--green-deep)}
+.nucleo .nu-20{background:var(--green-pale);color:var(--green-deep);border:1px solid #bfe6dd;border-radius:18px 6px 6px 18px}
+.nucleo .nu-20 small{color:var(--slate)}
+.nucleo .nu-80{background:var(--card);border:1px dashed #cfc8b8;color:var(--slate);border-radius:6px 18px 18px 6px}
+.nucleo .nu-80 .nu-pct{color:#b9b5a8}
+.nucleo .nu-pct{font-weight:800;letter-spacing:-.04em}
+.nucleo .nu-caps p{color:var(--slate)}
+.nucleo .nu-core div{background:var(--card);border:1px solid var(--border);border-radius:16px}
+.nucleo .nu-core b{color:var(--green-mid);font-weight:800}
+.nucleo .nu-core span{color:var(--slate)}
+.nucleo .nu-core code{color:var(--green-mid)}
+.nucleo .nu-pyg{background:var(--card);border:1px solid var(--border);border-radius:16px}
+.nucleo .nu-pyg p{color:var(--slate)}.nucleo .nu-pyg b{color:var(--green-deep)}
+.nucleo .nu-fx{background:var(--green-pale);color:var(--green-mid)}
+.nucleo .nu-paths span{background:var(--card);border:1px solid var(--border);color:var(--green-deep)}
+.nucleo .nu-paths i{color:var(--green-mid)}.nucleo .nu-paths em{color:var(--green-mid)}
+.nucleo .nu-caps b{color:var(--green-deep)}
+.nucleo .nu-caps p::before{background:var(--green-mid)}
+.nucleo .nu-caps p.g::before{background:#cfc8b8}
+.nucleo .nu-detail{color:var(--slate)}.nucleo .nu-detail strong{color:var(--green-deep)}
+.nucleo .nu-close{background:var(--cream-2);border:1px solid var(--border);border-radius:18px}
+.nucleo .nu-close .nu-detail{color:var(--slate)}
+.nucleo .nu-cta{background:var(--green-mid);color:#fff;border-radius:10px}
+/* errores comunes */
+.problemas{background:var(--cream-2)}
+.problemas .section-tag{color:var(--green-mid)}
+.problemas h2{color:var(--green-deep)}
+.problemas h2 em{color:inherit}
+.problemas .section-lead{color:var(--slate)}
+.problema-card{background:var(--card);border:1px solid var(--border);border-radius:18px}
+.problema-card:hover{background:#fff}
+.problema-card h3{color:var(--green-deep);font-weight:700}
+.problema-card p{color:var(--slate)}
+.problema-card summary::after{color:var(--green-mid)!important}
+/* comparativa */
+.comparativa{background:var(--cream-2)}
+.comparativa-table{background:var(--card)}
+.comparativa-col-jhony{background:var(--green-pale)!important;color:var(--green-deep)!important}
+.comparativa-table td.comparativa-col-jhony,.comparativa-table th.comparativa-col-jhony{color:var(--green-deep)!important;font-weight:600}
+.comparativa-badge{background:var(--green-mid);color:#fff}
+.certificado-section{background:var(--cream)}
+.certificado-visual img{border-color:var(--card);box-shadow:0 18px 40px rgba(28,30,29,.14)}
+/* tarjetas */
+.programas-section{background:transparent}
+.programa-card{background:var(--card);border-radius:18px}
+.programa-card:hover{box-shadow:0 12px 28px rgba(28,30,29,.08)}
+.programa-card h3{font-weight:800;letter-spacing:-.02em}
+.programa-card-badge{background:var(--green-pale);border-color:#cfeae4;color:var(--green-mid)}
+.hub-links a{background:var(--green-pale);border-color:#cfeae4;color:var(--green-mid)}
+.servicios{background:var(--cream)}
+.servicio-card{background:var(--card);border-radius:18px}
+.servicio-card::before{background:var(--green-mid)}
+.servicio-card h3{font-weight:800;letter-spacing:-.02em}
+.servicio-icon{border-radius:12px;background:var(--green-pale);border-color:#cfeae4}
+.servicio-popular{background:var(--green-pale);color:var(--green-mid)}
+/* precios */
+.precios{background:var(--cream-2)}
+.precio-pill{background:var(--card);border-radius:18px;border:1px solid var(--border)}
+.precio-pill:hover{box-shadow:0 12px 30px rgba(28,30,29,.08);border-color:var(--green-light)}
+.precio-pill--popular,.precio-pill--popular:hover{background:var(--card);border:2px solid var(--green-mid);transform:none;box-shadow:0 14px 34px rgba(34,82,76,.12)}
+.precio-pill--popular .precio-horas{color:var(--muted)}
+.precio-pill--popular .precio-amount{color:var(--green-deep)}
+.precio-pill--popular .precio-amount span{color:var(--muted)}
+.precio-pill--popular .precio-descuento{background:var(--green-pale);color:var(--green-mid)}
+.precio-pill--popular .precio-desc{color:var(--slate)}
+.precio-pill--popular .precio-cta{background:var(--green-mid);color:#fff}
+.precio-pill--popular .precio-cta:hover{background:#1b413c}
+.precio-pill--diagnostico{border:2px solid var(--green-light)}
+.precio-pill--diagnostico .precio-badge{background:var(--green-mid);color:#fff}
+.precio-pill--diagnostico .precio-amount{color:var(--green-deep)}
+.precio-badge{background:var(--green-light);color:var(--green-deep);font-weight:700}
+.precio-amount{font-weight:800;letter-spacing:-.045em;color:var(--green-deep)}
+.precio-cta{background:var(--green-mid);border-radius:10px;font-weight:700}
+.precio-cta:hover{background:#1b413c}
+.precio-descuento{background:var(--green-pale);color:var(--green-mid)}
+/* temario, método, FAQ */
+.temario{background:var(--cream)}
+.temario-acc details,.temario-item{background:var(--card);border-radius:14px}
+.temario-num{font-weight:800}
+.metodologia{background:var(--cream-2)}
+.metodo-features{background:var(--card);border:1px solid var(--border);border-radius:18px;color:var(--green-deep)}
+.metodo-features h3{color:var(--green-deep);font-weight:800;letter-spacing:-.02em}
+.feature-row{border-bottom-color:var(--border)}
+.feature-text{color:var(--slate)}.feature-text strong{color:var(--green-deep);font-weight:700}
+.step-circle{background:var(--green-pale);border-color:var(--green-light);color:var(--green-mid)}
+.faq-testi{background:var(--cream)}
+.testi-card{background:var(--card);border-radius:18px}
+.testi-text{font-style:normal}
+/* cierre y agenda */
+.cta-final{background:var(--cream)}
+.cta-box{background:var(--green-deep);border-radius:28px}
+.cta-text p,.cta-box p{color:#c9c9c4}
+.btn-white{background:var(--cream);color:var(--green-deep);border-radius:10px;font-weight:700}
+.agenda-directa{background:var(--cream-2)}
+.keywords-seo{background:var(--green-deep)}
+.hub-links{margin-top:1.75rem}
+.btn-primary:hover{background:#1b413c;transform:none}
+nav.hub-links{position:static;height:auto;background:transparent;backdrop-filter:none;border-bottom:0;z-index:auto}
+.nav-cta{border:1.5px solid var(--green-deep)!important;border-radius:10px!important;padding:.45rem 1rem!important;color:var(--green-deep)!important;font-weight:600!important}
+.nav-cta:hover{background:var(--green-deep)!important;color:#fff!important}
+.nucleo .nu-80 .nu-pct{color:#8f8a7c}
+.nu-top-feat{color:var(--green-deep)!important}.nu-top-feat strong{color:var(--green-mid)!important}
+.nu-top-h1{color:var(--green-deep)!important;font-weight:800}

@@ -1,0 +1,9 @@
+.level-card>*,.level-body,.level-content{min-width:0;max-width:100%}
+.level-title,.level-content,.level-body{overflow-wrap:anywhere}
+
+.level-tag{color:var(--green-mid)}
+.l4 .level-tag,.l4 .level-title{color:#9a6200}
+.quick-stat-num,.level-cta-text{color:#9a6200!important}
+.l4 .btn-level{background:#9a6200;color:#fff}
+.mos-box a[href*="credly"]{color:#fff!important}
+.l0 .level-tag{color:var(--green-mid)}

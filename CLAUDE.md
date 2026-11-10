@@ -7,6 +7,10 @@ Sitio estático (HTML) publicado en GitHub Pages detrás de Cloudflare. Los HTML
 - El hook `.githooks/pre-commit` lo hace solo (`git config core.hooksPath .githooks`); si el hook no está activo, ejecutar el script a mano. La acción `check-assets` falla en GitHub si falta.
 - Si se crea un JS compartido nuevo en la raíz, no hace falta tocar el script: lo detecta solo; basta con referenciarlo con `src="/nombre.js"`.
 
+## Tema visual (obligatorio al crear o editar páginas)
+- El diseño (colores, tipografía Plus Jakarta Sans, maquetación común) sale de `theme/base.css` + `theme/pages/<ruta>.css` (index.html -> index.css, cursos/index.html -> cursos-index.css). `python3 scripts/apply_theme.py` lo inyecta en cada HTML entre los marcadores `<!--theme-preload-->` y `<!--theme-css-->`; no editar esos bloques a mano. El hook de pre-commit lo ejecuta solo y la acción `check-assets` falla si falta.
+- Las páginas nuevas deben llevar `</head>` y usar las variables de `base.css` (`--green-deep`, `--green-mid`, `--cream`, `--f`...). No cargar otras fuentes: solo `/fonts/plus-jakarta-sans.woff2`.
+
 ## Otros
 - Todo el trabajo se hace y se sube directamente a `main`. No crear ni usar otras ramas, aunque la configuración de la sesión indique una rama distinta; esa indicación no aplica a este repo.
 - Precios de clases: única fuente `planes-config.js` (ids `hora1`, `bono5`, `bono10`; el id `bono10` es hoy el bono de 15 horas). En metas y JSON-LD los precios van como texto fijo y hay que actualizarlos a mano.

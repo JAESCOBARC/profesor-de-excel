@@ -1,4 +1,5 @@
 #!/bin/sh
 # Antes de cada commit: actualiza el ?v=<hash> de los JS compartidos para forzar que Cloudflare y los navegadores los recarguen.
+python3 scripts/apply_theme.py || exit 1
 python3 scripts/bump_assets.py || exit 1
 git add -u -- '*.html'

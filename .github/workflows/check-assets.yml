@@ -16,3 +16,5 @@ jobs:
           python-version: "3.11"
       - name: Verificar que los JS compartidos llevan su ?v=hash actual
         run: python3 scripts/bump_assets.py --check
+      - name: Verificar que el tema visual está inyectado en todas las páginas
+        run: python3 scripts/apply_theme.py --check

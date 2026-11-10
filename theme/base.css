@@ -1,0 +1,34 @@
+/* Tema visual común de trabajoenexcel.com (crema, verde profundo, menta; Plus Jakarta Sans).
+   Fuente única: theme/base.css + theme/pages/<página>.css. Lo inyecta scripts/apply_theme.py en cada HTML. */
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400 800;font-display:swap;src:url(/fonts/plus-jakarta-sans.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --green-deep:#1c1e1d;--green-mid:#22524c;--green-soft:#2f6b63;--green-light:#79e4d2;
+  --green-pale:#e4f5f1;--green-mist:#f1f8f6;--cream:#fbf9f4;--cream-2:#f6f2ea;--card:#fffefb;
+  --charcoal:#1c1e1d;--slate:#4b4f4d;--muted:#5f625f;--border:#e8e3d8;--accent:#e4f5f1;--gold:#f5a524;
+  --f:'Plus Jakarta Sans','Helvetica Neue',Arial,sans-serif;
+  --underline:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20' preserveAspectRatio='none'%3E%3Cpath d='M3 12C60 4 130 17 190 9S270 6 297 11' fill='none' stroke='%2379e4d2' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+body{font-family:var(--f);background:var(--cream);color:var(--charcoal)}
+h1,h2,h3,h4{font-family:var(--f)}
+h1,h2{font-weight:800!important;letter-spacing:-.035em!important}
+h1{letter-spacing:-.04em!important;line-height:1.06}
+h2{line-height:1.1}
+h3{font-weight:700!important;letter-spacing:-.015em}
+h1 em,h2 em{font-style:normal;color:inherit;background:var(--underline) no-repeat left bottom/100% .34em;padding:0 0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+em,i.it{font-style:normal;font-weight:600}
+nav.crumbs{position:static;height:auto;z-index:auto}
+.section-tag{background:color-mix(in srgb,currentColor 11%,transparent);padding:.3rem .8rem;border-radius:999px;text-transform:none;letter-spacing:.01em;font-size:.78rem;font-weight:700}
+.nav-logo{font-weight:800;letter-spacing:-.03em}
+.nav-links a{font-weight:500;color:var(--muted)}
+.nav-links a:hover{color:var(--green-deep)}
+.hero-badge{background:var(--green-pale);color:var(--green-mid);font-weight:600}
+.btn-primary,.btn-cta,.btn-white,.btn-cta-white,.nav-btn,.precio-cta{border-radius:10px!important;box-shadow:none!important;font-weight:700}
+.btn-ghost{font-weight:700;text-decoration:underline;text-underline-offset:5px}
+.faq-q{font-weight:700;letter-spacing:-.01em}
+.faq-q::after{width:24px;height:24px;border-radius:50%;background:var(--green-pale);display:inline-flex;align-items:center;justify-content:center;font-size:1rem;font-weight:600;color:var(--green-mid)}
+.keywords-seo .section-tag{color:var(--green-light)!important}
+.keywords-seo h2{color:#fff}
+.hero .animate-in{animation:none;opacity:1;transform:none}
+section.related{min-width:0;width:100%}
+.superprof-badge{color:#8a5a00}
+.stars{color:#e8940a}
