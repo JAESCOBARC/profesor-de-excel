@@ -135,7 +135,7 @@ nav.hub-links{position:static;height:auto;background:transparent;backdrop-filter
 .nu-top-h1{color:var(--green-deep)!important;font-weight:800}
 /* prueba social en el hero, formulario de archivo y clases por tema */
 .hero-proof{font-size:.88rem;color:var(--muted);margin:.35rem 0 0;line-height:1.5}.hero-proof strong{color:var(--green-deep)}.hero-proof a{color:inherit;text-decoration:underline;text-underline-offset:3px}.hero-proof .stars{letter-spacing:1px}
-.archivo{background:var(--cream);padding:4.5rem 5%}.archivo .section-lead{max-width:640px;margin-bottom:1.5rem}
+.archivo{background:var(--cream);padding:3.5rem 5%;display:flex;flex-direction:column;align-items:center;text-align:center}.archivo h2{max-width:20ch;margin-left:auto;margin-right:auto;text-wrap:balance}.archivo .section-lead{max-width:520px;margin:.75rem auto 1.5rem;text-wrap:balance}.archivo .btn-primary{margin:0 auto}
 .por-tema{background:var(--cream-2);padding:4.5rem 5%}
 .por-tema-grid{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.75rem}
 .por-tema-grid li{display:flex;min-width:0}.por-tema-grid a{flex:1;display:block;padding:1rem 1.1rem;border:1px solid var(--border);border-radius:14px;background:var(--card);text-decoration:none;color:inherit}
