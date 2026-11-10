@@ -18,3 +18,5 @@ jobs:
         run: python3 scripts/bump_assets.py --check
       - name: Verificar que el tema visual está inyectado en todas las páginas
         run: python3 scripts/apply_theme.py --check
+      - name: Verificar que no hay enlaces internos rotos
+        run: python3 scripts/check_links.py
