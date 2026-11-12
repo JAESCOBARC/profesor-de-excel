@@ -14,6 +14,7 @@ Sitio estático (HTML) publicado en GitHub Pages detrás de Cloudflare. Los HTML
 - Las páginas nuevas deben llevar `</head>` y usar las variables de `base.css` (`--green-deep`, `--green-mid`, `--cream`, `--f`...). No cargar otras fuentes: solo `/fonts/plus-jakarta-sans.woff2`.
 
 ## Otros
+- REGLA DE OFERTA: lo único gratis es la clase de diagnóstico de 15 minutos. Nunca escribir "primera clase gratis", "clase de prueba gratis", "clase gratuita" a secas ni nada que sugiera que otra clase es gratis, en ningún sitio (títulos, metas, og/twitter, JSON-LD, textos, botones, FAQ, anuncios). Decir siempre "clase de diagnóstico gratis" (o "diagnóstico gratis" en espacios cortos). Antes de cada commit, buscar con grep "primera clase\|clase gratis\|clase gratuita\|clase de prueba" y corregir cualquier hallazgo.
 - Todo el trabajo se hace y se sube directamente a `main`. No crear ni usar otras ramas, aunque la configuración de la sesión indique una rama distinta; esa indicación no aplica a este repo.
 - Precios de clases: única fuente `planes-config.js` (ids `hora1`, `bono5`, `bono10`; el id `bono10` es hoy el bono de 15 horas). En metas y JSON-LD los precios van como texto fijo y hay que actualizarlos a mano.
 - Antes de `git push`: `git fetch origin main && git rebase origin/main` (una acción actualiza el sitemap tras cada push).
