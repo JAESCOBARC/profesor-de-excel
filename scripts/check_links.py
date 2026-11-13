@@ -72,6 +72,9 @@ for loc in re.findall(r'<loc>([^<]+)</loc>',sm):
     p=urlparse(loc).path[1:]
     if not resolve(p or 'index.html'): bad.append(('sitemap.xml',loc,'URL sin archivo'))
     elif resolve(p or 'index.html') in redir: toredir.append(('sitemap.xml',loc,redir[resolve(p or 'index.html')]))
+for _f in files:
+    if _f.endswith(('.html','.js')) and not _f.startswith('docs/') and 'TU-CODIGO' in open(_f,encoding='utf-8',errors='ignore').read():
+        bad.append((_f,'TU-CODIGO','marcador de checkout sin sustituir'))
 print('enlaces revisados:',n,'| archivos:',len(files))
 print('ROTOS:',len(bad))
 for b in sorted(set(bad)): print(' ',b)
