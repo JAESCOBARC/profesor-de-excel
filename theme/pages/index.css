@@ -12,7 +12,8 @@ nav{background:rgba(251,249,244,.92)}
   .hero{padding:0;gap:0;align-items:stretch;grid-template-columns:minmax(0,46fr) minmax(0,54fr);border-bottom:1px solid var(--border)}
   .hero::before{display:none}
   .hero-content{background:var(--cream-2);padding:3.5rem 3rem 3rem 5vw}
-  .hero-visual{background:var(--card);border-left:1px solid var(--border);padding:3.5rem 5vw 3.5rem 3.5rem;justify-content:center}
+  .hero-visual{background:var(--card);border-left:1px solid var(--border);padding:3.5rem 5vw 3.5rem 3.5rem;justify-content:flex-start}
+  .hero-visual .hero-video-wrap{position:sticky;top:6rem}
   .trust-card{display:block}
   .hero-trust{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:1.1rem 2rem}
   .hero-trust .trust-divider{display:none}
