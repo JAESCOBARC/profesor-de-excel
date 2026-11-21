@@ -160,3 +160,14 @@ nav.hub-links{position:static;height:auto;background:transparent;backdrop-filter
   .trust-card--m{display:none}
   .hero-visual .trust-card--d{display:block;margin-top:1.5rem}
 }
+
+/* Llamada de atención del texto de la esfera (se detiene al reproducir) */
+.vozc-txt em{background:linear-gradient(100deg,var(--green-light) 0%,var(--green-light) 38%,#fff 50%,var(--green-light) 62%,var(--green-light) 100%) 0 0/250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:vozShine 2.6s linear infinite}
+.vozc-txt b{animation:vozPulse 2.6s ease-in-out infinite;transform-origin:left center}
+.vozc:not(.on) .vozc-btn{animation:vozBtn 2.6s ease-in-out infinite}
+.vozc.on .vozc-txt em,.vozc.on .vozc-txt b{animation:none}
+.vozc.on .vozc-txt em{-webkit-text-fill-color:var(--green-light);color:var(--green-light);background:none}
+@keyframes vozShine{from{background-position:150% 0}to{background-position:-100% 0}}
+@keyframes vozPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes vozBtn{0%,100%{box-shadow:0 0 0 0 rgba(121,228,210,.55)}60%{box-shadow:0 0 0 10px rgba(121,228,210,0)}}
+@media (prefers-reduced-motion:reduce){.vozc-txt em,.vozc-txt b,.vozc .vozc-btn{animation:none!important}.vozc-txt em{-webkit-text-fill-color:var(--green-light);color:var(--green-light);background:none}}
