@@ -1296,7 +1296,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-video-wrap" id="mobileVideoWrap">
     <video id="mobileVideo" muted playsinline preload="none" poster="https://i.ytimg.com/vi/ahc7xxEDbbE/hqdefault.jpg"></video>
     <button type="button" class="mv-play" id="mvPlayBtn" aria-label="Reproducir vídeo">▶</button>
-    <button type="button" class="mv-unmute" id="mvUnmute" aria-label="Activar sonido">🔇</button>
   </div>
 </section>
 
@@ -1834,7 +1833,6 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
 (function () {
   var video = document.getElementById('mobileVideo');
   if (!video) return;
-  var unmuteBtn = document.getElementById('mvUnmute');
   var playBtn = document.getElementById('mvPlayBtn');
   var triggered = false;
 
@@ -1846,15 +1844,10 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
     if (triggered || !isMobileView()) return;
     triggered = true;
     playBtn.classList.add('is-hidden');
-    unmuteBtn.classList.add('is-hidden');
     video.controls = true;
-    video.src = '/video-clases-excel.mp4';
-    video.muted = false;
-    video.play().catch(function () {
-      // El navegador bloqueó el sonido automático (sin interacción previa) — probamos silenciado.
-      video.muted = true;
-      video.play().catch(function () {});
-    });
+    video.src = '/video-clases-excel-mudo.mp4';  // sin audio: la voz va en la esfera del hero
+    video.muted = true;
+    video.play().catch(function () {});
   }
 
   setTimeout(startVideo, 7000);
@@ -1864,11 +1857,6 @@ document.querySelectorAll('.animate-in').forEach((el, i) => {
     startVideo();
   });
 
-  unmuteBtn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    video.muted = !video.muted;
-    unmuteBtn.textContent = video.muted ? '🔇' : '🔊';
-  });
 })();
 </script>
 <script>
