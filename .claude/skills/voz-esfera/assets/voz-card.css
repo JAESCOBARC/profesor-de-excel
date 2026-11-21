@@ -1,0 +1,24 @@
+/* Tarjeta de voz con esfera (skill voz-esfera) */
+.vozc{display:flex;align-items:center;gap:14px;background:var(--green-deep);color:#fff;border-radius:18px}
+.vozc-stage{flex:none;cursor:pointer;touch-action:pan-y;-webkit-tap-highlight-color:transparent;border-radius:50%}
+.vozc-stage canvas{width:100%;height:100%;display:block}
+.vozc-stage:focus-visible,.vozc-btn:focus-visible{outline:3px solid var(--green-light);outline-offset:2px}
+.vozc-txt{display:flex;flex-direction:column;gap:8px;min-width:0;align-items:flex-start}
+.vozc-txt b{font-size:1rem;line-height:1.25;text-wrap:balance}
+.vozc-txt em{font-style:normal;color:var(--green-light)}
+.vozc-btn{font:700 .92rem var(--f);background:var(--green-light);color:var(--green-deep);border:0;border-radius:99px;padding:.55rem 1.1rem;min-height:40px;cursor:pointer}
+.vozc-bar{display:block;width:100%;height:3px;background:rgba(255,255,255,.18);border-radius:3px;overflow:hidden;min-width:150px}
+.vozc-bar i{display:block;height:100%;width:0;background:var(--green-light)}
+.vozc{margin:.2rem 0 1rem;padding:10px 16px 10px 8px}
+.vozc .vozc-stage{width:92px;height:92px}
+
+/* Llamada de atención del texto de la esfera (se detiene al reproducir) */
+.vozc-txt em{background:linear-gradient(100deg,var(--green-light) 0%,var(--green-light) 38%,#fff 50%,var(--green-light) 62%,var(--green-light) 100%) 0 0/250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:vozShine 2.6s linear infinite}
+.vozc-txt b{animation:vozPulse 2.6s ease-in-out infinite;transform-origin:left center}
+.vozc:not(.on) .vozc-btn{animation:vozBtn 2.6s ease-in-out infinite}
+.vozc.on .vozc-txt em,.vozc.on .vozc-txt b{animation:none}
+.vozc.on .vozc-txt em{-webkit-text-fill-color:var(--green-light);color:var(--green-light);background:none}
+@keyframes vozShine{from{background-position:150% 0}to{background-position:-100% 0}}
+@keyframes vozPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes vozBtn{0%,100%{box-shadow:0 0 0 0 rgba(121,228,210,.55)}60%{box-shadow:0 0 0 10px rgba(121,228,210,0)}}
+@media (prefers-reduced-motion:reduce){.vozc-txt em,.vozc-txt b,.vozc .vozc-btn{animation:none!important}.vozc-txt em{-webkit-text-fill-color:var(--green-light);color:var(--green-light);background:none}}
