@@ -154,11 +154,4 @@ nav.hub-links{position:static;height:auto;background:transparent;backdrop-filter
 .vozc-bar i{display:block;height:100%;width:0;background:var(--green-light)}
 .vozc--m{margin:.2rem 0 1rem;padding:10px 16px 10px 8px}
 .vozc--m .vozc-stage{width:92px;height:92px}
-.vozc--d{display:none}
-@media (min-width:769px){
-  .vozc--m{display:none}
-  .vozc--d{display:flex;flex-direction:column;text-align:center;gap:10px;padding:18px 24px 20px;margin:0 auto 22px;width:min(100%,570px)}
-  .vozc--d .vozc-stage{width:230px;height:230px}
-  .vozc--d .vozc-txt{align-items:center;width:100%}
-  .vozc--d .vozc-txt b{font-size:1.15rem}
-}
+@media (min-width:769px){.vozc{display:none}}
