@@ -13,7 +13,7 @@ NUNCA generes audio ni montes la tarjeta sin un guion aprobado por el usuario en
 Antes de nada pregunta (en un único mensaje, máximo 4 preguntas):
 1. **Página/proyecto** donde irá y su objetivo (¿qué debe hacer el visitante después del audio?).
 2. **Guion**: ¿lo escribe el usuario, o quiere que lo redactes tú? Si pide un borrador, entrega UNO, claramente marcado como propuesta, y espera su aprobación o sus cambios. No lo des por bueno por silencio.
-3. **Duración** orientativa (≈13 caracteres/segundo; 50 s ≈ 650 caracteres).
+3. **Duración** orientativa (medido con esta voz: ≈19 caracteres/segundo; 50 s ≈ 950 caracteres; comprueba siempre la duración real del mp3).
 4. **Dónde se ve**: móvil y escritorio, o solo móvil.
 Aplica siempre las reglas del sitio al redactar o revisar el guion (CLAUDE.md): de las clases solo es gratis la clase de diagnóstico de 15 minutos; nunca "primera clase gratis", "clase de prueba gratis" ni "clase gratuita" a secas; no inventes cifras, reseñas ni garantías; todo dato (precios, años, alumnos) debe estar ya en el sitio.
 Escribe también el título de la tarjeta (≤ 8 palabras, con `<em>` en el gancho, ej. `Te lo cuento yo mismo <em>en 50 segundos</em>`); la duración que prometa debe coincidir con la real del audio.

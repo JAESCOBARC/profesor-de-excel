@@ -41,7 +41,7 @@ def main():
     ap.add_argument("--cfg", type=float, default=0.5)
     ap.add_argument("--pausa", type=float, default=0.35, help="segundos entre frases")
     ap.add_argument("--pausa-parrafo", type=float, default=0.7)
-    ap.add_argument("--cps", type=float, default=13.0, help="caracteres/segundo esperados (para detectar cortes)")
+    ap.add_argument("--cps", type=float, default=17.0, help="caracteres/segundo esperados para reintentar frases cortas (la voz real va a ~19)")
     ap.add_argument("--wav", help="guardar además el wav sin comprimir")
     a = ap.parse_args()
 
@@ -50,7 +50,7 @@ def main():
     m = ChatterboxMultilingualTTS.from_pretrained(device="cuda" if torch.cuda.is_available() else "cpu")
     sr = m.sr
     texto = open(a.text, encoding="utf-8").read()
-    segs, avisos = [], []
+    segs, avisos, medidas = [], [], []
     for pi, par in enumerate(frases(texto)):
         for ti, t in enumerate(par):
             mejor = None
@@ -63,14 +63,19 @@ def main():
                 ratio = dur / esperado
                 if mejor is None or abs(1 - ratio) < abs(1 - mejor[2]):
                     mejor = (w, dur, ratio)
-                if ratio >= 0.75:
+                if ratio >= 0.8:
                     break
             w, dur, ratio = mejor
             print(f"[{pi+1}.{ti+1}] {dur:4.1f}s (esperado {len(t)/a.cps:4.1f}s) {t[:70]}", flush=True)
-            if ratio < 0.75:
-                avisos.append(f"frase {pi+1}.{ti+1} posiblemente cortada: {t[:60]}")
+            medidas.append((f"{pi+1}.{ti+1}", t, len(t) / dur))
             segs.append(w)
             segs.append(torch.zeros(1, int(sr * (a.pausa_parrafo if ti == len(par) - 1 else a.pausa))))
+    import statistics
+    if len(medidas) > 1:   # aviso relativo: frases bastante más lentas (menos caracteres/s) que la mediana = posible recorte
+        med = statistics.median(c for _, _, c in medidas)
+        for n, t, c in medidas:
+            if c < 0.65 * med:
+                avisos.append(f"frase {n} posiblemente cortada o con silencios largos ({c:.0f} car/s frente a {med:.0f}): {t[:60]}")
     audio = torch.cat(segs[:-1], dim=1)
     tmp = tempfile.mkdtemp()
     raw = os.path.join(tmp, "raw.wav")
