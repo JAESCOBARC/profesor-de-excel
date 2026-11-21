@@ -13,7 +13,6 @@ nav{background:rgba(251,249,244,.92)}
   .hero::before{display:none}
   .hero-content{background:var(--cream-2);padding:3.5rem 3rem 3rem 5vw}
   .hero-visual{background:var(--card);border-left:1px solid var(--border);padding:3.5rem 5vw 3.5rem 3.5rem;justify-content:flex-start}
-  .hero-visual .hero-video-wrap{position:sticky;top:6rem}
   .trust-card{display:block}
   .hero-trust{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:1.1rem 2rem}
   .hero-trust .trust-divider{display:none}
@@ -159,6 +158,5 @@ nav.hub-links{position:static;height:auto;background:transparent;backdrop-filter
 .trust-card--d{display:none}
 @media (min-width:769px){
   .trust-card--m{display:none}
-  .trust-card--d{display:block;margin-top:2rem}
-  .hero-visual .hero-video-wrap{position:static}
+  .hero-visual .trust-card--d{display:block;margin-top:1.5rem}
 }
