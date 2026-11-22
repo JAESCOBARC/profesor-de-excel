@@ -171,3 +171,12 @@ nav.hub-links{position:static;height:auto;background:transparent;backdrop-filter
 @keyframes vozPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
 @keyframes vozBtn{0%,100%{box-shadow:0 0 0 0 rgba(121,228,210,.55)}60%{box-shadow:0 0 0 10px rgba(121,228,210,0)}}
 @media (prefers-reduced-motion:reduce){.vozc-txt em,.vozc-txt b,.vozc .vozc-btn{animation:none!important}.vozc-txt em{-webkit-text-fill-color:var(--green-light);color:var(--green-light);background:none}}
+.valor-hero{display:none}
+@media (min-width:1500px){
+  .valor-strip{display:none}
+  .valor-hero{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin-top:1.6rem}
+  .valor-hero .valor-chip{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:.65rem .85rem;box-shadow:none}
+  .valor-hero .valor-chip span{white-space:normal;font-size:.82rem;font-weight:600;color:var(--green-deep);line-height:1.25}
+  .valor-hero .valor-chip--certificado{background:var(--green-pale);border-color:#cfeae4}
+}
+
